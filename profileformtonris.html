@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  
+
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+
+
+<form  style="max-width: 700px; margin: 30px auto; background: #f9f9f9; padding: 30px; border-radius: 12px; font-family: Arial, sans-serif; box-shadow: 0 0 15px rgba(0,0,0,0.1);margin-top: 150px;">
+
+  <h2 style="text-align:center; color:#d63384;">Create NRI Matrimony Profile</h2>
+
+  <!-- Basic Info -->
+  <label style="display:block; margin-top:20px;">Full Name*</label>
+  <input type="text" name="full_name" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px;">
+
+  <label style="display:block; margin-top:15px;">Gender*</label>
+  <select name="gender" required style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+    <option value="">-- Select --</option>
+    <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+  </select>
+
+  <label style="display:block; margin-top:15px;">Date of Birth*</label>
+  <input type="date" name="dob" required style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+
+  <!-- Contact Info -->
+  <label style="display:block; margin-top:15px;">Email ID*</label>
+  <input type="email" name="email" required style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+
+  <label style="display:block; margin-top:15px;">Mobile Number*</label>
+  <input type="tel" name="mobile" required pattern="[0-9]{10,15}" placeholder="Include country code" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+
+  <!-- NRI-Specific -->
+  <label style="display:block; margin-top:15px;">Country Where NRI Is Living*</label>
+  <input type="text" name="residence_country" required placeholder="e.g., USA, UK, UAE, Canada" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+
+  <label style="display:block; margin-top:15px;">Years of Stay in Current Country*</label>
+  <input type="number" name="years_abroad" required placeholder="e.g., 5" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+
+  <label style="display:block; margin-top:15px;">Citizenship / Visa Status</label>
+  <input type="text" name="visa_status" placeholder="Example: Permanent Resident, H1B, etc." style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+
+  <!-- Religion & Language -->
+  <label style="display:block; margin-top:15px;">Religion*</label>
+  <select name="religion" required style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+    <option value="">-- Select --</option>
+    <option>Hindu</option>
+    <option>Muslim</option>
+    <option>Christian</option>
+    <option>Sikh</option>
+    <option>Jain</option>
+    <option>Buddhist</option>
+    <option>Other</option>
+  </select>
+
+  <label style="display:block; margin-top:15px;">Mother Tongue</label>
+  <input type="text" name="mother_tongue" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+
+  <!-- Professional Info -->
+  <label style="display:block; margin-top:15px;">Profession*</label>
+  <input type="text" name="profession" required style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+
+  <!-- Marital Status -->
+  <label style="display:block; margin-top:15px;">Marital Status*</label>
+  <select name="marital_status" required style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+    <option value="">-- Select --</option>
+    <option>Never Married</option>
+    <option>Divorced</option>
+    <option>Widowed</option>
+  </select>
+
+  <!-- Photo Upload -->
+  <label style="display:block; margin-top:15px;">Upload Profile Photo*</label>
+  <input type="file" name="photo" accept="image/*" required style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc;">
+
+  <!-- Bio -->
+  <label style="display:block; margin-top:15px;">About Yourself</label>
+  <textarea name="bio" rows="4" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;" placeholder="Write a few lines about yourself, your values, and what you are looking for."></textarea>
+
+  <!-- Submit -->
+  <button type="submit" style="margin-top:25px; background-color:#d63384; color:white; padding:12px 20px; border:none; border-radius:8px; font-size:16px; cursor:pointer; width:100%;">Submit Profile</button>
+</form>
+
+<script>
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('http://localhost:5000/api/nriprofile', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert('Profile submitted successfully!');
+        form.reset();
+      } else {
+        alert('Submission failed: ' + result.message);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An unexpected error occurred while submitting the profile.');
+    }
+  });
+</script>
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>

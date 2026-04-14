@@ -1,0 +1,142 @@
+
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Female Profiles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { font-family: Arial; background:#f4f4f4; padding:20px; margin:0; }
+        h2 { text-align:center; color:#ff4d88; }
+        .container { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+        .card {
+            width:260px; background:white; padding:15px;
+            border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card img {
+            width:100%; height:180px; object-fit:cover; border-radius:6px; cursor:pointer;
+        }
+        .name { font-size:18px; font-weight:bold; color:#ff4d88; margin:10px 0 5px; }
+        .info { font-size:14px; margin:4px 0; color:#666; }
+        .actions { display:flex; gap:8px; margin-top:12px; }
+        .btn { flex:1; padding:8px; border:none; border-radius:5px; cursor:pointer; font-size:12px; font-weight:600; transition:0.3s; }
+        .btn-interest { background:#ff4d88; color:white; }
+        .btn-interest:hover { background:#ff2970; }
+        .btn-view { background:#6c757d; color:white; }
+        .btn-view:hover { background:#5a6268; }
+        .btn:disabled { opacity:0.6; cursor:not-allowed; }
+    </style>
+    <script src="header-auth.js"></script>
+    <script>
+    // LOAD FEMALE PROFILES (session-aware)
+    async function loadFemale() {
+        const res = await fetch("http://localhost:5000/api/profiles/female");
+        if (!res.ok) return console.error('Failed to fetch profiles', res.status);
+        const result = await res.json();
+
+        const box = document.getElementById("profiles");
+        box.innerHTML = '';
+
+        result.data.forEach(p => {
+            let img = p.profileImage && p.profileImage.length > 50 
+                ? p.profileImage 
+                : "https://via.placeholder.com/260x180?text=No+Image";
+
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            const btnInterest = `
+                <button class="btn btn-interest" onclick="sendInterest(${p.id})" title="Send Interest">
+                    Interest
+                </button>
+            `;
+
+            const btnViewGuest = `
+                <button class="btn btn-view" onclick="alert('Please login to send interest')" title="Login to send interest">
+                    View
+                </button>
+            `;
+
+            const isLogged = window.headerAuth && window.headerAuth.getCurrentUser();
+            const actionBtn = isLogged ? btnInterest : btnViewGuest;
+
+            card.innerHTML = `
+                <img src="${img}" onclick="window.location.href='single_profile.html?id=${p.id}'">
+                <p class="name">${p.firstName} ${p.lastName}</p>
+                <p class="info"><b>Age:</b> ${p.dob}</p>
+                <p class="info"><b>Profession:</b> ${p.profession}</p>
+                <div class="actions">
+                    ${actionBtn}
+                </div>
+            `;
+
+            card.onclick = (e) => {
+                if (e.target.tagName.toLowerCase() === 'button' || e.target.closest('button')) return;
+                window.location.href = `single_profile.html?id=${p.id}`;
+            };
+
+            box.appendChild(card);
+        });
+    }
+
+    async function sendInterest(receiverId) {
+        const user = window.headerAuth && window.headerAuth.getCurrentUser();
+        if (!user) {
+            alert("Please login to send interest.");
+            window.location.href = 'login2.html';
+            return;
+        }
+
+        try {
+            const res = await fetch("http://localhost:5000/api/send-interest", {
+                method: "POST",
+                credentials: 'include',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ sender_id: user.id, receiver_id: receiverId })
+            });
+
+            const data = await res.json();
+            alert(data.message || 'Response received');
+            if (data.success) setTimeout(() => loadFemale(), 800);
+        } catch (err) {
+            console.error('Error sending interest:', err);
+            alert('Error sending interest. Please try again.');
+        }
+    }
+
+    // Ensure session is checked before loading profiles
+    document.addEventListener('DOMContentLoaded', async () => {
+        try { await window.headerAuth.checkSession(); } catch(e){}
+        loadFemale();
+    });
+    </script>
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  
+
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+    <!-- Hero Section -->
+    <!-- <section style="background:linear-gradient(rgba(110,72,170,0.9),rgba(157,80,187,0.9)),url('hero-bg.jpg');background-size:cover;background-position:center;color:white;text-align:center;padding:100px 20px;position:relative;margin-top: 140px;">
+        <div style="max-width:800px;margin:0 auto;">
+            <h2 style="font-size:42px;margin-bottom:20px;text-shadow:2px 2px 4px rgba(0,0,0,0.3);">Find Your Perfect Life Partner</h2>
+            <p style="font-size:20px;margin-bottom:30px;">Join thousands of happy couples who found their match through Hitiashi Matrimony</p>
+            <a href="#plans" style="background-color:#ffd700;color:#6e48aa;padding:12px 30px;border-radius:30px;text-decoration:none;font-weight:600;font-size:18px;transition:all 0.3s ease;display:inline-block;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 8px 20px rgba(255,215,0,0.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">View Membership Plans</a>
+        </div>
+    </section> -->
+
+ 
+
+
+
+
+
+
+
+  
+   <!-- Membership Concept Section with Hover Effects and Colored Cards -->
+<section style="padding:80px 20px;background:linear-gradient(135deg,#f8f1ff,#ffffff);">
+  <div style="max-width:1100px;margin:0 auto;">
+
+  <!-- Why Become a Member -->
+<div style="margin-bottom:60px;background-color:white;padding:40px 0;">
+  <h2 style="text-align:center;font-size:36px;color:black;margin-bottom:30px;">Why Become a Member?</h2>
+  <div style="display:flex;flex-wrap:nowrap;gap:30px;justify-content:center;width:80%;margin:auto;">
+    <div style="flex:1;background:#f9f9f9;border-radius:12px;padding:30px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
+      <h3 style="color:black;font-size:20px;margin-bottom:10px;">Verified Profiles</h3>
+      <p style="color:#333;margin:0;">Each member profile is manually verified to ensure authenticity and commitment.</p>
+    </div>
+    <div style="flex:1;background:#f9f9f9;border-radius:12px;padding:30px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
+      <h3 style="color:black;font-size:20px;margin-bottom:10px;">Tailored Matches</h3>
+      <p style="color:#333;margin:0;">Get suggestions based on your preferences, community, lifestyle, and values.</p>
+    </div>
+    <div style="flex:1;background:#f9f9f9;border-radius:12px;padding:30px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
+      <h3 style="color:black;font-size:20px;margin-bottom:10px;">Safe & Private</h3>
+      <p style="color:#333;margin:0;">We safeguard your personal details and only show what you choose to share.</p>
+    </div>
+  </div>
+</div>
+
+<!-- How Membership Works -->
+<div style="background-color:white;padding:40px 0;">
+  <h2 style="text-align:center;font-size:36px;color:black;margin-bottom:30px;">How Membership Works</h2>
+  <div style="display:flex;flex-wrap:nowrap;gap:30px;justify-content:center;width:80%;margin:auto;">
+    <div style="flex:1;background:#f9f9f9;border-left:5px solid #666;border-radius:8px;padding:25px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
+      <h3 style="margin-bottom:10px;font-size:18px;color:black;">1. Create Your Profile</h3>
+      <p style="margin:0;color:#333;">Share your details, upload your photo, and describe your expectations for a life partner.</p>
+    </div>
+    <div style="flex:1;background:#f9f9f9;border-left:5px solid #666;border-radius:8px;padding:25px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
+      <h3 style="margin-bottom:10px;font-size:18px;color:black;">2. Get Verified</h3>
+      <p style="margin:0;color:#333;">We perform a simple profile verification for quality and trustworthiness.</p>
+    </div>
+    <div style="flex:1;background:#f9f9f9;border-left:5px solid #666;border-radius:8px;padding:25px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
+      <h3 style="margin-bottom:10px;font-size:18px;color:black;">3. Connect Confidently</h3>
+      <p style="margin:0;color:#333;">Start expressing interest, chatting, and taking the next steps at your comfort level.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Success Stories -->
+<section id="testimonials" style="padding:80px 20px;background-color:white;">
+  <div style="max-width:80%;margin:0 auto;">
+    <h2 style="text-align:center;font-size:36px;margin-bottom:50px;color:black;">Success Stories</h2>
+    <div style="display:flex;gap:30px;justify-content:space-between;">
+      <!-- Testimonial 1 -->
+      <div style="width:calc(33.333% - 20px);background-color:#f9f9f9;border-radius:10px;padding:30px;transition:all 0.3s ease;box-sizing:border-box;" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
+        <div style="display:flex;align-items:center;margin-bottom:20px;">
+          <img src="images/msimage1.png" alt="Rahul & Priya" loading="lazy" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid #666;">
+          <div style="margin-left:15px;">
+            <h4 style="margin:0;font-size:18px;color:black;">Rahul & Priya</h4>
+            <p style="margin:5px 0 0;font-size:14px;color:#666;">Married: June 2022</p>
+          </div>
+        </div>
+        <p style="font-style:italic;color:#333;padding-left:20px;">"Hitiashi's advanced matching system connected us despite being in different cities. We found our perfect match within 3 weeks of premium membership!"</p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div style="width:calc(33.333% - 20px);background-color:#f9f9f9;border-radius:10px;padding:30px;transition:all 0.3s ease;box-sizing:border-box;" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
+        <div style="display:flex;align-items:center;margin-bottom:20px;">
+          <img src="images/msimage2.png" alt="Arjun & Meera" loading="lazy" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid #666;">
+          <div style="margin-left:15px;">
+            <h4 style="margin:0;font-size:18px;color:black;">Arjun & Meera</h4>
+            <p style="margin:5px 0 0;font-size:14px;color:#666;">Married: February 2023</p>
+          </div>
+        </div>
+        <p style="font-style:italic;color:#333;padding-left:20px;">"The verified profiles feature gave us confidence in the process. Our relationship manager helped us navigate cultural differences beautifully."</p>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div style="width:calc(33.333% - 20px);background-color:#f9f9f9;border-radius:10px;padding:30px;transition:all 0.3s ease;box-sizing:border-box;" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
+        <div style="display:flex;align-items:center;margin-bottom:20px;">
+          <img src="images/msimage3.png" alt="Vikram & Ananya" loading="lazy" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid #666;">
+          <div style="margin-left:15px;">
+            <h4 style="margin:0;font-size:18px;color:black;">Vikram & Ananya</h4>
+            <p style="margin:5px 0 0;font-size:14px;color:#666;">Married: November 2023</p>
+          </div>
+        </div>
+        <p style="font-style:italic;color:#333;padding-left:20px;">"As busy professionals, we appreciated the quality matches Hitiashi provided. The compatibility scores were surprisingly accurate!"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--faq-->
+<section style="padding:40px 10px;background:linear-gradient(135deg,#e8e3f8,#f9f7fe);">
+  <div style="max-width:80%;margin:0 auto;">
+    <h2 style="text-align:center;font-size:30px;margin-bottom:30px;color:#6e48aa;">Frequently Asked Questions</h2>
+
+    <!-- FAQ Container -->
+    <div id="faq-container">
+
+      <!-- FAQ Items -->
+      <div onclick="toggleFaq(0)" style="cursor:pointer;background-color:#ffffff;border-radius:10px;padding:9px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;" onmouseover="this.querySelector('h3').style.color='#4c2d85'" onmouseout="this.querySelector('h3').style.color=''">
+        <h3 style="font-size:16px;margin-bottom:8px;color:#6e48aa;">How does Hitiashi verify profiles?</h3>
+        <p class="faq-answer" style="display:none;margin:0;">We use a 4-step verification process including document verification, background checks, personal interviews, and social media validation to ensure all profiles are genuine.</p>
+      </div>
+
+      <div onclick="toggleFaq(1)" style="cursor:pointer;background-color:#ffffff;border-radius:10px;padding:9px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;" onmouseover="this.querySelector('h3').style.color='#4c2d85'" onmouseout="this.querySelector('h3').style.color=''">
+        <h3 style="font-size:16px;margin-bottom:8px;color:#6e48aa;">Can I upgrade my plan later?</h3>
+        <p class="faq-answer" style="display:none;margin:0;">Yes, you can upgrade anytime. The remaining value of your current plan will be applied to your upgrade.</p>
+      </div>
+
+      <div onclick="toggleFaq(2)" style="cursor:pointer;background-color:#ffffff;border-radius:10px;padding:9px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;" onmouseover="this.querySelector('h3').style.color='#4c2d85'" onmouseout="this.querySelector('h3').style.color=''">
+        <h3 style="font-size:16px;margin-bottom:8px;color:#6e48aa;">Is my personal information secure?</h3>
+        <p class="faq-answer" style="display:none;margin:0;">Absolutely. We use bank-level encryption and never share your contact details without permission.</p>
+      </div>
+
+      <div onclick="toggleFaq(3)" style="cursor:pointer;background-color:#ffffff;border-radius:10px;padding:9px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;" onmouseover="this.querySelector('h3').style.color='#4c2d85'" onmouseout="this.querySelector('h3').style.color=''">
+        <h3 style="font-size:16px;margin-bottom:8px;color:#6e48aa;">Can I hide my profile from others?</h3>
+        <p class="faq-answer" style="display:none;margin:0;">Yes, you can activate incognito mode to hide your profile until you're ready to go public.</p>
+      </div>
+
+      <div onclick="toggleFaq(4)" style="cursor:pointer;background-color:#ffffff;border-radius:10px;padding:9px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;" onmouseover="this.querySelector('h3').style.color='#4c2d85'" onmouseout="this.querySelector('h3').style.color=''">
+        <h3 style="font-size:16px;margin-bottom:8px;color:#6e48aa;">Do you offer refunds?</h3>
+        <p class="faq-answer" style="display:none;margin:0;">We provide refunds only in specific cases based on our terms and conditions. Please contact support for details.</p>
+      </div>
+
+      <div onclick="toggleFaq(5)" style="cursor:pointer;background-color:#ffffff;border-radius:10px;padding:9px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;" onmouseover="this.querySelector('h3').style.color='#4c2d85'" onmouseout="this.querySelector('h3').style.color=''">
+        <h3 style="font-size:16px;margin-bottom:8px;color:#6e48aa;">How do I delete my profile?</h3>
+        <p class="faq-answer" style="display:none;margin:0;">Go to account settings and select "Delete Profile." Confirm your decision and your data will be permanently removed.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleFaq(index) {
+      const answers = document.querySelectorAll(".faq-answer");
+      answers.forEach((ans, i) => {
+        ans.style.display = i === index ? (ans.style.display === "none" ? "block" : "none") : "none";
+      });
+    }
+  </script>
+</section>
+
+     
+
+   
+   <!-- Footer -->
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  
+
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+<main style="max-width: 80%; margin: 20px auto; padding: 0 20px; margin-top: 170px;">
+    <h1 style="font-size: 28px; color: #ff4d94; margin-bottom: 20px; text-align: center;">Find Your Perfect Match</h1>
+    
+    <section style="background-color: white; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <h2 style="font-size: 20px; margin-top: 0; margin-bottom: 15px; color: #495057;">Refine Your Search</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+            <div style="flex: 1; min-width: 200px;">
+                <label for="gender" style="display: block; margin-bottom: 5px; font-size: 14px; color: #6c757d;">Gender</label>
+                <select id="gender" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+                    <option value="">Any Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <label for="age-range" style="display: block; margin-bottom: 5px; font-size: 14px; color: #6c757d;">Age Range</label>
+                <select id="age-range" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+                    <option value="">Any Age</option>
+                    <option value="18-25">18-25</option>
+                    <option value="26-30">26-30</option>
+                    <option value="31-35">31-35</option>
+                    <option value="36-40">36-40</option>
+                    <option value="41+">41+</option>
+                </select>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <label for="interest" style="display: block; margin-bottom: 5px; font-size: 14px; color: #6c757d;">Interests</label>
+                <select id="interest" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+                    <option value="">Any Interest</option>
+                    <option value="music">Music</option>
+                    <option value="travel">Travel</option>
+                    <option value="sports">Sports</option>
+                    <option value="reading">Reading</option>
+                    <option value="cooking">Cooking</option>
+                </select>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <label for="occupation" style="display: block; margin-bottom: 5px; font-size: 14px; color: #6c757d;">Occupation</label>
+                <select id="occupation" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+                    <option value="">Any Occupation</option>
+                    <option value="engineer">Engineer</option>
+                    <option value="doctor">Doctor</option>
+                    <option value="artist">Artist</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="business">Business</option>
+                </select>
+            </div>
+            <div style="flex: 1; min-width: 200px; display: flex; align-items: flex-end;">
+                <button class="search-button" style="background-color: #ff4d94; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 14px; width: 100%;">Search Profiles</button>
+            </div>
+            <div style="flex: 1; min-width: 200px; display: flex; align-items: flex-end;">
+                <button class="reset-button" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 14px; width: 100%;">Reset Filters</button>
+            </div>
+        </div>
+    </section>
+<section>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2 class="profile-count" style="font-size: 22px; margin: 0; color: #495057;">Showing 6 Profiles</h2>
+        <div style="display: flex; gap: 10px;">
+            <select style="padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+                <option>Sort by: Newest First</option>
+                <option>Sort by: Recently Active</option>
+                <option>Sort by: Most Viewed</option>
+            </select>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div class="profile-card" data-gender="male" style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            <div style="position: relative;">
+                <img src="images/dating-image1.png" alt="Profile of Arjun Nair" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="position: absolute; top: 10px; right: 10px; background-color: #ff4d94; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Verified</div>
+            </div>
+            <div style="padding: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <h3 class="profile-age" style="margin: 0; font-size: 18px; color: #212529;">Arjun Nair, 27</h3>
+                    <button onclick="this.style.backgroundColor=this.style.backgroundColor==='rgb(255, 77, 148)'?'transparent':'#ff4d94';this.style.color=this.style.color==='white'?'#ff4d94':'white'" style="background-color: transparent; border: 1px solid #ff4d94; color: #ff4d94; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; transition: all 0.3s ease;">Like</button>
+                </div>
+                <p class="profile-occupation" style="margin: 0 0 10px 0; font-size: 14px; color: #6c757d;">Graphic Designer, Bangalore</p>
+                <div style="margin-bottom: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span class="profile-interest" style="font-size: 14px; color: #495057;">🎨 Art & Design</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">📍 From Kerala, in Bangalore</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🎵 Loves Indie Music</span>
+                    </div>
+                </div>
+                <div id="more-qualities-1" style="display: none; margin-top: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">📷 Photography Enthusiast</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🌍 Travel Blogger</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">☕ Coffee Lover</span>
+                    </div>
+                </div>
+                <button onclick="document.getElementById('more-qualities-1').style.display=document.getElementById('more-qualities-1').style.display==='none'?'block':'none';this.textContent=document.getElementById('more-qualities-1').style.display==='none'?'Show more qualities':'Show less qualities'" style="background-color: transparent; border: none; color: #ff4d94; padding: 0; cursor: pointer; font-size: 13px; text-decoration: none;">Show more qualities</button>
+            </div>
+        </div>
+
+        <div class="profile-card" data-gender="female" style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            <div style="position: relative;">
+                <img src="images/dating-image2.png" alt="Profile of Priya Sharma" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="position: absolute; top: 10px; right: 10px; background-color: #ff4d94; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Verified</div>
+            </div>
+            <div style="padding: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <h3 class="profile-age" style="margin: 0; font-size: 18px; color: #212529;">Priya Sharma, 29</h3>
+                    <button onclick="this.style.backgroundColor=this.style.backgroundColor==='rgb(255, 77, 148)'?'transparent':'#ff4d94';this.style.color=this.style.color==='white'?'#ff4d94':'white'" style="background-color: transparent; border: 1px solid #ff4d94; color: #ff4d94; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; transition: all 0.3s ease;">Like</button>
+                </div>
+                <p class="profile-occupation" style="margin: 0 0 10px 0; font-size: 14px; color: #6c757d;">Marketing Manager, Mumbai</p>
+                <div style="margin-bottom: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span class="profile-interest" style="font-size: 14px; color: #495057;">🌍 Travel Enthusiast</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">📍 Mumbai Native</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">📚 Avid Reader</span>
+                    </div>
+                </div>
+                <div id="more-qualities-2" style="display: none; margin-top: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🍳 Home Chef</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🧘 Yoga Practitioner</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🎥 Movie Buff</span>
+                    </div>
+                </div>
+                <button onclick="document.getElementById('more-qualities-2').style.display=document.getElementById('more-qualities-2').style.display==='none'?'block':'none';this.textContent=document.getElementById('more-qualities-2').style.display==='none'?'Show more qualities':'Show less qualities'" style="background-color: transparent; border: none; color: #ff4d94; padding: 0; cursor: pointer; font-size: 13px; text-decoration: none;">Show more qualities</button>
+            </div>
+        </div>
+
+        <div class="profile-card" data-gender="male" style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            <div style="position: relative;">
+                <img src="images/dating-image3.png" alt="Profile of Vikram Rao" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="position: absolute; top: 10px; right: 10px; background-color: #ff4d94; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Verified</div>
+            </div>
+            <div style="padding: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <h3 class="profile-age" style="margin: 0; font-size: 18px; color: #212529;">Vikram Rao, 31</h3>
+                    <button onclick="this.style.backgroundColor=this.style.backgroundColor==='rgb(255, 77, 148)'?'transparent':'#ff4d94';this.style.color=this.style.color==='white'?'#ff4d94':'white'" style="background-color: transparent; border: 1px solid #ff4d94; color: #ff4d94; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; transition: all 0.3s ease;">Like</button>
+                </div>
+                <p class="profile-occupation" style="margin: 0 0 10px 0; font-size: 14px; color: #6c757d;">Software Engineer, Hyderabad</p>
+                <div style="margin-bottom: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span class="profile-interest" style="font-size: 14px; color: #495057;">🎮 Gaming Enthusiast</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">📍 From Andhra Pradesh, in Hyderabad</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🏃‍♂️ Marathon Runner</span>
+                    </div>
+                </div>
+                <div id="more-qualities-3" style="display: none; margin-top: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🎸 Guitar Player</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🍲 Foodie</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">📱 Tech Geek</span>
+                    </div>
+                </div>
+                <button onclick="document.getElementById('more-qualities-3').style.display=document.getElementById('more-qualities-3').style.display==='none'?'block':'none';this.textContent=document.getElementById('more-qualities-3').style.display==='none'?'Show more qualities':'Show less qualities'" style="background-color: transparent; border: none; color: #ff4d94; padding: 0; cursor: pointer; font-size: 13px; text-decoration: none;">Show more qualities</button>
+            </div>
+        </div>
+
+        <div class="profile-card" data-gender="female" style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            <div style="position: relative;">
+                <img src="images/dating-image4.png" alt="Profile of Ananya Patel" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="position: absolute; top: 10px; right: 10px; background-color: #ff4d94; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Verified</div>
+            </div>
+            <div style="padding: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <h3 class="profile-age" style="margin: 0; font-size: 18px; color: #212529;">Ananya Patel, 26</h3>
+                    <button onclick="this.style.backgroundColor=this.style.backgroundColor==='rgb(255, 77, 148)'?'transparent':'#ff4d94';this.style.color=this.style.color==='white'?'#ff4d94':'white'" style="background-color: transparent; border: 1px solid #ff4d94; color: #ff4d94; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; transition: all 0.3s ease;">Like</button>
+                </div>
+                <p class="profile-occupation" style="margin: 0 0 10px 0; font-size: 14px; color: #6c757d;">Teacher, Delhi</p>
+                <div style="margin-bottom: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span class="profile-interest" style="font-size: 14px; color: #495057;">📚 Reading & Literature</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">📍 Delhi Native</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🎭 Theatre Enthusiast</span>
+                    </div>
+                </div>
+                <div id="more-qualities-4" style="display: none; margin-top: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">✍️ Writes Poetry</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🌱 Gardening</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🎵 Classical Music</span>
+                    </div>
+                </div>
+                <button onclick="document.getElementById('more-qualities-4').style.display=document.getElementById('more-qualities-4').style.display==='none'?'block':'none';this.textContent=document.getElementById('more-qualities-4').style.display==='none'?'Show more qualities':'Show less qualities'" style="background-color: transparent; border: none; color: #ff4d94; padding: 0; cursor: pointer; font-size: 13px; text-decoration: none;">Show more qualities</button>
+            </div>
+        </div>
+
+        <div class="profile-card" data-gender="male" style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            <div style="position: relative;">
+                <img src="images/dating-image5.png" alt="Profile of Rohan Gupta" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="position: absolute; top: 10px; right: 10px; background-color: #ff4d94; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Verified</div>
+            </div>
+            <div style="padding: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <h3 class="profile-age" style="margin: 0; font-size: 18px; color: #212529;">Rohan Gupta, 30</h3>
+                    <button onclick="this.style.backgroundColor=this.style.backgroundColor==='rgb(255, 77, 148)'?'transparent':'#ff4d94';this.style.color=this.style.color==='white'?'#ff4d94':'white'" style="background-color: transparent; border: 1px solid #ff4d94; color: #ff4d94; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; transition: all 0.3s ease;">Like</button>
+                </div>
+                <p class="profile-occupation" style="margin: 0 0 10px 0; font-size: 14px; color: #6c757d;">Chef, Chennai</p>
+                <div style="margin-bottom: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span class="profile-interest" style="font-size: 14px; color: #495057;">🍳 Cooking & Culinary Arts</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">📍 From Tamil Nadu, in Chennai</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🍷 Wine Enthusiast</span>
+                    </div>
+                </div>
+                <div id="more-qualities-5" style="display: none; margin-top: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🌍 Food Travel</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🎸 Acoustic Guitar</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🏋️‍♂️ Fitness Buff</span>
+                    </div>
+                </div>
+                <button onclick="document.getElementById('more-qualities-5').style.display=document.getElementById('more-qualities-5').style.display==='none'?'block':'none';this.textContent=document.getElementById('more-qualities-5').style.display==='none'?'Show more qualities':'Show less qualities'" style="background-color: transparent; border: none; color: #ff4d94; padding: 0; cursor: pointer; font-size: 13px; text-decoration: none;">Show more qualities</button>
+            </div>
+        </div>
+
+        <div class="profile-card" data-gender="female" style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            <div style="position: relative;">
+                <img src="images/dating-image6.png" alt="Profile of Neha Kapoor" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="position: absolute; top: 10px; right: 10px; background-color: #ff4d94; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Verified</div>
+            </div>
+            <div style="padding: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <h3 class="profile-age" style="margin: 0; font-size: 18px; color: #212529;">Neha Kapoor, 28</h3>
+                    <button onclick="this.style.backgroundColor=this.style.backgroundColor==='rgb(255, 77, 148)'?'transparent':'#ff4d94';this.style.color=this.style.color==='white'?'#ff4d94':'white'" style="background-color: transparent; border: 1px solid #ff4d94; color: #ff4d94; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; transition: all 0.3s ease;">Like</button>
+                </div>
+                <p class="profile-occupation" style="margin: 0 0 10px 0; font-size: 14px; color: #6c757d;">Fitness Trainer, Pune</p>
+                <div style="margin-bottom: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span class="profile-interest" style="font-size: 14px; color: #495057;">🏋️‍♀️ Fitness & Sports</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">📍 From Maharashtra, in Pune</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🧘 Yoga Instructor</span>
+                    </div>
+                </div>
+                <div id="more-qualities-6" style="display: none; margin-top: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🌱 Vegan Lifestyle</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🎵 EDM Fan</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 14px; color: #495057;">🏞️ Hiking</span>
+                    </div>
+                </div>
+                <button onclick="document.getElementById('more-qualities-6').style.display=document.getElementById('more-qualities-6').style.display==='none'?'block':'none';this.textContent=document.getElementById('more-qualities-6').style.display==='none'?'Show more qualities':'Show less qualities'" style="background-color: transparent; border: none; color: #ff4d94; padding: 0; cursor: pointer; font-size: 13px; text-decoration: none;">Show more qualities</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div style="display: flex; justify-content: center; margin: 40px 0;">
+        <nav style="display: flex; gap: 10px;">
+            <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #ff4d94; color: white; text-decoration: none;">1</a>
+            <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: white; color: #495057; text-decoration: none; border: 1px solid #dee2e6;">2</a>
+            <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: white; color: #495057; text-decoration: none; border: 1px solid #dee2e6;">3</a>
+            <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: white; color: #495057; text-decoration: none; border: 1px solid #dee2e6;">></a>
+        </nav>
+    </div>
+</main>
+
+<style>
+.profile-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+</style>
+
+<section style="background-color: #fce8ef; padding: 40px 20px; margin-top: 40px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; color: #ff4d94; margin-bottom: 30px;">Love Stories</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Riya and Karan" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 15px;">
+                    <div>
+                        <h3 style="margin: 0; font-size: 18px; color: #212529;">Riya & Karan</h3>
+                        <p style="margin: 5px 0 0 0; font-size: 14px; color: #6c757d;">Together since 2023</p>
+                    </div>
+                </div>
+                <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #495057;">"LoveConnect made it so easy to find someone who shares my passion for travel. We're now planning our first trip together!"</p>
+            </div>
+            <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <img src="https://randomuser.me/api/portraits/men/18.jpg" alt="Amit and Sneha" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 15px;">
+                    <div>
+                        <h3 style="margin: 0; font-size: 18px; color: #212529;">Amit & Sneha</h3>
+                        <p style="margin: 5px 0 0 0; font-size: 14px; color: #6c757d;">Together since 2024</p>
+                    </div>
+                </div>
+                <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #495057;">"The interest filters helped us connect over our love for music. LoveConnect truly brought us together!"</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="background-color: #ff4d94; color: white; padding: 60px 20px; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 28px; margin-top: 0; margin-bottom: 20px;">Ready to Find Love?</h2>
+        <p style="font-size: 18px; margin-bottom: 30px;">Join thousands of singles finding their perfect match on LoveConnect.</p>
+        <button style="background-color: white; color: #ff4d94; border: none; padding: 12px 30px; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; margin-right: 15px;">Sign Up Free</button>
+        <button style="background-color: transparent; color: white; border: 2px solid white; padding: 12px 30px; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold;">Browse Profiles</button>
+    </div>
+</section>
+
+   <!-- Footer -->
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "LoveConnect",
+  "url": "https://www.loveconnect.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.loveconnect.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<script>
+    function toggleQualities(id, button) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none") {
+            element.style.display = "block";
+            button.textContent = "Show less qualities";
+        } else {
+            element.style.display = "none";
+            button.textContent = "Show more qualities";
+        }     
+    }
+
+    document.querySelector('.search-button').addEventListener('click', filterProfiles);
+    document.querySelector('.reset-button').addEventListener('click', resetFilters);
+
+    function filterProfiles() {
+        const gender = document.getElementById('gender').value.toLowerCase();
+        const ageRange = document.getElementById('age-range').value;
+        const interest = document.getElementById('interest').value.toLowerCase();
+        const occupation = document.getElementById('occupation').value.toLowerCase();
+        const profiles = document.querySelectorAll('.profile-card');
+        let visibleCount = 0;
+
+        profiles.forEach(profile => {
+            const age = parseInt(profile.querySelector('.profile-age').textContent.split(', ')[1]);
+            const profileOccupation = profile.querySelector('.profile-occupation').textContent.toLowerCase();
+            const profileInterest = profile.querySelector('.profile-interest').textContent.toLowerCase();
+            const profileGender = profile.getAttribute('data-gender').toLowerCase();
+
+            let matches = true;
+
+            // Gender filter: show profiles only if they match the selected gender or if no gender is selected
+            if (gender && profileGender !== gender) {
+                matches = false;
+            }
+
+            // Age range filter
+            if (ageRange && !matchesAgeRange(age, ageRange)) {
+                matches = false;
+            }
+
+            // Interest filter
+            if (interest && !profileInterest.includes(interest)) {
+                matches = false;
+            }
+
+            // Occupation filter
+            if (occupation && !profileOccupation.includes(occupation)) {
+                matches = false;
+            }
+
+            if (matches) {
+                profile.style.display = 'block';
+                visibleCount++;
+            } else {
+                profile.style.display = 'none';
+            }
+        });
+
+        updateProfileCount(visibleCount);
+    }
+
+    function matchesAgeRange(age, range) {
+        if (!range) return true;
+        const [min, max] = range.split('-').map(Number);
+        if (range === '41+') return age >= 41;
+        return age >= min && (max ? age <= max : true);
+    }
+
+    function resetFilters() {
+        document.getElementById('gender').value = '';
+        document.getElementById('age-range').value = '';
+        document.getElementById('interest').value = '';
+        document.getElementById('occupation').value = '';
+
+        const profiles = document.querySelectorAll('.profile-card');
+        profiles.forEach(profile => {
+            profile.style.display = 'block';
+        });
+
+        updateProfileCount(profiles.length);
+    }
+
+    function updateProfileCount(count) {
+        const countElement = document.querySelector('.profile-count');
+        countElement.textContent = `Showing ${count} Profiles`;
+    }
+</script>
+</body>
+</html>

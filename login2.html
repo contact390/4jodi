@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9; width: 100%; min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+  <div style="width: 380px; background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);">
+    <h2 style="text-align: center; color: #ff3366; margin-bottom: 20px; font-size: 24px;">Login</h2>
+    
+    <form id="loginForm">
+      <label style="font-weight: bold; color: #333;">Email:</label><br>
+      <input type="email" name="email" required style="width: 100%; padding: 12px; margin: 8px 0 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; box-sizing: border-box;"><br>
+
+      <label style="font-weight: bold; color: #333;">Password:</label><br>
+      <input type="password" name="password" required style="width: 100%; padding: 12px; margin: 8px 0 20px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; box-sizing: border-box;"><br>
+
+      <button id="loginBtn" type="submit" style="width: 100%; background: #28a745; color: #fff; padding: 12px; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; transition: 0.3s;">
+        Login
+      </button>
+    </form>
+
+    <p id="loginMsg" style="text-align: center; margin-top: 15px; font-weight: bold;"></p>
+
+    <!-- Extra Buttons -->
+    <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center; gap:8px;">
+      <button id="registerBtn" onclick="window.location.href='createprofile.html'" 
+        style="background: #007bff; color: #fff; padding: 10px 15px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; width: 48%; transition: 0.3s;">
+        Register
+      </button>
+      <button id="forgotBtn" onclick="window.location.href='forgot.html'" 
+        style="background: #ffc107; color: #333; padding: 10px 15px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; width: 48%; transition: 0.3s;">
+        Forgot Password
+      </button>
+      <button id="logoutBtn" style="display:none; background:#dc3545; color:#fff; padding:8px 12px; border:none; border-radius:6px; font-size:14px; cursor:pointer;">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const res = await fetch("http://localhost:5000/api/login3", {
+          method: "POST",
+          credentials: 'include',
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const msg = document.getElementById("loginMsg");
+
+        const contentType = res.headers.get('content-type') || '';
+
+        if (!res.ok) {
+          // Non-2xx response; try to extract JSON error, otherwise show text
+          if (contentType.includes('application/json')) {
+            const errorJson = await res.json();
+            msg.style.color = 'red';
+            msg.innerText = '❌ ' + (errorJson.message || JSON.stringify(errorJson));
+          } else {
+            const text = await res.text();
+            msg.style.color = 'red';
+            msg.innerText = `❌ Server returned ${res.status}: ${text.substring(0,200)}`;
+          }
+          return;
+        }
+
+        // If response is JSON parse it, otherwise show the raw text (helps debugging HTML error pages)
+        let result;
+        if (contentType.includes('application/json')) {
+          result = await res.json();
+        } else {
+          const text = await res.text();
+          msg.style.color = 'red';
+          msg.innerText = '❌ Expected JSON response but received HTML/text. See console for details.';
+          console.error('Unexpected non-JSON response from /api/login3:', text);
+          return;
+        }
+
+        if (result.success) {
+          msg.style.color = "green";
+          msg.innerText = "✅ Login Successful! Welcome " + result.user.firstName;
+          // persist locally for quick UI update
+          try { localStorage.setItem('hitaishi_user', JSON.stringify(result.user)); } catch(e) { console.warn('localStorage set failed', e); }
+          // update local UI immediately
+          try { setLoggedInUI(result.user); } catch(e) { console.warn(e); }
+
+          // verify server session cookie was set (best-effort)
+          try {
+            const sessionResp = await fetch('http://localhost:5000/api/session', { credentials: 'include' });
+            if (sessionResp.ok) {
+              const sd = await sessionResp.json();
+              console.log('[LOGIN] session check:', sd);
+            } else {
+              console.warn('[LOGIN] session check status', sessionResp.status);
+            }
+          } catch (e) { console.warn('[LOGIN] session check error', e); }
+
+          setTimeout(() => {
+            window.location.href = "index.html"; // redirect after success
+          }, 1500);
+        } else {
+          msg.style.color = "red";
+          msg.innerText = "❌ " + result.message;
+        }
+      } catch (err) {
+        console.error("Login error:", err);
+        document.getElementById("loginMsg").style.color = "red";
+        document.getElementById("loginMsg").innerText = "Server error. Please try again.";
+      }
+    });
+
+    // -- Helper functions to manage UI state --
+    function setLoggedInUI(user) {
+      const loginBtn = document.getElementById('loginBtn');
+      const logoutBtn = document.getElementById('logoutBtn');
+      const registerBtn = document.getElementById('registerBtn');
+      const forgotBtn = document.getElementById('forgotBtn');
+
+      if (!loginBtn) return;
+
+      // Show user's first name on the button
+      loginBtn.innerText = (user && user.firstName) ? user.firstName : 'Profile';
+      loginBtn.style.background = '#ff3366';
+      loginBtn.style.cursor = 'pointer';
+      loginBtn.type = 'button'; // prevent form submit when showing profile
+      loginBtn.onclick = function() { window.location.href = 'userdashboard.html'; };
+
+      // Show logout button and hide register/forgot to reduce clutter
+      if (logoutBtn) {
+        logoutBtn.style.display = 'inline-block';
+        logoutBtn.onclick = async function() {
+          try {
+            // call server logout to destroy session
+            await fetch('http://localhost:5000/api/logout', { method: 'POST', credentials: 'include' });
+          } catch (e) { console.warn('Server logout failed', e); }
+          try { localStorage.removeItem('hitaishi_user'); } catch(e){}
+          // revert UI to logged-out state
+          loginBtn.innerText = 'Login';
+          loginBtn.style.background = '#28a745';
+          loginBtn.type = 'submit';
+          loginBtn.onclick = null;
+          logoutBtn.style.display = 'none';
+          registerBtn.style.display = 'inline-block';
+          forgotBtn.style.display = 'inline-block';
+        };
+      }
+
+      if (registerBtn) registerBtn.style.display = 'none';
+      if (forgotBtn) forgotBtn.style.display = 'none';
+    }
+
+    // On load, if user is stored locally, update UI
+    (function() {
+      try {
+        const raw = localStorage.getItem('hitaishi_user');
+        if (raw) {
+          const user = JSON.parse(raw);
+          if (user && user.firstName) {
+            setLoggedInUI(user);
+          }
+        }
+      } catch (e) {
+        console.warn('Error reading local user', e);
+      }
+    })();
+  </script>
+
+
+<!-- <div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script> -->
+
+
+</body>
+</html>

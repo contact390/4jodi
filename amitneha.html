@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  
+
+<!-- Contact Info Bar -->
+<div style="position: fixed; top: 0; left: 0; width: 100%; background-color: mediumspringgreen; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; font-family: Arial, sans-serif; font-size: 18px; z-index: 3000; height: 35px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <span style="display: flex; align-items: center;" class="desktop-only">
+      <i class="fas fa-map-marker-alt" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">Hyderabad, Mumbai, Delhi, Bangalore</span>
+    </span>
+    <a href="tel:9908793602" style="display: flex; align-items: center; text-decoration: none; margin-right: 15px;" class="desktop-only">
+      <i class="fas fa-phone-alt" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">9908793602</span>
+    </a>
+    <a href="mailto:Hitaishimatrimony@gmail.com" style="display: flex; align-items: center; text-decoration: none;" class="desktop-only">
+      <i class="fas fa-envelope" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">opticjodi@gmail.com</span>
+    </a>
+  </div>
+  <div style="display: flex; align-items: center; gap: 25px; margin-right: 50px;" class="desktop-only">
+    <a href="https://www.whatsapp.com/" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='green';" onmouseleave="this.style.color='maroon';"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.linkedin.com/in/hitaishi-matrimony" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='#0077b5';" onmouseleave="this.style.color='maroon';"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.instagram.com/hita.ishimatrimony/?hl=en" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='#e1306c';" onmouseleave="this.style.color='maroon';"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@Hitaishimatrimony" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='red';" onmouseleave="this.style.color='maroon';"><i class="fab fa-youtube"></i></a>
+    <a href="https://x.com/matrimonyhitais" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='black';" onmouseleave="this.style.color='maroon';"><i class="fab fa-twitter"></i></a>
+    <a href="createprofile.html" style="background-color: maroon; color: white; padding: 6px 15px; text-decoration: none; border-radius: 4px; font-size: 18px; font-weight: bold;" onmouseenter="this.style.backgroundColor='darkred'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';" onmouseleave="this.style.backgroundColor='maroon'; this.style.transform='scale(1)';">Create Profile</a>
+  </div>
+  
+  <!-- Mobile Top Bar -->
+  <div class="mobile-top-bar" style="display: none; width: 100%; justify-content: space-between; align-items: center;">
+    <a href="tel:9908793602" style="display: flex; align-items: center; text-decoration: none;">
+      <i class="fas fa-phone-alt" style="color: maroon; margin-right: 5px;"></i>
+    </a>
+    <a href="mailto:Hitaishimatrimony@gmail.com" style="display: flex; align-items: center; text-decoration: none;">
+      <i class="fas fa-envelope" style="color: maroon; margin-right: 5px;"></i>
+    </a>
+    <a href="createprofile.html" style="background-color: maroon; color: white; padding: 6px 15px; text-decoration: none; border-radius: 4px; font-size: 16px; font-weight: bold;">Create Profile</a>
+    <button id="mobileMenuBtn" onclick="toggleMobileTopMenu()" style="background:none; border:none; font-size:24px; color:maroon; cursor:pointer;">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile Top Menu (Hidden by default) -->
+<div id="mobileTopMenu" style="display: none; position: fixed; top: 35px; left: 0; width: 100%; background-color: mediumspringgreen; z-index: 3001; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); flex-direction: column; align-items: center;">
+  <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 15px;">
+    <a href="https://www.whatsapp.com/" style="color: maroon; font-size: 30px;"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.linkedin.com/in/hitaishi-matrimony" style="color: maroon; font-size: 30px;"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.instagram.com/hita.ishimatrimony/?hl=en" style="color: maroon; font-size: 30px;"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@Hitaishimatrimony" style="color: maroon; font-size: 30px;"><i class="fab fa-youtube"></i></a>
+    <a href="https://x.com/matrimonyhitais" style="color: maroon; font-size: 30px;"><i class="fab fa-twitter"></i></a>
+  </div>
+  
+</div>
+
+<!-- Main Header -->
+<header id="mainHeader" style="position: fixed; top: 50px; left: 0; width: 100%; height: 100px; background-color: #e83e8c; color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; display: flex; align-items: center; padding: 0 15px;">
+  <!-- Logo -->
+  <div style="flex: 0 0 120px; margin-right: 10px;">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Hitaishi Matrimony Logo" style="height: 80px; width: auto; padding-left: 0px; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+    </a>
+  </div>
+  <!-- Title & Tagline -->
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <h1 style="margin: 0; font-size: 40px; color: white; white-space: nowrap; margin-left: 100px; margin-top: 0%;">Welcome to 4jodi Matrimony</h1>
+      <span style="font-size: 9px; background-color: red; color: white; padding: 2px 5px; border-radius: 10px; flex-shrink: 0; margin-top: 10px;">Trusted since 2023</span>
+    </div>
+    <!-- Main Navigation -->
+    <nav id="topNav" style="display: flex; flex-wrap: wrap; gap: 50px; margin-left: 95px; margin-top: 8px;">
+      <a href="index.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Home</a>
+      <a href="male2.html" style="color: white; text-decoration: none;font-size: 18px; white-space: nowrap;">Male</a>
+      <a href="female.html" style="color: white; text-decoration: none;font-size: 18px; white-space: nowrap;">Female</a>
+        <a href="dating.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">community connect</a>
+      <a href="dating.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Dating</a>
+      <a href="co-living.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Co-living</a>
+      <a href="friendship.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Friendship</a>
+      <a href="secondmarriage.html" style="color: white; text-decoration: none;  font-size: 18px; white-space: nowrap;">Second marriage</a>
+      <a href="widows.html" style="color: white; text-decoration: none;font-size: 18px; white-space: nowrap;">Widows</a>
+      <a href="marriage affiliate.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Marriage Affiliates</a>
+      <a href="marriage broker.html" style="color: white; text-decoration: none;  font-size: 18px; white-space: nowrap;">Marriage Brokers</a>
+    </nav>
+  </div>
+  <!-- Top Navigation Links -->
+  <nav id="topNav" style="position: absolute; top: 10px; right: 35px; display: flex; justify-content: flex-end; align-items: center; gap: 50px;">
+    <a href="nri2.html" style="color: rgb(255, 255, 255); text-decoration: none; font-size: 18px; white-space: nowrap;">NRI</a>
+    <a href="contactus.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Contact us</a>
+    <a href="services2.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Services</a>
+    <a href="membership.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Membership</a>
+    <a href="successstories.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Success Stories</a>
+    <a href="login.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Login/Register</a>
+  </nav>
+  <!-- Mobile Menu Button -->
+  <button id="menuBtn" onclick="toggleMobileMenu()" style="display:none; position:absolute; right:15px; top:15px; background:none; border:none; font-size:32px; color:white; cursor:pointer; z-index:2001;">&#8942;</button>
+</header>
+
+<script>
+  // Toggle mobile top menu (social links and top nav)
+  function toggleMobileTopMenu() {
+    var mobileMenu = document.getElementById('mobileTopMenu');
+    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+      mobileMenu.style.display = 'flex';
+    } else {
+      mobileMenu.style.display = 'none';
+    }
+  }
+
+  // Toggle main mobile menu (main navigation)
+  function toggleMobileMenu() {
+    var nav = document.getElementById('mainNav');
+    var topNav = document.getElementById('topNav');
+    
+    if (nav.style.display === 'none' || nav.style.display === '') {
+      // Open mobile menu
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.position = 'absolute';
+      nav.style.top = '100px';
+      nav.style.left = '0';
+      nav.style.width = '100%';
+      nav.style.background = '#e83e8c';
+      nav.style.zIndex = '2000';
+      nav.style.marginLeft = '0';
+      nav.style.gap = '0';
+      nav.style.padding = '10px 0';
+      
+      Array.from(nav.children).forEach(a => {
+        a.style.borderBottom = '1px solid #fff';
+        a.style.padding = '15px 0';
+        a.style.fontSize = '18px';
+        a.style.textAlign = 'center';
+        a.style.background = 'none';
+        a.style.borderRadius = '0';
+        a.style.width = '100%';
+      });
+    } else {
+      // Close mobile menu
+      nav.style.display = 'none';
+    }
+  }
+
+  // Handle screen resize
+  function handleResize() {
+    var menuBtn = document.getElementById('menuBtn');
+    var nav = document.getElementById('mainNav');
+    var topNav = document.getElementById('topNav');
+    var mobileTopBar = document.querySelector('.mobile-top-bar');
+    var desktopElements = document.querySelectorAll('.desktop-only');
+    var mobileTopMenu = document.getElementById('mobileTopMenu');
+    
+    if (window.innerWidth <= 700) {
+      // Mobile view
+      menuBtn.style.display = 'block';
+      nav.style.display = 'none';
+      topNav.style.display = 'none';
+      mobileTopBar.style.display = 'flex';
+      mobileTopMenu.style.display = 'none';
+      
+      // Hide desktop elements
+      desktopElements.forEach(el => {
+        el.style.display = 'none';
+      });
+    } else {
+      // Desktop view
+      menuBtn.style.display = 'none';
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'row';
+      nav.style.position = 'relative';
+      nav.style.top = '';
+      nav.style.left = '';
+      nav.style.width = '';
+      nav.style.background = '';
+      nav.style.zIndex = '';
+      nav.style.marginLeft = '95px';
+      nav.style.gap = '50px';
+      nav.style.padding = '';
+      
+      Array.from(nav.children).forEach(a => {
+        a.style.borderBottom = '';
+        a.style.padding = '5px 10px';
+        a.style.fontSize = '18px';
+        a.style.textAlign = '';
+        a.style.background = '#ff69b4';
+        a.style.borderRadius = '5px';
+        a.style.width = '';
+      });
+      
+      topNav.style.display = 'flex';
+      topNav.style.flexDirection = 'row';
+      topNav.style.position = 'absolute';
+      topNav.style.top = '10px';
+      topNav.style.right = '35px';
+      topNav.style.gap = '50px';
+      
+      mobileTopBar.style.display = 'none';
+      mobileTopMenu.style.display = 'none';
+      
+      // Show desktop elements
+      desktopElements.forEach(el => {
+        el.style.display = 'flex';
+      });
+    }
+  }
+
+  window.addEventListener('resize', handleResize);
+  window.addEventListener('DOMContentLoaded', handleResize);
+</script>
+
+<style>
+/* Media Queries for Responsiveness */
+@media (max-width: 1000px) {
+    #mainHeader {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    #mainHeader h1 {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+    #mainHeader .logo div {
+        flex: 0 0 100px;
+    }
+    #mainHeader .logo img {
+        height: 40px;
+    }
+    #mainHeader nav a {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    #mainHeader nav[style*="position: absolute"] a {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 700px) {
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-top-bar {
+    display: flex !important;
+  }
+  
+  #mainHeader {
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 10px !important;
+    min-width: 100vw !important;
+    align-items: flex-start !important;
+  }
+  
+  #mainHeader > div {
+    margin: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  #mainHeader h1 {
+    font-size: 18px !important;
+    margin: 10px 0 0 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  #mainNav {
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin: 10px 0 0 0 !important;
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+  
+  #mainNav a {
+    font-size: 15px !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+    background-color: #ff69b4 !important;
+    border-bottom: 1px solid #e83e8c !important;
+  }
+  
+  #topNav {
+    position: static !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+  
+  #topNav a {
+    background: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid #e83e8c !important;
+    color: white !important;
+    font-size: 15px !important;
+    padding: 10px 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+</style>
+
+    <!-- Main Content -->
+    <main style="max-width: 1200px; margin: 180px auto 50px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); overflow: hidden;">
+        <div style="width: 100%; height: 350px; position: relative; overflow: hidden;">
+            <img src="https://via.placeholder.com/800x400/99ccff/ffffff?text=Amit+%26+Neha" alt="Amit & Neha" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); padding: 20px; text-align: center;">
+                <h1 style="color: white; margin: 0; font-size: 2.5em; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);">Amit & Neha</h1>
+                <p style="color: rgba(255, 255, 255, 0.9); margin: 5px 0 0; font-style: italic;">Married since February 2024</p>
+            </div>
+        </div>
+
+        <div style="padding: 40px;">
+            <!-- Perspective Toggle -->
+            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;">
+                <button onclick="showStory('amit')" id="amitBtn" style="border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-weight: 600; font-size: 16px; background: linear-gradient(to right, #3498db, #2980b9); color: white; transition: all 0.3s; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);">Amit's Story</button>
+                <button onclick="showStory('neha')" id="nehaBtn" style="border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-weight: 600; font-size: 16px; background: linear-gradient(to right, #9b59b6, #8e44ad); color: white; transition: all 0.3s; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);">Neha's Story</button>
+            </div>
+
+            <!-- Main Quote -->
+            <div id="quote" style="background: #f2f9fe; padding: 20px; border-radius: 10px; margin-bottom: 30px; border-left: 5px solid #3498db; transition: all 0.3s;">
+                <p style="margin: 0; font-style: italic; color: #555; font-size: 1.2em; line-height: 1.6;">"4jodi Matrimony connected us across cities and brought our hearts together!"</p>
+            </div>
+
+            <!-- Story Content -->
+            <div id="amitContent" style="display: block;">
+                <div style="display: flex; gap: 20px; margin-bottom: 20px; align-items: center;">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; background: #d0e0f5; display: flex; align-items: center; justify-content: center; color: #3498db; font-weight: bold; font-size: 1.5em; flex-shrink: 0;">A</div>
+                    <p style="margin: 0; line-height: 1.8; color: #444;">"As a doctor in Mumbai, my schedule was hectic and unpredictable. Traditional matchmaking wasn't working for me. 4jodi's advanced filters helped me find Neha who understood the demands of my profession. Our 89% compatibility score was impressive, but it was her profile mentioning her love for classical music and commitment to social causes that truly spoke to me."</p>
+                </div>
+                <p style="line-height: 1.8; color: #444; margin-bottom: 20px;">"The icebreaker questions feature made our initial conversations flow naturally. Our first meeting at a café turned into a 5-hour discussion! We bonded over our shared values and vision for life. 4jodi's privacy features gave us the comfort to take things at our own pace. The family mediation services were invaluable when it came time to bring our families together."</p>
+            </div>
+
+            <div id="nehaContent" style="display: none;">
+                <div style="display: flex; gap: 20px; margin-bottom: 20px; align-items: center;">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; background: #e8d0f5; display: flex; align-items: center; justify-content: center; color: #9b59b6; font-weight: bold; font-size: 1.5em; flex-shrink: 0;">N</div>
+                    <p style="margin: 0; line-height: 1.8; color: #444;">"Working as an architect in Pune, I was skeptical about online matrimony. 4jodi's verified profiles and women-centric safety features changed my mind. Amit's first message stood out because he commented on my architectural portfolio rather than just my appearance. Our video calls revealed how well our personalities complemented each other - his calm nature balanced my energetic personality perfectly."</p>
+                </div>
+                <p style="line-height: 1.8; color: #444; margin-bottom: 20px;">"The compatibility report highlighted areas we might disagree on, which actually helped us have meaningful conversations early on. When Amit surprised me by visiting Pune with tickets to my favorite musician's concert, I knew he was the one. Today, we're building our dream home together, combining my design skills with his practical approach. We often joke that 4jodi's algorithm knew we were perfect for each other before we did!"</p>
+            </div>
+
+            <!-- Wedding Details -->
+            <div style="background: #f9f9f9; padding: 25px; border-radius: 10px; margin-top: 30px; border-left: 5px solid #3498db;">
+                <h3 style="color: #3498db; margin-top: 0;">Their Wedding</h3>
+                <p style="line-height: 1.8; color: #444; margin-bottom: 0;">Amit and Neha had a magical destination wedding in Udaipur on February 14, 2024, blending Maharashtrian and Rajasthani traditions. They now divide their time between Mumbai and Pune, with Amit establishing his medical practice and Neha running her architecture firm. "We still refer to our 4jodi compatibility report when we need to understand each other better," they say with a smile.</p>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" style="display: inline-block; background: linear-gradient(to right, #3498db, #9b59b6); color: white; padding: 15px 40px; text-decoration: none; border-radius: 30px; font-weight: 600; font-size: 1.2em; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); transition: all 0.3s;">Find Your Perfect Match</a>
+            </div>
+        </div>
+    </main>
+
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+
+    <script>
+        function showStory(person) {
+            document.getElementById('amitContent').style.display = person === 'amit' ? 'block' : 'none';
+            document.getElementById('nehaContent').style.display = person === 'neha' ? 'block' : 'none';
+            document.getElementById('amitBtn').style.background = person === 'amit' ? 'linear-gradient(to right, #3498db, #2980b9)' : 'linear-gradient(to right, #9b59b6, #8e44ad)';
+            document.getElementById('nehaBtn').style.background = person === 'neha' ? 'linear-gradient(to right, #3498db, #2980b9)' : 'linear-gradient(to right, #9b59b6, #8e44ad)';
+            const quote = document.getElementById('quote');
+            if (person === 'amit') {
+                quote.innerHTML = '<p style="margin: 0; font-style: italic; color: #555; font-size: 1.2em; line-height: 1.6;">"I found my perfect life partner through Hitaishi Matrimony\'s intelligent matching system!"</p>';
+                quote.style.borderLeftColor = '#3498db';
+                quote.style.background = '#f2f9fe';
+            } else {
+                quote.innerHTML = '<p style="margin: 0; font-style: italic; color: #555; font-size: 1.2em; line-height: 1.6;">"Hitaishi helped me find Amit, who complements me in every way I could imagine!"</p>';
+                quote.style.borderLeftColor = '#9b59b6';
+                quote.style.background = '#f9f2fe';
+            }
+        }
+
+        function openLoginPopup() {
+            alert('Login/Register popup will open here.');
+        }
+    </script>
+</body>
+</html>

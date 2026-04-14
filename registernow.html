@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitaishi Matrimony</title>
+    <style>
+        /* Popup styling */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .popup-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+<!-- Popup Form -->
+<div id="registerPopup" class="popup-overlay">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2 style="color: #e83e8c; text-align: center; margin-top: 0;">Create Your Matrimony Profile</h2>
+        
+        <form style="display: grid; gap: 15px;">
+            <!-- Basic Information -->
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #e83e8c;">Basic Information</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <label for="firstName" style="display: block; margin-bottom: 5px; font-weight: bold;">First Name*</label>
+                        <input type="text" id="firstName" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+                    <div>
+                        <label for="lastName" style="display: block; margin-bottom: 5px; font-weight: bold;">Last Name*</label>
+                        <input type="text" id="lastName" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email*</label>
+                    <input type="email" id="email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                
+                <div>
+                    <label for="phone" style="display: block; margin-bottom: 5px; font-weight: bold;">Phone Number*</label>
+                    <input type="tel" id="phone" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                
+                <div>
+                    <label for="password" style="display: block; margin-bottom: 5px; font-weight: bold;">Create Password*</label>
+                    <input type="password" id="password" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+            </div>
+            
+            <!-- Personal Details -->
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #e83e8c;">Personal Details</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold;">Gender*</label>
+                        <select style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="dob" style="display: block; margin-bottom: 5px; font-weight: bold;">Date of Birth*</label>
+                        <input type="date" id="dob" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="religion" style="display: block; margin-bottom: 5px; font-weight: bold;">Religion*</label>
+                    <select id="religion" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                        <option value="">Select Religion</option>
+                        <option value="hindu">Hindu</option>
+                        <option value="muslim">Muslim</option>
+                        <option value="christian">Christian</option>
+                        <option value="sikh">Sikh</option>
+                        <option value="jain">Jain</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="caste" style="display: block; margin-bottom: 5px; font-weight: bold;">Caste</label>
+                    <input type="text" id="caste" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                
+                <div>
+                    <label for="motherTongue" style="display: block; margin-bottom: 5px; font-weight: bold;">Mother Tongue*</label>
+                    <select id="motherTongue" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                        <option value="">Select Language</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="english">English</option>
+                        <option value="bengali">Bengali</option>
+                        <option value="tamil">Tamil</option>
+                        <option value="telugu">Telugu</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Professional Details -->
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #e83e8c;">Professional Details</h3>
+                
+                <div>
+                    <label for="education" style="display: block; margin-bottom: 5px; font-weight: bold;">Education*</label>
+                    <select id="education" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                        <option value="">Select Highest Education</option>
+                        <option value="btech">B.Tech/B.E.</option>
+                        <option value="mba">MBA/PGDM</option>
+                        <option value="mca">MCA</option>
+                        <option value="medical">Medical (MBBS, MD)</option>
+                        <option value="ca">CA/CS/ICWA</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="profession" style="display: block; margin-bottom: 5px; font-weight: bold;">Profession*</label>
+                    <select id="profession" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                        <option value="">Select Profession</option>
+                        <option value="engineer">Engineer</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="business">Business</option>
+                        <option value="government">Government Job</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="income" style="display: block; margin-bottom: 5px; font-weight: bold;">Annual Income</label>
+                    <select id="income" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                        <option value="">Select Income Range</option>
+                        <option value="1-3">1-3 Lakhs</option>
+                        <option value="3-6">3-6 Lakhs</option>
+                        <option value="6-10">6-10 Lakhs</option>
+                        <option value="10-15">10-15 Lakhs</option>
+                        <option value="15+">15+ Lakhs</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Partner Preferences -->
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #e83e8c;">Partner Preferences</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold;">Age Range</label>
+                        <select style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                            <option value="">Min Age</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold;">&nbsp;</label>
+                        <select style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                            <option value="">Max Age</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                </div>
+                
+                <div>
+                    <label style="display: block; margin-bottom: 5px; font-weight: bold;">Preferred Religion</label>
+                    <select style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                        <option value="">Any</option>
+                        <option value="hindu">Hindu</option>
+                        <option value="muslim">Muslim</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Terms and Submit -->
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <input type="checkbox" id="terms" required style="width: auto;">
+                <label for="terms" style="font-size: 14px;">I agree to the <a href="#" style="color: #e83e8c;">Terms & Conditions</a> and <a href="#" style="color: #e83e8c;">Privacy Policy</a></label>
+            </div>
+            
+            <button type="submit" style="padding: 12px; background-color: #e83e8c; color: white; border: none; border-radius: 5px; font-weight: bold; font-size: 16px; cursor: pointer; margin-top: 10px;">Create Profile</button>
+            
+            <p style="text-align: center; font-size: 14px; margin-bottom: 0;">Already have an account? <a href="#" style="color: #e83e8c;">Login</a></p>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openPopup() {
+        document.getElementById('registerPopup').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+    }
+    
+    function closePopup() {
+        document.getElementById('registerPopup').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+    
+    // Close popup when clicking outside the content
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('registerPopup')) {
+            closePopup();
+        }
+    }
+</script>
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+</body>
+</html>

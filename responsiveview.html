@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  
+
+<!-- Contact Info Bar -->
+<div style="position: fixed; top: 0; left: 0; width: 100%; background-color: mediumspringgreen; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; font-family: Arial, sans-serif; font-size: 18px; z-index: 3000; height: 35px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <span style="display: flex; align-items: center;" class="desktop-only">
+      <i class="fas fa-map-marker-alt" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">Hyderabad, Mumbai, Delhi, Bangalore</span>
+    </span>
+    <a href="tel:9908793602" style="display: flex; align-items: center; text-decoration: none; margin-right: 15px;" class="desktop-only">
+      <i class="fas fa-phone-alt" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">9908793602</span>
+    </a>
+    <a href="mailto:Hitaishimatrimony@gmail.com" style="display: flex; align-items: center; text-decoration: none;" class="desktop-only">
+      <i class="fas fa-envelope" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">opticjodi@gmail.com</span>
+    </a>
+  </div>
+  <div style="display: flex; align-items: center; gap: 25px; margin-right: 50px;" class="desktop-only">
+    <a href="https://www.whatsapp.com/" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='green';" onmouseleave="this.style.color='maroon';"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.linkedin.com/in/hitaishi-matrimony" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='#0077b5';" onmouseleave="this.style.color='maroon';"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.instagram.com/hita.ishimatrimony/?hl=en" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='#e1306c';" onmouseleave="this.style.color='maroon';"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@Hitaishimatrimony" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='red';" onmouseleave="this.style.color='maroon';"><i class="fab fa-youtube"></i></a>
+    <a href="https://x.com/matrimonyhitais" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='black';" onmouseleave="this.style.color='maroon';"><i class="fab fa-twitter"></i></a>
+    <a href="createprofile.html" style="background-color: maroon; color: white; padding: 6px 15px; text-decoration: none; border-radius: 4px; font-size: 18px; font-weight: bold;" onmouseenter="this.style.backgroundColor='darkred'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';" onmouseleave="this.style.backgroundColor='maroon'; this.style.transform='scale(1)';">Create Profile</a>
+  </div>
+  
+  <!-- Mobile Top Bar -->
+  <div class="mobile-top-bar" style="display: none; width: 100%; justify-content: space-between; align-items: center;">
+    <a href="tel:9908793602" style="display: flex; align-items: center; text-decoration: none;">
+      <i class="fas fa-phone-alt" style="color: maroon; margin-right: 5px;"></i>
+    </a>
+    <a href="mailto:Hitaishimatrimony@gmail.com" style="display: flex; align-items: center; text-decoration: none;">
+      <i class="fas fa-envelope" style="color: maroon; margin-right: 5px;"></i>
+    </a>
+    <a href="createprofile.html" style="background-color: maroon; color: white; padding: 6px 15px; text-decoration: none; border-radius: 4px; font-size: 16px; font-weight: bold;">Create Profile</a>
+    <button id="mobileMenuBtn" onclick="toggleMobileTopMenu()" style="background:none; border:none; font-size:24px; color:maroon; cursor:pointer;">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile Top Menu (Hidden by default) -->
+<div id="mobileTopMenu" style="display: none; position: fixed; top: 35px; left: 0; width: 100%; background-color: mediumspringgreen; z-index: 3001; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); flex-direction: column; align-items: center;">
+  <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 15px;">
+    <a href="https://www.whatsapp.com/" style="color: maroon; font-size: 30px;"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.linkedin.com/in/hitaishi-matrimony" style="color: maroon; font-size: 30px;"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.instagram.com/hita.ishimatrimony/?hl=en" style="color: maroon; font-size: 30px;"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@Hitaishimatrimony" style="color: maroon; font-size: 30px;"><i class="fab fa-youtube"></i></a>
+    <a href="https://x.com/matrimonyhitais" style="color: maroon; font-size: 30px;"><i class="fab fa-twitter"></i></a>
+  </div>
+  
+</div>
+
+<!-- Main Header -->
+<header id="mainHeader" style="position: fixed; top: 50px; left: 0; width: 100%; height: 100px; background-color: #e83e8c; color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; display: flex; align-items: center; padding: 0 15px;">
+  <!-- Logo -->
+  <div style="flex: 0 0 120px; margin-right: 10px;">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Hitaishi Matrimony Logo" style="height: 80px; width: auto; padding-left: 0px; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+    </a>
+  </div>
+  <!-- Title & Tagline -->
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <h1 style="margin: 0; font-size: 40px; color: white; white-space: nowrap; margin-left: 100px; margin-top: 0%;">Welcome to 4jodi Matrimony</h1>
+      <span style="font-size: 9px; background-color: red; color: white; padding: 2px 5px; border-radius: 10px; flex-shrink: 0; margin-top: 10px;">Trusted since 2023</span>
+    </div>
+    <!-- Main Navigation -->
+    <nav id="topNav" style="display: flex; flex-wrap: wrap; gap: 50px; margin-left: 95px; margin-top: 8px;">
+      <a href="index.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Home</a>
+      <a href="male2.html" style="color: white; text-decoration: none;font-size: 18px; white-space: nowrap;">Male</a>
+      <a href="female.html" style="color: white; text-decoration: none;font-size: 18px; white-space: nowrap;">Female</a>
+        <a href="dating.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">community connect</a>
+      <a href="dating.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Dating</a>
+      <a href="co-living.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Co-living</a>
+      <a href="friendship.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Friendship</a>
+      <a href="secondmarriage.html" style="color: white; text-decoration: none;  font-size: 18px; white-space: nowrap;">Second marriage</a>
+      <a href="widows.html" style="color: white; text-decoration: none;font-size: 18px; white-space: nowrap;">Widows</a>
+      <a href="marriage affiliate.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Marriage Affiliates</a>
+      <a href="marriage broker.html" style="color: white; text-decoration: none;  font-size: 18px; white-space: nowrap;">Marriage Brokers</a>
+    </nav>
+  </div>
+  <!-- Top Navigation Links -->
+  <nav id="topNav" style="position: absolute; top: 10px; right: 35px; display: flex; justify-content: flex-end; align-items: center; gap: 50px;">
+    <a href="nri2.html" style="color: rgb(255, 255, 255); text-decoration: none; font-size: 18px; white-space: nowrap;">NRI</a>
+    <a href="contactus.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Contact us</a>
+    <a href="services2.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Services</a>
+    <a href="membership.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Membership</a>
+    <a href="successstories.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Success Stories</a>
+    <a href="login.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Login/Register</a>
+  </nav>
+  <!-- Mobile Menu Button -->
+  <button id="menuBtn" onclick="toggleMobileMenu()" style="display:none; position:absolute; right:15px; top:15px; background:none; border:none; font-size:32px; color:white; cursor:pointer; z-index:2001;">&#8942;</button>
+</header>
+
+<script>
+  // Toggle mobile top menu (social links and top nav)
+  function toggleMobileTopMenu() {
+    var mobileMenu = document.getElementById('mobileTopMenu');
+    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+      mobileMenu.style.display = 'flex';
+    } else {
+      mobileMenu.style.display = 'none';
+    }
+  }
+
+  // Toggle main mobile menu (main navigation)
+  function toggleMobileMenu() {
+    var nav = document.getElementById('mainNav');
+    var topNav = document.getElementById('topNav');
+    
+    if (nav.style.display === 'none' || nav.style.display === '') {
+      // Open mobile menu
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.position = 'absolute';
+      nav.style.top = '100px';
+      nav.style.left = '0';
+      nav.style.width = '100%';
+      nav.style.background = '#e83e8c';
+      nav.style.zIndex = '2000';
+      nav.style.marginLeft = '0';
+      nav.style.gap = '0';
+      nav.style.padding = '10px 0';
+      
+      Array.from(nav.children).forEach(a => {
+        a.style.borderBottom = '1px solid #fff';
+        a.style.padding = '15px 0';
+        a.style.fontSize = '18px';
+        a.style.textAlign = 'center';
+        a.style.background = 'none';
+        a.style.borderRadius = '0';
+        a.style.width = '100%';
+      });
+    } else {
+      // Close mobile menu
+      nav.style.display = 'none';
+    }
+  }
+
+  // Handle screen resize
+  function handleResize() {
+    var menuBtn = document.getElementById('menuBtn');
+    var nav = document.getElementById('mainNav');
+    var topNav = document.getElementById('topNav');
+    var mobileTopBar = document.querySelector('.mobile-top-bar');
+    var desktopElements = document.querySelectorAll('.desktop-only');
+    var mobileTopMenu = document.getElementById('mobileTopMenu');
+    
+    if (window.innerWidth <= 700) {
+      // Mobile view
+      menuBtn.style.display = 'block';
+      nav.style.display = 'none';
+      topNav.style.display = 'none';
+      mobileTopBar.style.display = 'flex';
+      mobileTopMenu.style.display = 'none';
+      
+      // Hide desktop elements
+      desktopElements.forEach(el => {
+        el.style.display = 'none';
+      });
+    } else {
+      // Desktop view
+      menuBtn.style.display = 'none';
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'row';
+      nav.style.position = 'relative';
+      nav.style.top = '';
+      nav.style.left = '';
+      nav.style.width = '';
+      nav.style.background = '';
+      nav.style.zIndex = '';
+      nav.style.marginLeft = '95px';
+      nav.style.gap = '50px';
+      nav.style.padding = '';
+      
+      Array.from(nav.children).forEach(a => {
+        a.style.borderBottom = '';
+        a.style.padding = '5px 10px';
+        a.style.fontSize = '18px';
+        a.style.textAlign = '';
+        a.style.background = '#ff69b4';
+        a.style.borderRadius = '5px';
+        a.style.width = '';
+      });
+      
+      topNav.style.display = 'flex';
+      topNav.style.flexDirection = 'row';
+      topNav.style.position = 'absolute';
+      topNav.style.top = '10px';
+      topNav.style.right = '35px';
+      topNav.style.gap = '50px';
+      
+      mobileTopBar.style.display = 'none';
+      mobileTopMenu.style.display = 'none';
+      
+      // Show desktop elements
+      desktopElements.forEach(el => {
+        el.style.display = 'flex';
+      });
+    }
+  }
+
+  window.addEventListener('resize', handleResize);
+  window.addEventListener('DOMContentLoaded', handleResize);
+</script>
+
+<style>
+/* Media Queries for Responsiveness */
+@media (max-width: 1000px) {
+    #mainHeader {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    #mainHeader h1 {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+    #mainHeader .logo div {
+        flex: 0 0 100px;
+    }
+    #mainHeader .logo img {
+        height: 40px;
+    }
+    #mainHeader nav a {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    #mainHeader nav[style*="position: absolute"] a {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 700px) {
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-top-bar {
+    display: flex !important;
+  }
+  
+  #mainHeader {
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 10px !important;
+    min-width: 100vw !important;
+    align-items: flex-start !important;
+  }
+  
+  #mainHeader > div {
+    margin: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  #mainHeader h1 {
+    font-size: 18px !important;
+    margin: 10px 0 0 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  #mainNav {
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin: 10px 0 0 0 !important;
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+  
+  #mainNav a {
+    font-size: 15px !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+    background-color: #ff69b4 !important;
+    border-bottom: 1px solid #e83e8c !important;
+  }
+  
+  #topNav {
+    position: static !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+  
+  #topNav a {
+    background: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid #e83e8c !important;
+    color: white !important;
+    font-size: 15px !important;
+    padding: 10px 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+</style>
+
+    
+
+    <!-----------first line ------------>
+
+<div style="position: fixed; top: 0; left: 0; width: 100%; background-color: mediumspringgreen; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; font-family: Arial, sans-serif; font-size: 14px; z-index: 1001; height: 35px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <div style="display: flex; align-items: center; gap: 20px;">
+        <span style="display: flex; align-items: center;">
+            <i class="fas fa-map-marker-alt" style="color: maroon; margin-right: 5px;"></i>
+            <span style="color: black;">Hyderabad, Mumbai, Delhi, Bangalore</span>
+        </span>
+    <a href="tel:9899907614" style="display: flex; align-items: center; text-decoration: none; margin-right: 15px;">
+    <i class="fas fa-phone-alt" style="color: maroon; margin-right: 5px;"></i>
+    <span style="color: black;">9899907614</span>
+</a>
+
+<a href="mailto:Hitaishi@matrimony.com" style="display: flex; align-items: center; text-decoration: none;">
+    <i class="fas fa-envelope" style="color: maroon; margin-right: 5px;"></i>
+    <span style="color: black;">Hitaishi@matrimony.com</span>
+</a>
+
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 10px; margin-right: 30px;">
+    <a href="https://www.whatsapp.com/" style="color: maroon; font-size: 20px;"
+        onmouseenter="this.style.color='green';" 
+        onmouseleave="this.style.color='maroon';">
+        <i class="fab fa-whatsapp"></i></a>
+
+    <a href="https://www.facebook.com/" style="color: maroon; font-size: 20px;"
+        onmouseenter="this.style.color='#3b5998';" 
+        onmouseleave="this.style.color='maroon';">
+        <i class="fab fa-facebook-f"></i></a>
+
+    <a href="https://www.instagram.com/accounts/login/?hl=en" style="color: maroon; font-size: 20px;"
+        onmouseenter="this.style.color='#e1306c';" 
+        onmouseleave="this.style.color='maroon';">
+        <i class="fab fa-instagram"></i></a>
+
+    <a href="https://www.youtube.com/account" style="color: maroon; font-size: 20px;"
+        onmouseenter="this.style.color='red';" 
+        onmouseleave="this.style.color='maroon';">
+        <i class="fab fa-youtube"></i></a>
+
+    <a href="https://x.com/i/flow/login" style="color: maroon; font-size: 20px;"
+        onmouseenter="this.style.color='black';" 
+        onmouseleave="this.style.color='maroon';">
+        <i class="fab fa-twitter"></i></a>
+
+    <a href="form2.html" style="background-color: maroon; color: white; padding: 6px 15px; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: bold;"
+        onmouseenter="this.style.backgroundColor='darkred'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+        onmouseleave="this.style.backgroundColor='maroon'; this.style.transform='scale(1)';">
+        Create Profile</a>
+</div>
+
+</div>
+<!---------second line----->
+<header style="position: fixed; top: 0; left: 0; width: 100%; max-width: 1280px; margin: 0 auto; height: 100px; background-color: #e83e8c; color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; display: flex; align-items: center; padding: 0 15px;margin-top: 50px;">
+    <div style="flex: 0 0 120px; margin-right: 10px;">
+
+        <!-------hitqaishi matrimony login----->
+    <a href="index.html">
+        <img src="images/logo.png" alt="Hitaishi Matrimony Logo" style="height: 80px; width: auto; padding-left: 0px; transition: all 0.3s ease;" 
+                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.15)';" 
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+    </a>
+</div>
+    
+
+<!-------bottom line nov bars-->
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <h1 style="margin: 0; font-size: 24px; color: greenyellow; white-space: nowrap; margin-left: 10px;margin-top: 0%;">
+                Welcome to Hitaishi Matrimony
+            </h1>
+            <span style="font-size: 9px; background-color: red; color: white; padding: 2px 5px; border-radius: 10px; flex-shrink: 0;margin-top: 10px;">
+                Trusted since 2014
+            </span>
+        </div>
+        <nav style="display: flex; flex-wrap: wrap; gap: 5px; margin-left: 5px; margin-top: 8px;">
+    <a href="index.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+        onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+        Home</a>
+
+    <a href="male2.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+        onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+        Male</a>
+
+    <a href="female.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+        onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+        Female</a>
+
+    <a href="dating.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+        onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+        Dating</a>
+
+    <a href="co-living.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+        onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+        Co-living</a>
+
+    <a href="friendship.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+        onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+        Friendship</a>
+
+    <a href="secondmarriage.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+        onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+        Second marriage</a>
+
+    <a href="widows.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+        onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+        Widows</a>
+
+    <a href="marriage affiliate .html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+        onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+        Marriage Affiliates</a>
+
+    <a href="marriage broker.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+        onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+        Marriage Brokers</a>
+</nav>
+
+    </div>
+
+    <!----------top line nov bars---->
+    
+    <nav style="position: absolute; top: 10px; right: 15px; display: flex; justify-content: flex-end; align-items: center; gap: 10px;">
+
+        <a href="contactus.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.color='#ff69b4';" 
+        onmouseleave="this.style.color='white';">
+        NRI</a>
+
+    <a href="contactus.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.color='#ff69b4';" 
+        onmouseleave="this.style.color='white';">
+        Contact us</a>
+
+    <a href="services.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.color='#ff69b4';" 
+        onmouseleave="this.style.color='white';">
+        Services</a>
+
+    <a href="membership.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.color='#ff69b4';" 
+        onmouseleave="this.style.color='white';">
+        Membership</a>
+
+    <a href="successstories.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.color='#ff69b4';" 
+        onmouseleave="this.style.color='white';">
+        Success Stories</a>
+
+    <a href="login.html" onclick="openLoginPopup()" 
+        style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+        onmouseenter="this.style.backgroundColor='#e754a8'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+        onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+        Login/Register</a>
+</nav>
+
+</header>
+
+<style>
+/* Media Queries for Responsiveness */
+@media (max-width: 1000px) {
+    header {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    header h1 {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+    header .logo div {
+        flex: 0 0 100px;
+    }
+    header .logo img {
+        height: 40px;
+    }
+    header nav a {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    header nav[style*="position: absolute"] a {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: auto;
+        padding: 10px;
+    }
+    header h1 {
+        font-size: 16px;
+    }
+    header .logo div {
+        flex: 0 0 80px;
+    }
+    header .logo img {
+        height: 30px;
+    }
+    header nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+    header nav[style*="position: absolute"] {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+</style>
+
+
+
+<!-------find your life parteners---->
+<section style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.pinimg.com/736x/10/7d/b7/107db799e59acdc43e1910410c8f1cc8.jpg'); background-size: cover; background-position: center; height: 600px; display: flex; color: white; padding-top: 80px; position: relative;">
+    <div style="width: 85%; margin: auto auto 0; text-align: center; align-self: flex-end; padding-bottom: 80px;">
+        <h2 style="font-size: 42px; margin-bottom: 20px;">Find Your Perfect Life Partner</h2>
+        <p style="font-size: 18px; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Join thousands of happy couples who found their soulmates through Hitaishi Matrimony</p>
+        
+    <form action="form2.html" method="GET" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+    
+    <select name="looking_for" required
+        style="padding: 12px 20px; border: none; border-radius: 5px; width: 200px; transition: all 0.3s ease;"
+        onmouseenter="this.style.backgroundColor='#f8d7e6'; this.style.transform='scale(1.05)'"
+        onmouseleave="this.style.backgroundColor=''; this.style.transform='scale(1)'">
+        <option value="" disabled selected>I'm looking for ...</option>
+        <option value="bride">Bride</option>
+        <option value="groom">Groom</option>
+    </select>
+
+    <select name="religion" required
+        style="padding: 12px 20px; border: none; border-radius: 5px; width: 180px; transition: all 0.3s ease;"
+        onmouseenter="this.style.backgroundColor='#f8d7e6'; this.style.transform='scale(1.05)'"
+        onmouseleave="this.style.backgroundColor=''; this.style.transform='scale(1)'">
+        <option value="" disabled selected>Religion</option>
+        <option>Hindu</option>
+        <option>Muslim</option>
+        <option>Christian</option>
+        <option>Sikh</option>
+        <option>Other</option>
+    </select>
+
+    <select name="age" required
+        style="padding: 12px 20px; border: none; border-radius: 5px; width: 160px; transition: all 0.3s ease;"
+        onmouseenter="this.style.backgroundColor='#f8d7e6'; this.style.transform='scale(1.05)'"
+        onmouseleave="this.style.backgroundColor=''; this.style.transform='scale(1)'">
+        <option value="" disabled selected>Age</option>
+        <option>18-25</option>
+        <option>26-30</option>
+        <option>31-35</option>
+        <option>36-40</option>
+        <option>40+</option>
+    </select>
+
+    <select name="location" required
+        style="padding: 12px 20px; border: none; border-radius: 5px; width: 180px; transition: all 0.3s ease;"
+        onmouseenter="this.style.backgroundColor='#f8d7e6'; this.style.transform='scale(1.05)'"
+        onmouseleave="this.style.backgroundColor=''; this.style.transform='scale(1)'">
+        <option value="" disabled selected>Location</option>
+        <option>Delhi</option>
+        <option>Mumbai</option>
+        <option>Bangalore</option>
+        <option>Kolkata</option>
+        <option>Others</option>
+    </select>
+
+    <button type="submit"
+        style="padding: 12px 30px; background-color: #e83e8c; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: all 0.3s ease;"
+        onmouseenter="this.style.backgroundColor='#c83279'; this.style.transform='scale(1.05)'"
+        onmouseleave="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1)'">
+        Find Matches
+    </button>
+
+</form>
+
+    </div>
+</section>
+
+<!-------------find your life partners with simple steps---->
+    
+<div style="margin: 0; padding: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #fefefe;">
+    <div style="padding: 3.125rem 1.25rem; background-color: #fff9f0; font-family: Arial, sans-serif; width: 85%; max-width: 75rem; box-sizing: border-box;">
+    <h2 style="text-align: center; font-size: 1.625rem; margin-bottom: 2.5rem; color: #d63384;">❤️ Find Your Life Partner in Simple Steps</h2>
+
+    <div style="display: flex; justify-content: space-between; gap: 1.25rem;">
+        
+        <div style="width: 30%; background: #ffffff; padding: 1.5625rem; text-align: center; border-radius: 0.875rem; box-shadow: 0 0.375rem 0.9375rem rgba(0, 0, 0, 0.08); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0.75rem 1.5rem rgba(0, 0, 0, 0.15)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0.375rem 0.9375rem rgba(0, 0, 0, 0.08)';">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhHSdVAwgk4U9Uny0oOhuFJU3VAYPhSX-S0w&s" alt="Create Profile" style="width: 5rem; height: 5rem; margin-bottom: 0.9375rem;">
+            <h3 style="margin: 0.625rem 0; font-size: 1.25rem; color: #28a745;">Create Profile</h3>
+            <p style="font-size: 0.875rem; color: #444;">Get started by adding your real information, recent photo, and preferences. A genuine profile attracts the best matches and builds trust instantly.</p>
+        </div>
+
+        <div style="width: 30%; background: #ffffff; padding: 1.5625rem; text-align: center; border-radius: 0.875rem; box-shadow: 0 0.375rem 0.9375rem rgba(0, 0, 0, 0.08); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0.75rem 1.5rem rgba(0, 0, 0, 0.15)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0.375rem 0.9375rem rgba(0, 0, 0, 0.08)';">
+            <img src="https://storage.needpix.com/rsynced_images/money-3630935_1280.png" alt="Search Matches" style="width: 5rem; height: 5rem; margin-bottom: 0.9375rem;">
+            <h3 style="margin: 0.625rem 0; font-size: 1.25rem; color: #28a745;">Search Matches</h3>
+            <p style="font-size: 0.875rem; color: #444;">Use powerful filters to explore verified profiles that match your lifestyle, values, and goals. Find your ideal life partner in just a few clicks.</p>
+        </div>
+
+        <div style="width: 30%; background: #ffffff; padding: 1.5625rem; text-align: center; border-radius: 0.875rem; box-shadow: 0 0.375rem 0.9375rem rgba(0, 0, 0, 0.08); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0.75rem 1.5rem rgba(0, 0, 0, 0.15)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0.375rem 0.9375rem rgba(0, 0, 0, 0.08)';">
+            <img src="https://cdn12.picryl.com/photo/2016/12/31/online-internet-silhouettes-computer-communication-4046fe-1024.jpg" alt="Start Talking" style="width: 5rem; height: 5rem; margin-bottom: 0.9375rem;">
+            <h3 style="margin: 0.625rem 0; font-size: 1.25rem; color: #28a745;">Start Talking</h3>
+            <p style="font-size: 0.875rem; color: #444;">Break the ice and connect with your favorite matches. Chat safely, share interests, and take the first step toward a happy future together.</p>
+        </div>
+
+    </div>
+    </div>
+</div>
+
+<!-----why choose htaishi matrimony---->
+
+<section style="padding: 60px 0; background: linear-gradient(to bottom, #fff9fc, #f7e1e9); width: 95%; margin: auto;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <h2 style="text-align: center; font-size: 36px; color: #e83e8c; margin-bottom: 50px; position: relative;">
+            <span style="background: linear-gradient(to right, #e83e8c, #ff69b4); -webkit-background-clip: text; background-clip: text; color: transparent;">Why Choose Hitaishi Matrimony?</span>
+        </h2>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+            
+            <div style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid #e83e8c;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #e83e8c, #ff69b4); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <i class="fas fa-shield-alt" style="color: white; font-size: 24px;"></i>
+                </div>
+                <h3 style="margin-top: 0; color: #333; font-size: 22px;">Verified Profiles</h3>
+                <p style="color: #666; line-height: 1.6;">Every profile undergoes strict verification to ensure genuine matches. Our 3-step verification process includes ID proof, address proof, and manual screening.</p>
+            </div>
+
+            <div style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid #ff69b4;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ff69b4, #e83e8c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <i class="fas fa-heart" style="color: white; font-size: 24px;"></i>
+                </div>
+                <h3 style="margin-top: 0; color: #333; font-size: 22px;">Smart Matching</h3>
+                <p style="color: #666; line-height: 1.6;">Our AI-powered compatibility system analyzes 50+ parameters to suggest highly compatible matches based on personality, values, and preferences.</p>
+            </div>
+
+            <div style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid #ff8c00;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ff8c00, #ff4500); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <i class="fas fa-lock" style="color: white; font-size: 24px;"></i>
+                </div>
+                <h3 style="margin-top: 0; color: #333; font-size: 22px;">Privacy Protection</h3>
+                <p style="color: #666; line-height: 1.6;">Your privacy is our priority. We offer photo privacy controls, contact masking, and secure communication channels to protect your information.</p>
+            </div>
+
+            <div style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid #56ab2f;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #56ab2f, #a8e063); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <i class="fas fa-users" style="color: white; font-size: 24px;"></i>
+                </div>
+                <h3 style="margin-top: 0; color: #333; font-size: 22px;">Community Focused</h3>
+                <p style="color: #666; line-height: 1.6;">Specialized communities for all castes and religions with dedicated matchmakers who understand your cultural expectations and traditions.</p>
+            </div>
+
+            <div style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid #3498db;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <i class="fas fa-headset" style="color: white; font-size: 24px;"></i>
+                </div>
+                <h3 style="margin-top: 0; color: #333; font-size: 22px;">Dedicated Support</h3>
+                <p style="color: #666; line-height: 1.6;">Our relationship experts are available 24/7 to guide you through the matchmaking process and help you find your perfect life partner.</p>
+            </div>
+
+            <div style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid #9b59b6;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <i class="fas fa-star" style="color: white; font-size: 24px;"></i>
+                </div>
+                <h3 style="margin-top: 0; color: #333; font-size: 22px;">Success Stories</h3>
+                <p style="color: #666; line-height: 1.6;">Join 10,000+ couples who found their life partners through Hitaishi. Read real success stories from happily married couples.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="form2.html" style="display: inline-block; background: linear-gradient(to right, #e83e8c, #ff69b4); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 18px; box-shadow: 0 5px 15px rgba(232, 62, 140, 0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                Create Your Free Profile
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<!-----suceess stories---->
+<section style="padding: 60px 0; background-color: #fff9fc;">
+  <div style="width: 98%; margin: 0 auto;">
+    <h2 style="text-align: center; font-size: 32px; margin-bottom: 50px; color: #e83e8c;">Success Stories</h2>
+
+    <div style="display: flex; justify-content: space-between; gap: 0; flex-wrap: nowrap;">
+      
+      <div onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 10px 25px rgba(232,62,140,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';" 
+          style="flex: 0 0 31%; min-width: 0; max-width: 32%; height: 400px; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; transition: all 0.3s ease; margin: 0 2px;">
+        <div style="height: 180px; background: url('https://images.pexels.com/photos/6685151/pexels-photo-6685151.jpeg') center/cover no-repeat;"></div>
+        <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column;">
+          <h3 style="margin-top: 0; font-size: 22px;">Rahul & Priya</h3>
+          <p style="font-size: 14px; flex-grow: 1; color: #555;">"We found each other on Hitaishi Matrimony and couldn't be happier. The matching system really understands compatibility!"</p>
+          <p style="font-style: italic; color: #e83e8c; margin-bottom: 10px;">Married since 2023</p>
+          <div style="text-align: center; margin-top: auto;">
+            <a href="rahulpriya.html" style="display: inline-block; padding: 12px 25px; background-color: #e83e8c; color: white; border-radius: 5px; font-weight: bold; font-size: 16px; cursor: pointer; text-decoration: none;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 10px 25px rgba(232,62,140,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';" 
+          style="flex: 0 0 31%; min-width: 0; max-width: 32%; height: 400px; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; transition: all 0.3s ease; margin: 0 2px;">
+        <div style="height: 180px; background: url('https://www.alfaazphotography.com/wp-content/uploads/2019/10/How-to-find-right-Indian-Wedding-Photographer-0028-1024x683.jpg') center/cover no-repeat;"></div>
+        <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column;">
+          <h3 style="margin-top: 0; font-size: 22px;">Amit & Neha</h3>
+          <p style="font-size: 14px; flex-grow: 1; color: #555;">"After years of searching, we connected on Hitaishi. The verification process gave us confidence in each other from the start."</p>
+          <p style="font-style: italic; color: #e83e8c; margin-bottom: 10px;">Married since 2022</p>
+          <div style="text-align: center; margin-top: auto;">
+            <a href="amitneha.html" style="display: inline-block; padding: 12px 25px; background-color: #e83e8c; color: white; border-radius: 5px; font-weight: bold; font-size: 16px; cursor: pointer; text-decoration: none;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 10px 25px rgba(232,62,140,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';" 
+          style="flex: 0 0 31%; min-width: 0; max-width: 32%; height: 400px; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; transition: all 0.3s ease; margin: 0 2px;">
+        <div style="height: 180px; background: url('https://www.candidshutters.com/maintenance/wp-content/uploads/2024/06/Best-wedding-photographers-India-Top-5-destination-wedding-photographers-Indian-weddings-2.jpg') center/cover no-repeat;"></div>
+        <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column;">
+          <h3 style="margin-top: 0; font-size: 22px;">Vikram & Anjali</h3>
+          <p style="font-size: 14px; flex-grow: 1; color: #555;">"The personalized matchmaking service made all the difference. We're so grateful to Hitaishi for bringing us together."</p>
+          <p style="font-style: italic; color: #e83e8c; margin-bottom: 10px;">Married since 2021</p>
+          <div style="text-align: center; margin-top: auto;">
+            <a href="vikramanjali.html" style="display: inline-block; padding: 12px 25px; background-color: #e83e8c; color: white; border-radius: 5px; font-weight: bold; font-size: 16px; cursor: pointer; text-decoration: none;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <button style="padding: 12px 30px; background-color: #e83e8c; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#d42a7a'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)'" onmouseout="this.style.backgroundColor='#e83e8c'; this.style.transform='none'; this.style.boxShadow='none'">
+        <a href="viewmorestories.html" style="text-decoration: none; color: white;">View More Stories</a>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!---------membership----->
+
+<section style="padding: 60px 0; background-color: white;">
+    <div style="width: 95%; margin: 0 auto;">
+        <h2 style="text-align: center; font-size: 32px; margin-bottom: 50px; color: #e83e8c;">Membership Plans</h2>
+        <div style="display: flex; justify-content: space-between; gap: 30px; flex-wrap: nowrap;">
+            
+            <div onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" 
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" 
+                style="width: 300px; background-color: #fff9fc; border-radius: 10px; padding: 30px; text-align: center; border: 2px solid #ffe6f2; transition: all 0.3s ease;">
+                <h3 style="margin-top: 0; color: #e83e8c;">Basic</h3>
+                <p style="font-size: 24px; font-weight: bold;">₹999<span style="font-size: 14px; font-weight: normal;">/month</span></p>
+                <ul style="text-align: left; list-style: none; padding: 0; margin: 20px 0;">
+                    <li style="margin-bottom: 10px; color: #555;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 8px;"></i>Limited Profile Views</li>
+                    <li style="margin-bottom: 10px; color: #555;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 8px;"></i>Basic Chat</li>
+                    <li style="margin-bottom: 10px; color: #555;"><i class="fas fa-times-circle" style="color: #dc3545; margin-right: 8px;"></i>No Direct Contact</li>
+                    <li style="margin-bottom: 10px; color: #555;"><i class="fas fa-times-circle" style="color: #dc3545; margin-right: 8px;"></i>No Premium Support</li>
+                </ul>
+                <a href="membership.html" style="display: inline-block; padding: 12px 25px; background-color: #e83e8c; color: white; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#c83279'" onmouseout="this.style.backgroundColor='#e83e8c'">Choose Plan</a>
+            </div>
+
+            <div onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" 
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" 
+                style="width: 300px; background-color: #fff9fc; border-radius: 10px; padding: 30px; text-align: center; border: 2px solid #e83e8c; transition: all 0.3s ease;">
+                <h3 style="margin-top: 0; color: #e83e8c;">Standard</h3>
+                <p style="font-size: 24px; font-weight: bold;">₹1999<span style="font-size: 14px; font-weight: normal;">/month</span></p>
+                <ul style="text-align: left; list-style: none; padding: 0; margin: 20px 0;">
+                    <li style="margin-bottom: 10px; color: #555;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 8px;"></i>Unlimited Profile Views</li>
+                    <li style="margin-bottom: 10px; color: #555;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 8px;"></i>Advanced Chat Features</li>
+                    <li style="margin-bottom: 10px; color: #555;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 8px;"></i>Direct Contact (Limited)</li>
+                    <li style="margin-bottom: 10px; color: #555;"><i class="fas fa-times-circle" style="color: #dc3545; margin-right: 8px;"></i>No Premium Support</li>
+                </ul>
+                <a href="membership.html" style="display: inline-block; padding: 12px 25px; background-color: #e83e8c; color: white; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#c83279'" onmouseout="this.style.backgroundColor='#e83e8c'">Choose Plan</a>
+            </div>
+
+            <div onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" 
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" 
+                style="width: 300px; background-color: #fff9fc; border-radius: 10px; padding: 30px; text-align: center; border: 2px solid #ff69b4; transition: all 0.3s ease;">
+                <h3 style="margin-top: 0; color: #e83e8c;">Premium</h3>
+                <p style="font-size: 24px; font-weight: bold;">₹3999<span style="font-size: 14px; font-weight: normal;">/month</span></p>
+                <ul style="text-align: left; list-style: none; padding: 0; margin: 20px 0;">
+                    <li style="margin-bottom: 10px; color: #555;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 8px;"></i>Unlimited Profile Views</li>
+                    <li style="margin-bottom: 10px; color: #555;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 8px;"></i>All Chat Features</li>
+                    <li style="margin-bottom: 10px; color: #555;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 8px;"></i>Direct Contact (Unlimited)</li>
+                    <li style="margin-bottom: 10px; color: #555;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 8px;"></i>Dedicated Premium Support</li>
+                </ul>
+                <a href="membership.html" style="display: inline-block; padding: 12px 25px; background-color: #e83e8c; color: white; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#c83279'" onmouseout="this.style.backgroundColor='#e83e8c'">Choose Plan</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <button style="padding: 12px 30px; background-color: #e83e8c; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#d42a7a'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)'" onmouseout="this.style.backgroundColor='#e83e8c'; this.style.transform='none'; this.style.boxShadow='none'">
+                <a href="membership.html" style="text-decoration: none; color: white;">View All Plans</a>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!---------numbers-------->
+
+<section style="padding: 80px 0; background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
+
+            <div class="counter-item" style="padding: 30px; background: rgba(255,255,255,0.9); border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div style="font-size: 48px; font-weight: 700; color: #e83e8c; margin-bottom: 10px;" class="count" data-count="78212">0</div>
+                <div style="font-size: 20px; color: #555;">Bride Profiles</div>
+            </div>
+
+            <div class="counter-item" style="padding: 30px; background: rgba(255,255,255,0.9); border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div style="font-size: 48px; font-weight: 700; color: #e83e8c; margin-bottom: 10px;" class="count" data-count="85671">0</div>
+                <div style="font-size: 20px; color: #555;">Groom Profiles</div>
+            </div>
+
+            <div class="counter-item" style="padding: 30px; background: rgba(255,255,255,0.9); border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div style="font-size: 48px; font-weight: 700; color: #e83e8c; margin-bottom: 10px;" class="count" data-count="12033">0</div>
+                <div style="font-size: 20px; color: #555;">Happy Couples</div>
+            </div>
+
+            <div class="counter-item" style="padding: 30px; background: rgba(255,255,255,0.9); border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div style="font-size: 48px; font-weight: 700; color: #e83e8c; margin-bottom: 10px;" class="count" data-count="11">0</div>
+                <div style="font-size: 20px; color: #555;">Years of Experience</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Counter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.count');
+            const speed = 200;
+
+            function animateCounters() {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText.replace(/\D/g, '');
+                    const increment = target / speed;
+
+                    if(count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(animateCounters, 1);
+                    } else {
+                        counter.innerText = target.toLocaleString() + '+';
+                    }
+                });
+            }
+
+            // Animate when in view
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {threshold: 0.5});
+
+            document.querySelectorAll('.counter-item').forEach(item => {
+                observer.observe(item);
+            });
+
+            // Add hover effect using inline styles
+            document.querySelectorAll('.counter-item').forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.style.transform = 'scale(1.05)';
+                    item.style.boxShadow = '0 10px 30px rgba(232, 62, 140, 0.5)';
+                    item.style.cursor = 'pointer';
+                });
+                item.addEventListener('mouseleave', () => {
+                    item.style.transform = 'scale(1)';
+                    item.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                    item.style.cursor = 'default';
+                });
+            });
+        });
+    </script>
+
+</section>
+<!----------------what our client sAY-------->
+
+<section style="padding: 60px 0; background-color: #ffe6f2;">
+    <div style="width: 95%; margin: 0 auto;">
+        <h2 style="text-align: center; font-size: 32px; margin-bottom: 50px; color: #e83e8c;">What Our Clients Says</h2>
+        <div style="display: flex; justify-content: space-between; flex-wrap: nowrap; gap: 30px; max-width: 100%;">
+            
+            <div class="testimonial-card" style="flex: 1 1 0; min-width: 0; max-width: 33.33%; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; border-radius: 50%; background-image: url('https://randomuser.me/api/portraits/women/65.jpg'); background-size: cover; background-position: center; margin-right: 15px;"></div>
+                    <div>
+                        <h4 style="margin: 0;">Ananya Sharma</h4>
+                        <p style="margin: 5px 0 0; font-size: 14px; color: #666;">Delhi, 28</p>
+                    </div>
+                </div>
+                <p>"Hitaishi Matrimony made the process so easy. Within a month of joining, I found someone who shares all my values and interests."</p>
+                <div style="color: #ffc107; font-size: 18px;">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card" style="flex: 1 1 0; min-width: 0; max-width: 33.33%; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; border-radius: 50%; background-image: url('https://randomuser.me/api/portraits/men/44.jpg'); background-size: cover; background-position: center; margin-right: 15px;"></div>
+                    <div>
+                        <h4 style="margin: 0;">Rajiv Malhotra</h4>
+                        <p style="margin: 5px 0 0; font-size: 14px; color: #666;">Mumbai, 32</p>
+                    </div>
+                </div>
+                <p>"The quality of profiles on Hitaishi is exceptional. I appreciated the detailed verification process that gave me confidence in the matches."</p>
+                <div style="color: #ffc107; font-size: 18px;">★★★★☆</div>
+            </div>
+
+            <div class="testimonial-card" style="flex: 1 1 0; min-width: 0; max-width: 33.33%; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; border-radius: 50%; background-image: url('https://randomuser.me/api/portraits/men/56.jpg'); background-size: cover; background-position: center; margin-right: 15px;"></div>
+                    <div>
+                        <h4 style="margin: 0;">Priyanka & Arjun</h4>
+                        <p style="margin: 5px 0 0; font-size: 14px; color: #666;">Bangalore, Couple</p>
+                    </div>
+                </div>
+                <p>"We're so grateful to Hitaishi for bringing us together. The compatibility matching was spot on - we couldn't be happier!"</p>
+                <div style="color: #ffc107; font-size: 18px;">★★★★★</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.testimonial-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'scale(1.05)';
+                    card.style.boxShadow = '0 10px 30px rgba(232, 62, 140, 0.4)';
+                    card.style.cursor = 'pointer';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'scale(1)';
+                    card.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
+                    card.style.cursor = 'default';
+                });
+            });
+        });
+    </script>
+</section>
+
+<!----------still have any quations------------>
+        
+<div style="text-align: center; margin-top: 40px; background: linear-gradient(135deg, #d63384, #6f42c1); padding: 30px; border-radius: 15px; color: white;">
+            <h3 style="margin-top: 0; font-size: 1.5rem;">Still have questions?</h3>
+            <p style="margin-bottom: 20px; font-size: 1.1rem;">Our team is happy to help you with any queries.</p>
+            <button style="background: white; color: #d63384; border: none; padding: 12px 30px; border-radius: 50px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';"><a href="contactus.html" style="text-decoration: none;">Contact Us</a></button>
+</div>
+    
+
+<br>
+
+<!-------------Faqs----------->
+
+<div style="text-align: center; margin-bottom: 40px;">
+            <h1 style="color: #d63384; font-size: 2.5rem; margin-bottom: 10px; text-shadow: 1px 1px 3px rgba(0,0,0,0.1);">Hitaishi Matrimony</h1>
+            <h2 style="color: #6f42c1; font-size: 1.8rem; margin-top: 0;">Frequently Asked Questions</h2>
+            <div style="height: 4px; width: 100px; background: linear-gradient(to right, #d63384, #6f42c1); margin: 0 auto; border-radius: 2px;"></div>
+</div>
+
+
+    <div style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 30px;">
+    <div style="margin-bottom: 25px; border-bottom: 1px dashed #e9ecef; padding-bottom: 25px; margin-left: 200px;">
+        <div style="display: flex; align-items: center; cursor: pointer; transition: background-color 0.3s;" 
+            onmouseover="this.style.backgroundColor='#f1e7ff'; this.children[1].style.color='#6f42c1'; this.children[2].style.color='#6f42c1';"
+            onmouseout="this.style.backgroundColor=''; this.children[1].style.color='#495057'; this.children[2].style.color='#d63384';"
+            onclick="toggleAnswer('answer1', this)">
+            <div style="width: 30px; height: 30px; background: linear-gradient(135deg, #d63384, #6f42c1); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold;">1</div>
+            <h3 style="color: #495057; margin: 0; font-size: 1.2rem;">What makes Hitaishi Matrimony different from other services?</h3>
+            <span style="margin-left: auto; font-size: 1.5rem; color: #d63384; margin-right: 250px;">+</span>
+        </div>
+        <div id="answer1" style="display: none; padding-left: 45px; padding-top: 15px;">
+            <p style="color: #6c757d; line-height: 1.6; margin: 0;">Hitaishi Matrimony focuses on personalized matchmaking with verified profiles. Our advanced compatibility algorithm and dedicated relationship managers ensure you find matches that align with your values, preferences, and lifestyle.</p>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 25px; border-bottom: 1px dashed #e9ecef; padding-bottom: 25px; margin-left: 200px;">
+        <div style="display: flex; align-items: center; cursor: pointer; transition: background-color 0.3s;" 
+            onmouseover="this.style.backgroundColor='#f1e7ff'; this.children[1].style.color='#6f42c1'; this.children[2].style.color='#6f42c1';"
+            onmouseout="this.style.backgroundColor=''; this.children[1].style.color='#495057'; this.children[2].style.color='#d63384';"
+            onclick="toggleAnswer('answer2', this)">
+            <div style="width: 30px; height: 30px; background: linear-gradient(135deg, #d63384, #6f42c1); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold;">2</div>
+            <h3 style="color: #495057; margin: 0; font-size: 1.2rem;">How do I register on Hitaishi Matrimony?</h3>
+            <span style="margin-left: auto; font-size: 1.5rem; color: #d63384; margin-right: 250px;">+</span>
+        </div>
+        <div id="answer2" style="display: none; padding-left: 45px; padding-top: 15px;">
+            <p style="color: #6c757d; line-height: 1.6; margin: 0;">Registration is simple! Click on the 'Register' button, fill in your basic details, complete your profile with information about yourself and your preferences, and verify your phone number. Our team will review and activate your profile within 24 hours.</p>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 25px; border-bottom: 1px dashed #e9ecef; padding-bottom: 25px; margin-left: 200px;">
+        <div style="display: flex; align-items: center; cursor: pointer; transition: background-color 0.3s;" 
+            onmouseover="this.style.backgroundColor='#f1e7ff'; this.children[1].style.color='#6f42c1'; this.children[2].style.color='#6f42c1';"
+            onmouseout="this.style.backgroundColor=''; this.children[1].style.color='#495057'; this.children[2].style.color='#d63384';"
+            onclick="toggleAnswer('answer3', this)">
+            <div style="width: 30px; height: 30px; background: linear-gradient(135deg, #d63384, #6f42c1); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold;">3</div>
+            <h3 style="color: #495057; margin: 0; font-size: 1.2rem;">What security measures do you have in place?</h3>
+            <span style="margin-left: auto; font-size: 1.5rem; color: #d63384; margin-right: 250px;">+</span>
+        </div>
+        <div id="answer3" style="display: none; padding-left: 45px; padding-top: 15px;">
+            <p style="color: #6c757d; line-height: 1.6; margin: 0;">We take security seriously with multiple layers of protection:
+                <ul style="color: #6c757d; padding-left: 20px; margin-top: 10px;">
+                    <li style="margin-bottom: 8px;">All profiles are manually verified</li>
+                    <li style="margin-bottom: 8px;">Phone number and email verification required</li>
+                    <li style="margin-bottom: 8px;">Secure SSL encrypted connections</li>
+                    <li style="margin-bottom: 8px;">Option to hide sensitive information</li>
+                    <li>24/7 monitoring for suspicious activity</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 25px; border-bottom: 1px dashed #e9ecef; padding-bottom: 25px; margin-left: 200px;">
+        <div style="display: flex; align-items: center; cursor: pointer; transition: background-color 0.3s;" 
+            onmouseover="this.style.backgroundColor='#f1e7ff'; this.children[1].style.color='#6f42c1'; this.children[2].style.color='#6f42c1';"
+            onmouseout="this.style.backgroundColor=''; this.children[1].style.color='#495057'; this.children[2].style.color='#d63384';"
+            onclick="toggleAnswer('answer4', this)">
+            <div style="width: 30px; height: 30px; background: linear-gradient(135deg, #d63384, #6f42c1); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold;">4</div>
+            <h3 style="color: #495057; margin: 0; font-size: 1.2rem;">What are the membership plans and pricing?</h3>
+            <span style="margin-left: auto; font-size: 1.5rem; color: #d63384; margin-right: 250px;">+</span>
+        </div>
+        <div id="answer4" style="display: none; padding-left: 45px; padding-top: 15px;">
+            <p style="color: #6c757d; line-height: 1.6; margin: 0;">We offer flexible plans to suit different needs:
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+                    <div style="flex: 1; min-width: 200px; background: #f8f9fa; border-radius: 10px; padding: 15px; border-left: 4px solid #d63384;">
+                        <h4 style="color: #d63384; margin-top: 0;">Basic Plan</h4>
+                        <p style="color: #6c757d; margin-bottom: 5px;">₹2,999 for 3 months</p>
+                        <p style="color: #6c757d; margin: 0; font-size: 0.9rem;">Profile creation, limited matches, basic search</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; background: #f8f9fa; border-radius: 10px; padding: 15px; border-left: 4px solid #6f42c1;">
+                        <h4 style="color: #6f42c1; margin-top: 0;">Premium Plan</h4>
+                        <p style="color: #6c757d; margin-bottom: 5px;">₹5,999 for 6 months</p>
+                        <p style="color: #6c757d; margin: 0; font-size: 0.9rem;">Unlimited matches, advanced search, priority support</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; background: #f8f9fa; border-radius: 10px; padding: 15px; border-left: 4px solid #20c997;">
+                        <h4 style="color: #20c997; margin-top: 0;">Platinum Plan</h4>
+                        <p style="color: #6c757d; margin-bottom: 5px;">₹9,999 for 12 months</p>
+                        <p style="color: #6c757d; margin: 0; font-size: 0.9rem;">Personal matchmaker, exclusive events, profile highlighting</p>
+                    </div>
+                </div>
+            </p>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 25px; border-bottom: 1px dashed #e9ecef; padding-bottom: 25px; margin-left: 200px;">
+        <div style="display: flex; align-items: center; cursor: pointer; transition: background-color 0.3s;" 
+            onmouseover="this.style.backgroundColor='#f1e7ff'; this.children[1].style.color='#6f42c1'; this.children[2].style.color='#6f42c1';"
+            onmouseout="this.style.backgroundColor=''; this.children[1].style.color='#495057'; this.children[2].style.color='#d63384';"
+            onclick="toggleAnswer('answer5', this)">
+            <div style="width: 30px; height: 30px; background: linear-gradient(135deg, #d63384, #6f42c1); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold;">5</div>
+            <h3 style="color: #495057; margin: 0; font-size: 1.2rem;">How do I contact customer support?</h3>
+            <span style="margin-left: auto; font-size: 1.5rem; color: #d63384; margin-right: 250px;">+</span>
+        </div>
+        <div id="answer5" style="display: none; padding-left: 45px; padding-top: 15px;">
+            <p style="color: #6c757d; line-height: 1.6; margin: 0;">
+                You can reach out to our support team via email at 
+                <a href="mailto:support@hitaishimatrimony.com" style="color: #6f42c1; text-decoration: none;">support@hitaishimatrimony.com</a> or call us at 
+                <strong>+91 12345 67890</strong>. Our customer service is available 9 AM to 9 PM, Monday to Saturday.
+            </p>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 25px; border-bottom: 1px dashed #e9ecef; padding-bottom: 25px; margin-left: 200px;">
+        <div style="display: flex; align-items: center; cursor: pointer; transition: background-color 0.3s;" 
+            onmouseover="this.style.backgroundColor='#f1e7ff'; this.children[1].style.color='#6f42c1'; this.children[2].style.color='#6f42c1';"
+            onmouseout="this.style.backgroundColor=''; this.children[1].style.color='#495057'; this.children[2].style.color='#d63384';"
+            onclick="toggleAnswer('answer6', this)">
+            <div style="width: 30px; height: 30px; background: linear-gradient(135deg, #d63384, #6f42c1); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold;">6</div>
+            <h3 style="color: #495057; margin: 0; font-size: 1.2rem;">Can I update my profile after registration?</h3>
+            <span style="margin-left: auto; font-size: 1.5rem; color: #d63384; margin-right: 250px;">+</span>
+        </div>
+        <div id="answer6" style="display: none; padding-left: 45px; padding-top: 15px;">
+            <p style="color: #6c757d; line-height: 1.6; margin: 0;">
+                Yes, you can update your profile at any time. Simply log in to your account and navigate to the 'Edit Profile' section. Make sure to save changes before exiting.
+            </p>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 0; margin-left: 200px;">
+        <div style="display: flex; align-items: center; cursor: pointer; transition: background-color 0.3s;" 
+            onmouseover="this.style.backgroundColor='#f1e7ff'; this.children[1].style.color='#6f42c1'; this.children[2].style.color='#6f42c1';"
+            onmouseout="this.style.backgroundColor=''; this.children[1].style.color='#495057'; this.children[2].style.color='#d63384';"
+            onclick="toggleAnswer('answer7', this)">
+            <div style="width: 30px; height: 30px; background: linear-gradient(135deg, #d63384, #6f42c1); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold;">7</div>
+            <h3 style="color: #495057; margin: 0; font-size: 1.2rem;">Is my personal information shared with third parties?</h3>
+            <span style="margin-left: auto; font-size: 1.5rem; color: #d63384; margin-right: 250px;">+</span>
+        </div>
+        <div id="answer7" style="display: none; padding-left: 45px; padding-top: 15px;">
+            <p style="color: #6c757d; line-height: 1.6; margin: 0;">
+                No, your personal data is confidential and will never be shared with third parties without your explicit consent. We comply fully with privacy laws and protect your data with strict security protocols.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleAnswer(id, element) {
+        // Get all answer elements
+        var allAnswers = document.querySelectorAll('[id^="answer"]');
+        // Get all plus/minus spans (they are the third child of the clickable div)
+        var allSpans = document.querySelectorAll('[onclick^="toggleAnswer"] > span:nth-child(3)');
+        
+        // Close all answers and reset all spans to '+'
+        allAnswers.forEach(function(answer) {
+            answer.style.display = 'none';
+        });
+        allSpans.forEach(function(span) {
+            span.textContent = '+';
+        });
+        
+        // Toggle the clicked answer
+        var target = document.getElementById(id);
+        var targetSpan = element.children[2];
+        
+        if (target.style.display === 'none' || target.style.display === '') {
+            target.style.display = 'block';
+            targetSpan.textContent = '−';
+        } else {
+            target.style.display = 'none';
+            targetSpan.textContent = '+';
+        }
+    }
+</script>
+
+   <!-----login popup------>
+
+    <div id="loginPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; font-family: 'Georgia', serif;">
+        <div style="background: linear-gradient(145deg, #fff0f5, #ffe4ec); width: 300px; max-width: 90%; margin: 80px auto; padding: 35px 30px; border-radius: 20px; border: 4px double #e91e63; box-shadow: 0 12px 28px rgba(0,0,0,0.2); position: relative; text-align: center;">
+            
+            <span onclick="closeLoginPopup()" style="position: absolute; top: 12px; right: 16px; font-size: 22px; font-weight: bold; cursor: pointer; color: #e91e63;">&times;</span>
+    
+            <h2 style="margin-top: 0; color: #d81b60; font-size: 26px; margin-bottom: 15px;">Hitaishi Matrimony</h2>
+            <p style="margin: 0; font-size: 16px; color: #555;">Login or Register to Begin Your Beautiful Journey</p>
+    
+            <input type="text" placeholder="Email or Mobile" style="width: 100%; padding: 12px; margin: 18px 0 10px; border-radius: 10px; border: 1.5px solid #d81b60; background: #fff; font-size: 14px;">
+            <input type="password" placeholder="Password" style="width: 100%; padding: 12px; margin: 10px 0 20px; border-radius: 10px; border: 1.5px solid #d81b60; background: #fff; font-size: 14px;">
+    
+            <button style="width: 100%; padding: 12px; background: #d81b60; color: white; font-size: 16px; border: none; border-radius: 10px; cursor: pointer;">Login</button>
+    
+            <p style="margin: 20px 0 10px; font-size: 14px; color: #555;">Don't have an account?</p>
+            <a href="#" onclick="switchToRegister()" style="display: inline-block; width: 100%; padding: 12px; background: #ff69b4; color: white; text-decoration: none; font-size: 16px; border-radius: 10px;">Register</a>
+            
+            <div style="margin-top: 25px; font-size: 12px; color: #999;">Crafted with ❤️ by Hitaishi</div>
+        </div>
+    </div>
+    
+<!------register popup-->
+
+    <div id="registerPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background-color: white; padding: 30px; border-radius: 10px; width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto; box-shadow: 0 5px 30px rgba(0,0,0,0.3); position: relative;">
+            <span onclick="closeRegisterPopup()" style="position: absolute; top: 15px; right: 15px; font-size: 24px; cursor: pointer; color: #888;">&times;</span>
+            <h2 style="color: #e83e8c; text-align: center; margin-top: 0;">Create Your Matrimony Profile</h2>
+            
+            <form style="display: grid; gap: 15px;">
+                <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px;">
+                    <h3 style="margin-top: 0; color: #e83e8c;">Basic Information</h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div>
+                            <label for="firstName" style="display: block; margin-bottom: 5px; font-weight: bold;">First Name*</label>
+                            <input type="text" id="firstName" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                        <div>
+                            <label for="lastName" style="display: block; margin-bottom: 5px; font-weight: bold;">Last Name*</label>
+                            <input type="text" id="lastName" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email*</label>
+                        <input type="email" id="email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+                    
+                    <div>
+                        <label for="phone" style="display: block; margin-bottom: 5px; font-weight: bold;">Phone Number*</label>
+                        <input type="tel" id="phone" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+                    
+                    <div>
+                        <label for="password" style="display: block; margin-bottom: 5px; font-weight: bold;">Create Password*</label>
+                        <input type="password" id="password" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="terms" required style="width: auto;">
+                    <label for="terms" style="font-size: 14px;">I agree to the <a href="#" style="color: #e83e8c; text-decoration: none;">Terms & Conditions</a> and <a href="#" style="color: #e83e8c; text-decoration: none;">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" style="padding: 12px; background-color: #e83e8c; color: white; border: none; border-radius: 5px; font-weight: bold; font-size: 16px; cursor: pointer; margin-top: 10px;">Create Profile</button>
+                
+                <p style="text-align: center; font-size: 14px; margin-bottom: 0;">Already have an account? <a href="#" onclick="switchToLogin()" style="color: #e83e8c; text-decoration: none;">Login</a></p>
+            </form>
+        </div>
+</div>
+
+   <!-- Footer -->
+<footer style="background-color: #333; color: white; padding: 50px 0 20px;">
+  <div style="width: 85%; margin: 0 auto;">
+    <div style="display: flex; justify-content: space-between; flex-wrap: nowrap; gap: 30px; margin-bottom: 40px;">
+      
+      
+      <!-- Column 1 -->
+    <div style="flex: 1; min-width: 0;">
+     <h3 style="color: #e83e8c; margin-top: 0;">4jodi Matrimony</h3>
+       <p style="margin-bottom: 20px;">India's most trusted matrimony service helping millions find their perfect life partners since 2024.</p>
+        <div style="display: flex; gap: 10px; flex-wrap: nowrap; align-items: center;">
+         <a href="https://www.facebook.com" target="_blank" style="display: inline-flex; justify-content: center; align-items: center; background-color: #444; border-radius: 50%; width: 40px; height: 40px; text-decoration: none;">
+        <img src="https://img.icons8.com/ios-filled/25/ffffff/facebook-new.png" alt="Facebook" style="display: block; width: 25px; height: 25px;">
+       </a>
+       <a href="https://www.linkedin.com" target="_blank" style="display: inline-flex; justify-content: center; align-items: center; background-color: #444; border-radius: 50%; width: 40px; height: 40px; text-decoration: none;">
+        <img src="https://img.icons8.com/ios-filled/25/ffffff/linkedin.png" alt="LinkedIn" style="display: block; width: 25px; height: 25px;">
+       </a>
+       <a href="https://x.com/matrimonyhitais" target="_blank" style="display: inline-flex; justify-content: center; align-items: center; background-color: #444; border-radius: 50%; width: 40px; height: 40px; text-decoration: none;">
+      <img src="https://img.icons8.com/ios-filled/25/ffffff/twitter.png" alt="Twitter" style="display: block; width: 25px; height: 25px;">
+      </a>
+       <a href="https://www.instagram.com" target="_blank" style="display: inline-flex; justify-content: center; align-items: center; background-color: #444; border-radius: 50%; width: 40px; height: 40px; text-decoration: none;">
+      <img src="https://img.icons8.com/ios-filled/25/ffffff/instagram-new.png" alt="Instagram" style="display: block; width: 25px; height: 25px;">
+     </a>
+    </div>
+   </div>
+
+      <!-- Column 2 -->
+      <div style="flex: 1; min-width: 0;">
+        <h4 style="margin-top: 0; margin-bottom: 20px;">Quick Links</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ccc; text-decoration: none;">Home</a></li>
+          <li style="margin-bottom: 10px;"><a href="form2.html" style="color: #ccc; text-decoration: none;">Search Profiles</a></li>
+          <li style="margin-bottom: 10px;"><a href="membership.html" style="color: #ccc; text-decoration: none;">Membership Plans</a></li>
+          <li style="margin-bottom: 10px;"><a href="viewmorestories.html" style="color: #ccc; text-decoration: none;">Success Stories</a></li>
+          <li style="margin-bottom: 10px;"><a href="contactus.html" style="color: #ccc; text-decoration: none;">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div style="flex: 1; min-width: 0;">
+        <h4 style="margin-top: 0; margin-bottom: 20px;">Help & Support</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 10px;"><a href="faq.html" style="color: #ccc; text-decoration: none;">FAQs</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ccc; text-decoration: none;">Safety Tips</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ccc; text-decoration: none;">Privacy Policy</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ccc; text-decoration: none;">Terms & Conditions</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ccc; text-decoration: none;">Grievance Redressal</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+    <div style="flex: 1; min-width: 0;">
+     <h4 style="margin-top: 0; margin-bottom: 20px;">Contact Us</h4>
+     <p style="margin-bottom: 10px;">📞 +91 9908793602</p>
+      <p style="margin-bottom: 10px; white-space: nowrap;">✉️ opticjodi@gmail.com</p>
+      <p style="margin-bottom: 10px;">🏢  pragathi nagar, hyderabad, India - 500090</p>
+       </div>
+
+    </div>
+
+    <div style="border-top: 1px solid #444; padding-top: 20px; text-align: center; color: #999; font-size: 14px;">
+      <p>© 2024 4jodi Matrimony. All Rights Reserved.</p>
+    </div>
+  </div>
+ </footer>
+<!---script---->
+
+<script>
+    // Function to open login popup
+    function openLoginPopup() {
+        document.getElementById('loginPopup').style.display = 'block';
+        document.getElementById('registerPopup').style.display = 'none'; // Ensure register is hidden
+    }
+
+    // Function to close login popup
+    function closeLoginPopup() {
+        document.getElementById('loginPopup').style.display = 'none';
+    }
+
+    // Function to switch to register popup from login
+    function switchToRegister() {
+        document.getElementById('loginPopup').style.display = 'none';
+        document.getElementById('registerPopup').style.display = 'flex'; // Use flex to center
+    }
+
+    // Function to close register popup
+    function closeRegisterPopup() {
+        document.getElementById('registerPopup').style.display = 'none';
+    }
+
+    // Function to switch to login popup from register
+    function switchToLogin() {
+        document.getElementById('registerPopup').style.display = 'none';
+        document.getElementById('loginPopup').style.display = 'block';
+    }
+
+    // Counter animation
+    document.addEventListener('DOMContentLoaded', function() {
+        const counters = document.querySelectorAll('.count');
+        const speed = 200;
+
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                let currentCount = +counter.innerText.replace(/\D/g, ''); // Remove '+' for parsing
+                const increment = target / speed;
+
+                if(currentCount < target) {
+                    counter.innerText = Math.ceil(currentCount + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target.toLocaleString() + '+'; // Add '+' back
+                }
+            });
+        }
+
+        // Animate when in view
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {threshold: 0.5});
+
+        document.querySelectorAll('.counter-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Add hover effect for counter items
+        document.querySelectorAll('.counter-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'scale(1.05)';
+                item.style.boxShadow = '0 10px 30px rgba(232, 62, 140, 0.5)';
+                item.style.cursor = 'pointer';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'scale(1)';
+                item.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                item.style.cursor = 'default';
+            });
+        });
+
+        // Add hover effect for testimonial cards
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        testimonialCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'scale(1.05)';
+                card.style.boxShadow = '0 10px 30px rgba(232, 62, 140, 0.4)';
+                card.style.cursor = 'pointer';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+                card.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
+                card.style.cursor = 'default';
+            });
+        });
+    });
+
+    // FAQ Toggle function (modified to close others)
+    function toggleAnswer(id, element) {
+        var allAnswers = document.querySelectorAll('[id^="answer"]');
+        var allSpans = document.querySelectorAll('[onclick^="toggleAnswer"] > span:nth-child(3)');
+        
+        allAnswers.forEach(function(answer) {
+            if (answer.id !== id) { // Only close if it's not the current one
+                answer.style.display = 'none';
+            }
+        });
+        allSpans.forEach(function(span) {
+            if (span.parentElement.parentElement.querySelector(`#${id}`) !== span.parentElement.nextElementSibling) { // Only reset if it's not the current one
+                span.textContent = '+';
+            }
+        });
+        
+        var target = document.getElementById(id);
+        var targetSpan = element.children[2];
+        
+        if (target.style.display === 'none' || target.style.display === '') {
+            target.style.display = 'block';
+            targetSpan.textContent = '−';
+        } else {
+            target.style.display = 'none';
+            targetSpan.textContent = '+';
+        }
+    }
+</script>
+
+</body>
+</html>

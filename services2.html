@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  
+
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+    <!-- Hero Section -->
+    <section style="margin-top:70px;background:url('https://png.pngtree.com/thumb_back/fh260/background/20230715/pngtree-d-rendering-of-a-glossy-background-featuring-a-two-diamond-gold-image_3867619.jpg') center/cover no-repeat;height:80vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:white;">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);"></div>
+        <div style="position:relative;z-index:1;max-width:800px;padding:20px;">
+            <h1 style="font-family:'Playfair Display',serif;font-size:3.5rem;margin-bottom:20px;text-shadow:2px 2px 4px rgba(0,0,0,0.5);">Complete Wedding Services</h1>
+            <p style="font-size:1.2rem;margin-bottom:30px;text-shadow:1px 1px 2px rgba(0,0,0,0.5);">From bridal attire to venue decoration - we provide everything to make your special day perfect</p>
+            <a href="#services" style="background:#d81b60;color:white;padding:12px 30px;border-radius:30px;text-decoration:none;font-weight:600;transition:all 0.3s;border:2px solid #d81b60;display:inline-block;">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+<section id="services" style="padding:80px 20px;background:white;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:50px;color:#8e24aa;">
+      Our Comprehensive Services
+    </h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;">
+
+      <!-- Bridal Attire -->
+      <a href="bridecollection.html" style="text-decoration:none; color:inherit;">
+        <div style="background:#fff9f9;border-radius:10px;padding:30px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s,box-shadow 0.3s;" 
+             onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'" 
+             onmouseout="this.style.transform='';this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+          <div style="width:80px;height:80px;background:linear-gradient(to right,#d81b60,#8e24aa);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Bridal Attire</h3>
+          <p style="margin:0;">Exquisite wedding dresses for rent or purchase from top designers</p>
+        </div>
+      </a>
+
+      <!-- Groom Attire -->
+      <a href="groomcollection.html" style="text-decoration:none; color:inherit;">
+        <div style="background:#fff9f9;border-radius:10px;padding:30px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s,box-shadow 0.3s;" 
+             onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'" 
+             onmouseout="this.style.transform='';this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+          <div style="width:80px;height:80px;background:linear-gradient(to right,#d81b60,#8e24aa);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Groom Attire</h3>
+          <p style="margin:0;">Elegant sherwanis and suits for rent or purchase</p>
+        </div>
+      </a>
+
+      <!-- Makeup & Styling -->
+      <a href="#makeup" style="text-decoration:none; color:inherit;">
+        <div style="background:#fff9f9;border-radius:10px;padding:30px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s,box-shadow 0.3s;" 
+             onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'" 
+             onmouseout="this.style.transform='';this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+          <div style="width:80px;height:80px;background:linear-gradient(to right,#d81b60,#8e24aa);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
+            </svg>
+          </div>
+          <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Makeup & Styling</h3>
+          <p style="margin:0;">Professional bridal and groom makeup artists</p>
+        </div>
+      </a>
+
+      <!-- Decorations -->
+      <a href="#decorations" style="text-decoration:none; color:inherit;">
+        <div style="background:#fff9f9;border-radius:10px;padding:30px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s,box-shadow 0.3s;" 
+             onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'" 
+             onmouseout="this.style.transform='';this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+          <div style="width:80px;height:80px;background:linear-gradient(to right,#d81b60,#8e24aa);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Decorations</h3>
+          <p style="margin:0;">Stunning wedding venue decorations for all budgets</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+               
+
+    <!-- Makeup & Styling Section -->
+
+    <section id="makeup" style="padding:80px 20px;background:#fff9f9;">
+        <div style="max-width:1200px;margin:0 auto;">
+            <h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:50px;color:#d81b60;">Makeup & Styling Services</h2>
+            
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:50px;">
+                <div>
+                    <h3 style="font-size:1.8rem;margin-bottom:20px;color:#8e24aa;">Bridal Makeup Packages</h3>
+                    <div style="background:white;border-radius:10px;padding:25px;margin-bottom:20px;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform=''">
+                        <h4 style="margin:0 0 10px;font-size:1.2rem;color:#d81b60;">Royal Bride (₹35,000)</h4>
+                        <p style="margin:0;">Includes trial session, HD makeup, hair styling, drape artist, jewelry setting, and touch-up kit</p>
+                    </div>
+                    <div style="background:white;border-radius:10px;padding:25px;margin-bottom:20px;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform=''">
+                        <h4 style="margin:0 0 10px;font-size:1.2rem;color:#d81b60;">Classic Bride (₹25,000)</h4>
+                        <p style="margin:0;">Includes trial session, airbrush makeup, hair styling, and drape assistance</p>
+                    </div>
+                    <div style="background:white;border-radius:10px;padding:25px;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform=''">
+                        <h4 style="margin:0 0 10px;font-size:1.2rem;color:#d81b60;">Essential Bride (₹15,000)</h4>
+                        <p style="margin:0;">Includes basic makeup and hair styling with 5-hour durability</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="font-size:1.8rem;margin-bottom:20px;color:#8e24aa;">Groom Styling Packages</h3>
+                    <div style="background:white;border-radius:10px;padding:25px;margin-bottom:20px;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform=''">
+                        <h4 style="margin:0 0 10px;font-size:1.2rem;color:#d81b60;">Premium Groom (₹15,000)</h4>
+                        <p style="margin:0;">Includes facial, haircut/style, beard grooming, makeup, and outfit consultation</p>
+                    </div>
+                    <div style="background:white;border-radius:10px;padding:25px;margin-bottom:20px;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform=''">
+                        <h4 style="margin:0 0 10px;font-size:1.2rem;color:#d81b60;">Standard Groom (₹10,000)</h4>
+                        <p style="margin:0;">Includes haircut/style, beard grooming, and light makeup</p>
+                    </div>
+                    <div style="background:white;border-radius:10px;padding:25px;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform=''">
+                        <h4 style="margin:0 0 10px;font-size:1.2rem;color:#d81b60;">Basic Groom (₹6,000)</h4>
+                        <p style="margin:0;">Includes haircut/style and beard grooming</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align:center;">
+                <h3 style="font-size:1.5rem;margin-bottom:20px;color:#8e24aa;">Our Makeup Artists</h3>
+                <div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;">
+                    <div style="width:150px;text-align:center;">
+                        <div style="background:url('images/servicesmakupimage1.png') center/cover no-repeat;width:150px;height:150px;border-radius:50%;margin:0 auto 15px;border:3px solid #d81b60;"></div>
+                        <h4 style="margin:0;color:#d81b60;">Priya Sharma</h4>
+                        <p style="margin:5px 0 0;font-size:0.9rem;">Bridal Specialist</p>
+                    </div>
+                    <div style="width:150px;text-align:center;">
+                        <div style="background:url('images/servicesmakupimage2.png') center/cover no-repeat;width:150px;height:150px;border-radius:50%;margin:0 auto 15px;border:3px solid #d81b60;"></div>
+                        <h4 style="margin:0;color:#d81b60;">Rahul Kapoor</h4>
+                        <p style="margin:5px 0 0;font-size:0.9rem;">Groom Stylist</p>
+                    </div>
+                    <div style="width:150px;text-align:center;">
+                        <div style="background:url('images/servicesmakupimage3.png') center/cover no-repeat;width:150px;height:150px;border-radius:50%;margin:0 auto 15px;border:3px solid #d81b60;"></div>
+                        <h4 style="margin:0;color:#d81b60;">Neha Patel</h4>
+                        <p style="margin:5px 0 0;font-size:0.9rem;">HD Makeup Expert</p>
+                    </div>
+                    <div style="width:150px;text-align:center;">
+                        <div style="background:url('images/servicesmakupimage4.png') center/cover no-repeat;width:150px;height:150px;border-radius:50%;margin:0 auto 15px;border:3px solid #d81b60;"></div>
+                        <h4 style="margin:0;color:#d81b60;">Arjun Singh</h4>
+                        <p style="margin:5px 0 0;font-size:0.9rem;">Hair Specialist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Decoration Section -->
+
+ <section id="decoration" style="padding:80px 20px;background:white;font-family:Arial,sans-serif;">
+    <div style="max-width:1200px;margin:0 auto;position:relative;">
+        <h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:50px;color:#8e24aa;">Wedding Decorations</h2>
+        <div style="display:flex;gap:30px;margin-bottom:50px;overflow-x:auto;padding-bottom:20px;scrollbar-width:thin;">
+            <!-- Card 1: Budget Decor -->
+            <div style="flex-shrink:0;width:320px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+                <div style="background:url('https://placehold.co/600x400/3498db/ffffff?text=Budget+Decor') center/cover no-repeat;height:200px;"></div>
+                <div style="padding:25px;background:white;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;">
+                    <div>
+                        <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Budget Decor (₹50,000 - ₹1,00,000)</h3>
+                        <p style="margin:0 0 20px;color:#555;line-height:1.5;">Beautiful decorations for intimate weddings with fresh flowers and elegant drapes</p>
+                        <ul style="padding-left:20px;margin:0;color:#555;">
+                            <li style="margin-bottom:8px;">Mandap decoration</li>
+                            <li style="margin-bottom:8px;">Stage backdrop</li>
+                            <li style="margin-bottom:8px;">Basic lighting</li>
+                            <li>Seating arrangement</li>
+                        </ul>
+                    </div>
+                    <button onclick="showBookingForm('Budget Decor (₹50,000 - ₹1,00,000)')" style="background:linear-gradient(135deg,#27ae60,#2ecc71);color:white;padding:12px 25px;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:0.3s;font-weight:bold;box-shadow:0 4px 15px rgba(0,0,0,0.2);text-align:center;width:100%;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Card 2: Standard Decor -->
+            <div style="flex-shrink:0;width:320px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+                <div style="background:url('https://placehold.co/600x400/2ecc71/ffffff?text=Standard+Decor') center/cover no-repeat;height:200px;"></div>
+                <div style="padding:25px;background:white;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;">
+                    <div>
+                        <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Standard Decor (₹1,00,000 - ₹3,00,000)</h3>
+                        <p style="margin:0 0 20px;color:#555;line-height:1.5;">Luxurious decorations with premium flowers, thematic elements, and custom designs</p>
+                        <ul style="padding-left:20px;margin:0;color:#555;">
+                            <li style="margin-bottom:8px;">Themed mandap</li>
+                            <li style="margin-bottom:8px;">Custom stage design</li>
+                            <li style="margin-bottom:8px;">Advanced lighting</li>
+                            <li>Full venue decoration</li>
+                        </ul>
+                    </div>
+                    <button onclick="showBookingForm('Standard Decor (₹1,00,000 - ₹3,00,000)')" style="background:linear-gradient(135deg,#27ae60,#2ecc71);color:white;padding:12px 25px;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:0.3s;font-weight:bold;box-shadow:0 4px 15px rgba(0,0,0,0.2);text-align:center;width:100%;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Card 3: Luxury Decor -->
+            <div style="flex-shrink:0;width:320px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+                <div style="background:url('https://placehold.co/600x400/e74c3c/ffffff?text=Luxury+Decor') center/cover no-repeat;height:200px;"></div>
+                <div style="padding:25px;background:white;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;">
+                    <div>
+                        <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Luxury Decor (₹3,00,000+)</h3>
+                        <p style="margin:0 0 20px;color:#555;line-height:1.5;">Bespoke, extravagant decorations with imported flowers, custom installations, and premium materials</p>
+                        <ul style="padding-left:20px;margin:0;color:#555;">
+                            <li style="margin-bottom:8px;">Custom designed mandap</li>
+                            <li style="margin-bottom:8px;">Imported floral arrangements</li>
+                            <li style="margin-bottom:8px;">Professional lighting design</li>
+                            <li>Complete venue transformation</li>
+                        </ul>
+                    </div>
+                    <button onclick="showBookingForm('Luxury Decor (₹3,00,000+)')" style="background:linear-gradient(135deg,#27ae60,#2ecc71);color:white;padding:12px 25px;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:0.3s;font-weight:bold;box-shadow:0 4px 15px rgba(0,0,0,0.2);text-align:center;width:100%;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Card 4: Basic Floral Decor -->
+            <div style="flex-shrink:0;width:320px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+                <div style="background:url('https://placehold.co/600x400/8e44ad/ffffff?text=Basic+Floral') center/cover no-repeat;height:200px;"></div>
+                <div style="padding:25px;background:white;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;">
+                    <div>
+                        <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Basic Floral Decor (₹60,000 - ₹1,20,000)</h3>
+                        <p style="margin:0 0 20px;color:#555;line-height:1.5;">Elegant floral arrangements for key areas with seasonal flowers</p>
+                        <ul style="padding-left:20px;margin:0;color:#555;">
+                            <li style="margin-bottom:8px;">Entrance floral arch</li>
+                            <li style="margin-bottom:8px;">Centerpieces for 10 tables</li>
+                            <li style="margin-bottom:8px;">Stage floral accents</li>
+                            <li>Basic aisle decoration</li>
+                        </ul>
+                    </div>
+                    <button onclick="showBookingForm('Basic Floral Decor (₹60,000 - ₹1,20,000)')" style="background:linear-gradient(135deg,#27ae60,#2ecc71);color:white;padding:12px 25px;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:0.3s;font-weight:bold;box-shadow:0 4px 15px rgba(0,0,0,0.2);text-align:center;width:100%;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Card 5: Premium Floral Decor -->
+            <div style="flex-shrink:0;width:320px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+                <div style="background:url('https://placehold.co/600x400/f1c40f/ffffff?text=Premium+Floral') center/cover no-repeat;height:200px;"></div>
+                <div style="padding:25px;background:white;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;">
+                    <div>
+                        <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Premium Floral Decor (₹1,50,000 - ₹3,50,000)</h3>
+                        <p style="margin:0 0 20px;color:#555;line-height:1.5;">Opulent floral designs with exotic and imported flowers, covering extensive areas</p>
+                        <ul style="padding-left:20px;margin:0;color:#555;">
+                            <li style="margin-bottom:8px;">Grand floral entrance</li>
+                            <li style="margin-bottom:8px;">Custom floral chandeliers</li>
+                            <li style="margin-bottom:8px;">Full venue floral draping</li>
+                            <li>Bridal bouquet & groom's boutonnière</li>
+                        </ul>
+                    </div>
+                    <button onclick="showBookingForm('Premium Floral Decor (₹1,50,000 - ₹3,50,000)')" style="background:linear-gradient(135deg,#27ae60,#2ecc71);color:white;padding:12px 25px;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:0.3s;font-weight:bold;box-shadow:0 4px 15px rgba(0,0,0,0.2);text-align:center;width:100%;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Card 6: Standard Lighting Design -->
+            <div style="flex-shrink:0;width:320px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+                <div style="background:url('https://placehold.co/600x400/1abc9c/ffffff?text=Standard+Lighting') center/cover no-repeat;height:200px;"></div>
+                <div style="padding:25px;background:white;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;">
+                    <div>
+                        <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Standard Lighting Design (₹70,000 - ₹1,80,000)</h3>
+                        <p style="margin:0 0 20px;color:#555;line-height:1.5;">Ambiance lighting to enhance the decor and highlight key features</p>
+                        <ul style="padding-left:20px;margin:0;color:#555;">
+                            <li style="margin-bottom:8px;">Uplighting for walls</li>
+                            <li style="margin-bottom:8px;">Pinspot lighting for centerpieces</li>
+                            <li style="margin-bottom:8px;">Dance floor lighting</li>
+                            <li>Gobo projection (monogram/pattern)</li>
+                        </ul>
+                    </div>
+                    <button onclick="showBookingForm('Standard Lighting Design (₹70,000 - ₹1,80,000)')" style="background:linear-gradient(135deg,#27ae60,#2ecc71);color:white;padding:12px 25px;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:0.3s;font-weight:bold;box-shadow:0 4px 15px rgba(0,0,0,0.2);text-align:center;width:100%;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Card 7: Premium Lighting Design -->
+            <div style="flex-shrink:0;width:320px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+                <div style="background:url('https://placehold.co/600x400/9b59b6/ffffff?text=Premium+Lighting') center/cover no-repeat;height:200px;"></div>
+                <div style="padding:25px;background:white;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;">
+                    <div>
+                        <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Premium Lighting Design (₹2,00,000 - ₹4,50,000)</h3>
+                        <p style="margin:0 0 20px;color:#555;line-height:1.5;">Dynamic and sophisticated lighting setups with advanced effects and personalized themes</p>
+                        <ul style="padding-left:20px;margin:0;color:#555;">
+                            <li style="margin-bottom:8px;">Intelligent moving lights</li>
+                            <li style="margin-bottom:8px;">LED video walls</li>
+                            <li style="margin-bottom:8px;">Custom light programming</li>
+                            <li>Fog/haze effects, Laser shows</li>
+                        </ul>
+                    </div>
+                    <button onclick="showBookingForm('Premium Lighting Design (₹2,00,000 - ₹4,50,000)')" style="background:linear-gradient(135deg,#27ae60,#2ecc71);color:white;padding:12px 25px;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:0.3s;font-weight:bold;box-shadow:0 4px 15px rgba(0,0,0,0.2);text-align:center;width:100%;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Card 8: Thematic Decor & Props -->
+            <div style="flex-shrink:0;width:320px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+                <div style="background:url('https://placehold.co/600x400/34495e/ffffff?text=Thematic+Decor') center/cover no-repeat;height:200px;"></div>
+                <div style="padding:25px;background:white;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;">
+                    <div>
+                        <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Thematic Decor & Props (₹1,00,000 - ₹3,00,000)</h3>
+                        <p style="margin:0 0 20px;color:#555;line-height:1.5;">Unique thematic elements and custom props to bring your wedding vision to life</p>
+                        <ul style="padding-left:20px;margin:0;color:#555;">
+                            <li style="margin-bottom:8px;">Custom backdrops & installations</li>
+                            <li style="margin-bottom:8px;">Themed entryways</li>
+                            <li style="margin-bottom:8px;">Unique seating areas</li>
+                            <li>Personalized photo booths</li>
+                        </ul>
+                    </div>
+                    <button onclick="showBookingForm('Thematic Decor & Props (₹1,00,000 - ₹3,00,000)')" style="background:linear-gradient(135deg,#27ae60,#2ecc71);color:white;padding:12px 25px;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:0.3s;font-weight:bold;box-shadow:0 4px 15px rgba(0,0,0,0.2);text-align:center;width:100%;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Card 9: Entrance & Aisle Decor -->
+            <div style="flex-shrink:0;width:320px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+                <div style="background:url('https://placehold.co/600x400/607d8b/ffffff?text=Entrance+Aisle+Decor') center/cover no-repeat;height:200px;"></div>
+                <div style="padding:25px;background:white;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;">
+                    <div>
+                        <h3 style="margin:0 0 15px;font-size:1.3rem;color:#d81b60;">Entrance & Aisle Decor (₹90,000 - ₹2,50,000)</h3>
+                        <p style="margin:0 0 20px;color:#555;line-height:1.5;">Grand and inviting decorations for your wedding entrance and aisle, setting the perfect first impression</p>
+                        <ul style="padding-left:20px;margin:0;color:#555;">
+                            <li style="margin-bottom:8px;">Red carpet/themed runner</li>
+                            <li style="margin-bottom:8px;">Floral pillars/urns along aisle</li>
+                            <li style="margin-bottom:8px;">Welcome sign decor</li>
+                            <li>Guest book table setup</li>
+                        </ul>
+                    </div>
+                    <button onclick="showBookingForm('Entrance & Aisle Decor (₹90,000 - ₹2,50,000)')" style="background:linear-gradient(135deg,#27ae60,#2ecc71);color:white;padding:12px 25px;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:0.3s;font-weight:bold;box-shadow:0 4px 15px rgba(0,0,0,0.2);text-align:center;width:100%;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Form Popup -->
+    <div id="bookingPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.7);z-index:1000;justify-content:center;align-items:center;">
+        <div style="background-color:white;border-radius:10px;width:90%;max-width:350px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,0.3);position:relative;">
+            <button onclick="hideBookingForm()" style="position:absolute;top:15px;right:15px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888;transition:color 0.2s;" onmouseover="this.style.color='#d81b60'" onmouseout="this.style.color='#888'">&times;</button>
+            <h3 style="margin-top:0;color:#8e24aa;font-size:1.5rem;margin-bottom:10px;">Book Wedding Decorations</h3>
+            <p id="selectedPackage" style="color:#d81b60;font-weight:bold;margin-bottom:20px;"></p>
+       
+      
+
+<form id="bookingForm" style="display:grid;gap:6px;">
+  <div style="display:grid;gap:2px;">
+    <input type="text" placeholder="Your full name" required style="padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;">
+  </div>
+
+  <div style="display:grid;gap:2px;">
+    <input type="email" placeholder="Your email address" required style="padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;">
+  </div>
+
+  <div style="display:grid;gap:2px;">
+    <input type="tel" placeholder="Your phone number" required style="padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;">
+  </div>
+
+  <div style="display:grid;gap:2px;">
+    <input type="date" required style="padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;">
+  </div>
+
+  <div style="display:grid;gap:2px;">
+    <input type="text" placeholder="Wedding venue address" required style="padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;">
+  </div>
+
+  <div style="display:grid;gap:2px;">
+    <textarea placeholder="Any special requests or details" style="padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;min-height:50px;"></textarea>
+  </div>
+
+  <button type="submit" style="background:linear-gradient(135deg,#8e24aa,#ab47bc);color:white;padding:8px;border:none;border-radius:4px;font-size:0.85rem;cursor:pointer;transition:0.3s;font-weight:bold;box-shadow:0 2px 6px rgba(0,0,0,0.1);margin-top:6px;" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 10px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)'">Submit Booking Request</button>
+</form>
+
+<!-- 
+          <form id="bookingForm" style="display:grid;gap:6px;">
+    <div style="display:grid;gap:2px;">
+        <label style="font-weight:bold;color:#555;font-size:13px;">Full Name</label>
+        <input type="text" placeholder="Your full name" required style="padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;">
+    </div>
+
+    <div style="display:grid;gap:2px;">
+        <label style="font-weight:bold;color:#555;font-size:13px;">Email</label>
+        <input type="email" placeholder="Your email address" required style="padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;">
+    </div>
+
+    <div style="display:grid;gap:2px;">
+        <label style="font-weight:bold;color:#555;font-size:13px;">Phone Number</label>
+        <input type="tel" placeholder="Your phone number" required style="padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;">
+    </div>
+
+    <div style="display:grid;gap:2px;">
+        <label style="font-weight:bold;color:#555;font-size:13px;">Wedding Date</label>
+        <input type="date" required style="padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;">
+    </div>
+
+    <div style="display:grid;gap:2px;">
+        <label style="font-weight:bold;color:#555;font-size:13px;">Venue Location</label>
+        <input type="text" placeholder="Wedding venue address" required style="padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;">
+    </div>
+
+    <div style="display:grid;gap:2px;">
+        <label style="font-weight:bold;color:#555;font-size:13px;">Additional Requirements</label>
+        <textarea placeholder="Any special requests or details" style="padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;min-height:50px;"></textarea>
+    </div>
+
+    <button type="submit" style="background:linear-gradient(135deg,#8e24aa,#ab47bc);color:white;padding:8px;border:none;border-radius:4px;font-size:0.85rem;cursor:pointer;transition:0.3s;font-weight:bold;box-shadow:0 2px 6px rgba(0,0,0,0.1);margin-top:6px;" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 10px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)'">Submit Booking Request</button>
+     </form>  -->
+
+     <script>
+  document.getElementById("bookingForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // Collecting form data
+    const form = e.target;
+    const formData = {
+      fullName: form.querySelector('input[placeholder="Your full name"]').value.trim(),
+      email: form.querySelector('input[placeholder="Your email address"]').value.trim(),
+      phone: form.querySelector('input[placeholder="Your phone number"]').value.trim(),
+      weddingDate: form.querySelector('input[type="date"]').value,
+      venue: form.querySelector('input[placeholder="Wedding venue address"]').value.trim(),
+      additional: form.querySelector('textarea').value.trim()
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/api/decoration", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        alert("Booking request submitted successfully!");
+        form.reset();
+      } else {
+        alert("Failed to submit. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again later.");
+    }
+  });
+</script>
+
+</div>
+     </div>
+
+      <script>
+    // Show booking form with selected package
+    function showBookingForm(packageName) {
+        document.getElementById('selectedPackage').textContent = "Package: " + packageName;
+        document.getElementById('bookingPopup').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when form is open
+    }
+    
+    // Hide booking form
+    function hideBookingForm() {
+        document.getElementById('bookingPopup').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+    
+    // Handle form submission
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your booking request! We will contact you shortly.');
+        hideBookingForm();
+        this.reset();
+    });
+    
+    // Close popup when clicking outside the form
+    document.getElementById('bookingPopup').addEventListener('click', function(e) {
+        if (e.target === this) {
+            hideBookingForm();
+        }
+    });
+     </script>
+
+       <style>
+        @media (max-width: 768px) {
+            #decoration {
+                padding: 40px 15px !important;
+            }
+            
+            #decoration h2 {
+                font-size: 2rem !important;
+                margin-bottom: 30px !important;
+            }
+            
+            #decoration div[style*="display:flex"] {
+                gap: 20px !important;
+                padding-bottom: 15px !important;
+            }
+            
+            #decoration div[style*="width:320px"] {
+                width: 280px !important;
+            }
+            
+            #bookingPopup div[style*="max-width:500px"] {
+                width: 95% !important;
+                padding: 20px !important;
+            }
+        }
+      </style>
+</section>
+
+<!----jawellery-->
+
+      <section id="jewelry-services" style="padding: 40px; background-color: #fff; color: #800080; text-align: center;">
+            <h2 style="font-size: 2em; margin: 0 0 20px;">Jewelry Services</h2>
+            <p style="font-size: 1.2em; line-height: 1.6; margin: 0 0 30px; color: #333;">Discover our exquisite jewelry collection for rent or purchase, perfect for weddings and special occasions.</p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; overflow: visible;">
+                <div style="background-color: #fff; color: #800080; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, border 0.3s; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;" onmouseover="this.style.transform='scale(1.03)'; this.style.border='2px solid #a100a1';" onmouseout="this.style.transform='scale(1)'; this.style.border='none';">
+                    <div>
+                        <img src="images/sjawellaryimage1.png" alt="Kundan Necklace Set" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin: 0 0 10px;">
+                        <h3 style="font-size: 1.5em; margin: 0 0 10px;">Kundan Necklace Set</h3>
+                        <p style="font-size: 1em; line-height: 1.5; margin: 0 0 10px; color: #333;">Intricate Kundan necklace with vibrant stones for bridal elegance.</p>
+                        <p style="font-size: 1em; margin: 0 0 5px;"><strong>Rent:</strong> ₹4000/day</p>
+                        <p style="font-size: 1em; margin: 0 0 10px;"><strong>Purchase:</strong> ₹50,000</p>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; padding-top: 10px;">
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Rent Now</button>
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Buy Now</button>
+                    </div>
+                </div>
+                <div style="background-color: #fff; color: #800080; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, border 0.3s; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;" onmouseover="this.style.transform='scale(1.03)'; this.style.border='2px solid #a100a1';" onmouseout="this.style.transform='scale(1)'; this.style.border='none';">
+                    <div>
+                        <img src="images/sjawellaryimage2.png" alt="Polki Bangles" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin: 0 0 10px;">
+                        <h3 style="font-size: 1.5em; margin: 0 0 10px;">Polki Bangles</h3>
+                        <p style="font-size: 1em; line-height: 1.5; margin: 0 0 10px; color: #333;">Exquisite Polki bangles with uncut diamonds for a royal look.</p>
+                        <p style="font-size: 1em; margin: 0 0 5px;"><strong>Rent:</strong> ₹2500/day</p>
+                        <p style="font-size: 1em; margin: 0 0 10px;"><strong>Purchase:</strong> ₹30,000</p>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; padding-top: 10px;">
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Rent Now</button>
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Buy Now</button>
+                    </div>
+                </div>
+                <div style="background-color: #fff; color: #800080; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, border 0.3s; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;" onmouseover="this.style.transform='scale(1.03)'; this.style.border='2px solid #a100a1';" onmouseout="this.style.transform='scale(1)'; this.style.border='none';">
+                    <div>
+                        <img src="images/maimage3.png" alt="Jhumka Earrings" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin: 0 0 10px;">
+                        <h3 style="font-size: 1.5em; margin: 0 0 10px;">Jhumka Earrings</h3>
+                        <p style="font-size: 1em; line-height: 1.5; margin: 0 0 10px; color: #333;">Traditional gold Jhumka earrings with intricate filigree work.</p>
+                        <p style="font-size: 1em; margin: 0 0 5px;"><strong>Rent:</strong> ₹1500/day</p>
+                        <p style="font-size: 1em; margin: 0 0 10px;"><strong>Purchase:</strong> ₹15,000</p>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; padding-top: 10px;">
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Rent Now</button>
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Buy Now</button>
+                    </div>
+                </div>
+                <div style="background-color: #fff; color: #800080; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, border 0.3s; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;" onmouseover="this.style.transform='scale(1.03)'; this.style.border='2px solid #a100a1';" onmouseout="this.style.transform='scale(1)'; this.style.border='none';">
+                    <div>
+                        <img src="images/sjawellaryimage4.png" alt="Diamond Mangalsutra" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin: 0 0 10px;">
+                        <h3 style="font-size: 1.5em; margin: 0 0 10px;">Diamond Mangalsutra</h3>
+                        <p style="font-size: 1em; line-height: 1.5; margin: 0 0 10px; color: #333;">Elegant diamond-studded mangalsutra for eternal love.</p>
+                        <p style="font-size: 1em; margin: 0 0 5px;"><strong>Rent:</strong> ₹2000/day</p>
+                        <p style="font-size: 1em; margin: 0 0 10px;"><strong>Purchase:</strong> ₹25,000</p>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; padding-top: 10px;">
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Rent Now</button>
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Buy Now</button>
+                    </div>
+                </div>
+                <div style="background-color: #fff; color: #800080; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, border 0.3s; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;" onmouseover="this.style.transform='scale(1.03)'; this.style.border='2px solid #a100a1';" onmouseout="this.style.transform='scale(1)'; this.style.border='none';">
+                    <div>
+                        <img src="images/sjawellaryimage5.png" alt="Gold Anklets" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin: 0 0 10px;">
+                        <h3 style="font-size: 1.5em; margin: 0 0 10px;">Gold Anklets</h3>
+                        <p style="font-size: 1em; line-height: 1.5; margin: 0 0 10px; color: #333;">Delicate gold anklets with charming bells for tradition.</p>
+                        <p style="font-size: 1em; margin: 0 0 5px;"><strong>Rent:</strong> ₹1200/day</p>
+                        <p style="font-size: 1em; margin: 0 0 10px;"><strong>Purchase:</strong> ₹12,000</p>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; padding-top: 10px;">
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Rent Now</button>
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Buy Now</button>
+                    </div>
+                </div>
+                <div style="background-color: #fff; color: #800080; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, border 0.3s; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;" onmouseover="this.style.transform='scale(1.03)'; this.style.border='2px solid #a100a1';" onmouseout="this.style.transform='scale(1)'; this.style.border='none';">
+                    <div>
+                        <img src="images/sjawellaryimage6.png" alt="Temple Jewelry Set" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin: 0 0 10px;">
+                        <h3 style="font-size: 1.5em; margin: 0 0 10px;">Temple Jewelry Set</h3>
+                        <p style="font-size: 1em; line-height: 1.5; margin: 0 0 10px; color: #333;">Gold temple jewelry set with motifs for bridal elegance.</p>
+                        <p style="font-size: 1em; margin: 0 0 5px;"><strong>Rent:</strong> ₹4500/day</p>
+                        <p style="font-size: 1em; margin: 0 0 10px;"><strong>Purchase:</strong> ₹55,000</p>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; padding-top: 10px;">
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Rent Now</button>
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Buy Now</button>
+                    </div>
+                </div>
+                <div style="background-color: #fff; color: #800080; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, border 0.3s; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;" onmouseover="this.style.transform='scale(1.03)'; this.style.border='2px solid #a100a1';" onmouseout="this.style.transform='scale(1)'; this.style.border='none';">
+                    <div>
+                        <img src="images/sjawellaryimage7.png" alt="Pearl Maang Tikka" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin: 0 0 10px;">
+                        <h3 style="font-size: 1.5em; margin: 0 0 10px;">Pearl Maang Tikka</h3>
+                        <p style="font-size: 1em; line-height: 1.5; margin: 0 0 10px; color: #333;">Elegant pearl maang tikka for a sophisticated bridal look.</p>
+                        <p style="font-size: 1em; margin: 0 0 5px;"><strong>Rent:</strong> ₹1000/day</p>
+                        <p style="font-size: 1em; margin: 0 0 10px;"><strong>Purchase:</strong> ₹10,000</p>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; padding-top: 10px;">
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Rent Now</button>
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Buy Now</button>
+                    </div>
+                </div>
+                <div style="background-color: #fff; color: #800080; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, border 0.3s; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;" onmouseover="this.style.transform='scale(1.03)'; this.style.border='2px solid #a100a1';" onmouseout="this.style.transform='scale(1)'; this.style.border='none';">
+                    <div>
+                        <img src="images/sjawellaryimage8.png" alt="Ruby Ring" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin: 0 0 10px;">
+                        <h3 style="font-size: 1.5em; margin: 0 0 10px;">Ruby Ring</h3>
+                        <p style="font-size: 1em; line-height: 1.5; margin: 0 0 10px; color: #333;">Vibrant ruby ring with gold setting for engagements.</p>
+                        <p style="font-size: 1em; margin: 0 0 5px;"><strong>Rent:</strong> ₹800/day</p>
+                        <p style="font-size: 1em; margin: 0 0 10px;"><strong>Purchase:</strong> ₹8000</p>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; padding-top: 10px;">
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Rent Now</button>
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Buy Now</button>
+                    </div>
+                </div>
+                <div style="background-color: #fff; color: #800080; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, border 0.3s; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;" onmouseover="this.style.transform='scale(1.03)'; this.style.border='2px solid #a100a1';" onmouseout="this.style.transform='scale(1)'; this.style.border='none';">
+                    <div>
+                        <img src="images/sjawellaryimage9.png" alt="Emerald Choker" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin: 0 0 10px;">
+                        <h3 style="font-size: 1.5em; margin: 0 0 10px;">Emerald Choker</h3>
+                        <p style="font-size: 1em; line-height: 1.5; margin: 0 0 10px; color: #333;">Stunning emerald choker with gold accents for regal style.</p>
+                        <p style="font-size: 1em; margin: 0 0 5px;"><strong>Rent:</strong> ₹3500/day</p>
+                        <p style="font-size: 1em; margin: 0 0 10px;"><strong>Purchase:</strong> ₹40,000</p>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; padding-top: 10px;">
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Rent Now</button>
+                        <button style="background-color: #800080; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#a100a1';" onmouseout="this.style.backgroundColor='#800080';">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+           <!-- Footer -->
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+</body>
+</html>

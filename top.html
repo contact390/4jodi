@@ -1,0 +1,47 @@
+
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+<div style="position: fixed; top: 0; left: 0; width: 100%; background-color: #f7c600; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; font-family: Arial, sans-serif; font-size: 14px; min-height: 100px; z-index: 1000;height: 50px;"> 
+
+  <!-- Left Side -->
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <span style="color: maroon;">
+      <i class="fas fa-phone-alt" style="margin-right: 5px;"></i>
+      <span style="color: black;">9899907614</span>
+    </span>
+    <span style="color: maroon;">
+      <i class="fas fa-phone-alt" style="margin-right: 5px;"></i>
+      <span style="color: #c1272d;">9811000099</span>
+    </span>
+    <span style="color: maroon;">
+      <i class="fas fa-envelope" style="margin-right: 5px;"></i>
+      <span style="color: black;">Hitaishi@matrimony.com</span>
+    </span>
+  </div>
+
+  <!-- Right Side -->
+  <div style="display: flex; align-items: center; gap: 15px;">
+    <a href="#" style="color: maroon; font-size: 18px;"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" style="color: maroon; font-size: 18px;"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" style="color: maroon; font-size: 18px;"><i class="fab fa-instagram"></i></a>
+    <a href="#" style="color: maroon; font-size: 18px;"><i class="fab fa-youtube"></i></a>
+    <a href="#" style="color: maroon; font-size: 18px;"><i class="fab fa-twitter"></i></a>
+    <a href="#" style="background-color: maroon; color: white; padding: 6px 12px; text-decoration: none; border-radius: 2px; font-size: 14px;">Create Profile</a>
+  </div>
+
+</div>

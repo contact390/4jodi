@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  
+
+<!-- Contact Info Bar -->
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+
+    <!-- Header Section -->
+    <header style="background-color: #1a1a2e; color: white; padding: 20px 0; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <h1 style="margin: 0; font-size: 2.5em;">Royal Groom Collections</h1>
+        <p style="margin: 5px 0 0; font-size: 1.2em; color: #e6e6e6;">Premium Wedding Attire for the Distinguished Groom</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav style="background-color: #16213e; padding: 15px 0;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; flex-wrap: wrap;">
+            <a href="#traditional" style="color: white; text-decoration: none; margin: 0 15px; font-weight: bold; padding: 5px 10px; border-radius: 4px; transition: background-color 0.3s;">Traditional</a>
+            <a href="#contemporary" style="color: white; text-decoration: none; margin: 0 15px; font-weight: bold; padding: 5px 10px; border-radius: 4px; transition: background-color 0.3s;">Contemporary</a>
+            <a href="#sherwani" style="color: white; text-decoration: none; margin: 0 15px; font-weight: bold; padding: 5px 10px; border-radius: 4px; transition: background-color 0.3s;">Sherwanis</a>
+            <a href="#accessories" style="color: white; text-decoration: none; margin: 0 15px; font-weight: bold; padding: 5px 10px; border-radius: 4px; transition: background-color 0.3s;">Accessories</a>
+            <a href="#contact" style="color: white; text-decoration: none; margin: 0 15px; font-weight: bold; padding: 5px 10px; border-radius: 4px; transition: background-color 0.3s;">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; height: 500px; display: flex; align-items: center; justify-content: center; color: white; text-align: center;">
+        <div>
+            <h2 style="font-size: 3em; margin-bottom: 20px;">Elegance Redefined</h2>
+            <p style="font-size: 1.5em; max-width: 800px; margin: 0 auto 30px;">Discover our exclusive collection of premium groom wear for your special day</p>
+            <button style="background-color: #e94560; color: white; border: none; padding: 12px 30px; font-size: 1.1em; border-radius: 30px; cursor: pointer; transition: background-color 0.3s;">View Collections</button>
+        </div>
+    </section>
+
+    <!-- Traditional Collection -->
+    <section id="traditional" style="padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 40px; color: #1a1a2e; border-bottom: 2px solid #e94560; display: inline-block; padding-bottom: 10px;">Traditional Collections</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+            <!-- Item 1 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Royal Blue Sherwani" style="width: 100%; height: 300px; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3 style="margin-top: 0; color: #1a1a2e;">Royal Blue Silk Sherwani</h3>
+                    <p style="color: #666;">Handcrafted with intricate zari work and premium silk fabric.</p>
+                    <p style="font-weight: bold; color: #e94560; font-size: 1.2em;">₹12,999</p>
+                    <button style="background-color: #1a1a2e; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; width: 100%;">View Details</button>
+                </div>
+            </div>
+            
+            <!-- Item 2 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Maroon Sherwani" style="width: 100%; height: 300px; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3 style="margin-top: 0; color: #1a1a2e;">Maroon Velvet Sherwani</h3>
+                    <p style="color: #666;">Luxurious velvet with golden embroidery for a regal look.</p>
+                    <p style="font-weight: bold; color: #e94560; font-size: 1.2em;">₹15,499</p>
+                    <button style="background-color: #1a1a2e; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; width: 100%;">View Details</button>
+                </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Beige Jodhpuri" style="width: 100%; height: 300px; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3 style="margin-top: 0; color: #1a1a2e;">Beige Jodhpuri Suit</h3>
+                    <p style="color: #666;">Classic Jodhpuri cut with modern styling and premium fabric.</p>
+                    <p style="font-weight: bold; color: #e94560; font-size: 1.2em;">₹10,999</p>
+                    <button style="background-color: #1a1a2e; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; width: 100%;">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contemporary Collection -->
+    <section id="contemporary" style="padding: 60px 20px; max-width: 1200px; margin: 0 auto; background-color: #f0f0f0;">
+        <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 40px; color: #1a1a2e; border-bottom: 2px solid #e94560; display: inline-block; padding-bottom: 10px;">Contemporary Collections</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+            <!-- Item 1 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Black Tuxedo" style="width: 100%; height: 300px; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3 style="margin-top: 0; color: #1a1a2e;">Premium Black Tuxedo</h3>
+                    <p style="color: #666;">Italian wool tuxedo with satin lapels for a sophisticated look.</p>
+                    <p style="font-weight: bold; color: #e94560; font-size: 1.2em;">₹18,999</p>
+                    <button style="background-color: #1a1a2e; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; width: 100%;">View Details</button>
+                </div>
+            </div>
+            
+            <!-- Item 2 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Navy Blue Suit" style="width: 100%; height: 300px; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3 style="margin-top: 0; color: #1a1a2e;">Navy Blue Wedding Suit</h3>
+                    <p style="color: #666;">Tailored fit suit with peak lapels for a modern groom.</p>
+                    <p style="font-weight: bold; color: #e94560; font-size: 1.2em;">₹14,499</p>
+                    <button style="background-color: #1a1a2e; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; width: 100%;">View Details</button>
+                </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Gray Suit" style="width: 100%; height: 300px; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3 style="margin-top: 0; color: #1a1a2e;">Charcoal Gray Three-Piece</h3>
+                    <p style="color: #666;">Elegant three-piece suit with waistcoat for formal weddings.</p>
+                    <p style="font-weight: bold; color: #e94560; font-size: 1.2em;">₹16,999</p>
+                    <button style="background-color: #1a1a2e; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; width: 100%;">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sherwani Collection -->
+    <section id="sherwani" style="padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 40px; color: #1a1a2e; border-bottom: 2px solid #e94560; display: inline-block; padding-bottom: 10px;">Sherwani Collections</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+            <!-- Item 1 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="https://images.unsplash.com/photo-1600188769045-bc60235283d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="White Sherwani" style="width: 100%; height: 300px; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3 style="margin-top: 0; color: #1a1a2e;">Ivory Silk Sherwani</h3>
+                    <p style="color: #666;">Pure silk with silver embroidery for a royal appearance.</p>
+                    <p style="font-weight: bold; color: #e94560; font-size: 1.2em;">₹22,999</p>
+                    <button style="background-color: #1a1a2e; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; width: 100%;">View Details</button>
+                </div>
+            </div>
+            
+            <!-- Item 2 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Gold Sherwani" style="width: 100%; height: 300px; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3 style="margin-top: 0; color: #1a1a2e;">Golden Threadwork Sherwani</h3>
+                    <p style="color: #666;">Heavy gold zari work on premium fabric for the main ceremony.</p>
+                    <p style="font-weight: bold; color: #e94560; font-size: 1.2em;">₹25,999</p>
+                    <button style="background-color: #1a1a2e; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; width: 100%;">View Details</button>
+                </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="https://images.unsplash.com/photo-1561526116-e2460f4d40a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Red Sherwani" style="width: 100%; height: 300px; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3 style="margin-top: 0; color: #1a1a2e;">Ruby Red Bandhgala Sherwani</h3>
+                    <p style="color: #666;">Traditional bandhgala with modern cuts and embellishments.</p>
+                    <p style="font-weight: bold; color: #e94560; font-size: 1.2em;">₹19,999</p>
+                    <button style="background-color: #1a1a2e; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; width: 100%;">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accessories Section -->
+    <section id="accessories" style="padding: 60px 20px; max-width: 1200px; margin: 0 auto; background-color: #f0f0f0;">
+        <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 40px; color: #1a1a2e; border-bottom: 2px solid #e94560; display: inline-block; padding-bottom: 10px;">Groom Accessories</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; margin-top: 40px;">
+            <!-- Item 1 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; padding: 20px;">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Safa" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
+                <h3 style="margin: 15px 0 5px; color: #1a1a2e;">Designer Safa</h3>
+                <p style="font-weight: bold; color: #e94560; font-size: 1.1em;">₹2,499 - ₹5,999</p>
+            </div>
+            
+            <!-- Item 2 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; padding: 20px;">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Moje" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
+                <h3 style="margin: 15px 0 5px; color: #1a1a2e;">Traditional Mojris</h3>
+                <p style="font-weight: bold; color: #e94560; font-size: 1.1em;">₹1,999 - ₹4,499</p>
+            </div>
+            
+            <!-- Item 3 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; padding: 20px;">
+                <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Watch" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
+                <h3 style="margin: 15px 0 5px; color: #1a1a2e;">Luxury Watches</h3>
+                <p style="font-weight: bold; color: #e94560; font-size: 1.1em;">₹5,999 - ₹25,999</p>
+            </div>
+            
+            <!-- Item 4 -->
+            <div style="background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; padding: 20px;">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Tie" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
+                <h3 style="margin: 15px 0 5px; color: #1a1a2e;">Premium Ties & Cufflinks</h3>
+                <p style="font-weight: bold; color: #e94560; font-size: 1.1em;">₹999 - ₹3,999</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="padding: 60px 20px; background-color: #1a1a2e; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 40px; border-bottom: 2px solid #e94560; display: inline-block; padding-bottom: 10px;">Contact Us</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-top: 40px;">
+                <div>
+                    <h3 style="color: #e94560;">Visit Our Store</h3>
+                    <p>123 Wedding Plaza, Fashion Street</p>
+                    <p>Mumbai, Maharashtra 400001</p>
+                    <p>India</p>
+                    
+                    <h3 style="color: #e94560; margin-top: 30px;">Contact Info</h3>
+                    <p>Phone: +91 98765 43210</p>
+                    <p>Email: info@royalgroomcollections.com</p>
+                </div>
+                
+                <div>
+                    <h3 style="color: #e94560;">Business Hours</h3>
+                    <p>Monday - Friday: 10:00 AM - 8:00 PM</p>
+                    <p>Saturday: 10:00 AM - 9:00 PM</p>
+                    <p>Sunday: 11:00 AM - 7:00 PM</p>
+                    
+                    <h3 style="color: #e94560; margin-top: 30px;">Follow Us</h3>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: white; font-size: 1.5em;">Facebook</a>
+                        <a href="#" style="color: white; font-size: 1.5em;">Instagram</a>
+                        <a href="#" style="color: white; font-size: 1.5em;">Twitter</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="color: #e94560;">Book an Appointment</h3>
+                    <form>
+                        <input type="text" placeholder="Your Name" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 4px; border: none;">
+                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 4px; border: none;">
+                        <input type="tel" placeholder="Phone Number" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 4px; border: none;">
+                        <textarea placeholder="Your Message" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 4px; border: none; height: 100px;"></textarea>
+                        <button type="submit" style="background-color: #e94560; color: white; border: none; padding: 12px 30px; font-size: 1.1em; border-radius: 4px; cursor: pointer; width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+</body>
+</html>

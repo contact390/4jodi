@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitaishi Matrimony - Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body style="font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f8f8f8; color: #333; overflow: hidden;">
+
+
+<!-- Background content -->
+<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #e83e8c, #ff69b4); display: flex; justify-content: center; align-items: center; z-index: -1;">
+    <h1 style="color: white; font-size: 3rem; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Hitaishi Matrimony</h1>
+</div>
+
+<!-- Popup Form -->
+<div id="registerPopup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; display: flex; justify-content: center; align-items: center;">
+    <div style="background-color: white; padding: 30px; border-radius: 10px; width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto; box-shadow: 0 5px 30px rgba(0,0,0,0.3); position: relative; animation: popupFadeIn 0.3s ease-out;">
+        <style>
+            @keyframes popupFadeIn {
+                from { opacity: 0; transform: translateY(-20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        </style>
+        <span style="position: absolute; top: 15px; right: 15px; font-size: 24px; cursor: pointer; color: #888;" onclick="closePopup()">&times;</span>
+        <h2 style="color: #e83e8c; text-align: center; margin-top: 0;">Create Your Matrimony Profile</h2>
+        
+        <form style="display: grid; gap: 15px;">
+            <!-- Basic Information -->
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #e83e8c;">Basic Information</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <label for="firstName" style="display: block; margin-bottom: 5px; font-weight: bold;">First Name*</label>
+                        <input type="text" id="firstName" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                    <div>
+                        <label for="lastName" style="display: block; margin-bottom: 5px; font-weight: bold;">Last Name*</label>
+                        <input type="text" id="lastName" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email*</label>
+                    <input type="email" id="email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                </div>
+                
+                <div>
+                    <label for="phone" style="display: block; margin-bottom: 5px; font-weight: bold;">Phone Number*</label>
+                    <input type="tel" id="phone" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                </div>
+                
+                <div>
+                    <label for="password" style="display: block; margin-bottom: 5px; font-weight: bold;">Create Password*</label>
+                    <input type="password" id="password" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                </div>
+            </div>
+            
+            <!-- Personal Details -->
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #e83e8c;">Personal Details</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <label for="gender" style="display: block; margin-bottom: 5px; font-weight: bold;">Gender*</label>
+                        <select id="gender" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="dob" style="display: block; margin-bottom: 5px; font-weight: bold;">Date of Birth*</label>
+                        <input type="date" id="dob" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="religion" style="display: block; margin-bottom: 5px; font-weight: bold;">Religion*</label>
+                    <select id="religion" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                        <option value="">Select Religion</option>
+                        <option value="hindu">Hindu</option>
+                        <option value="muslim">Muslim</option>
+                        <option value="christian">Christian</option>
+                        <option value="sikh">Sikh</option>
+                        <option value="jain">Jain</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="caste" style="display: block; margin-bottom: 5px; font-weight: bold;">Caste</label>
+                    <input type="text" id="caste" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                </div>
+                
+                <div>
+                    <label for="motherTongue" style="display: block; margin-bottom: 5px; font-weight: bold;">Mother Tongue*</label>
+                    <select id="motherTongue" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                        <option value="">Select Language</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="english">English</option>
+                        <option value="bengali">Bengali</option>
+                        <option value="tamil">Tamil</option>
+                        <option value="telugu">Telugu</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Professional Details -->
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #e83e8c;">Professional Details</h3>
+                
+                <div>
+                    <label for="education" style="display: block; margin-bottom: 5px; font-weight: bold;">Education*</label>
+                    <select id="education" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                        <option value="">Select Highest Education</option>
+                        <option value="btech">B.Tech/B.E.</option>
+                        <option value="mba">MBA/PGDM</option>
+                        <option value="mca">MCA</option>
+                        <option value="medical">Medical (MBBS, MD)</option>
+                        <option value="ca">CA/CS/ICWA</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="profession" style="display: block; margin-bottom: 5px; font-weight: bold;">Profession*</label>
+                    <select id="profession" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                        <option value="">Select Profession</option>
+                        <option value="engineer">Engineer</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="business">Business</option>
+                        <option value="government">Government Job</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="income" style="display: block; margin-bottom: 5px; font-weight: bold;">Annual Income</label>
+                    <select id="income" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                        <option value="">Select Income Range</option>
+                        <option value="1-3">1-3 Lakhs</option>
+                        <option value="3-6">3-6 Lakhs</option>
+                        <option value="6-10">6-10 Lakhs</option>
+                        <option value="10-15">10-15 Lakhs</option>
+                        <option value="15+">15+ Lakhs</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Partner Preferences -->
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #e83e8c;">Partner Preferences</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <label for="preferredAgeMin" style="display: block; margin-bottom: 5px; font-weight: bold;">Age Range</label>
+                        <select id="preferredAgeMin" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                            <option value="">Min Age</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="preferredAgeMax" style="display: block; margin-bottom: 5px; font-weight: bold;">&nbsp;</label>
+                        <select id="preferredAgeMax" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                            <option value="">Max Age</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="preferredReligion" style="display: block; margin-bottom: 5px; font-weight: bold;">Preferred Religion</label>
+                    <select id="preferredReligion" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                        <option value="">Any</option>
+                        <option value="hindu">Hindu</option>
+                        <option value="muslim">Muslim</option>
+                        <option value="christian">Christian</option>
+                        <option value="sikh">Sikh</option>
+                        <option value="jain">Jain</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Terms and Submit -->
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <input type="checkbox" id="terms" required style="width: auto;">
+                <label for="terms" style="font-size: 14px;">I agree to the <a href="#" style="color: #e83e8c; text-decoration: none;">Terms & Conditions</a> and <a href="#" style="color: #e83e8c; text-decoration: none;">Privacy Policy</a></label>
+            </div>
+            
+            <button type="submit" style="padding: 12px; background-color: #e83e8c; color: white; border: none; border-radius: 5px; font-weight: bold; font-size: 16px; cursor: pointer; margin-top: 10px;">Create Profile</button>
+            
+            <p style="text-align: center; font-size: 14px; margin-bottom: 0;">Already have an account? <a href="#" style="color: #e83e8c; text-decoration: none;">Login</a></p>
+        </form>
+
+
+
+        <script>
+    // The popup is already visible by default in the HTML
+    
+    function closePopup() {
+        document.getElementById('registerPopup').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+    
+    // Close popup when clicking outside the content
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('registerPopup')) {
+            closePopup();
+        }
+    }
+    
+    // Form submission handler
+    document.querySelector("form").addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        const formData = {
+            firstName: document.getElementById("firstName").value.trim(),
+            lastName: document.getElementById("lastName").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            phone: document.getElementById("phone").value.trim(),
+            password: document.getElementById("password").value,
+
+            gender: document.getElementById("gender").value,
+            dob: document.getElementById("dob").value,
+            religion: document.getElementById("religion").value,
+            caste: document.getElementById("caste").value.trim(),
+            motherTongue: document.getElementById("motherTongue").value,
+
+            education: document.getElementById("education").value,
+            profession: document.getElementById("profession").value,
+            income: document.getElementById("income").value,
+
+            preferredAgeMin: document.getElementById("preferredAgeMin").value,
+            preferredAgeMax: document.getElementById("preferredAgeMax").value,
+            preferredReligion: document.getElementById("preferredReligion").value
+        };
+
+        if (!document.getElementById("terms").checked) {
+            alert("You must agree to the Terms & Conditions");
+            return;
+        }
+
+        try {
+            const response = await fetch("http://localhost:5000/api/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert("Profile created successfully! Redirecting to home page...");
+                // Redirect to index.html after successful registration
+                window.location.href = "index.html";
+            } else {
+                alert("Failed to create profile: " + (result.message || "Server error"));
+            }
+        } catch (err) {
+            console.error("Error:", err);
+            alert("Something went wrong while submitting the form.");
+        }
+    });
+</script>
+
+
+    </div>
+</div>
+
+
+
+</body>
+</html>

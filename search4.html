@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimony Search</title>
+</head>
+<body style="font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f0f4f8, #d9e2ec); min-height: 100vh;">
+
+
+<!-- Contact Info Bar -->
+<div style="position: fixed; top: 0; left: 0; width: 100%; background-color: mediumspringgreen; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; font-family: Arial, sans-serif; font-size: 14px; z-index: 3000; height: 35px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <span style="display: flex; align-items: center;">
+      <i class="fas fa-map-marker-alt" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">Hyderabad, Mumbai, Delhi, Bangalore</span>
+    </span>
+    <a href="tel:9908793602" style="display: flex; align-items: center; text-decoration: none; margin-right: 15px;">
+      <i class="fas fa-phone-alt" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">9908793602</span>
+    </a>
+    <a href="mailto:Hitaishimatrimony@gmail.com" style="display: flex; align-items: center; text-decoration: none;">
+      <i class="fas fa-envelope" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">opticjodi@gmail.com</span>
+    </a>
+  </div>
+  <div style="display: flex; align-items: center; gap: 10px; margin-right: 30px;">
+    <a href="https://www.whatsapp.com/" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='green';" onmouseleave="this.style.color='maroon';"><i class="fab fa-whatsapp"></i></a>
+<a href="https://www.linkedin.com/in/hitaishi-matrimony" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='#0077b5';" onmouseleave="this.style.color='maroon';">
+        <i class="fab fa-linkedin-in"></i>    <a href="https://www.instagram.com/hita.ishimatrimony/?hl=en" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='#e1306c';" onmouseleave="this.style.color='maroon';"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@Hitaishimatrimony" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='red';" onmouseleave="this.style.color='maroon';"><i class="fab fa-youtube"></i></a>
+    <a href="https://x.com/matrimonyhitais" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='black';" onmouseleave="this.style.color='maroon';"><i class="fab fa-twitter"></i></a>
+    <a href="createprofilr.html" style="background-color: maroon; color: white; padding: 6px 15px; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: bold;" onmouseenter="this.style.backgroundColor='darkred'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';" onmouseleave="this.style.backgroundColor='maroon'; this.style.transform='scale(1)';">Create Profile</a>
+  </div>
+</div>
+
+
+
+<!-- Main Header -->
+<header style="position: fixed; top: 0; left: 0; width: 100%; max-width: 1280px; margin: 0 auto; height: 100px; background-color: #e83e8c; color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; display: flex; align-items: center; padding: 0 15px;margin-top: 50px;">
+    <!-- Logo -->
+   <div style="flex: 0 0 120px; margin-right: 10px;">
+    <a href="index.html">
+        <img src="images/logo.png" alt="Hitaishi Matrimony Logo" style="height: 60px; width: auto; padding-left: 0px; transition: all 0.3s ease;" 
+             onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.15)';" 
+             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+    </a>
+</div>
+    
+    <!-- Title & Tagline -->
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <h1 style="margin: 0; font-size: 24px; color: greenyellow; white-space: nowrap; margin-left: 10px;margin-top: 0%;">
+                Welcome to 4jodi Matrimony
+            </h1>
+            <span style="font-size: 9px; background-color: red; color: white; padding: 2px 5px; border-radius: 10px; flex-shrink: 0;margin-top: 10px;">
+                Trusted since 2014
+            </span>
+        </div>
+        <!-- Main Navigation -->
+       <nav style="display: flex; flex-wrap: wrap; gap: 5px; margin-left: 5px; margin-top: 8px;">
+  <a href="index.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Home</a>
+
+  <a href="male2.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Male</a>
+
+  <a href="female.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Female</a>
+
+  <a href="dating.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Dating</a>
+
+  <a href="co-living.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Co-living</a>
+
+  <a href="friendship.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Friendship</a>
+
+  <a href="secondmarriage.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Second marriage</a>
+
+  <a href="widows.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Widows</a>
+
+  <a href="marriage affiliate .html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Marriage Affiliates</a>
+
+  <a href="marriage broker.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Marriage Brokers</a>
+</nav>
+
+    </div>
+    
+    <!-- Top Navigation Links -->
+<nav style="position: absolute; top: 10px; right: 15px; display: flex; justify-content: flex-end; align-items: center; gap: 10px;">
+     <a href="nri2.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     NRI </a>
+
+  <a href="contactus.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     Contact us</a>
+
+  <a href="services2.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     Services</a>
+
+  <a href="membership.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     Membership</a>
+
+  <a href="successstories.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     Success Stories</a>
+
+  <a href="login.html" onclick="openLoginPopup()" 
+     style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e754a8'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Login/Register</a>
+</nav>
+
+</header>
+
+<style>
+/* Media Queries for Responsiveness */
+@media (max-width: 1000px) {
+    header {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    header h1 {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+    header .logo div {
+        flex: 0 0 100px;
+    }
+    header .logo img {
+        height: 40px;
+    }
+    header nav a {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    header nav[style*="position: absolute"] a {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: auto;
+        padding: 10px;
+    }
+    header h1 {
+        font-size: 16px;
+    }
+    header .logo div {
+        flex: 0 0 80px;
+    }
+    header .logo img {
+        height: 30px;
+    }
+    header nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+    header nav[style*="position: absolute"] {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+  </style>
+
+
+
+    <div style="max-width: 1400px; margin: 0 auto; padding: 20px; display: flex; flex-wrap: wrap;">
+        <h1 style="text-align: center; color: #2c3e50; font-size: 2.5em; margin-bottom: 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); width: 100%;">Matrimony Search</h1>
+
+        <!-- Filters Section (Left Side) -->
+      <div style="position: sticky; top: 20px; flex: 0 0 300px; background: linear-gradient(135deg, #ffffff, #f8f9fa); padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); margin-right: 20px; height: fit-content; max-height: 90vh; overflow-y: auto;">
+    <h2 style="margin: 0 0 20px; color: #34495e; font-size: 1.8em; font-weight: 600;">Search Filters</h2>
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+        <div>
+            <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 500;">Gender</label>
+            <select id="gender" style="width: 100%; padding: 10px; border: 1px solid #dfe6e9; border-radius: 6px; background: #fff; font-size: 1em; color: #2c3e50; outline: none; transition: border-color 0.3s;">
+                <option value="all">All</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 500;">Age</label>
+            <select id="age" style="width: 100%; padding: 10px; border: 1px solid #dfe6e9; border-radius: 6px; background: #fff; font-size: 1em; color: #2c3e50; outline: none; transition: border-color 0.3s;">
+                <option value="all">All</option>
+                <option value="20-25">20-25</option>
+                <option value="26-30">26-30</option>
+                <option value="31-35">31-35</option>
+                <option value="36-40">36-40</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 500;">Religion</label>
+            <select id="religion" style="width: 100%; padding: 10px; border: 1px solid #dfe6e9; border-radius: 6px; background: #fff; font-size: 1em; color: #2c3e50; outline: none; transition: border-color 0.3s;">
+                <option value="all">All</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Christian">Christian</option>
+                <option value="Muslim">Muslim</option>
+                <option value="Sikh">Sikh</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 500;">Occupation</label>
+            <select id="occupation" style="width: 100%; padding: 10px; border: 1px solid #dfe6e9; border-radius: 6px; background: #fff; font-size: 1em; color: #2c3e50; outline: none; transition: border-color 0.3s;">
+                <option value="all">All</option>
+                <option value="Engineer">Engineer</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Business">Business</option>
+                <option value="Lawyer">Lawyer</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 500;">Marital Status</label>
+            <select id="marital" style="width: 100%; padding: 10px; border: 1px solid #dfe6e9; border-radius: 6px; background: #fff; font-size: 1em; color: #2c3e50; outline: none; transition: border-color 0.3s;">
+                <option value="all">All</option>
+                <option value="Never Married">Never Married</option>
+                <option value="Divorced">Divorced</option>
+                <option value="Widowed">Widowed</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 500;">Education</label>
+            <select id="education" style="width: 100%; padding: 10px; border: 1px solid #dfe6e9; border-radius: 6px; background: #fff; font-size: 1em; color: #2c3e50; outline: none; transition: border-color 0.3s;">
+                <option value="all">All</option>
+                <option value="Bachelor's">Bachelor's</option>
+                <option value="Master's">Master's</option>
+                <option value="PhD">PhD</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 500;">Location</label>
+            <select id="location" style="width: 100%; padding: 10px; border: 1px solid #dfe6e9; border-radius: 6px; background: #fff; font-size: 1em; color: #2c3e50; outline: none; transition: border-color 0.3s;">
+                <option value="all">All</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Kolkata">Kolkata</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 500;">Job Type</label>
+            <select id="jobType" style="width: 100%; padding: 10px; border: 1px solid #dfe6e9; border-radius: 6px; background: #fff; font-size: 1em; color: #2c3e50; outline: none; transition: border-color 0.3s;">
+                <option value="all">All</option>
+                <option value="Private">Private</option>
+                <option value="Government">Government</option>
+                <option value="Self-Employed">Self-Employed</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 500;">Annual Salary</label>
+            <select id="salary" style="width: 100%; padding: 10px; border: 1px solid #dfe6e9; border-radius: 6px; background: #fff; font-size: 1em; color: #2c3e50; outline: none; transition: border-color 0.3s;">
+                <option value="all">All</option>
+                <option value="Below 5L">Below 5L</option>
+                <option value="5L-10L">5L-10L</option>
+                <option value="Above 10L">Above 10L</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 500;">Caste</label>
+            <select id="caste" style="width: 100%; padding: 10px; border: 1px solid #dfe6e9; border-radius: 6px; background: #fff; font-size: 1em; color: #2c3e50; outline: none; transition: border-color 0.3s;">
+                <option value="all">All</option>
+                <option value="Brahmin">Brahmin</option>
+                <option value="Kshatriya">Kshatriya</option>
+                <option value="OBC">OBC</option>
+                <option value="SC/ST">SC/ST</option>
+                <option value="No Caste">No Caste</option>
+            </select>
+        </div>
+    </div>
+    </div>
+
+        <!-- Profiles Section (Right Side) -->
+        <div style="flex: 1; min-width: 0;">
+            <!-- Shortlist Counter -->
+            <div style="background: linear-gradient(135deg, #ffffff, #f8f9fa); padding: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); margin-bottom: 25px; text-align: center;">
+                <h3 style="margin: 0; color: #2c3e50; font-size: 1.4em; font-weight: 600;">Shortlisted Profiles: <span id="shortlistCount" style="color: #e74c3c; font-weight: bold;">0</span></h3>
+            </div>
+
+            <div id="profiles" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+                <!-- Profile 1 -->
+                <div class="profile" data-gender="Male" data-age="26-30" data-religion="Hindu" data-occupation="Engineer" data-marital="Never Married" data-education="Bachelor's" data-location="Mumbai" data-jobType="Private" data-salary="5L-10L" data-caste="Brahmin" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+<img src="https://placehold.co/150x150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">Amit Sharma</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 28</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Engineer</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Mumbai</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Male</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Hindu</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Never Married</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: Bachelor's</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Private</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: 5L-10L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: Brahmin</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+                <!-- Profile 2 -->
+                <div class="profile" data-gender="Female" data-age="20-25" data-religion="Christian" data-occupation="Doctor" data-marital="Never Married" data-education="Master's" data-location="Delhi" data-jobType="Government" data-salary="Above 10L" data-caste="No Caste" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="https://via.placeholder.com/150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">Sarah Thomas</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 24</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Doctor</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Delhi</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Female</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Christian</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Never Married</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: Master's</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Government</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: Above 10L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: No Caste</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+                <!-- Profile 3 -->
+                <div class="profile" data-gender="Male" data-age="31-35" data-religion="Muslim" data-occupation="Teacher" data-marital="Divorced" data-education="Master's" data-location="Bangalore" data-jobType="Government" data-salary="5L-10L" data-caste="No Caste" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="https://via.placeholder.com/150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">Mohammed Khan</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 32</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Teacher</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Bangalore</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Male</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Muslim</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Divorced</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: Master's</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Government</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: 5L-10L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: No Caste</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+                <!-- Profile 4 -->
+                <div class="profile" data-gender="Female" data-age="26-30" data-religion="Hindu" data-occupation="Engineer" data-marital="Never Married" data-education="Bachelor's" data-location="Chennai" data-jobType="Private" data-salary="5L-10L" data-caste="Kshatriya" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="https://via.placeholder.com/150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">Priya Singh</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 27</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Engineer</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Chennai</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Female</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Hindu</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Never Married</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: Bachelor's</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Private</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: 5L-10L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: Kshatriya</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+                <!-- Profile 5 -->
+                <div class="profile" data-gender="Male" data-age="36-40" data-religion="Sikh" data-occupation="Business" data-marital="Widowed" data-education="Master's" data-location="Delhi" data-jobType="Self-Employed" data-salary="Above 10L" data-caste="No Caste" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="https://via.placeholder.com/150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">Harpreet Singh</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 38</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Business</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Delhi</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Male</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Sikh</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Widowed</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: Master's</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Self-Employed</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: Above 10L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: No Caste</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+                <!-- Profile 6 -->
+                <div class="profile" data-gender="Female" data-age="20-25" data-religion="Hindu" data-occupation="Teacher" data-marital="Never Married" data-education="Bachelor's" data-location="Mumbai" data-jobType="Private" data-salary="Below 5L" data-caste="OBC" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="https://via.placeholder.com/150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">Anjali Verma</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 23</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Teacher</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Mumbai</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Female</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Hindu</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Never Married</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: Bachelor's</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Private</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: Below 5L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: OBC</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+                <!-- Profile 7 -->
+                <div class="profile" data-gender="Male" data-age="26-30" data-religion="Christian" data-occupation="Doctor" data-marital="Never Married" data-education="PhD" data-location="Bangalore" data-jobType="Private" data-salary="Above 10L" data-caste="No Caste" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="https://via.placeholder.com/150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">John Mathew</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 29</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Doctor</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Bangalore</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Male</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Christian</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Never Married</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: PhD</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Private</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: Above 10L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: No Caste</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+                <!-- Profile 8 -->
+                <div class="profile" data-gender="Female" data-age="31-35" data-religion="Muslim" data-occupation="Business" data-marital="Divorced" data-education="Master's" data-location="Chennai" data-jobType="Self-Employed" data-salary="Above 10L" data-caste="No Caste" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="https://via.placeholder.com/150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">Aisha Rahman</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 34</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Business</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Chennai</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Female</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Muslim</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Divorced</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: Master's</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Self-Employed</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: Above 10L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: No Caste</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+                <!-- Profile 9 -->
+                <div class="profile" data-gender="Male" data-age="20-25" data-religion="Hindu" data-occupation="Lawyer" data-marital="Never Married" data-education="Bachelor's" data-location="Kolkata" data-jobType="Private" data-salary="5L-10L" data-caste="SC/ST" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="https://via.placeholder.com/150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">Rahul Das</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 25</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Lawyer</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Kolkata</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Male</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Hindu</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Never Married</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: Bachelor's</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Private</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: 5L-10L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: SC/ST</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+                <!-- Profile 10 -->
+                <div class="profile" data-gender="Female" data-age="26-30" data-religion="Sikh" data-occupation="Engineer" data-marital="Never Married" data-education="Master's" data-location="Delhi" data-jobType="Private" data-salary="Above 10L" data-caste="No Caste" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="https://via.placeholder.com/150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">Simran Kaur</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 30</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Engineer</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Delhi</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Female</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Sikh</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Never Married</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: Master's</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Private</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: Above 10L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: No Caste</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+                <!-- Profile 11 -->
+                <div class="profile" data-gender="Male" data-age="31-35" data-religion="Hindu" data-occupation="Business" data-marital="Divorced" data-education="Bachelor's" data-location="Mumbai" data-jobType="Self-Employed" data-salary="Above 10L" data-caste="OBC" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="https://via.placeholder.com/150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">Vikram Yadav</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 33</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Business</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Mumbai</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Male</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Hindu</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Divorced</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: Bachelor's</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Self-Employed</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: Above 10L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: OBC</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+                <!-- Profile 12 -->
+                <div class="profile" data-gender="Female" data-age="20-25" data-religion="Muslim" data-occupation="Teacher" data-marital="Never Married" data-education="Master's" data-location="Kolkata" data-jobType="Government" data-salary="5L-10L" data-caste="No Caste" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="https://via.placeholder.com/150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">Fatima Sheikh</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 22</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Teacher</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Kolkata</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Female</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Muslim</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Never Married</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: Master's</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Government</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: 5L-10L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: No Caste</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+                <!-- Profile 13 -->
+                <div class="profile" data-gender="Male" data-age="36-40" data-religion="Hindu" data-occupation="Lawyer" data-marital="Widowed" data-education="Master's" data-location="Chennai" data-jobType="Self-Employed" data-salary="Above 10L" data-caste="Brahmin" style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="https://via.placeholder.com/150" alt="Profile" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.5em; font-weight: 600;">Suresh Iyer</h3>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Age: 37</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Occupation: Lawyer</p>
+                    <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Location: Chennai</p>
+                    <div class="more-content" style="display: none;">
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Gender: Male</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Religion: Hindu</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Marital Status: Widowed</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Education: Master's</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Job Type: Self-Employed</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Salary: Above 10L</p>
+                        <p style="margin: 8px 0; color: #7f8c8d; font-size: 0.95em;">Caste: Brahmin</p>
+                    </div>
+                    <button class="more-btn" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; transition: background 0.3s; margin-top: 10px;">More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const filters = {
+            gender: document.getElementById('gender'),
+            age: document.getElementById('age'),
+            religion: document.getElementById('religion'),
+            occupation: document.getElementById('occupation'),
+            marital: document.getElementById('marital'),
+            education: document.getElementById('education'),
+            location: document.getElementById('location'),
+            jobType: document.getElementById('jobType'),
+            salary: document.getElementById('salary'),
+            caste: document.getElementById('caste')
+        };
+
+        const shortlistCount = document.getElementById('shortlistCount');
+
+        function updateShortlistCount() {
+            const visibleProfiles = document.querySelectorAll('.profile[style*="display: block"]');
+            shortlistCount.textContent = visibleProfiles.length;
+        }
+
+        function applyFilters() {
+            const profiles = document.querySelectorAll('.profile');
+            profiles.forEach(profile => {
+                const matchesGender = filters.gender.value === 'all' || profile.dataset.gender === filters.gender.value;
+                const matchesAge = filters.age.value === 'all' || profile.dataset.age === filters.age.value;
+                const matchesReligion = filters.religion.value === 'all' || profile.dataset.religion === filters.religion.value;
+                const matchesOccupation = filters.occupation.value === 'all' || profile.dataset.occupation === filters.occupation.value;
+                const matchesMarital = filters.marital.value === 'all' || profile.dataset.marital === filters.marital.value;
+                const matchesEducation = filters.education.value === 'all' || profile.dataset.education === filters.education.value;
+                const matchesLocation = filters.location.value === 'all' || profile.dataset.location === filters.location.value;
+                const matchesJobType = filters.jobType.value === 'all' || profile.dataset.jobType === filters.jobType.value;
+                const matchesSalary = filters.salary.value === 'all' || profile.dataset.salary === filters.salary.value;
+                const matchesCaste = filters.caste.value === 'all' || profile.dataset.caste === filters.caste.value;
+
+                if (matchesGender && matchesAge && matchesReligion && matchesOccupation && matchesMarital && matchesEducation && matchesLocation && matchesJobType && matchesSalary && matchesCaste) {
+                    profile.style.display = 'block';
+                } else {
+                    profile.style.display = 'none';
+                }
+            });
+            updateShortlistCount();
+        }
+
+        Object.values(filters).forEach(filter => {
+            filter.addEventListener('change', applyFilters);
+        });
+
+        // Toggle more content
+        document.querySelectorAll('.more-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const moreContent = button.previousElementSibling;
+                if (moreContent.style.display === 'none') {
+                    moreContent.style.display = 'block';
+                    button.textContent = 'Less';
+                } else {
+                    moreContent.style.display = 'none';
+                    button.textContent = 'More';
+                }
+            });
+        });
+
+        // Initial filter application
+        applyFilters();
+    </script>
+
+
+
+
+
+   <!-- Footer -->
+<footer style="background-color: #333; color: white; padding: 50px 0 20px;">
+  <div style="width: 85%; margin: 0 auto;">
+    <div style="display: flex; justify-content: space-between; flex-wrap: nowrap; gap: 30px; margin-bottom: 40px;">
+      
+      
+      <!-- Column 1 -->
+    <div style="flex: 1; min-width: 0;">
+     <h3 style="color: #e83e8c; margin-top: 0;">4jodi Matrimony</h3>
+       <p style="margin-bottom: 20px;">India's most trusted matrimony service helping millions find their perfect life partners since 2024.</p>
+        <div style="display: flex; gap: 10px; flex-wrap: nowrap; align-items: center;">
+         <a href="https://www.facebook.com" target="_blank" style="display: inline-flex; justify-content: center; align-items: center; background-color: #444; border-radius: 50%; width: 40px; height: 40px; text-decoration: none;">
+        <img src="https://img.icons8.com/ios-filled/25/ffffff/facebook-new.png" alt="Facebook" style="display: block; width: 25px; height: 25px;">
+       </a>
+       <a href="https://www.linkedin.com" target="_blank" style="display: inline-flex; justify-content: center; align-items: center; background-color: #444; border-radius: 50%; width: 40px; height: 40px; text-decoration: none;">
+        <img src="https://img.icons8.com/ios-filled/25/ffffff/linkedin.png" alt="LinkedIn" style="display: block; width: 25px; height: 25px;">
+       </a>
+       <a href="https://x.com/matrimonyhitais" target="_blank" style="display: inline-flex; justify-content: center; align-items: center; background-color: #444; border-radius: 50%; width: 40px; height: 40px; text-decoration: none;">
+      <img src="https://img.icons8.com/ios-filled/25/ffffff/twitter.png" alt="Twitter" style="display: block; width: 25px; height: 25px;">
+      </a>
+       <a href="https://www.instagram.com" target="_blank" style="display: inline-flex; justify-content: center; align-items: center; background-color: #444; border-radius: 50%; width: 40px; height: 40px; text-decoration: none;">
+      <img src="https://img.icons8.com/ios-filled/25/ffffff/instagram-new.png" alt="Instagram" style="display: block; width: 25px; height: 25px;">
+     </a>
+    </div>
+   </div>
+
+      <!-- Column 2 -->
+      <div style="flex: 1; min-width: 0;">
+        <h4 style="margin-top: 0; margin-bottom: 20px;">Quick Links</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ccc; text-decoration: none;">Home</a></li>
+          <li style="margin-bottom: 10px;"><a href="form2.html" style="color: #ccc; text-decoration: none;">Search Profiles</a></li>
+          <li style="margin-bottom: 10px;"><a href="membership.html" style="color: #ccc; text-decoration: none;">Membership Plans</a></li>
+          <li style="margin-bottom: 10px;"><a href="viewmorestories.html" style="color: #ccc; text-decoration: none;">Success Stories</a></li>
+          <li style="margin-bottom: 10px;"><a href="contactus.html" style="color: #ccc; text-decoration: none;">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div style="flex: 1; min-width: 0;">
+        <h4 style="margin-top: 0; margin-bottom: 20px;">Help & Support</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 10px;"><a href="faq.html" style="color: #ccc; text-decoration: none;">FAQs</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ccc; text-decoration: none;">Safety Tips</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ccc; text-decoration: none;">Privacy Policy</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ccc; text-decoration: none;">Terms & Conditions</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ccc; text-decoration: none;">Grievance Redressal</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+    <div style="flex: 1; min-width: 0;">
+     <h4 style="margin-top: 0; margin-bottom: 20px;">Contact Us</h4>
+     <p style="margin-bottom: 10px;">📞 +91 9908793602</p>
+      <p style="margin-bottom: 10px; white-space: nowrap;">✉️ opticjodi@gmail.com</p>
+      <p style="margin-bottom: 10px;">🏢  pragathi nagar, hyderabad, India - 500090</p>
+       </div>
+
+    </div>
+
+    <div style="border-top: 1px solid #444; padding-top: 20px; text-align: center; color: #999; font-size: 14px;">
+      <p>© 2024 4jodi Matrimony. All Rights Reserved.</p>
+    </div>
+  </div>
+ </footer>
+</body>
+</html>

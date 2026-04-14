@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Profiles</title>
+    <style>
+        body { font-family: Arial; background:#f4f4f4; padding:20px; }
+        h2 { text-align:center; }
+        .container { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+        .card {
+            width:260px; background:white; padding:15px; border-radius:10px;
+            box-shadow:0 2px 6px rgba(0,0,0,0.15); cursor:pointer;
+        }
+        .card img { width:100%; height:180px; object-fit:cover; border-radius:6px; }
+        .name { font-size:18px; font-weight:bold; color:#ff6f61; }
+        .info { font-size:14px; margin:4px 0; }
+    </style>
+</head>
+
+<body>
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+<h2>All Profiles</h2>
+<div id="profiles" class="container"></div>
+
+<script>
+// LOAD ALL PROFILES
+async function loadProfiles() {
+    const res = await fetch("http://localhost:5000/api/new_profilecreation");
+    const result = await res.json();
+
+    const box = document.getElementById("profiles");
+
+    result.data.forEach(p => {
+        const div = document.createElement("div");
+        div.classList.add("card");
+
+        let img = p.profileImage?.length > 50 
+            ? p.profileImage 
+            : "https://via.placeholder.com/260x180?text=No+Image";
+
+        div.innerHTML = `
+            <img src="${img}">
+            <p class="name">${p.firstName} ${p.lastName}</p>
+            <p class="info"><b>Gender:</b> ${p.gender}</p>
+            <p class="info"><b>Mobile:</b> ${p.mobile}</p>
+            <p class="info"><b>Email:</b> ${p.email}</p>
+        `;
+
+        // GO TO FULL PROFILE PAGE
+        div.onclick = () => {
+            window.location.href = `single_profile.html?id=${p.id}`;
+        };
+
+        box.appendChild(div);
+    });
+}
+
+loadProfiles();
+</script>
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+    <!-- Hero Section -->
+<section style="height:80vh;background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 20px;margin-top:70px;padding-top: 160px;">
+        <div style="max-width:700px;">
+            <h1 style="font-size:3rem;margin-bottom:20px;animation:fadeIn 1s ease;">Connect with Verified Marriage Brokers</h1>
+            <p style="font-size:1.2rem;margin-bottom:30px;">Trusted experts helping you find your ideal life partner.</p>
+            <a href="#registration" style="display:inline-block;padding:12px 30px;background-color:#e91e63;color:#fff;border:none;border-radius:50px;font-size:1rem;font-weight:600;cursor:pointer;text-decoration:none;position:relative;overflow:hidden;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 20px rgba(233,30,99,0.3)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+                Register as a Broker
+            </a>
+        </div>
+    </section>
+
+    
+
+    <!-- About Brokers Network Section -->
+<section id="about" style="padding:80px 20px;background:white;display:flex;justify-content:center;">
+    <div style="width:80%;max-width:1200px;margin:0 auto;">
+        <div style="text-align:center;margin-bottom:60px;">
+            <h2 style="font-size:36px;color:#333;margin-bottom:15px;position:relative;display:inline-block;">About Our <span style="color:#e83e8c;">Brokers Network</span></h2>
+            <div style="height:4px;width:80px;background:linear-gradient(90deg,#e83e8c,#ff69b4);margin:0 auto;"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+            <div>
+                <img src="images/mbimage1.png" alt="Marriage brokers network" style="width:100%;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:all 0.5s ease ; height: 400px;" loading="lazy" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 15px 40px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)';">
+            </div>
+            <div>
+                <h3 style="font-size:28px;color:#333;margin-bottom:20px;">Connecting Professional Matchmakers Since 2014</h3>
+                <p style="font-size:16px;color:#666;margin-bottom:20px;">Hitaishi Matrimony's Marriage Brokers Network is India's most trusted platform connecting professional matchmakers with genuine clients looking for life partners. Our verified broker network spans across 50+ cities in India.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:15px;">
+                    <div style="background:#f9f9f9;padding:15px;border-radius:8px;flex:1;min-width:200px;border-left:4px solid #e83e8c;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+                        <h4 style="font-size:18px;color:#e83e8c;margin:0 0 10px 0;">500+ Brokers</h4>
+                        <p style="font-size:14px;color:#666;margin:0;">Verified professionals in our network</p>
+                    </div>
+                    <div style="background:#f9f9f9;padding:15px;border-radius:8px;flex:1;min-width:200px;border-left:4px solid #ff69b4;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+                        <h4 style="font-size:18px;color:#ff69b4;margin:0 0 10px 0;">10,000+</h4>
+                        <p style="font-size:14px;color:#666;margin:0;">Successful matches made</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section (Compact Version) -->
+<section id="benefits" style="padding:60px 15px; background:linear-gradient(135deg,#fff9fc,#ffe6f2); box-sizing:border-box;">
+  <div style="width:95%; max-width:1100px; margin:0 auto; box-sizing:border-box;">
+    <div style="text-align:center; margin-bottom:40px;">
+      <h2 style="font-size:30px; color:#333; margin-bottom:10px; position:relative; display:inline-block;">Benefits for <span style="color:#e83e8c;">Marriage Brokers</span></h2>
+      <div style="height:3px; width:60px; background:#e83e8c; margin:0 auto;"></div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;">
+
+      <div style="background:#ffe4e6; padding:18px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.06); transition:all 0.3s ease; text-align:center; min-height:200px;">
+        <h3 style="font-size:20px; color:#333; margin-bottom:10px; font-weight:700;">Access to Premium Profiles</h3>
+        <p style="font-size:15px; color:#555; line-height:1.4;">Exclusive access to thousands of verified profiles of brides and grooms from respectable families across India.</p>
+      </div>
+
+      <div style="background:#ffe4e6; padding:18px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.06); transition:all 0.3s ease; text-align:center; min-height:200px;">
+        <h3 style="font-size:20px; color:#333; margin-bottom:10px; font-weight:700;">Business Growth</h3>
+        <p style="font-size:15px; color:#555; line-height:1.4;">Expand your client base and boost matchmaking success with our advanced tools and platform.</p>
+      </div>
+
+      <div style="background:#ffe4e6; padding:18px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.06); transition:all 0.3s ease; text-align:center; min-height:200px;">
+        <h3 style="font-size:20px; color:#333; margin-bottom:10px; font-weight:700;">Verified Badge</h3>
+        <p style="font-size:15px; color:#555; line-height:1.4;">Earn a verified badge to build trust and stand out from unverified matchmakers.</p>
+      </div>
+
+      <div style="background:#ffe4e6; padding:18px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.06); transition:all 0.3s ease; text-align:center; min-height:200px;">
+        <h3 style="font-size:20px; color:#333; margin-bottom:10px; font-weight:700;">Commission Earnings</h3>
+        <p style="font-size:15px; color:#555; line-height:1.4;">Earn attractive commissions for every successful match made through our platform.</p>
+      </div>
+
+      <div style="background:#ffe4e6; padding:18px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.06); transition:all 0.3s ease; text-align:center; min-height:200px;">
+        <h3 style="font-size:20px; color:#333; margin-bottom:10px; font-weight:700;">Dedicated Support</h3>
+        <p style="font-size:15px; color:#555; line-height:1.4;">24/7 support for profile matching, client queries, and technical assistance.</p>
+      </div>
+
+      <div style="background:#ffe4e6; padding:18px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.06); transition:all 0.3s ease; text-align:center; min-height:200px;">
+        <h3 style="font-size:20px; color:#333; margin-bottom:10px; font-weight:700;">Recognition</h3>
+        <p style="font-size:15px; color:#555; line-height:1.4;">Get featured as a top broker based on performance and client feedback.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section style="padding:60px 20px;background:white;">
+  <div style="width:85%;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:40px;">
+      <h2 style="font-size:30px;color:#333;margin-bottom:10px;position:relative;display:inline-block;">
+        How Our <span style="color:#e83e8c;">Broker Network</span> Works
+      </h2>
+      <div style="height:3px;width:60px;background:linear-gradient(90deg,#e83e8c,#ff69b4);margin:0 auto;"></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px;">
+      
+      <!-- Card 1 -->
+      <div style="position:relative;text-align:center;background:#ffe6f0;padding:20px 15px;border-radius:8px;box-shadow:0 3px 8px rgba(232,62,140,0.15);transition:all 0.3s ease;" 
+        onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 6px 16px rgba(232,62,140,0.3)';" 
+        onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 3px 8px rgba(232,62,140,0.15)';">
+        <div style="width:60px;height:60px;background:linear-gradient(135deg,#e83e8c,#ff69b4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;color:white;font-size:20px;font-weight:bold;">1</div>
+        <h3 style="font-size:18px;color:#333;margin-bottom:10px;">Register as Broker</h3>
+        <p style="font-size:14px;color:#666;line-height:1.5;">Complete our simple registration process with your professional details and documents.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="position:relative;text-align:center;background:#ffe6f0;padding:20px 15px;border-radius:8px;box-shadow:0 3px 8px rgba(232,62,140,0.15);transition:all 0.3s ease;" 
+        onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 6px 16px rgba(232,62,140,0.3)';" 
+        onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 3px 8px rgba(232,62,140,0.15)';">
+        <div style="width:60px;height:60px;background:linear-gradient(135deg,#e83e8c,#ff69b4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;color:white;font-size:20px;font-weight:bold;">2</div>
+        <h3 style="font-size:18px;color:#333;margin-bottom:10px;">Get Verified</h3>
+        <p style="font-size:14px;color:#666;line-height:1.5;">Our team will verify your credentials and activate your broker account.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="position:relative;text-align:center;background:#ffe6f0;padding:20px 15px;border-radius:8px;box-shadow:0 3px 8px rgba(232,62,140,0.15);transition:all 0.3s ease;" 
+        onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 6px 16px rgba(232,62,140,0.3)';" 
+        onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 3px 8px rgba(232,62,140,0.15)';">
+        <div style="width:60px;height:60px;background:linear-gradient(135deg,#e83e8c,#ff69b4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;color:white;font-size:20px;font-weight:bold;">3</div>
+        <h3 style="font-size:18px;color:#333;margin-bottom:10px;">Access Profiles</h3>
+        <p style="font-size:14px;color:#666;line-height:1.5;">Start browsing thousands of verified profiles for your clients.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="position:relative;text-align:center;background:#ffe6f0;padding:20px 15px;border-radius:8px;box-shadow:0 3px 8px rgba(232,62,140,0.15);transition:all 0.3s ease;" 
+        onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 6px 16px rgba(232,62,140,0.3)';" 
+        onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 3px 8px rgba(232,62,140,0.15)';">
+        <div style="width:60px;height:60px;background:linear-gradient(135deg,#e83e8c,#ff69b4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;color:white;font-size:20px;font-weight:bold;">4</div>
+        <h3 style="font-size:18px;color:#333;margin-bottom:10px;">Connect Clients</h3>
+        <p style="font-size:14px;color:#666;line-height:1.5;">Match and introduce clients to compatible profiles for marriage.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="position:relative;text-align:center;background:#ffe6f0;padding:20px 15px;border-radius:8px;box-shadow:0 3px 8px rgba(232,62,140,0.15);transition:all 0.3s ease;" 
+        onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 6px 16px rgba(232,62,140,0.3)';" 
+        onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 3px 8px rgba(232,62,140,0.15)';">
+        <div style="width:60px;height:60px;background:linear-gradient(135deg,#e83e8c,#ff69b4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;color:white;font-size:20px;font-weight:bold;">5</div>
+        <h3 style="font-size:18px;color:#333;margin-bottom:10px;">Earn Commission</h3>
+        <p style="font-size:14px;color:#666;line-height:1.5;">Get rewarded with commission for every successful match.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="position:relative;text-align:center;background:#ffe6f0;padding:20px 15px;border-radius:8px;box-shadow:0 3px 8px rgba(232,62,140,0.15);transition:all 0.3s ease;" 
+        onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 6px 16px rgba(232,62,140,0.3)';" 
+        onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 3px 8px rgba(232,62,140,0.15)';">
+        <div style="width:60px;height:60px;background:linear-gradient(135deg,#e83e8c,#ff69b4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;color:white;font-size:20px;font-weight:bold;">6</div>
+        <h3 style="font-size:18px;color:#333;margin-bottom:10px;">Grow Network</h3>
+        <p style="font-size:14px;color:#666;line-height:1.5;">Expand your client base and reputation as a trusted expert.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Brokers Grid Section -->
+<section style="padding:80px 5%;text-align:center;overflow-x:auto;">
+  <h2 style="font-size:2.5rem;margin-bottom:50px;color:#e91e63;position:relative;display:inline-block;">
+    Our Verified Brokers
+    <span style="position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:80px;height:3px;background-color:#e91e63;"></span>
+  </h2>
+  <div style="display:flex;flex-wrap:nowrap;gap:30px;width:max-content;padding:10px 0;">
+
+    <!-- Broker Card Template -->
+    <div style="min-width:240px;background-color:#fff;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:all 0.3s ease;position:relative;height:340px;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+      <img src="images/mbimage2.png" alt="Broker Image" style="width:100%;height:180px;object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="font-size:1.2rem;margin-bottom:8px;color:#e91e63;">Priya Sharma</h3>
+        <p style="margin-bottom:8px;color:#666;font-size:0.9rem;">Delhi, India</p>
+        <p style="margin-bottom:0;color:#666;font-size:0.9rem;">8 Years Experience</p>
+      </div>
+    </div>
+
+    <div style="min-width:240px;background-color:#fff;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:all 0.3s ease;position:relative;height:340px;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+      <img src="images/mbimage3.png" alt="Broker Image" style="width:100%;height:180px;object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="font-size:1.2rem;margin-bottom:8px;color:#e91e63;">Rahul Patel</h3>
+        <p style="margin-bottom:8px;color:#666;font-size:0.9rem;">Mumbai, India</p>
+        <p style="margin-bottom:0;color:#666;font-size:0.9rem;">12 Years Experience</p>
+      </div>
+    </div>
+
+    <div style="min-width:240px;background-color:#fff;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:all 0.3s ease;position:relative;height:340px;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+      <img src="images/mbimage4.png" alt="Broker Image" style="width:100%;height:180px;object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="font-size:1.2rem;margin-bottom:8px;color:#e91e63;">Sunita Reddy</h3>
+        <p style="margin-bottom:8px;color:#666;font-size:0.9rem;">Bangalore, India</p>
+        <p style="margin-bottom:0;color:#666;font-size:0.9rem;">15 Years Experience</p>
+      </div>
+    </div>
+
+    <div style="min-width:240px;background-color:#fff;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:all 0.3s ease;position:relative;height:340px;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+      <img src="images/mbimage5.png" alt="Broker Image" style="width:100%;height:180px;object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="font-size:1.2rem;margin-bottom:8px;color:#e91e63;">Amit Verma</h3>
+        <p style="margin-bottom:8px;color:#666;font-size:0.9rem;">Hyderabad, India</p>
+        <p style="margin-bottom:0;color:#666;font-size:0.9rem;">10 Years Experience</p>
+      </div>
+    </div>
+
+    <div style="min-width:240px;background-color:#fff;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:all 0.3s ease;position:relative;height:340px;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+      <img src="images/mbimage6.png" alt="Broker Image" style="width:100%;height:180px;object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="font-size:1.2rem;margin-bottom:8px;color:#e91e63;">Neha Sinha</h3>
+        <p style="margin-bottom:8px;color:#666;font-size:0.9rem;">Chennai, India</p>
+        <p style="margin-bottom:0;color:#666;font-size:0.9rem;">9 Years Experience</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Registration Form Section (Compact) -->
+<section id="registration" style="padding:60px 5%;text-align:center;">
+  <h2 style="font-size:2rem;margin-bottom:40px;color:#e91e63;position:relative;display:inline-block;">
+    Become a Matrimony Broker
+    <span style="position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:60px;height:3px;background-color:#e91e63;"></span>
+  </h2>
+
+
+  <form style="width:90%;max-width:500px;margin:0 auto;background-color:#fff;padding:25px 20px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s ease;font-family:'Poppins',sans-serif;">
+    
+    <div style="margin-bottom:15px;text-align:left;">
+      <label for="name" style="display:block;margin-bottom:6px;font-weight:500;font-size:0.9rem;">Full Name</label>
+      <input type="text" id="name" style="width:90%;padding:6px 12px;border:1px solid #ddd;border-radius:5px;font-size:0.9rem;transition:all 0.3s ease;" required onfocus="this.style.borderColor='#e91e63';this.style.boxShadow='0 0 0 2px rgba(233,30,99,0.2)';" onblur="this.style.borderColor='#ddd';this.style.boxShadow='none';">
+    </div>
+
+    <div style="margin-bottom:15px;text-align:left;">
+      <label for="email" style="display:block;margin-bottom:6px;font-weight:500;font-size:0.9rem;">Email Address</label>
+      <input type="email" id="email" style="width:90%;padding:6px 12px;border:1px solid #ddd;border-radius:5px;font-size:0.9rem;transition:all 0.3s ease;" required onfocus="this.style.borderColor='#e91e63';this.style.boxShadow='0 0 0 2px rgba(233,30,99,0.2)';" onblur="this.style.borderColor='#ddd';this.style.boxShadow='none';">
+    </div>
+
+    <div style="margin-bottom:15px;text-align:left;">
+      <label for="phone" style="display:block;margin-bottom:6px;font-weight:500;font-size:0.9rem;">Phone Number</label>
+      <input type="tel" id="phone" style="width:90%;padding:6px 12px;border:1px solid #ddd;border-radius:5px;font-size:0.9rem;transition:all 0.3s ease;" required onfocus="this.style.borderColor='#e91e63';this.style.boxShadow='0 0 0 2px rgba(233,30,99,0.2)';" onblur="this.style.borderColor='#ddd';this.style.boxShadow='none';">
+    </div>
+
+    <div style="margin-bottom:15px;text-align:left;">
+      <label for="location" style="display:block;margin-bottom:6px;font-weight:500;font-size:0.9rem;">Location</label>
+      <input type="text" id="location" style="width:90%;padding:6px 12px;border:1px solid #ddd;border-radius:5px;font-size:0.9rem;transition:all 0.3s ease;" required onfocus="this.style.borderColor='#e91e63';this.style.boxShadow='0 0 0 2px rgba(233,30,99,0.2)';" onblur="this.style.borderColor='#ddd';this.style.boxShadow='none';">
+    </div>
+
+    <div style="margin-bottom:15px;text-align:left;">
+      <label for="experience" style="display:block;margin-bottom:6px;font-weight:500;font-size:0.9rem;">Years of Experience</label>
+      <input type="number" id="experience" style="width:90%;padding:6px 12px;border:1px solid #ddd;border-radius:5px;font-size:0.9rem;transition:all 0.3s ease;" required onfocus="this.style.borderColor='#e91e63';this.style.boxShadow='0 0 0 2px rgba(233,30,99,0.2)';" onblur="this.style.borderColor='#ddd';this.style.boxShadow='none';">
+    </div>
+
+    <div style="margin-bottom:20px;text-align:left;">
+      <label for="photo" style="display:block;margin-bottom:6px;font-weight:500;font-size:0.9rem;">Upload Your Photo</label>
+      <input type="file" id="photo" accept="image/*" style="width:90%;padding:6px 12px;border:1px solid #ddd;border-radius:5px;font-size:0.9rem;transition:all 0.3s ease;" onfocus="this.style.borderColor='#e91e63';this.style.boxShadow='0 0 0 2px rgba(233,30,99,0.2)';" onblur="this.style.borderColor='#ddd';this.style.boxShadow='none';">
+    </div>
+
+    <button type="submit" style="width:60%;padding:8px 20px;background-color:#e91e63;color:#fff;border:none;border-radius:50px;font-size:0.95rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 16px rgba(233,30,99,0.3)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+      Submit Application
+    </button>
+
+  </form>
+  
+<script>
+  document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData();
+
+    formData.append("name", document.getElementById("name").value);
+    formData.append("email", document.getElementById("email").value);
+    formData.append("phone", document.getElementById("phone").value);
+    formData.append("location", document.getElementById("location").value);
+    formData.append("experience", document.getElementById("experience").value);
+    formData.append("photo", document.getElementById("photo").files[0]);
+
+    fetch("http://localhost:5000/api/brokers", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Server error");
+      }
+      return response.json();
+    })
+    .then(data => {
+      alert("Application submitted successfully!");
+      form.reset();
+    })
+    .catch(error => {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again.");
+    });
+  });
+</script>
+
+
+</section>
+
+   <!-- Footer -->
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+ <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Responsive Navigation
+        window.addEventListener('resize', () => {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const nav = document.getElementById('mainNav');
+            const ul = nav.querySelector('ul');
+            if (window.innerWidth <= 576) {
+                mobileMenuBtn.style.display = 'block';
+                nav.style.display = 'none';
+                ul.style.flexDirection = 'column';
+                ul.style.position = 'absolute';
+                ul.style.top = '70px';
+                ul.style.left = '0';
+                ul.style.width = '100%';
+                ul.style.background = '#fff';
+                ul.style.padding = '20px';
+                ul.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                ul.querySelectorAll('li').forEach(li => {
+                    li.style.marginLeft = '0';
+                    li.style.marginBottom = '10px';
+                });
+            } else {
+                mobileMenuBtn.style.display = 'none';
+                nav.style.display = 'flex';
+                ul.style.flexDirection = 'row';
+                ul.style.position = 'static';
+                ul.style.width = 'auto';
+                ul.style.background = 'none';
+                ul.style.padding = '0';
+                ul.style.boxShadow = 'none';
+                ul.querySelectorAll('li').forEach(li => {
+                    li.style.marginLeft = '30px';
+                    li.style.marginBottom = '0';
+                });
+            }
+        });
+        window.dispatchEvent(new Event('resize'));
+
+        // Ripple effect for buttons
+        document.querySelectorAll('.btn-ripple').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.backgroundColor = 'rgba(255,255,255,0.7)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Scroll animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.broker-card, .benefit-card, .registration-form');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Hover effect for nav links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('mouseover', () => {
+                link.querySelector('span').style.width = '100%';
+            });
+            link.addEventListener('mouseout', () => {
+                link.querySelector('span').style.width = '0';
+            });
+        });
+    </script>
+
+    <!-- Inline Animation Styles -->
+ <style>
+        @keyframes ripple {
+            to { transform: scale(4); opacity: 0; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; } to { opacity: 1; }
+        }
+    </style>
+</body>
+</html>

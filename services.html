@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  
+
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+<!-- Contact Info Bar -->
+<div style="position: fixed; top: 0; left: 0; width: 100%; background-color: mediumspringgreen; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; font-family: Arial, sans-serif; font-size: 14px; z-index: 1001; height: 35px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <!-- Left Side - Contact Info -->
+    <div style="display: flex; align-items: center; gap: 20px;">
+        <span style="display: flex; align-items: center;">
+            <i class="fas fa-map-marker-alt" style="color: maroon; margin-right: 5px;"></i>
+            <span style="color: black;">Hyderabad, Mumbai, Delhi, Bangalore</span>
+        </span>
+   <a href="tel:9899907614" style="display: flex; align-items: center; text-decoration: none; margin-right: 15px;">
+    <i class="fas fa-phone-alt" style="color: maroon; margin-right: 5px;"></i>
+    <span style="color: black;">9899907614</span>
+</a>
+
+<a href="mailto:Hitaishi@matrimony.com" style="display: flex; align-items: center; text-decoration: none;">
+    <i class="fas fa-envelope" style="color: maroon; margin-right: 5px;"></i>
+    <span style="color: black;">Hitaishi@matrimony.com</span>
+</a>
+
+    </div>
+  
+    <!-- Right Side - Social Media -->
+    <div style="display: flex; align-items: center; gap: 10px; margin-right: 30px;">
+  <a href="https://www.whatsapp.com/" style="color: maroon; font-size: 20px;"
+     onmouseenter="this.style.color='green';" 
+     onmouseleave="this.style.color='maroon';">
+     <i class="fab fa-whatsapp"></i></a>
+
+  <a href="https://www.facebook.com/" style="color: maroon; font-size: 20px;"
+     onmouseenter="this.style.color='#3b5998';" 
+     onmouseleave="this.style.color='maroon';">
+     <i class="fab fa-facebook-f"></i></a>
+
+  <a href="https://www.instagram.com/accounts/login/?hl=en" style="color: maroon; font-size: 20px;"
+     onmouseenter="this.style.color='#e1306c';" 
+     onmouseleave="this.style.color='maroon';">
+     <i class="fab fa-instagram"></i></a>
+
+  <a href="https://www.youtube.com/account" style="color: maroon; font-size: 20px;"
+     onmouseenter="this.style.color='red';" 
+     onmouseleave="this.style.color='maroon';">
+     <i class="fab fa-youtube"></i></a>
+
+  <a href="https://x.com/i/flow/login" style="color: maroon; font-size: 20px;"
+     onmouseenter="this.style.color='black';" 
+     onmouseleave="this.style.color='maroon';">
+     <i class="fab fa-twitter"></i></a>
+
+  <a href="form2.html" style="background-color: maroon; color: white; padding: 6px 15px; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: bold;"
+     onmouseenter="this.style.backgroundColor='darkred'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='maroon'; this.style.transform='scale(1)';">
+     Create Profile</a>
+</div>
+
+ </div>
+
+<!-- Main Header -->
+<header style="position: fixed; top: 0; left: 0; width: 100%; max-width: 1280px; margin: 0 auto; height: 100px; background-color: #e83e8c; color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; display: flex; align-items: center; padding: 0 15px;margin-top: 50px;">
+    <!-- Logo -->
+   <div style="flex: 0 0 120px; margin-right: 10px;">
+    <a href="index.html">
+        <img src="images/logo.png" alt="Hitaishi Matrimony Logo" style="height: 60px; width: auto; padding-left: 0px; transition: all 0.3s ease;" 
+             onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.15)';" 
+             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+    </a>
+</div>
+    
+    <!-- Title & Tagline -->
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <h1 style="margin: 0; font-size: 24px; color: greenyellow; white-space: nowrap; margin-left: 10px;margin-top: 0%;">
+                Welcome to Hitaishi Matrimony
+            </h1>
+            <span style="font-size: 9px; background-color: red; color: white; padding: 2px 5px; border-radius: 10px; flex-shrink: 0;margin-top: 10px;">
+                Trusted since 2014
+            </span>
+        </div>
+        <!-- Main Navigation -->
+       <nav style="display: flex; flex-wrap: wrap; gap: 5px; margin-left: 5px; margin-top: 8px;">
+  <a href="index.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Home</a>
+
+  <a href="male2.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Male</a>
+
+  <a href="female.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Female</a>
+
+  <a href="dating.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Dating</a>
+
+  <a href="co-living.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Co-living</a>
+
+  <a href="friendship.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Friendship</a>
+
+  <a href="secondmarriage.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Second marriage</a>
+
+  <a href="widows.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Widows</a>
+
+  <a href="marriage affiliate .html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Marriage Affiliates</a>
+
+  <a href="marriage broker.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Marriage Brokers</a>
+</nav>
+
+    </div>
+    
+    <!-- Top Navigation Links -->
+<nav style="position: absolute; top: 10px; right: 15px; display: flex; justify-content: flex-end; align-items: center; gap: 10px;">
+     <a href="nri2.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     NRI </a>
+
+  <a href="contactus.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     Contact us</a>
+
+  <a href="services2.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     Services</a>
+
+  <a href="membership.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     Membership</a>
+
+  <a href="successstories.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     Success Stories</a>
+
+  <a href="login.html" onclick="openLoginPopup()" 
+     style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e754a8'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Login/Register</a>
+</nav>
+
+</header>
+
+<style>
+/* Media Queries for Responsiveness */
+@media (max-width: 1000px) {
+    header {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    header h1 {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+    header .logo div {
+        flex: 0 0 100px;
+    }
+    header .logo img {
+        height: 40px;
+    }
+    header nav a {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    header nav[style*="position: absolute"] a {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: auto;
+        padding: 10px;
+    }
+    header h1 {
+        font-size: 16px;
+    }
+    header .logo div {
+        flex: 0 0 80px;
+    }
+    header .logo img {
+        height: 30px;
+    }
+    header nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+    header nav[style*="position: absolute"] {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+  </style>
+
+    <!-- Main Content -->
+<main style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+
+        <!-- Services Introduction -->
+        <section style="margin-bottom: 50px; text-align: center;">
+            <h2 style="color: #e83e8c; font-size: 2em; margin-bottom: 20px;">Our Matrimony Services</h2>
+            <p style="font-size: 1.1em; max-width: 800px; margin: 0 auto 30px;">At Hitaishi Matrimony, we offer a complete range of services to help you find your perfect life partner. Our verified profiles and expert matchmakers ensure genuine connections.</p>
+            
+            <!-- Services Grid -->
+ <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+                <!-- Service 1 -->
+                <div style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='none';">
+                    <div style="background: #f0e6ff; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <span style="font-size: 2em; color: #6f42c1;">❤️</span>
+                    </div>
+                    <h3 style="color: #6f42c1; margin-top: 0; font-size: 1.4em;">Premium Matchmaking</h3>
+                    <p>Expert matchmakers use advanced compatibility analysis to suggest perfect matches based on your preferences.</p>
+                    <ul style="text-align: left; padding-left: 20px;">
+                        <li>Verified profiles</li>
+                        <li>Personalized suggestions</li>
+                        <li>Background verification</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='none';">
+                    <div style="background: #ffe6f2; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <span style="font-size: 2em; color: #e83e8c;">👰</span>
+                    </div>
+                    <h3 style="color: #6f42c1; margin-top: 0; font-size: 1.4em;">Profile Assistance</h3>
+                    <p>Professional help in creating attractive profiles that stand out and get noticed by potential matches.</p>
+                    <ul style="text-align: left; padding-left: 20px;">
+                        <li>Profile writing</li>
+                        <li>Photo guidance</li>
+                        <li>Optimization tips</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='none';">
+                    <div style="background: #e6f7ff; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <span style="font-size: 2em; color: #007bff;">💍</span>
+                    </div>
+                    <h3 style="color: #6f42c1; margin-top: 0; font-size: 1.4em;">Wedding Services</h3>
+                    <p>Complete wedding planning services from venue selection to catering and decoration.</p>
+                    <ul style="text-align: left; padding-left: 20px;">
+                        <li>Venue booking</li>
+                        <li>Catering services</li>
+                        <li>Event planning</li>
+                    </ul>
+                </div>
+         </div>
+        </section>
+
+
+<!--1. Detailed Services -->
+<section style="margin-bottom: 50px;">
+            <h2 style="color: #e83e8c; font-size: 1.8em; border-bottom: 2px solid #e83e8c; padding-bottom: 10px; margin-bottom: 30px;width: 80%;text-align: center;">Detailed Services</h2>
+ <div style="background: #ffffff; border-radius: 12px; padding: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); width: 80%; max-width: 1200px; margin: 0 auto 40px auto; transition: all 0.3s ease; border: 1px solid rgba(233, 62, 140, 0.2);" 
+           onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(233, 62, 140, 0.15)'; this.style.borderColor='rgba(233, 62, 140, 0.4)';" 
+            onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'; this.style.borderColor='rgba(233, 62, 140, 0.2)';">
+    
+            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+             <div style="background: linear-gradient(135deg, #e83e8c, #6f42c1); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+            <span style="color: white; font-size: 1.5em;">❤️</span>
+            </div>
+             <h3 style="color: #6f42c1; margin: 0; font-size: 1.8em; font-weight: 600;">Premium Matchmaking Service</h3>
+          </div>
+    
+          <p style="color: #555; line-height: 1.7; margin-bottom: 25px; font-size: 1.1em; text-align: center;">Our premium matchmaking service goes beyond basic search filters to provide you with highly compatible matches based on multiple factors:</p>
+    
+          <div style="display: flex; flex-direction: row; gap: 25px; margin-top: 25px; flex-wrap: nowrap; justify-content: space-between;">
+             <div style="padding: 20px; background: #f9f9f9; border-radius: 8px; transition: all 0.3s ease; border-left: 4px solid #e83e8c; flex: 1;" 
+             onmouseover="this.style.background='#fff5f9'; this.style.transform='translateX(5px)';" 
+             onmouseout="this.style.background='#f9f9f9'; this.style.transform='';">
+            <h4 style="color: #e83e8c; margin: 0 0 12px 0; font-size: 1.2em; font-weight: 600;">Compatibility Analysis</h4>
+            <p style="color: #666; margin: 0; line-height: 1.6; font-size: 0.95em;">We analyze 50+ compatibility factors including values, lifestyle, and personality traits to suggest the best matches.</p>
+            </div>
+        
+            <div style="padding: 20px; background: #f9f9f9; border-radius: 8px; transition: all 0.3s ease; border-left: 4px solid #6f42c1; flex: 1;" 
+             onmouseover="this.style.background='#f5f0ff'; this.style.transform='translateX(5px)';" 
+             onmouseout="this.style.background='#f9f9f9'; this.style.transform='';">
+            <h4 style="color: #6f42c1; margin: 0 0 12px 0; font-size: 1.2em; font-weight: 600;">Verified Profiles</h4>
+            <p style="color: #666; margin: 0; line-height: 1.6; font-size: 0.95em;">Every profile undergoes thorough verification including ID proof, address proof, and background checks.</p>
+        </div>
+        
+          <div style="padding: 20px; background: #f9f9f9; border-radius: 8px; transition: all 0.3s ease; border-left: 4px solid #e83e8c; flex: 1;" 
+             onmouseover="this.style.background='#fff5f9'; this.style.transform='translateX(5px)';" 
+             onmouseout="this.style.background='#f9f9f9'; this.style.transform='';">
+            <h4 style="color: #e83e8c; margin: 0 0 12px 0; font-size: 1.2em; font-weight: 600;">Personal Matchmaker</h4>
+            <p style="color: #666; margin: 0; line-height: 1.6; font-size: 0.95em;">Dedicated relationship expert who understands your preferences and suggests suitable matches.</p>
+        </div>
+        </div>
+    
+         <div style="text-align: center; margin-top: 30px;">
+           <a href="#" style="display: inline-block; background: linear-gradient(135deg, #e83e8c, #6f42c1); color: white; text-decoration: none; padding: 12px 30px; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(233, 62, 140, 0.3);" 
+           onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(233, 62, 140, 0.4);'" 
+           onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 15px rgba(233, 62, 140, 0.3);'">
+            Learn More About This Service
+          </a>
+       </div>
+    </div> 
+    
+    
+<!-- Service 2 Details -->
+
+<div style="background: #ffffff; border-radius: 12px; padding: 40px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); margin-bottom: 40px; width: 80%; max-width: 1200px; margin-left: auto; margin-right: auto;">
+       <h3 style="color: #5a32a8; margin: 0 0 20px 0; font-size: 1.8em; font-weight: 700; text-align: center;">Profile Optimization Service</h3>
+       <p style="color: #444; font-size: 1.1em; line-height: 1.6; margin-bottom: 30px; text-align: center;">Your profile is your first impression. Let us help you shine with our expert optimization services.</p>
+        <div style="display: flex; flex-direction: row; gap: 25px; margin-top: 25px; flex-wrap: nowrap; justify-content: space-between;">
+         <div style="background: #f9f9ff; border-radius: 10px; padding: 25px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; flex: 1;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)';">
+            <h4 style="color: #d63384; margin: 0 0 15px 0; font-size: 1.4em; font-weight: 600;">Professional Writing</h4>
+            <p style="color: #555; font-size: 1em; line-height: 1.5; margin: 0;">Our skilled writers create engaging profile content that showcases your unique personality and strengths.</p>
+        </div>
+        <div style="background: #f9f9ff; border-radius: 10px; padding: 25px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; flex: 1;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)';">
+            <h4 style="color: #d63384; margin: 0 0 15px 0; font-size: 1.4em; font-weight: 600;">Photo Guidance</h4>
+            <p style="color: #555; font-size: 1em; line-height: 1.5; margin: 0;">Get expert advice on choosing photos that authentically represent you and attract the right attention.</p>
+        </div>
+        <div style="background: #f9f9ff; border-radius: 10px; padding: 25px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; flex: 1;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)';">
+            <h4 style="color: #d63384; margin: 0 0 15px 0; font-size: 1.4em; font-weight: 600;">SEO Optimization</h4>
+            <p style="color: #555; font-size: 1em; line-height: 1.5; margin: 0;">Boost your profile’s visibility with strategic keyword placement optimized for search algorithms.</p>
+        </div>
+       </div>
+            </div>
+
+
+ <!-- Service 3 Details -->
+<div style="background: #ffffff; border-radius: 12px; padding: 40px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); width: 80%; max-width: 1200px; margin: 0 auto 40px auto;">
+    <h3 style="color: #5a32a8; margin: 0 0 20px 0; font-size: 1.8em; font-weight: 700; text-align: center;">Wedding Planning Services</h3>
+    <p style="color: #444; font-size: 1.1em; line-height: 1.6; margin-bottom: 30px; text-align: center;">From engagement to wedding reception, we manage every detail for your dream day.</p>
+    <div style="display: flex; flex-direction: row; gap: 25px; margin-top: 25px; flex-wrap: nowrap; justify-content: space-between;">
+        <div style="background: #f9f9ff; border-radius: 10px; padding: 25px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; flex: 1;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)';">
+            <h4 style="color: #d63384; margin: 0 0 15px 0; font-size: 1.4em; font-weight: 600;">Venue Selection</h4>
+            <p style="color: #555; font-size: 1em; line-height: 1.5; margin: 0;">Explore premium wedding venues with exclusive discounts for Hitaishi Matrimony members.</p>
+        </div>
+        <div style="background: #f9f9ff; border-radius: 10px; padding: 25px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; flex: 1;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)';">
+            <h4 style="color: #d63384; margin: 0 0 15px 0; font-size: 1.4em; font-weight: 600;">Vendor Management</h4>
+            <p style="color: #555; font-size: 1em; line-height: 1.5; margin: 0;">Connect with our trusted network of photographers, caterers, decorators, and more.</p>
+        </div>
+        <div style="background: #f9f9ff; border-radius: 10px; padding: 25px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; flex: 1;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)';">
+            <h4 style="color: #d63384; margin: 0 0 15px 0; font-size: 1.4em; font-weight: 600;">Event Coordination</h4>
+            <p style="color: #555; font-size: 1em; line-height: 1.5; margin: 0;">Our professional event managers ensure your wedding day runs smoothly and perfectly.</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+ <!-- Why Choose Us -->
+<section style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 40px; border-radius: 10px; margin-bottom: 50px; text-align: center; width: 100%; overflow-x: hidden;">
+  <h2 style="color: #6f42c1; font-size: 1.8em; margin-bottom: 30px;">Why Choose Hitaishi Matrimony?</h2>
+  <div style="display: flex; justify-content: space-between; gap: 20px; width: 100%; max-width: 100%; flex-wrap: nowrap; overflow: hidden;">
+
+    <div style="flex: 1; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;"
+         onmouseenter="this.style.transform='scale(1.05)'" 
+         onmouseleave="this.style.transform='scale(1)'">
+      <div id="counter1" style="font-size: 2.5em; color: #e83e8c; font-weight: bold; margin-bottom: 10px;">0</div>
+      <p style="font-weight: bold;">Successful Matches</p>
+    </div>
+
+    <div style="flex: 1; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;"
+         onmouseenter="this.style.transform='scale(1.05)'" 
+         onmouseleave="this.style.transform='scale(1)'">
+      <div id="counter2" style="font-size: 2.5em; color: #e83e8c; font-weight: bold; margin-bottom: 10px;">0</div>
+      <p style="font-weight: bold;">Verified Profiles</p>
+    </div>
+
+    <div style="flex: 1; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;"
+         onmouseenter="this.style.transform='scale(1.05)'" 
+         onmouseleave="this.style.transform='scale(1)'">
+      <div id="counter3" style="font-size: 2.5em; color: #e83e8c; font-weight: bold; margin-bottom: 10px;">0</div>
+      <p style="font-weight: bold;">Customer Support</p>
+    </div>
+
+    <div style="flex: 1; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;"
+         onmouseenter="this.style.transform='scale(1.05)'" 
+         onmouseleave="this.style.transform='scale(1)'">
+      <div id="counter4" style="font-size: 2.5em; color: #e83e8c; font-weight: bold; margin-bottom: 10px;">0</div>
+      <p style="font-weight: bold;">Years Experience</p>
+    </div>
+
+  </div>
+
+  <script>
+    function animateCounter(id, endValue, duration, suffix = '', formatter = null) {
+      let start = 0;
+      const obj = document.getElementById(id);
+      const stepTime = Math.max(1, Math.floor(duration / endValue));
+      const timer = setInterval(() => {
+        start++;
+        let display = formatter ? formatter(start) : start;
+        obj.innerText = display + suffix;
+        if (start >= endValue) {
+          clearInterval(timer);
+          obj.innerText = formatter ? formatter(endValue) + suffix : endValue + suffix;
+        }
+      }, stepTime);
+    }
+
+    window.onload = function () {
+      animateCounter("counter1", 10000, 2000, '+', (val) => val.toLocaleString());  // 10,000+
+      animateCounter("counter2", 98, 1500, '%');                                    // 98%
+      animateCounter("counter3", 24, 1200, '/7');                                   // 24/7
+      animateCounter("counter4", 15, 1000, '+');                                    // 15+
+    };
+  </script>
+</section>
+
+
+
+
+        <!-- CTA Section -->
+<section style="background: linear-gradient(135deg, #e83e8c, #6f42c1); color: white; padding: 50px 20px; border-radius: 10px; text-align: center; margin-bottom: 50px;">
+    <h2 style="font-size: 1.8em; margin-top: 0; margin-bottom: 20px;">Ready to Find Your Perfect Match?</h2>
+     <p style="font-size: 1.1em; max-width: 700px; margin: 0 auto 30px;">Join thousands of happy couples who found their life partners through Hitaishi Matrimony.</p>
+     <button style="background: white; color: #e83e8c; border: none; padding: 15px 40px; font-size: 1.1em; font-weight: bold; border-radius: 5px; cursor: pointer; margin: 0 10px 10px 0;">Sign Up Now</button>
+     <button style="background: transparent; color: white; border: 2px solid white; padding: 15px 40px; font-size: 1.1em; font-weight: bold; border-radius: 5px; cursor: pointer; margin: 0 0 10px 10px;">Contact Us</button>
+</section>
+</main>
+
+
+    <!-- Footer -->
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+</body>
+</html>

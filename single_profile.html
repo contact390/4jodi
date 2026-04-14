@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Premium Profile</title>
+
+    <style>
+        body {
+            font-family: 'Arial';
+            background: linear-gradient(135deg, #fdf2f8, #fff);
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: auto;
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {opacity:0; transform: translateY(25px);}
+            to {opacity:1; transform: translateY(0);}
+        }
+
+        .premium-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #f7d45c, #e6b200);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-transform: uppercase;
+        }
+
+        .verified {
+            background: #4CAF50;
+            color: white;
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 30px;
+            margin-left: 10px;
+        }
+
+        .not-verified {
+            background: #d9534f;
+            color: white;
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 30px;
+            margin-left: 10px;
+        }
+
+        .top-section {
+            display: flex;
+            gap: 25px;
+        }
+
+        .photo-box {
+            position: relative;
+        }
+
+        .glow {
+            position: absolute;
+            width: 300px;
+            height: 340px;
+            top: -15px;
+            left: -15px;
+            background: radial-gradient(circle, rgba(255,215,0,0.35), transparent 70%);
+            animation: glowPulse 3s infinite alternate;
+            border-radius: 15px;
+        }
+
+        @keyframes glowPulse {
+            from { transform: scale(1); opacity: 0.7; }
+            to { transform: scale(1.15); opacity: 1; }
+        }
+
+        .photo-box img {
+            width: 300px;
+            height: 350px;
+            border-radius: 15px;
+            border: 4px solid #ffcc33;
+            object-fit: cover;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+        }
+
+        h2 { font-size: 30px; color:#d62839; margin-bottom: 6px; }
+
+        h3 {
+            margin-top: 35px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #f7d45c;
+            font-size: 22px;
+        }
+
+        .detail-card {
+            background: #fff7dc;
+            padding: 18px;
+            border-left: 4px solid #ffd700;
+            border-radius: 12px;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: slideUp 0.7s ease;
+        }
+
+        @keyframes slideUp {
+            from {opacity:0; transform:translateY(20px);}
+            to {opacity:1; transform:translateY(0);}
+        }
+
+        #interestBtn {
+            padding: 12px 22px;
+            margin-top: 10px;
+            background: linear-gradient(135deg, #ff9a3c, #ff5e62);
+            color:white;
+            border:none;
+            border-radius:10px;
+            font-size:17px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        #interestBtn:hover {
+            transform: scale(1.07);
+        }
+
+        /* MATCH SCORE */
+        .match-box {
+            text-align:center;
+            padding:20px;
+            background:#fffbe8;
+            border-radius:12px;
+            margin-top:20px;
+            border:2px dashed #ffad33;
+        }
+
+        .match-circle {
+            width:120px;
+            height:120px;
+            margin:auto;
+            border-radius:50%;
+            background:conic-gradient(#ff6f3c var(--score), #ffe0c2 0deg);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:32px;
+            font-weight:bold;
+            color:#d62839;
+        }
+
+        /* STORIES */
+        .story-box {
+            margin-top:20px;
+            padding:20px;
+            background:linear-gradient(#fff7ee,#fff);
+            border-radius:15px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+<div class="container">
+
+    <div class="premium-badge">⭐ Premium Profile</div>
+
+    <div id="profile-box"></div>
+
+</div>
+
+<script src="header-auth.js"></script>
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const profileId = urlParams.get("id");
+
+async function loadProfile() {
+    const res = await fetch(`http://localhost:5000/api/new_profilecreation`);
+    const data = await res.json();
+    const p = data.data.find(x => x.id == profileId);
+    const box = document.getElementById("profile-box");
+
+    if (!p) {
+        box.innerHTML = "<h2>No Profile Found</h2>";
+        return;
+    }
+
+    let img = p.profileImage?.length > 50 ? p.profileImage :
+        "https://via.placeholder.com/300x350?text=No+Image";
+
+    let emailCheck = p.isVerified ? 
+        `<span class='verified'>✔ Email Verified</span>` :
+        `<span class='not-verified'>✘ Not Verified</span>`;
+
+    // AI Match Score (Random future: use real ML model)
+    let matchScore = Math.floor(Math.random()*20)+80;
+    let matchDeg = matchScore * 3.6;
+
+    box.innerHTML = `
+        <div class="top-section">
+
+            <div class="photo-box">
+                <div class="glow"></div>
+                <img src="${img}">
+            </div>
+
+            <div>
+                <h2>${p.firstName} ${p.lastName} ${emailCheck}</h2>
+
+                <p><b>Profile For:</b> ${p.profileFor}</p>
+                <p><b>Gender:</b> ${p.gender}</p>
+                <p><b>DOB:</b> ${p.dob}</p>
+                <p><b>Mobile:</b> ${p.mobile}</p>
+                <p><b>Email:</b> ${p.email}</p>
+                <p><b>Marital Status:</b> ${p.maritalStatus}</p>
+
+                            <button id="interestBtn">Send Interest 💖</button>
+            </div>
+        </div>
+
+        <!-- MATCH SCORE -->
+        <div class="match-box">
+            <h3>Match Compatibility Score</h3>
+            <div class="match-circle" style="--score:${matchDeg}deg">
+                ${matchScore}%
+            </div>
+            <p style="margin-top:10px;">AI Based Profile Match</p>
+        </div>
+
+        <!-- PERSONAL -->
+        <div class="detail-card">
+            <h3>Personal Details</h3>
+            <p><b>Religion:</b> ${p.religion}</p>
+            <p><b>Caste:</b> ${p.caste}</p>
+            <p><b>Sub Caste:</b> ${p.subCaste || "Not Provided"}</p>
+            <p><b>Mother Tongue:</b> ${p.motherTongue}</p>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="detail-card">
+            <h3>Education & Career</h3>
+            <p><b>Education:</b> ${p.education}</p>
+            <p><b>College:</b> ${p.college || "Not Provided"}</p>
+            <p><b>Profession:</b> ${p.profession}</p>
+            <p><b>Income:</b> ${p.income}</p>
+        </div>
+
+        <!-- PARTNER PREFERENCE -->
+        <div class="detail-card">
+            <h3>Partner Preferences</h3>
+            <p><b>Preferred Age:</b> 22 - 30</p>
+            <p><b>Preferred Religion:</b> ${p.religion}</p>
+            <p><b>Preferred Caste:</b> ${p.caste}</p>
+            <p><b>Education Preference:</b> Graduate / Post Graduate</p>
+            <p><b>Profession Preference:</b> IT / Govt / Private Sector</p>
+        </div>
+
+        <!-- STORIES & RECOMMENDATIONS -->
+        <div class="story-box">
+            <h3>Success Stories & Recommendations</h3>
+            <p>💬 "Profiles like this have a very high acceptance rate."</p>
+            <p>💬 "Recommended by 92% of our users with similar preferences."</p>
+            <p>🌟 "High chances of finding a perfect match — Verified!"</p>
+        </div>
+    `;
+
+    setupInterestButton();
+}
+
+
+async function checkInterest() {
+    const user = window.headerAuth && window.headerAuth.getCurrentUser();
+    if (!user) return;
+
+    try {
+        const res = await fetch("http://localhost:5000/api/check-interest", {
+            method: "POST",
+            credentials: 'include',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ sender_id: user.id, receiver_id: profileId })
+        });
+        const data = await res.json();
+        if (data.exists) {
+            const btn = document.getElementById("interestBtn");
+            btn.innerText = "Interest Sent ✔️";
+            btn.disabled = true;
+        }
+    } catch (err) {
+        console.error('checkInterest error', err);
+    }
+}
+
+async function sendInterest() {
+    // Allow anonymous interest: include sender_id only if logged in
+    const user = window.headerAuth && window.headerAuth.getCurrentUser();
+    const payload = { receiver_id: profileId };
+    if (user && user.id) payload.sender_id = user.id;
+
+    try {
+        const res = await fetch('http://localhost:5000/api/send-interest', {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        alert(data.message || 'Request sent');
+        if (data.success) {
+            const btn = document.getElementById('interestBtn');
+            btn.innerText = 'Interest Sent ✔️';
+            btn.disabled = true;
+        }
+    } catch (err) {
+        console.error('sendInterest error', err);
+        alert('Error sending interest. Please try again.');
+    }
+}
+
+function setupInterestButton() {
+    const btn = document.getElementById("interestBtn");
+    // enable immediately so anonymous users can send interest
+    btn.disabled = false;
+    btn.addEventListener('click', sendInterest);
+    // if logged in, run checkInterest to update UI
+    (async () => {
+        try { await window.headerAuth.checkSession(); } catch(e){}
+        checkInterest();
+    })();
+}
+
+loadProfile();
+</script>
+
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+</body>
+</html>

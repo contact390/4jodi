@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  
+
+<!-- Contact Info Bar -->
+<div style="position: fixed; top: 0; left: 0; width: 100%; background-color: mediumspringgreen; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; font-family: Arial, sans-serif; font-size: 18px; z-index: 3000; height: 35px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <span style="display: flex; align-items: center;" class="desktop-only">
+      <i class="fas fa-map-marker-alt" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">Hyderabad, Mumbai, Delhi, Bangalore</span>
+    </span>
+    <a href="tel:9908793602" style="display: flex; align-items: center; text-decoration: none; margin-right: 15px;" class="desktop-only">
+      <i class="fas fa-phone-alt" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">9908793602</span>
+    </a>
+    <a href="mailto:Hitaishimatrimony@gmail.com" style="display: flex; align-items: center; text-decoration: none;" class="desktop-only">
+      <i class="fas fa-envelope" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">opticjodi@gmail.com</span>
+    </a>
+  </div>
+  <div style="display: flex; align-items: center; gap: 25px; margin-right: 50px;" class="desktop-only">
+    <a href="https://www.whatsapp.com/" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='green';" onmouseleave="this.style.color='maroon';"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.linkedin.com/in/hitaishi-matrimony" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='#0077b5';" onmouseleave="this.style.color='maroon';"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.instagram.com/hita.ishimatrimony/?hl=en" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='#e1306c';" onmouseleave="this.style.color='maroon';"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@Hitaishimatrimony" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='red';" onmouseleave="this.style.color='maroon';"><i class="fab fa-youtube"></i></a>
+    <a href="https://x.com/matrimonyhitais" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='black';" onmouseleave="this.style.color='maroon';"><i class="fab fa-twitter"></i></a>
+    <a href="createprofile.html" style="background-color: maroon; color: white; padding: 6px 15px; text-decoration: none; border-radius: 4px; font-size: 18px; font-weight: bold;" onmouseenter="this.style.backgroundColor='darkred'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';" onmouseleave="this.style.backgroundColor='maroon'; this.style.transform='scale(1)';">Create Profile</a>
+  </div>
+  
+  <!-- Mobile Top Bar -->
+  <div class="mobile-top-bar" style="display: none; width: 100%; justify-content: space-between; align-items: center;">
+    <a href="tel:9908793602" style="display: flex; align-items: center; text-decoration: none;">
+      <i class="fas fa-phone-alt" style="color: maroon; margin-right: 5px;"></i>
+    </a>
+    <a href="mailto:Hitaishimatrimony@gmail.com" style="display: flex; align-items: center; text-decoration: none;">
+      <i class="fas fa-envelope" style="color: maroon; margin-right: 5px;"></i>
+    </a>
+    <a href="createprofile.html" style="background-color: maroon; color: white; padding: 6px 15px; text-decoration: none; border-radius: 4px; font-size: 16px; font-weight: bold;">Create Profile</a>
+    <button id="mobileMenuBtn" onclick="toggleMobileTopMenu()" style="background:none; border:none; font-size:24px; color:maroon; cursor:pointer;">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile Top Menu (Hidden by default) -->
+<div id="mobileTopMenu" style="display: none; position: fixed; top: 35px; left: 0; width: 100%; background-color: mediumspringgreen; z-index: 3001; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); flex-direction: column; align-items: center;">
+  <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 15px;">
+    <a href="https://www.whatsapp.com/" style="color: maroon; font-size: 30px;"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.linkedin.com/in/hitaishi-matrimony" style="color: maroon; font-size: 30px;"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.instagram.com/hita.ishimatrimony/?hl=en" style="color: maroon; font-size: 30px;"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@Hitaishimatrimony" style="color: maroon; font-size: 30px;"><i class="fab fa-youtube"></i></a>
+    <a href="https://x.com/matrimonyhitais" style="color: maroon; font-size: 30px;"><i class="fab fa-twitter"></i></a>
+  </div>
+  
+</div>
+
+<!-- Main Header -->
+<header id="mainHeader" style="position: fixed; top: 50px; left: 0; width: 100%; height: 100px; background-color: #e83e8c; color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; display: flex; align-items: center; padding: 0 15px;">
+  <!-- Logo -->
+  <div style="flex: 0 0 120px; margin-right: 10px;">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Hitaishi Matrimony Logo" style="height: 80px; width: auto; padding-left: 0px; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+    </a>
+  </div>
+  <!-- Title & Tagline -->
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <h1 style="margin: 0; font-size: 40px; color: white; white-space: nowrap; margin-left: 100px; margin-top: 0%;">Welcome to 4jodi Matrimony</h1>
+      <span style="font-size: 9px; background-color: red; color: white; padding: 2px 5px; border-radius: 10px; flex-shrink: 0; margin-top: 10px;">Trusted since 2023</span>
+    </div>
+    <!-- Main Navigation -->
+    <nav id="topNav" style="display: flex; flex-wrap: wrap; gap: 50px; margin-left: 95px; margin-top: 8px;">
+      <a href="index.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Home</a>
+      <a href="male2.html" style="color: white; text-decoration: none;font-size: 18px; white-space: nowrap;">Male</a>
+      <a href="female.html" style="color: white; text-decoration: none;font-size: 18px; white-space: nowrap;">Female</a>
+        <a href="dating.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">community connect</a>
+      <a href="dating.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Dating</a>
+      <a href="co-living.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Co-living</a>
+      <a href="friendship.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Friendship</a>
+      <a href="secondmarriage.html" style="color: white; text-decoration: none;  font-size: 18px; white-space: nowrap;">Second marriage</a>
+      <a href="widows.html" style="color: white; text-decoration: none;font-size: 18px; white-space: nowrap;">Widows</a>
+      <a href="marriage affiliate.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Marriage Affiliates</a>
+      <a href="marriage broker.html" style="color: white; text-decoration: none;  font-size: 18px; white-space: nowrap;">Marriage Brokers</a>
+    </nav>
+  </div>
+  <!-- Top Navigation Links -->
+  <nav id="topNav" style="position: absolute; top: 10px; right: 35px; display: flex; justify-content: flex-end; align-items: center; gap: 50px;">
+    <a href="nri2.html" style="color: rgb(255, 255, 255); text-decoration: none; font-size: 18px; white-space: nowrap;">NRI</a>
+    <a href="contactus.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Contact us</a>
+    <a href="services2.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Services</a>
+    <a href="membership.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Membership</a>
+    <a href="successstories.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Success Stories</a>
+    <a href="login.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Login/Register</a>
+  </nav>
+  <!-- Mobile Menu Button -->
+  <button id="menuBtn" onclick="toggleMobileMenu()" style="display:none; position:absolute; right:15px; top:15px; background:none; border:none; font-size:32px; color:white; cursor:pointer; z-index:2001;">&#8942;</button>
+</header>
+
+<script>
+  // Toggle mobile top menu (social links and top nav)
+  function toggleMobileTopMenu() {
+    var mobileMenu = document.getElementById('mobileTopMenu');
+    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+      mobileMenu.style.display = 'flex';
+    } else {
+      mobileMenu.style.display = 'none';
+    }
+  }
+
+  // Toggle main mobile menu (main navigation)
+  function toggleMobileMenu() {
+    var nav = document.getElementById('mainNav');
+    var topNav = document.getElementById('topNav');
+    
+    if (nav.style.display === 'none' || nav.style.display === '') {
+      // Open mobile menu
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.position = 'absolute';
+      nav.style.top = '100px';
+      nav.style.left = '0';
+      nav.style.width = '100%';
+      nav.style.background = '#e83e8c';
+      nav.style.zIndex = '2000';
+      nav.style.marginLeft = '0';
+      nav.style.gap = '0';
+      nav.style.padding = '10px 0';
+      
+      Array.from(nav.children).forEach(a => {
+        a.style.borderBottom = '1px solid #fff';
+        a.style.padding = '15px 0';
+        a.style.fontSize = '18px';
+        a.style.textAlign = 'center';
+        a.style.background = 'none';
+        a.style.borderRadius = '0';
+        a.style.width = '100%';
+      });
+    } else {
+      // Close mobile menu
+      nav.style.display = 'none';
+    }
+  }
+
+  // Handle screen resize
+  function handleResize() {
+    var menuBtn = document.getElementById('menuBtn');
+    var nav = document.getElementById('mainNav');
+    var topNav = document.getElementById('topNav');
+    var mobileTopBar = document.querySelector('.mobile-top-bar');
+    var desktopElements = document.querySelectorAll('.desktop-only');
+    var mobileTopMenu = document.getElementById('mobileTopMenu');
+    
+    if (window.innerWidth <= 700) {
+      // Mobile view
+      menuBtn.style.display = 'block';
+      nav.style.display = 'none';
+      topNav.style.display = 'none';
+      mobileTopBar.style.display = 'flex';
+      mobileTopMenu.style.display = 'none';
+      
+      // Hide desktop elements
+      desktopElements.forEach(el => {
+        el.style.display = 'none';
+      });
+    } else {
+      // Desktop view
+      menuBtn.style.display = 'none';
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'row';
+      nav.style.position = 'relative';
+      nav.style.top = '';
+      nav.style.left = '';
+      nav.style.width = '';
+      nav.style.background = '';
+      nav.style.zIndex = '';
+      nav.style.marginLeft = '95px';
+      nav.style.gap = '50px';
+      nav.style.padding = '';
+      
+      Array.from(nav.children).forEach(a => {
+        a.style.borderBottom = '';
+        a.style.padding = '5px 10px';
+        a.style.fontSize = '18px';
+        a.style.textAlign = '';
+        a.style.background = '#ff69b4';
+        a.style.borderRadius = '5px';
+        a.style.width = '';
+      });
+      
+      topNav.style.display = 'flex';
+      topNav.style.flexDirection = 'row';
+      topNav.style.position = 'absolute';
+      topNav.style.top = '10px';
+      topNav.style.right = '35px';
+      topNav.style.gap = '50px';
+      
+      mobileTopBar.style.display = 'none';
+      mobileTopMenu.style.display = 'none';
+      
+      // Show desktop elements
+      desktopElements.forEach(el => {
+        el.style.display = 'flex';
+      });
+    }
+  }
+
+  window.addEventListener('resize', handleResize);
+  window.addEventListener('DOMContentLoaded', handleResize);
+</script>
+
+<style>
+/* Media Queries for Responsiveness */
+@media (max-width: 1000px) {
+    #mainHeader {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    #mainHeader h1 {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+    #mainHeader .logo div {
+        flex: 0 0 100px;
+    }
+    #mainHeader .logo img {
+        height: 40px;
+    }
+    #mainHeader nav a {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    #mainHeader nav[style*="position: absolute"] a {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 700px) {
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-top-bar {
+    display: flex !important;
+  }
+  
+  #mainHeader {
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 10px !important;
+    min-width: 100vw !important;
+    align-items: flex-start !important;
+  }
+  
+  #mainHeader > div {
+    margin: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  #mainHeader h1 {
+    font-size: 18px !important;
+    margin: 10px 0 0 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  #mainNav {
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin: 10px 0 0 0 !important;
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+  
+  #mainNav a {
+    font-size: 15px !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+    background-color: #ff69b4 !important;
+    border-bottom: 1px solid #e83e8c !important;
+  }
+  
+  #topNav {
+    position: static !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+  
+  #topNav a {
+    background: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid #e83e8c !important;
+    color: white !important;
+    font-size: 15px !important;
+    padding: 10px 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+</style>
+
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h1 style="color: #2c3e50; text-align: center; margin-bottom: 30px;">NRI Profiles</h1>
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <button id="refreshBtn" style="background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 16px;">Refresh Profiles</button>
+        </div>
+
+        <div id="profilesContainer" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px;">
+            <div id="loadingMessage" style="grid-column: 1 / -1; text-align: center; padding: 30px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                Loading profiles...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchProfiles();
+            document.getElementById('refreshBtn').addEventListener('click', fetchProfiles);
+        });
+
+        async function fetchProfiles() {
+            const container = document.getElementById('profilesContainer');
+            const loadingMessage = document.getElementById('loadingMessage');
+            try {
+                loadingMessage.textContent = "Loading profiles...";
+                const response = await fetch('http://localhost:5000/api/nriprofile');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const profiles = await response.json();
+                if (profiles.length === 0) {
+                    loadingMessage.textContent = "No profiles found";
+                    return;
+                }
+
+                container.innerHTML = '';
+                profiles.forEach(profile => {
+                    const card = document.createElement('div');
+                    card.style.cssText = "background:white;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);padding:20px;display:flex;flex-direction:column;gap:15px;";
+
+                    const topSection = document.createElement('div');
+                    topSection.style.cssText = "display:flex;gap:15px;align-items:center;";
+
+                    const photoDiv = document.createElement('div');
+                    if (profile.photo_path) {
+                        const img = document.createElement('img');
+                        const photoFilename = profile.photo_path.split('\\').pop().split('/').pop();
+                        img.src = `/uploads/${photoFilename}`;
+                        img.alt = profile.full_name;
+                        img.style.cssText = "width:80px;height:80px;object-fit:cover;border-radius:50%;border:2px solid #3498db;";
+                        img.onerror = () => {
+                            photoDiv.innerHTML = '<div style="width:80px;height:80px;background:#eee;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#777;border:2px solid #ddd;">No Photo</div>';
+                        };
+                        photoDiv.appendChild(img);
+                    } else {
+                        photoDiv.innerHTML = '<div style="width:80px;height:80px;background:#eee;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#777;border:2px solid #ddd;">No Photo</div>';
+                    }
+
+                    const basicInfo = document.createElement('div');
+                    basicInfo.style.flex = "1";
+
+                    const name = document.createElement('h3');
+                    name.textContent = profile.full_name || 'N/A';
+                    name.style.cssText = "margin:0;color:#2c3e50;";
+
+                    const country = document.createElement('div');
+                    country.innerHTML = `<strong>Country:</strong> ${profile.residence_country || 'N/A'}`;
+                    country.style.cssText = "margin-top:5px;color:#555;";
+
+                    let ageText = "N/A";
+                    if (profile.dob) {
+                        const dob = new Date(profile.dob);
+                        const ageDiff = Date.now() - dob.getTime();
+                        const ageDate = new Date(ageDiff);
+                        ageText = Math.abs(ageDate.getUTCFullYear() - 1970);
+                    }
+                    const age = document.createElement('div');
+                    age.innerHTML = `<strong>Age:</strong> ${ageText}`;
+                    age.style.cssText = "margin-top:5px;color:#555;";
+
+                    const profession = document.createElement('div');
+                    profession.innerHTML = `<strong>Profession:</strong> ${profile.profession || 'N/A'}`;
+                    profession.style.cssText = "margin-top:5px;color:#555;";
+
+                    basicInfo.appendChild(name);
+                    basicInfo.appendChild(country);
+                    basicInfo.appendChild(age);
+                    basicInfo.appendChild(profession);
+
+                    topSection.appendChild(photoDiv);
+                    topSection.appendChild(basicInfo);
+
+                    const detailsSection = document.createElement('div');
+                    detailsSection.id = `details-${profile.id}`;
+                    detailsSection.style.cssText = "display:none;margin-top:10px;padding-top:15px;border-top:1px solid #eee;";
+
+                    const fields = [
+                        { label: "Gender", value: profile.gender },
+                        { label: "Date of Birth", value: profile.dob },
+                        { label: "Email", value: profile.email },
+                        { label: "Mobile", value: profile.mobile },
+                        { label: "Years Abroad", value: profile.years_abroad },
+                        { label: "Visa Status", value: profile.visa_status },
+                        { label: "Religion", value: profile.religion },
+                        { label: "Mother Tongue", value: profile.mother_tongue },
+                        { label: "Marital Status", value: profile.marital_status },
+                        { label: "Bio", value: profile.bio }
+                    ];
+
+                    fields.forEach(field => {
+                        if (field.value) {
+                            const fieldDiv = document.createElement('div');
+                            fieldDiv.style.marginBottom = "8px";
+                            const label = document.createElement('span');
+                            label.textContent = `${field.label}: `;
+                            label.style.cssText = "font-weight:bold;color:#555;";
+                            const value = document.createElement('span');
+                            value.textContent = field.value;
+                            value.style.color = "#333";
+                            fieldDiv.appendChild(label);
+                            fieldDiv.appendChild(value);
+                            detailsSection.appendChild(fieldDiv);
+                        }
+                    });
+
+                    const buttonContainer = document.createElement('div');
+                    buttonContainer.style.cssText = "display:flex;gap:10px;margin-top:10px;";
+
+                    const viewMoreBtn = document.createElement('button');
+                    viewMoreBtn.textContent = "View More";
+                    viewMoreBtn.style.cssText = "background:#f0f0f0;color:#3498db;border:none;padding:8px 15px;border-radius:4px;cursor:pointer;font-size:14px;flex:1;";
+                    viewMoreBtn.onclick = function() {
+                        const details = document.getElementById(`details-${profile.id}`);
+                        if (details.style.display === "none") {
+                            details.style.display = "block";
+                            this.textContent = "View Less";
+                        } else {
+                            details.style.display = "none";
+                            this.textContent = "View More";
+                        }
+                    };
+
+                    if (profile.email) {
+                        const connectBtn = document.createElement('button');
+                        connectBtn.textContent = "Connect";
+                        connectBtn.style.cssText = "background:#2ecc71;color:white;border:none;padding:8px 15px;border-radius:4px;cursor:pointer;font-size:14px;flex:1;transition:all 0.3s;";
+                        connectBtn.onmouseover = function() { this.style.background = "#27ae60"; };
+                        connectBtn.onmouseout = function() { this.style.background = "#2ecc71"; };
+
+                        connectBtn.onclick = async function () {
+                            try {
+                                const res = await fetch('http://localhost:5000/api/connect-request', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({
+                                        toEmail: profile.email,
+                                        fromName: 'Someone from Hitaishi Matrimony'
+                                    })
+                                });
+                                const data = await res.json();
+                                alert(data.message);
+                                connectBtn.textContent = "Request Sent";
+                                connectBtn.disabled = true;
+                                connectBtn.style.background = "#aaa";
+                                connectBtn.style.cursor = "not-allowed";
+                            } catch (err) {
+                                alert('Failed to send connection request.');
+                                console.error(err);
+                            }
+                        };
+
+                        buttonContainer.appendChild(viewMoreBtn);
+                        buttonContainer.appendChild(connectBtn);
+                    } else {
+                        viewMoreBtn.style.width = "100%";
+                        buttonContainer.appendChild(viewMoreBtn);
+                    }
+
+                    card.appendChild(topSection);
+                    card.appendChild(buttonContainer);
+                    card.appendChild(detailsSection);
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error fetching profiles:', error);
+                loadingMessage.textContent = "Error loading profiles. Please try again.";
+                loadingMessage.style.color = "red";
+            }
+        }
+    </script>
+    
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+</body>
+</html>
+
+

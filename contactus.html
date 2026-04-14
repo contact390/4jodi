@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  <div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+    <!-- Main Content -->
+<main style="max-width: 1200px; margin: 20px auto; padding: 0 20px; padding-top: 130px;">
+    <!-- Contact Section -->
+    <section style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h2 style="color: #333; text-align: center; font-size: 2em;">Get in Touch</h2>
+        <p style="text-align: center; color: #666; font-size: 1.1em; margin-bottom: 30px;">
+            We're here to help you find your soulmate. Reach out to us today!
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+            <!-- Contact Form -->
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="color: #ff6f61; font-size: 1.5em;">Send Us a Message</h3>
+                
+           <form id="contact-form" style="display: flex; flex-direction: column; gap: 15px;">
+    <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px;">
+    <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px;">
+    <input type="tel" name="phone" placeholder="Your Phone Number" required style="padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px;">
+    <textarea name="message" placeholder="Your Message" required style="padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px; min-height: 30px;"></textarea>
+    <button type="submit" style="padding: 10px; background-color: #ff6f61; color: white; border: none; border-radius: 5px; font-size: 1.1em; cursor: pointer;">Send Message</button>
+    <p id="form-response" style="text-align: center; font-size: 14px;"></p>
+</form>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    if (form) {
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = {
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                message: form.message.value,
+                date: new Date().toISOString().slice(0, 19).replace('T', ' ')
+            };
+
+            const responseMessage = document.getElementById('form-response');
+            const button = form.querySelector('button');
+            button.disabled = true;
+            button.textContent = 'Sending...';
+
+            try {
+                const response = await fetch('http://localhost:5000/api/contact', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                // Check if response is OK before trying to parse as JSON
+                if (!response.ok) {
+                    throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+
+                responseMessage.textContent = result.message || 'Message sent successfully!';
+                responseMessage.style.color = 'green';
+                form.reset();
+            } catch (error) {
+                console.error('Error:', error);
+                responseMessage.textContent = error.message || 'Something went wrong. Please try again.';
+                responseMessage.style.color = 'red';
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Send Message';
+                
+                // Clear message after 5 seconds
+                setTimeout(() => {
+                    responseMessage.textContent = '';
+                }, 5000);
+            }
+        });
+    }
+});
+</script>
+            </div>
+
+            <!-- Contact Info -->
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="color: #ff6f61; font-size: 1.5em;">Contact Information</h3>
+                <p style="color: #333; font-size: 1em; margin: 10px 0;">
+                    <strong>Phone:</strong> <a href="tel:+91-9876543210" style="color: #ff6f61; text-decoration: none;">+91-9908796302</a>
+                </p>
+                <p style="color: #333; font-size: 1em; margin: 10px 0;">
+                    <strong>Alternate Phone:</strong> <a href="tel:+91-9123456789" style="color: #ff6f61; text-decoration: none;">+91-9502489877</a>
+                </p>
+                <p style="color: #333; font-size: 1em; margin: 10px 0;">
+                    <strong>Email:</strong> <a href="mailto:support@hitaishimatrimony.com" style="color: #ff6f61; text-decoration: none;">opticjodi@gmail.com</a>
+                </p>
+                <p style="color: #333; font-size: 1em; margin: 10px 0;">
+                    <strong>Alternate Email:</strong> <a href="mailto:info@hitaishimatrimony.com" style="color: #ff6f61; text-decoration: none;">hitaishimatrimony@gmail.com</a>
+                </p>
+                <p style="color: #333; font-size: 1em; margin: 10px 0;">
+                    <strong>Address:</strong> 985, pragathi nagar
+                </p>
+                <p style="color: #333; font-size: 1em; margin: 10px 0;">
+                    <strong>Branch Office:</strong> kukatpally hyderabad, Telangana, India - 500072
+                </p>
+                <p style="color: #333; font-size: 1em; margin: 10px 0;">
+                    <strong>Office Hours:</strong> Mon-Sat, 10:00 AM - 6:00 PM
+                </p>
+                <p style="color: #333; font-size: 1em; margin: 10px 0;">
+                    <strong>Social Media:</strong>
+                    <a href="https://facebook.com/hitaishimatrimony" style="color: #ff6f61; text-decoration: none; margin: 0 5px;">Facebook</a> |
+                    <a href="https://instagram.com/hitaishimatrimony" style="color: #ff6f61; text-decoration: none; margin: 0 5px;">Instagram</a> |
+                    <a href="https://linkedin.com/company/hitaishimatrimony" style="color: #ff6f61; text-decoration: none; margin: 0 5px;">LinkedIn</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section style="margin-top: 30px;">
+        <h3 style="color: #333; text-align: center; font-size: 1.5em;">Our Location</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.9989560521627!2d72.82455331540294!3d19.06504828709232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9d6e7b0b3b7%3A0x7f3b8e7c6f4b7d9a!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1634567891234!5m2!1sen!2sin" style="width: 100%; height: 300px; border: 0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+</main>
+
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+  
+</body>
+</html>

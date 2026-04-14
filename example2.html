@@ -1,0 +1,87 @@
+<!-- 🌟 FIXED MODERN TRANSPARENT GLASS NAVBAR -->
+<nav id="glassNav" style="
+    position:fixed; top:0; left:0; width:100%;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:12px 40px; z-index:999;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    transition: all 0.4s ease;
+">
+
+    <!-- Logo -->
+    <div style="display:flex; align-items:center;">
+        <div style="
+            width:45px; height:45px; border-radius:50%;
+            background: linear-gradient(135deg, #ff007f, #ff4eb3);
+            color:white; display:flex; align-items:center; justify-content:center;
+            font-weight:bold; font-size:22px;
+            margin-right:12px; box-shadow:0 4px 12px rgba(255,0,140,0.5);
+        ">H</div>
+
+        <span style="
+            font-size:22px; font-weight:700; 
+            color:black; 
+            text-shadow:0 2px 5px rgba(0,0,0,0.3);
+        ">
+            Hitaishi Matrimony
+        </span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="deskMenu" style="display:flex; gap:30px;">
+        <a href="index.html" style="color:black; text-decoration:none; font-size:16px; font-weight:500;">Home</a>
+        <a href="male2.html" style="color:black; text-decoration:none; font-size:16px; font-weight:500;">Male</a>
+        <a href="female.html" style="color:black; text-decoration:none; font-size:16px; font-weight:500;">Female</a>
+        <a href="communityconnect.html" style="color:black; text-decoration:none; font-size:16px; font-weight:500;">Community</a>
+        <a href="nri2.html" style="color:black; text-decoration:none; font-size:16px; font-weight:500;">NRI</a>
+        <a href="membership.html" style="color:black; text-decoration:none; font-size:16px; font-weight:500;">Membership</a>
+    </div>
+
+    <!-- Right CTA -->
+    <a href="createprofile.html" class="deskMenu" style="
+        padding:8px 22px; border-radius:25px;
+        color:white; text-decoration:none; font-weight:bold;
+        background: linear-gradient(135deg, #ff007f, #ff4eb3);
+        box-shadow:0 4px 10px rgba(255,0,140,0.5);
+        transition:0.3s; margin-right: 50px;
+    "
+    >Create Profile</a>
+
+    <!-- Mobile Icon -->
+    <div id="mobIcon" style="font-size:32px; color:black; display:none; cursor:pointer;">☰</div>
+
+</nav>
+
+<script>
+    const nav = document.getElementById('glassNav');
+
+    // Solid navbar on scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.style.background = 'rgba(0,0,0,0.85)';
+            nav.style.backdropFilter = 'blur(0px)';
+        } else {
+            nav.style.background = 'rgba(255,255,255,0.15)';
+            nav.style.backdropFilter = 'blur(15px)';
+        }
+    });
+
+    // Responsive View
+    function handleResize() {
+        const deskItems = document.querySelectorAll('.deskMenu');
+        const mobIcon = document.getElementById('mobIcon');
+
+        if (window.innerWidth <= 900) {
+            deskItems.forEach(el => el.style.display = 'none');
+            mobIcon.style.display = 'block';
+        } else {
+            deskItems.forEach(el => el.style.display = 'flex');
+            mobIcon.style.display = 'none';
+        }
+    }
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+</script>

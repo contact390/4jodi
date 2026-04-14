@@ -1,0 +1,460 @@
+<!-- 
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Membership Plans</title>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+  <h2 style="color: #007BFF;">All Membership Plans</h2>
+  <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead style="background-color: #f2f2f2;">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Plan</th>
+        <th>Price</th>
+        <th>Payment Method</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody id="membershipTableBody">
+    </tbody>
+  </table>
+
+  <script>
+    async function fetchMemberships() {
+      try {
+        const response = await fetch('http://localhost:5000/api/membership_plan');
+        const data = await response.json();
+
+        const tableBody = document.getElementById('membershipTableBody');
+        tableBody.innerHTML = ''; 
+
+        data.forEach(item => {
+          const row = `
+            <tr>
+              <td>${item.id}</td>
+              <td>${item.name}</td>
+              <td>${item.email}</td>
+              <td>${item.phone}</td>
+              <td>${item.plan}</td>
+              <td>${item.price}</td>
+              <td>${item.payment_method}</td>
+              <td>${item.date}</td>
+            </tr>
+          `;
+          tableBody.innerHTML += row;
+        });
+      } catch (err) {
+        console.error('Failed to load data:', err);
+      }
+    }
+
+    fetchMemberships();
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+
+
+<!-- Contact Info Bar -->
+<div style="position: fixed; top: 0; left: 0; width: 100%; background-color: mediumspringgreen; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; font-family: Arial, sans-serif; font-size: 14px; z-index: 3000; height: 35px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <span style="display: flex; align-items: center;">
+      <i class="fas fa-map-marker-alt" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">Hyderabad, Mumbai, Delhi, Bangalore</span>
+    </span>
+    <a href="tel:9908793602" style="display: flex; align-items: center; text-decoration: none; margin-right: 15px;">
+      <i class="fas fa-phone-alt" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">9908793602</span>
+    </a>
+    <a href="mailto:Hitaishimatrimony@gmail.com" style="display: flex; align-items: center; text-decoration: none;">
+      <i class="fas fa-envelope" style="color: maroon; margin-right: 5px;"></i>
+      <span style="color: black;">opticjodi@gmail.com</span>
+    </a>
+  </div>
+  <div style="display: flex; align-items: center; gap: 10px; margin-right: 30px;">
+    <a href="https://www.whatsapp.com/" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='green';" onmouseleave="this.style.color='maroon';"><i class="fab fa-whatsapp"></i></a>
+<a href="https://www.linkedin.com/in/hitaishi-matrimony" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='#0077b5';" onmouseleave="this.style.color='maroon';">
+        <i class="fab fa-linkedin-in"></i>    <a href="https://www.instagram.com/hita.ishimatrimony/?hl=en" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='#e1306c';" onmouseleave="this.style.color='maroon';"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@Hitaishimatrimony" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='red';" onmouseleave="this.style.color='maroon';"><i class="fab fa-youtube"></i></a>
+    <a href="https://x.com/matrimonyhitais" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='black';" onmouseleave="this.style.color='maroon';"><i class="fab fa-twitter"></i></a>
+    <a href="createprofilr.html" style="background-color: maroon; color: white; padding: 6px 15px; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: bold;" onmouseenter="this.style.backgroundColor='darkred'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';" onmouseleave="this.style.backgroundColor='maroon'; this.style.transform='scale(1)';">Create Profile</a>
+  </div>
+</div>
+
+
+
+<!-- Main Header -->
+<header style="position: fixed; top: 0; left: 0; width: 100%; max-width: 1280px; margin: 0 auto; height: 100px; background-color: #e83e8c; color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; display: flex; align-items: center; padding: 0 15px;margin-top: 50px;">
+    <!-- Logo -->
+   <div style="flex: 0 0 120px; margin-right: 10px;">
+    <a href="index.html">
+        <img src="images/logo.png" alt="Hitaishi Matrimony Logo" style="height: 60px; width: auto; padding-left: 0px; transition: all 0.3s ease;" 
+             onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.15)';" 
+             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+    </a>
+</div>
+    
+    <!-- Title & Tagline -->
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <h1 style="margin: 0; font-size: 24px; color: greenyellow; white-space: nowrap; margin-left: 10px;margin-top: 0%;">
+                Welcome to 4jodi Matrimony
+            </h1>
+            <span style="font-size: 9px; background-color: red; color: white; padding: 2px 5px; border-radius: 10px; flex-shrink: 0;margin-top: 10px;">
+                Trusted since 2014
+            </span>
+        </div>
+        <!-- Main Navigation -->
+       <nav style="display: flex; flex-wrap: wrap; gap: 5px; margin-left: 5px; margin-top: 8px;">
+  <a href="index.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Home</a>
+
+  <a href="male2.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Male</a>
+
+  <a href="female.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Female</a>
+
+  <a href="dating.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Dating</a>
+
+  <a href="co-living.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Co-living</a>
+
+  <a href="friendship.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Friendship</a>
+
+  <a href="secondmarriage.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Second marriage</a>
+
+  <a href="widows.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Widows</a>
+
+  <a href="marriage affiliate .html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Marriage Affiliates</a>
+
+  <a href="marriage broker.html" style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Marriage Brokers</a>
+</nav>
+
+    </div>
+    
+    <!-- Top Navigation Links -->
+<nav style="position: absolute; top: 10px; right: 15px; display: flex; justify-content: flex-end; align-items: center; gap: 10px;">
+     <a href="nri2.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     NRI </a>
+
+  <a href="contactus.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     Contact us</a>
+
+  <a href="services2.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     Services</a>
+
+  <a href="membership.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     Membership</a>
+
+  <a href="successstories.html" style="color: white; text-decoration: none; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.color='#ff69b4';" 
+     onmouseleave="this.style.color='white';">
+     Success Stories</a>
+
+  <a href="login.html" onclick="openLoginPopup()" 
+     style="color: white; text-decoration: none; background-color: #ff69b4; padding: 5px 10px; border-radius: 5px; font-size: 12px; white-space: nowrap;"
+     onmouseenter="this.style.backgroundColor='#e754a8'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';"
+     onmouseleave="this.style.backgroundColor='#ff69b4'; this.style.transform='scale(1)';">
+     Login/Register</a>
+</nav>
+
+</header>
+
+<style>
+/* Media Queries for Responsiveness */
+@media (max-width: 1000px) {
+    header {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    header h1 {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+    header .logo div {
+        flex: 0 0 100px;
+    }
+    header .logo img {
+        height: 40px;
+    }
+    header nav a {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    header nav[style*="position: absolute"] a {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: auto;
+        padding: 10px;
+    }
+    header h1 {
+        font-size: 16px;
+    }
+    header .logo div {
+        flex: 0 0 80px;
+    }
+    header .logo img {
+        height: 30px;
+    }
+    header nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+    header nav[style*="position: absolute"] {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+  </style>
+
+
+
+<!-- Contact Messages Section -->
+<section style="margin-top: 190px;">
+  <h2 style="color:#28a745;">Search Contact by Email or Phone</h2>
+  <input type="text" id="searchValue" placeholder="Enter Email or Phone" style="padding:10px;width:300px;">
+  <button onclick="searchContact()" style="padding:10px 20px;margin-left:10px;">Search</button>
+  <div id="resultContact" style="margin-top:30px;"></div>
+
+
+<script>
+    function searchContact() {
+      const value = document.getElementById('searchValue').value.trim();
+      const resultDiv = document.getElementById('resultContact');
+      resultDiv.innerHTML = '';
+      if (!value) return alert("Please enter a value");
+      const isEmail = value.includes('@');
+      const endpoint = isEmail ? `email/${value}` : `phone/${value}`;
+      fetch(`http://localhost:5000/api/contact/${endpoint}`)
+        .then(res => {
+          if (!res.ok) throw new Error("Not found");
+          return res.json();
+        })
+        .then(data => {
+          const table = document.createElement('table');
+          table.border = "1";
+          table.cellPadding = "10";
+          table.style.borderCollapse = "collapse";
+          table.innerHTML = `
+            <tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Message</th><th>Date</th></tr>
+            ${data.map(d => `
+              <tr>
+                <td>${d.id}</td>
+                <td>${d.name}</td>
+                <td>${d.email}</td>
+                <td>${d.phone}</td>
+                <td>${d.message}</td>
+                <td>${new Date(d.date).toLocaleString()}</td>
+              </tr>
+            `).join('')}
+          `;
+          resultDiv.appendChild(table);
+        })
+        .catch(() => {
+          resultDiv.innerHTML = `<p style="color:red;">No contact found with the given value.</p>`;
+        });
+    }
+  </script>
+
+</section>
+
+<!-- User Profile Section -->
+<section>
+
+
+<h2>Search Profile by Email</h2>
+  <input type="text" id="email" placeholder="Enter email" style="padding:8px; width:300px;" />
+  <button onclick="fetchProfile()" style="padding:8px 15px;">Search</button>
+
+  <div id="result" style="margin-top:20px;"></div>
+
+  <script>
+    async function fetchProfile() {
+      const email = document.getElementById('email').value;
+      const resultDiv = document.getElementById('result');
+
+      if (!email) {
+        resultDiv.innerHTML = '<p style="color:red;">Please enter an email.</p>';
+        return;
+      }
+
+      try {
+        const res = await fetch(`http://localhost:5000/api/create_profile?email=${encodeURIComponent(email)}`);
+        const data = await res.json();
+
+        if (res.status !== 200) {
+          resultDiv.innerHTML = `<p style="color:red;">${data.error}</p>`;
+        } else {
+          resultDiv.innerHTML = `
+            <h3>${data.firstName} ${data.lastName}</h3>
+            <p><strong>Gender:</strong> ${data.gender}</p>
+            <p><strong>DOB:</strong> ${data.dob}</p>
+            <p><strong>Religion:</strong> ${data.religion}</p>
+            <p><strong>Occupation:</strong> ${data.occupation}</p>
+            <p><strong>About:</strong> ${data.about}</p>
+          `;
+        }
+      } catch (err) {
+        console.error(err);
+        resultDiv.innerHTML = '<p style="color:red;">Failed to fetch profile.</p>';
+      }
+    }
+  </script>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Membership Details Section -->
+
+<h2 style="color:#007bff;font-family:Arial, sans-serif;">Search Subscriber</h2>
+
+<div style="margin-bottom:20px;">
+  <label for="emailInput" style="font-weight:bold;font-family:Arial, sans-serif;">Email: </label>
+  <input type="text" id="emailInput" placeholder="Enter subscriber email" style="padding:6px;border:1px solid #ccc;border-radius:4px;">
+  <button onclick="getSubscriber()" style="padding:6px 12px;margin-left:5px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Search</button>
+</div>
+
+<!-- Result section (below search bar) -->
+<div id="result" style="margin-top:20px;padding:15px;border:1px solid #ddd;border-radius:6px;background:#f9f9f9;font-family:Arial, sans-serif;display:none;"></div>
+
+<script>
+  async function getSubscriber() {
+    const email = document.getElementById("emailInput").value.trim();
+    const resultDiv = document.getElementById("result");
+
+    if (!email) {
+      alert("Please enter an email");
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:5000/api/membership_plan/email/${email}`);
+      const data = await response.json();
+
+      resultDiv.style.display = "block"; // show only after search
+
+      if (data.error) {
+        resultDiv.innerHTML = `<p style="color:red;font-weight:bold;margin:0;">${data.error}</p>`;
+      } else {
+        resultDiv.innerHTML = `
+          <h3 style="margin:0 0 10px 0;color:#333;">Subscriber Details</h3>
+          <p style="margin:5px 0;"><b>ID:</b> ${data.id}</p>
+          <p style="margin:5px 0;"><b>Name:</b> ${data.fullName}</p>
+          <p style="margin:5px 0;"><b>Email:</b> ${data.email}</p>
+          <p style="margin:5px 0;"><b>Phone:</b> ${data.phone}</p>
+          <p style="margin:5px 0;"><b>Package:</b> ${data.packageName} (${data.packagePrice})</p>
+          <p style="margin:5px 0;"><b>Subscribed On:</b> ${new Date(data.created_at).toLocaleString()}</p>
+        `;
+      }
+    } catch (err) {
+      resultDiv.style.display = "block";
+      resultDiv.innerHTML = `<p style="color:red;font-weight:bold;margin:0;">Something went wrong. Please try again.</p>`;
+    }
+  }
+</script>
+
+
+
+
+
+     <!-- Footer -->
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+</body>
+</html>

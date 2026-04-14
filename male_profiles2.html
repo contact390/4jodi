@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Male Profiles</title>
+</head>
+<body style="font-family:Arial;background:#f4f4f4;padding:20px;">
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+<h2 style="text-align:center;color:#3399ff;margin-bottom:20px;">Male Profiles</h2>
+
+<!-- FILTER BOX -->
+<div id="filterBox" style="width:95%;margin:0 auto 20px auto;background:white;padding:15px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+
+    <input id="searchName" type="text" placeholder="Search Name" 
+    style="padding:10px;border:1px solid #ccc;border-radius:8px;width:180px;font-size:14px;">
+
+    <select id="professionFilter" 
+    style="padding:10px;border:1px solid #ccc;border-radius:8px;width:180px;font-size:14px;">
+        <option value="">All Professions</option>
+        <option value="Software Engineer">Software Engineer</option>
+        <option value="Doctor">Doctor</option>
+        <option value="Business">Business</option>
+        <option value="Teacher">Teacher</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <input id="minAge" type="number" placeholder="Min Age" 
+    style="padding:10px;border:1px solid #ccc;border-radius:8px;width:140px;font-size:14px;">
+
+    <input id="maxAge" type="number" placeholder="Max Age"
+    style="padding:10px;border:1px solid #ccc;border-radius:8px;width:140px;font-size:14px;">
+
+    <input id="cityFilter" type="text" placeholder="City"
+    style="padding:10px;border:1px solid #ccc;border-radius:8px;width:180px;font-size:14px;">
+
+    <!-- RESET BUTTON -->
+    <button onclick="resetFilters()" 
+    style="background:#ff4d4d;color:white;padding:10px 18px;border:none;border-radius:8px;font-size:14px;cursor:pointer;font-weight:bold;box-shadow:0 3px 8px rgba(0,0,0,0.2);">
+        Reset
+    </button>
+</div>
+
+<!-- PROFILES -->
+<div id="profiles" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;"></div>
+
+
+<script>
+let allProfiles = [];
+
+// LOAD DATA
+async function loadMale() {
+    const res = await fetch("http://localhost:5000/api/profiles/male");
+    const result = await res.json();
+    allProfiles = result.data;
+    displayProfiles(allProfiles);
+}
+
+// DISPLAY PROFILES
+function displayProfiles(list) {
+    const box = document.getElementById("profiles");
+    box.innerHTML = "";
+
+    list.forEach(p => {
+        let img = p.profileImage?.length > 50 
+            ? p.profileImage 
+            : "https://via.placeholder.com/260x180?text=No+Image";
+
+        let age = calculateAge(p.dob);
+
+        const card = document.createElement("div");
+        card.style = `
+            width:260px;background:white;padding:15px;border-radius:12px;
+            box-shadow:0 3px 8px rgba(0,0,0,0.15);cursor:pointer;
+            transition:transform .2s;
+        `;
+        card.onmouseover = () => card.style.transform = "scale(1.04)";
+        card.onmouseout = () => card.style.transform = "scale(1)";
+
+        card.innerHTML = `
+            <img src="${img}" style="width:100%;height:180px;object-fit:cover;border-radius:10px;">
+            <p style="font-size:18px;font-weight:bold;color:#3399ff;margin:8px 0 5px 0;">
+                ${p.firstName} ${p.lastName}
+            </p>
+            <p style="font-size:14px;margin:3px 0;"><b>Age:</b> ${age}</p>
+            <p style="font-size:14px;margin:3px 0;"><b>Mobile:</b> ${p.mobile}</p>
+            <p style="font-size:14px;margin:3px 0;"><b>Profession:</b> ${p.profession}</p>
+            <p style="font-size:14px;margin:3px 0;"><b>City:</b> ${p.city}</p>
+        `;
+
+        card.onclick = () => {
+            window.location.href = `single_profile.html?id=${p.id}`;
+        };
+
+        box.appendChild(card);
+    });
+}
+
+// AGE CALCULATOR
+function calculateAge(dob) {
+    const birth = new Date(dob);
+    return Math.floor((Date.now() - birth.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
+}
+
+// FILTER LOGIC
+function applyFilters() {
+    let filtered = allProfiles;
+
+    let name = document.getElementById("searchName").value.toLowerCase();
+    let profession = document.getElementById("professionFilter").value;
+    let minAge = parseInt(document.getElementById("minAge").value);
+    let maxAge = parseInt(document.getElementById("maxAge").value);
+    let city = document.getElementById("cityFilter").value.toLowerCase();
+
+    filtered = filtered.filter(p => {
+        let age = calculateAge(p.dob);
+
+        return (
+            (!name || (p.firstName + " " + p.lastName).toLowerCase().includes(name)) &&
+            (!profession || p.profession === profession) &&
+            (!minAge || age >= minAge) &&
+            (!maxAge || age <= maxAge) &&
+            (!city || p.city?.toLowerCase().includes(city))
+        );
+    });
+
+    displayProfiles(filtered);
+}
+
+// RESET FILTERS
+function resetFilters() {
+    document.getElementById("searchName").value = "";
+    document.getElementById("professionFilter").value = "";
+    document.getElementById("minAge").value = "";
+    document.getElementById("maxAge").value = "";
+    document.getElementById("cityFilter").value = "";
+
+    displayProfiles(allProfiles);
+}
+
+// LIVE FILTER
+document.querySelectorAll("#filterBox input, #filterBox select")
+    .forEach(el => el.addEventListener("input", applyFilters));
+
+loadMale();
+</script>
+
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+</body>
+</html>

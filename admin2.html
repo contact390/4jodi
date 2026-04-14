@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Profiles</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h1 { color: #ff3366; text-align: center; }
+    table { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    th, td { padding: 12px; border: 1px solid #ddd; text-align: center; }
+    th { background: #ff3366; color: #fff; }
+    tr:nth-child(even) { background: #f9f9f9; }
+    img { max-width: 80px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>All Profiles</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Profile For</th>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Marital Status</th>
+        <th>Religion</th>
+        <th>Caste</th>
+        <th>Education</th>
+        <th>Profession</th>
+        <th>Income</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Profile Image</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody id="profilesBody"></tbody>
+  </table>
+
+  <script>
+    async function fetchProfiles() {
+      try {
+        const response = await fetch("http://localhost:5000/api/new_profilecreation"); // change if different port
+        const data = await response.json();
+
+        if (data.success) {
+          const tbody = document.getElementById("profilesBody");
+          tbody.innerHTML = "";
+
+          data.data.forEach(profile => {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+              <td>${profile.id}</td>
+              <td>${profile.profileFor}</td>
+              <td>${profile.firstName} ${profile.lastName}</td>
+              <td>${profile.dob}</td>
+              <td>${profile.gender}</td>
+              <td>${profile.maritalStatus}</td>
+              <td>${profile.religion}</td>
+              <td>${profile.caste}</td>
+              <td>${profile.education}</td>
+              <td>${profile.profession}</td>
+              <td>${profile.income}</td>
+              <td>${profile.mobile}</td>
+              <td>${profile.email}</td>
+              <td>${profile.profileImage ? `<img src="${profile.profileImage}" alt="Profile">` : "N/A"}</td>
+              <td>${profile.created_at}</td>
+            `;
+
+            tbody.appendChild(row);
+          });
+        }
+      } catch (err) {
+        console.error("Error loading profiles:", err);
+      }
+    }
+
+    fetchProfiles();
+  </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Profiles</title>
+</head>
+<body style="font-family: Arial, sans-serif; background:linear-gradient(135deg,#f9f9f9,#f0f0f5); margin:0; padding:30px;">
+  <h1 style="color:#ff3366; text-align:center; margin-bottom:30px; font-size:32px; letter-spacing:1px;">✨ All Profiles ✨</h1>
+  <div id="profilesContainer" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:25px; width:95%; margin:0 auto;"></div>
+
+  <script>
+    async function fetchProfiles() {
+      try {
+        const response = await fetch("http://localhost:5000/api/new_profilecreation"); 
+        const data = await response.json();
+
+        if (data.success) {
+          const container = document.getElementById("profilesContainer");
+          container.innerHTML = "";
+
+          data.data.forEach(profile => {
+            const card = document.createElement("div");
+            card.style = "background:#fff; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,0.1); padding:25px 20px; text-align:center; transition:all 0.3s ease; position:relative;";
+            card.onmouseover = () => card.style.transform = "translateY(-8px)";
+            card.onmouseout = () => card.style.transform = "translateY(0)";
+
+            card.innerHTML = `
+              <div style="position:absolute; top:15px; right:15px; background:#ff3366; color:#fff; font-size:12px; padding:4px 10px; border-radius:20px;">${profile.profileFor}</div>
+              <img src="${profile.profileImage || 'https://via.placeholder.com/120'}" alt="Profile" style="width:130px; height:130px; border-radius:50%; object-fit:cover; margin-bottom:15px; border:4px solid #ff3366;">
+              <h2 style="margin:10px 0; color:#222; font-size:22px; font-weight:bold;">${profile.firstName} ${profile.lastName}</h2>
+              <p style="margin:5px 0; color:#444; font-size:15px;"><b>Gender:</b> ${profile.gender}</p>
+              <p style="margin:5px 0; color:#444; font-size:15px;"><b>Profession:</b> ${profile.profession}</p>
+              <p style="margin:5px 0; color:#444; font-size:15px;"><b>Education:</b> ${profile.education}</p>
+
+              <div class="more-details" style="display:none; text-align:left; margin-top:15px; font-size:14px; color:#555; line-height:1.6;">
+                <p><b>DOB:</b> ${profile.dob}</p>
+                <p><b>Marital Status:</b> ${profile.maritalStatus}</p>
+                <p><b>Religion:</b> ${profile.religion}</p>
+                <p><b>Caste:</b> ${profile.caste}</p>
+                <p><b>Income:</b> ${profile.income}</p>
+                <p><b>Mobile:</b> ${profile.mobile}</p>
+                <p><b>Email:</b> ${profile.email}</p>
+                <p style="color:#888; font-size:12px;"><b>Created At:</b> ${profile.created_at}</p>
+              </div>
+
+              <!-- Buttons back here -->
+              <button class="toggleBtn" style="margin-top:15px; background:#ff3366; color:#fff; border:none; padding:10px 18px; border-radius:6px; cursor:pointer; font-size:14px;">More Details</button>
+              <button class="connectBtn" style="margin-top:15px; margin-left:8px; background:#28a745; color:#fff; border:none; padding:10px 18px; border-radius:6px; cursor:pointer; font-size:14px;">Connect</button>
+            `;
+
+            // Toggle More Details
+            const toggleBtn = card.querySelector(".toggleBtn");
+            const moreDetails = card.querySelector(".more-details");
+            toggleBtn.addEventListener("click", () => {
+              if (moreDetails.style.display === "none") {
+                moreDetails.style.display = "block";
+                toggleBtn.textContent = "Less Details";
+              } else {
+                moreDetails.style.display = "none";
+                toggleBtn.textContent = "More Details";
+              }
+            });
+
+            // Connect Button
+            const connectBtn = card.querySelector(".connectBtn");
+            connectBtn.addEventListener("click", () => {
+              alert(`✅ You sent a connect request to ${profile.firstName} ${profile.lastName}`);
+            });
+
+            container.appendChild(card);
+          });
+        }
+      } catch (err) {
+        console.error("Error loading profiles:", err);
+      }
+    }
+
+    fetchProfiles();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
+  
+
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+  <div style="max-width: 500px; width: 100%; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); overflow: hidden;">
+    <!-- Progress Bar -->
+    <div style="display: flex; justify-content: space-between; padding: 20px 40px; background: #f8f9fa; border-bottom: 1px solid #eee;">
+      <div style="text-align: center;">
+        <div id="step1" style="width: 40px; height: 40px; line-height: 40px; border-radius: 50%; background: #ff3366; color: white; margin: 0 auto 5px; font-weight: bold;">1</div>
+        <div style="font-size: 12px; color: #ff3366; font-weight: 500;">Profile For</div>
+      </div>
+      <div style="text-align: center;">
+        <div id="step2" style="width: 40px; height: 40px; line-height: 40px; border-radius: 50%; background: #ddd; color: #777; margin: 0 auto 5px; font-weight: bold;">2</div>
+        <div style="font-size: 12px; color: #777; font-weight: 500;">Basic Info</div>
+      </div>
+      <div style="text-align: center;">
+        <div id="step3" style="width: 40px; height: 40px; line-height: 40px; border-radius: 50%; background: #ddd; color: #777; margin: 0 auto 5px; font-weight: bold;">3</div>
+        <div style="font-size: 12px; color: #777; font-weight: 500;">Religion</div>
+      </div>
+      <div style="text-align: center;">
+        <div id="step4" style="width: 40px; height: 40px; line-height: 40px; border-radius: 50%; background: #ddd; color: #777; margin: 0 auto 5px; font-weight: bold;">4</div>
+        <div style="font-size: 12px; color: #777; font-weight: 500;">Education</div>
+      </div>
+      <div style="text-align: center;">
+        <div id="step5" style="width: 40px; height: 40px; line-height: 40px; border-radius: 50%; background: #ddd; color: #777; margin: 0 auto 5px; font-weight: bold;">5</div>
+        <div style="font-size: 12px; color: #777; font-weight: 500;">Verify</div>
+      </div>
+    </div>
+    
+    <!-- Form Container -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Creation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f7f7f7; margin: 0; padding: 20px;">
+    <div style="max-width: 600px; margin: 40px auto; background-color: #ffffff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+        <div id="section0" style="display: block;">
+            <h2 style="color: #ff3366; margin-top: 10px; text-align: center;">Who is this profile for?</h2>
+            <p style="color: #666; margin-bottom: 15px; text-align: center;">Please select one option to continue</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px;">
+                <div class="profile-option" data-option="Myself" onclick="selectProfileOption(this)" style="border: 2px solid #ddd; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease;">
+                    <div style="font-size: 20px; color: #ff3366; margin-bottom: 10px;"><i class="fas fa-user"></i></div>
+                    <h3 style="margin: 0; color: #333;">Myself</h3>
+                    <p style="color: #666; margin: 10px 0 0; font-size: 11px; text-align: center;">I am creating my own profile</p>
+                </div>
+                <div class="profile-option" data-option="Son" onclick="selectProfileOption(this)" style="border: 2px solid #ddd; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease;">
+                    <div style="font-size: 20px; color: #ff3366; margin-bottom: 10px;"><i class="fas fa-male"></i></div>
+                    <h3 style="margin: 0; color: #333;">Son</h3>
+                    <p style="color: #666; margin: 10px 0 0; font-size: 11px; text-align: center;">I am creating profile for my son</p>
+                </div>
+                <div class="profile-option" data-option="Daughter" onclick="selectProfileOption(this)" style="border: 2px solid #ddd; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease;">
+                    <div style="font-size: 20px; color: #ff3366; margin-bottom: 10px;"><i class="fas fa-female"></i></div>
+                    <h3 style="margin: 0; color: #333;">Daughter</h3>
+                    <p style="color: #666; margin: 10px 0 0; font-size: 11px; text-align: center;">I am creating profile for my daughter</p>
+                </div>
+                <div class="profile-option" data-option="Brother" onclick="selectProfileOption(this)" style="border: 2px solid #ddd; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease;">
+                    <div style="font-size: 20px; color: #ff3366; margin-bottom: 10px;"><i class="fas fa-user-friends"></i></div>
+                    <h3 style="margin: 0; color: #333;">Brother</h3>
+                    <p style="color: #666; margin: 10px 0 0; font-size: 11px; text-align: center;">I am creating profile for my brother</p>
+                </div>
+                <div class="profile-option" data-option="Sister" onclick="selectProfileOption(this)" style="border: 2px solid #ddd; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease;">
+                    <div style="font-size: 20px; color: #ff3366; margin-bottom: 10px;"><i class="fas fa-female"></i></div>
+                    <h3 style="margin: 0; color: #333;">Sister</h3>
+                    <p style="color: #666; margin: 10px 0 0; font-size: 11px; text-align: center;">I am creating profile for my sister</p>
+                </div>
+                <div class="profile-option" data-option="Relative/Friend" onclick="selectProfileOption(this)" style="border: 2px solid #ddd; border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s ease;">
+                    <div style="font-size: 20px; color: #ff3366; margin-bottom: 10px;"><i class="fas fa-users"></i></div>
+                    <h3 style="margin: 0; color: #333;">Relative/Friend</h3>
+                    <p style="color: #666; margin: 10px 0 0; font-size: 11px; text-align: center;">I am creating profile for a relative or friend</p>
+                </div>
+            </div>
+            
+            <p id="profile-error" style="color: #ff3366; text-align: center; margin-top: 20px; display: none;">
+                <i class="fas fa-exclamation-circle"></i> Please select an option to continue
+            </p>
+            
+            <button class="btn" onclick="validateProfileSelection()" style="background: linear-gradient(to right, #ff3366, #ff4b2b); color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 18px; font-weight: 600; margin: 30px auto 10px; display: block; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 51, 102, 0.3); transition: transform 0.2s, box-shadow 0.2s;">
+                Continue <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <div id="section1" style="display: none;">
+            <h2 style="color: #ff3366; margin-top: 10px; text-align: center;">Basic Information</h2>
+            <p style="color: #666; margin-bottom: 15px; text-align: center;">All fields are mandatory to proceed with registration</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div>
+                    <label>First Name</label>
+                    <input type="text" id="firstName" placeholder="Enter your first name" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                </div>
+                <div>
+                    <label>Last Name</label>
+                    <input type="text" id="lastName" placeholder="Enter your last name" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                </div>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <label>Date of Birth</label>
+                <input type="date" id="dob" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <label>Gender</label>
+                <select id="gender" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <label>Marital Status</label>
+                <select id="maritalStatus" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                    <option value="">Select Marital Status</option>
+                    <option value="Never Married">Never Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widowed">Widowed</option>
+                    <option value="Separated">Separated</option>
+                </select>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <label>Profile Image</label>
+                <input type="file" id="profileImage" accept="image/*" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                <div id="imagePreview" style="margin-top: 10px;">
+                    <img id="previewImg" src="" alt="Preview" style="max-width: 120px; border-radius: 10px; display: none; border: 1px solid #ccc; padding: 3px;">
+                </div>
+            </div>
+            
+            <div class="btn-group" style="display: flex; justify-content: space-between; margin-top: 30px;">
+                <button class="btn-back" onclick="showSection(0)" style="background: #f1f1f1; color: #333; padding: 14px 30px; border-radius: 30px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; border: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: transform 0.2s;">
+                    <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back
+                </button>
+                <button class="btn" onclick="validateSection(1)" style="background: linear-gradient(to right, #ff3366, #ff4b2b); color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 18px; font-weight: 600; margin: 30px auto 10px; display: block; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 51, 102, 0.3); transition: transform 0.2s, box-shadow 0.2s;">
+                    Continue <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="section2" style="display: none;">
+            <h2 style="color: #ff3366; margin-top: 10px; text-align: center;">Religious & Community Details</h2>
+            <p style="color: #666; margin-bottom: 15px; text-align: center;">Your religious background helps us find better matches</p>
+            
+            <div style="margin-top: 15px;">
+                <label>Religion</label>
+                <select id="religion" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                    <option value="">Select Religion</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Muslim">Muslim</option>
+                    <option value="Christian">Christian</option>
+                    <option value="Sikh">Sikh</option>
+                    <option value="Buddhist">Buddhist</option>
+                    <option value="Jain">Jain</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <label>Caste/Community</label>
+                <select id="caste" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                    <option value="">Select Caste/Community</option>
+                    <option value="Brahmin">Brahmin</option>
+                    <option value="Kshatriya">Kshatriya</option>
+                    <option value="Vaishya">Vaishya</option>
+                    <option value="Shudra">Shudra</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <label>Sub Caste (Optional)</label>
+                <input type="text" id="subCaste" placeholder="Enter your sub-caste if any" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <label>Mother Tongue</label>
+                <select id="motherTongue" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                    <option value="">Select Mother Tongue</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Gujarati">Gujarati</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div class="btn-group" style="display: flex; justify-content: space-between; margin-top: 30px;">
+                <button class="btn-back" onclick="showSection(1)" style="background: #f1f1f1; color: #333; padding: 14px 30px; border-radius: 30px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; border: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: transform 0.2s;"><i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back</button>
+                <button class="btn" onclick="validateSection(2)" style="background: linear-gradient(to right, #ff3366, #ff4b2b); color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 18px; font-weight: 600; margin: 30px auto 10px; display: block; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 51, 102, 0.3); transition: transform 0.2s, box-shadow 0.2s;">Continue <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></button>
+            </div>
+        </div>
+
+        <div id="section3" style="display: none;">
+            <h2 style="color: #ff3366; margin-top: 10px; text-align: center;">Education & Career</h2>
+            <p style="color: #666; margin-bottom: 15px; text-align: center;">Information about your education and profession</p>
+            
+            <div style="margin-top: 15px;">
+                <label>Highest Education</label>
+                <select id="education" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                    <option value="">Select Education Level</option>
+                    <option value="High School">High School</option>
+                    <option value="Bachelor's Degree">Bachelor's Degree</option>
+                    <option value="Master's Degree">Master's Degree</option>
+                    <option value="Doctorate">Doctorate</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <label>College/University</label>
+                <input type="text" id="college" placeholder="Enter your college/university name" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <label>Profession</label>
+                <select id="profession" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                    <option value="">Select Profession</option>
+                    <option value="Software Professional">Software Professional</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Engineer">Engineer</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Business Owner">Business Owner</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <label>Annual Income (₹)</label>
+                <select id="income" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                    <option value="">Select Income Range</option>
+                    <option value="0-5 Lakhs">0-5 Lakhs</option>
+                    <option value="5-10 Lakhs">5-10 Lakhs</option>
+                    <option value="10-20 Lakhs">10-20 Lakhs</option>
+                    <option value="20+ Lakhs">20+ Lakhs</option>
+                </select>
+            </div>
+            
+            <div class="btn-group" style="display: flex; justify-content: space-between; margin-top: 30px;">
+                <button class="btn-back" onclick="showSection(2)" style="background: #f1f1f1; color: #333; padding: 14px 30px; border-radius: 30px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; border: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: transform 0.2s;"><i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back</button>
+                <button class="btn" onclick="validateSection(3)" style="background: linear-gradient(to right, #ff3366, #ff4b2b); color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 18px; font-weight: 600; margin: 30px auto 10px; display: block; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 51, 102, 0.3); transition: transform 0.2s, box-shadow 0.2s;">Continue <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></button>
+            </div>
+        </div>
+
+        <div id="section4" style="display: none;">
+            <h2 style="color: #ff3366; margin-top: 10px; text-align: center;">Verify Your Account</h2>
+            <p style="color: #666; margin-bottom: 15px; text-align: center;">Please enter your contact details to complete registration</p>
+            
+            <div style="margin-top: 15px;">
+                <label>Mobile Number</label>
+                <div style="display: flex; gap: 10px;">
+                    <select style="width: 80px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                        <option>+91</option>
+                        <option>+1</option>
+                        <option>+44</option>
+                    </select>
+                    <input type="tel" id="mobile" placeholder="Enter your mobile number" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+                </div>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email address" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Create a strong password" style="width: calc(100% - 24px); padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box; transition: border 0.3s;">
+            </div>
+            
+            <div class="btn-group" style="display: flex; justify-content: space-between; margin-top: 30px;">
+                <button class="btn-back" onclick="showSection(3)" style="background: #f1f1f1; color: #333; padding: 14px 30px; border-radius: 30px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; border: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: transform 0.2s;"><i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back</button>
+                <button class="btn" onclick="validateSection(4)" style="background: linear-gradient(to right, #ff3366, #ff4b2b); color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 18px; font-weight: 600; margin: 30px auto 10px; display: block; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 51, 102, 0.3); transition: transform 0.2s, box-shadow 0.2s;">Register <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></button>
+            </div>
+        </div>
+
+        <div id="section5" style="display: none; text-align: center; padding: 40px 20px;">
+            <div style="font-size: 80px; color: #4CAF50; margin-bottom: 20px;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 style="color: #ff3366; margin-top: 10px; text-align: center;">Profile Created Successfully!</h2>
+            <p style="color: #666; margin-bottom: 15px; text-align: center; font-size: 18px;">Thank you for creating your profile. Our team will verify your details and activate your account shortly.</p>
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <button onclick="showSection(0)" class="btn" style="background: linear-gradient(to right, #ff3366, #ff4b2b); color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 18px; font-weight: 600; margin: 30px auto 10px; display: block; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 51, 102, 0.3); transition: transform 0.2s, box-shadow 0.2s;">
+                    <i class="fas fa-home" style="margin-right: 8px;"></i> Go to Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let profileData = {};
+
+        function showSection(index) {
+            for (let i = 0; i <= 5; i++) {
+                document.getElementById("section" + i).style.display = "none";
+            }
+            document.getElementById("section" + index).style.display = "block";
+        }
+
+        function selectProfileOption(element) {
+            document.querySelectorAll(".profile-option").forEach(el => {
+                el.style.borderColor = "#ddd";
+                el.style.transform = "none";
+                el.style.boxShadow = "none";
+            });
+            element.style.borderColor = "#ff3366";
+            element.style.transform = "translateY(-5px)";
+            element.style.boxShadow = "0 4px 15px rgba(255, 51, 102, 0.1)";
+            profileData.profileFor = element.dataset.option;
+            document.getElementById("profile-error").style.display = "none";
+        }
+
+        function validateProfileSelection() {
+            if (!profileData.profileFor) {
+                document.getElementById("profile-error").style.display = "block";
+                return;
+            }
+            showSection(1);
+        }
+
+        function validateSection(step) {
+            if (step === 1) {
+                const firstName = document.getElementById("firstName").value.trim();
+                const lastName = document.getElementById("lastName").value.trim();
+                const dob = document.getElementById("dob").value;
+                const gender = document.getElementById("gender").value;
+                const maritalStatus = document.getElementById("maritalStatus").value;
+
+                if (!firstName || !lastName || !dob || !gender || !maritalStatus) {
+                    alert("Please fill all required fields in Basic Information.");
+                    return;
+                }
+
+                profileData.firstName = firstName;
+                profileData.lastName = lastName;
+                profileData.dob = dob;
+                profileData.gender = gender;
+                profileData.maritalStatus = maritalStatus;
+
+                // Check if file exists and convert to base64
+                const file = document.getElementById("profileImage").files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        profileData.profileImage = e.target.result;
+                        showSection(2);
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    profileData.profileImage = null;
+                    showSection(2);
+                }
+
+            } else if (step === 2) {
+                const religion = document.getElementById("religion").value;
+                const caste = document.getElementById("caste").value;
+                const subCaste = document.getElementById("subCaste").value.trim();
+                const motherTongue = document.getElementById("motherTongue").value;
+
+                if (!religion || !caste || !motherTongue) {
+                    alert("Please fill all required fields in Religious Details.");
+                    return;
+                }
+
+                profileData.religion = religion;
+                profileData.caste = caste;
+                profileData.subCaste = subCaste;
+                profileData.motherTongue = motherTongue;
+                showSection(3);
+
+            } else if (step === 3) {
+                const education = document.getElementById("education").value;
+                const college = document.getElementById("college").value.trim();
+                const profession = document.getElementById("profession").value;
+                const income = document.getElementById("income").value;
+
+                if (!education || !profession || !income) {
+                    alert("Please fill all required fields in Education & Career.");
+                    return;
+                }
+
+                profileData.education = education;
+                profileData.college = college;
+                profileData.profession = profession;
+                profileData.income = income;
+                showSection(4);
+
+            } else if (step === 4) {
+                const mobile = document.getElementById("mobile").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
+
+                if (!mobile || !email || !password) {
+                    alert("Please enter Mobile, Email, and Password.");
+                    return;
+                }
+
+                profileData.mobile = mobile;
+                profileData.email = email;
+                profileData.password = password;
+
+                // Final API call
+                console.log("Submitting profile data:", profileData);
+                fetch("http://localhost:5000/api/new_profilecreation", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(profileData)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log("API Response:", data);
+                    if (data.success) {
+                        showSection(5); // success screen
+                    } else {
+                        alert("Error: " + (data.message || "Failed to create profile"));
+                    }
+                })
+                .catch(err => {
+                    console.error("Fetch Error:", err);
+                    alert("Something went wrong. Try again.");
+                });
+            }
+        }
+
+        // Preview profile image
+        document.getElementById("profileImage").addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("previewImg").src = e.target.result;
+                    document.getElementById("previewImg").style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            } else {
+                document.getElementById("previewImg").style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+  </div>
+
+  <script>
+    // Global variables
+    let currentSection = 0;
+    let selectedProfileFor = '';
+    let formData = {};
+
+    // Function to show a specific section
+    function showSection(sectionIndex) {
+      // Hide all sections
+      document.querySelectorAll('[id^="section"]').forEach(section => {
+        section.style.display = 'none';
+      });
+      
+      // Show the requested section
+      document.getElementById(`section${sectionIndex}`).style.display = 'block';
+      
+      // Update current section
+      currentSection = sectionIndex;
+      
+      // Update progress indicators
+      updateProgressIndicators(sectionIndex);
+    }
+
+    // Function to update progress indicators
+    function updateProgressIndicators(currentStep) {
+      const steps = [1, 2, 3, 4, 5];
+      
+      steps.forEach((step, index) => {
+        const bubble = document.getElementById(`step${step}`);
+        
+        if (index < currentStep) {
+          bubble.style.background = '#4CAF50';
+          bubble.style.color = 'white';
+        } else if (index === currentStep) {
+          bubble.style.background = '#ff3366';
+          bubble.style.color = 'white';
+        } else {
+          bubble.style.background = '#ddd';
+          bubble.style.color = '#777';
+        }
+      });
+    }
+
+    // Function to select profile option
+    function selectProfileOption(option) {
+      // Remove selected class from all options
+      document.querySelectorAll('.profile-option').forEach(el => {
+        el.style.borderColor = '#ddd';
+        el.style.boxShadow = 'none';
+      });
+      
+      // Add selected class to clicked option
+      const selectedEl = document.querySelector(`.profile-option[onclick="selectProfileOption('${option}')"]`);
+      selectedEl.style.borderColor = '#ff3366';
+      selectedEl.style.boxShadow = '0 0 10px rgba(255, 51, 102, 0.3)';
+      
+      // Store selection
+      selectedProfileFor = option;
+      formData.profileFor = option;
+      
+      // Hide error message if shown
+      document.getElementById('profile-error').style.display = 'none';
+    }
+
+    // Function to validate profile selection
+    function validateProfileSelection() {
+      if (!selectedProfileFor) {
+        document.getElementById('profile-error').style.display = 'block';
+        return;
+      }
+      
+      // Proceed to next section
+      showSection(1);
+    }
+
+    // Function to validate section data
+    function validateSection(sectionNum) {
+      let isValid = true;
+      const inputs = document.querySelectorAll(`#section${sectionNum} input, #section${sectionNum} select, #section${sectionNum} textarea`);
+      
+      inputs.forEach(input => {
+        if (input.hasAttribute('required') && !input.value.trim()) {
+          input.style.borderColor = '#ff3366';
+          isValid = false;
+        } else {
+          input.style.borderColor = '#ddd';
+          
+          // Store the data
+          formData[input.id] = input.value;
+        }
+      });
+      
+      if (!isValid) {
+        alert('Please fill in all required fields');
+        return;
+      }
+      
+      // Special validation for section 4 (verification)
+      if (sectionNum === 4) {
+        const mobile = document.getElementById('mobile').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        // Validate mobile number
+        if (!/^\d{10}$/.test(mobile)) {
+          alert('Please enter a valid 10-digit mobile number');
+          return;
+        }
+        
+        // Validate email
+        if (!/^\S+@\S+\.\S+$/.test(email)) {
+          alert('Please enter a valid email address');
+          return;
+        }
+        
+        // Validate password
+        if (password.length < 6) {
+          alert('Password must be at least 6 characters long');
+          return;
+        }
+        
+        // Show OTP section
+        document.getElementById('otpSection').style.display = 'block';
+        document.getElementById('continueBtn').innerHTML = 'Verify & Complete <i class="fas fa-check" style="margin-left: 8px;"></i>';
+        document.getElementById('continueBtn').setAttribute('onclick', 'verifyAndSubmit()');
+        
+        // Simulate sending OTP
+        document.getElementById('otpStatus').style.display = 'block';
+        document.getElementById('otpStatus').style.backgroundColor = '#f0f8ff';
+        document.getElementById('otpStatus').style.color = '#0066cc';
+        document.getElementById('otpStatus').style.padding = '10px';
+        document.getElementById('otpStatus').style.borderRadius = '5px';
+        document.getElementById('otpStatus').innerHTML = '<i class="fas fa-info-circle"></i> Verification code sent to your mobile. For demo, use 123456';
+        
+        return;
+      }
+      
+      // Proceed to next section
+      showSection(sectionNum + 1);
+    }
+
+    // Function to verify OTP and submit form
+    function verifyAndSubmit() {
+      const otp = document.getElementById('otp').value;
+      
+      if (otp !== '123456') {
+        document.getElementById('otpStatus').style.backgroundColor = '#ffebee';
+        document.getElementById('otpStatus').style.color = '#c62828';
+        document.getElementById('otpStatus').innerHTML = '<i class="fas fa-exclamation-circle"></i> Invalid verification code. Please try again.';
+        return;
+      }
+      
+      // Success
+      document.getElementById('otpStatus').style.backgroundColor = '#e8f5e9';
+      document.getElementById('otpStatus').style.color = '#2e7d32';
+      document.getElementById('otpStatus').innerHTML = '<i class="fas fa-check-circle"></i> Verification successful!';
+      
+      // Simulate form submission
+      setTimeout(() => {
+        showSection(5);
+      }, 1000);
+    }
+
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set up input validation styling
+      document.querySelectorAll('input, select, textarea').forEach(input => {
+        input.addEventListener('blur', function() {
+          if (this.hasAttribute('required') && !this.value.trim()) {
+            this.style.borderColor = '#ff3366';
+          } else {
+            this.style.borderColor = '#ddd';
+          }
+        });
+      });
+    });
+  </script>
+  
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+</body>
+</html>
