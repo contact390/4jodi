@@ -145,7 +145,7 @@ app.use('/uploads', express.static('uploads'));
 app.use(express.static(path.join(__dirname)));
 
 // ✅ Start server
-const PORT = 5000;
+const PORT = 5002;
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
