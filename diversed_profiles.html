@@ -1,204 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Divorced Profiles - Hitaishi Matrimony</title>
-
-<style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f5f5; }
-    .header { background:linear-gradient(135deg,#e17055,#fab1a0); padding:25px 0; text-align:center; color:white; }
-    .header h1 { margin:0; font-size:2.4rem; }
-    .header p { margin:10px 0 0; font-size:1.1rem; opacity:0.9; }
-    .nav { background:white; padding:15px 0; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
-    .nav-container { max-width:1100px; margin:auto; display:flex; gap:15px; justify-content:center; flex-wrap:wrap; }
-    .nav-btn { padding:10px 20px; border-radius:25px; background:#eee; text-decoration:none; font-weight:600; color:#333; border:1px solid #ddd; transition:all 0.3s ease; }
-    .nav-btn:hover, .active { background:#e17055 !important; color:white !important; }
-    .container { max-width:1100px; margin:auto; padding:20px; }
-    .back-btn { background:#e17055; color:white; padding:10px 20px; border-radius:25px; text-decoration:none; font-weight:bold; display:inline-block; margin-bottom:20px; transition:background 0.3s ease; }
-    .back-btn:hover { background:#d15b40; }
-    .profiles-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:25px; margin-top:20px; }
-    .profile-card { background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:transform 0.3s ease, box-shadow 0.3s ease; }
-    .profile-card:hover { transform:translateY(-5px); box-shadow:0 8px 25px rgba(0,0,0,0.2); }
-    .profile-image { height:220px; background-size:cover; background-position:center; background-color:#f0f0f0; display:flex; align-items:center; justify-content:center; color:#999; }
-    .profile-content { padding:18px; }
-    .profile-name { font-size:1.3rem; font-weight:bold; margin-bottom:10px; color:#2c3e50; }
-    .profile-detail { margin-bottom:6px; font-size:0.95rem; display:flex; }
-    .label { font-weight:bold; color:#444; min-width:100px; }
-    .loading, .no-profiles, .error { text-align:center; padding:25px; background:white; border-radius:8px; margin-top:20px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
-    .error { background:#ffeaea; color:#e74c3c; }
-    .no-profiles { background:#f8f9fa; color:#666; }
-</style>
-
+  <title>Form with HttpOnly Cookie</title>
 </head>
 <body>
-    <div id="navbar"></div>
 
-<script>
-  fetch("navbar.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("navbar").innerHTML = data;
+  <h2>User Form</h2>
 
-      // Run scripts inside navbar
-      const scripts = document.getElementById("navbar").querySelectorAll("script");
-      scripts.forEach(oldScript => {
-        const newScript = document.createElement("script");
-        newScript.textContent = oldScript.textContent;
-        document.body.appendChild(newScript);
-      });
-    });
-</script>
+  <input type="text" id="name" placeholder="Enter Name" /><br><br>
+  <input type="email" id="email" placeholder="Enter Email" /><br><br>
 
-<div class="header">
-    <h1>Divorced Profiles</h1>
-    <p>Find someone ready for a fresh start with understanding</p>
-</div>
+  <button onclick="login()">Login</button>
+  <button onclick="submitForm()">Submit</button>
 
-<div class="nav">
-    <div class="nav-container">
-        <a href="index.html" class="nav-btn">Home</a>
-        <a href="male-profiles.html" class="nav-btn">Male Profiles</a>
-        <a href="female-profiles.html" class="nav-btn">Female Profiles</a>
-        <a href="widow-profiles.html" class="nav-btn">Widow Profiles</a>
-        <a href="never-married-profiles.html" class="nav-btn">Never Married</a>
-        <a href="#" class="nav-btn active">Divorced Profiles</a>
-        <a href="separated-profiles.html" class="nav-btn">Separated Profiles</a>
-    </div>
-</div>
-
-<div class="container">
-
-    <a href="index.html" class="back-btn">← Back to Dashboard</a>
-
-    <h2 style="color:#2c3e50; margin-bottom:5px;">Available Divorced Profiles</h2>
-    <p style="color:#666; margin-bottom:20px;">Find understanding partners ready for a fresh start</p>
-
-    <div id="profiles-container">
-        <div class="loading">Loading divorced profiles...</div>
-    </div>
-
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    loadDivorcedProfiles();
-});
-
-async function loadDivorcedProfiles() {
-    const container = document.getElementById("profiles-container");
-
-    try {
-        console.log("Fetching divorced profiles...");
-        
-        const response = await fetch("http://localhost:5000/api/profiles/divorced");
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const result = await response.json();
-        console.log("API Response:", result);
-
-        if (!result.success) {
-            throw new Error(result.message || "API returned unsuccessful response");
-        }
-
-        if (!result.data || !Array.isArray(result.data)) {
-            throw new Error("Invalid data format received from API");
-        }
-
-        if (result.data.length === 0) {
-            container.innerHTML = `
-                <div class="no-profiles">
-                    <h3>No Divorced Profiles Found</h3>
-                    <p>There are currently no divorced profiles in the system.</p>
-                </div>
-            `;
-            return;
-        }
-
-        let html = `<div class="profiles-grid">`;
-
-        result.data.forEach(profile => {
-            const age = calculateAge(profile.dob);
-            const img = profile.profileImage || "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80";
-
-            html += `
-                <div class="profile-card">
-                    <div class="profile-image" style="background-image:url('${img}')">
-                        ${!profile.profileImage ? '<span>Profile Image</span>' : ''}
-                    </div>
-                    <div class="profile-content">
-                        <div class="profile-name">${escapeHtml(profile.firstName || '')} ${escapeHtml(profile.lastName || '')}</div>
-
-                        <div class="profile-detail"><span class="label">Age:</span> ${age} years</div>
-                        <div class="profile-detail"><span class="label">Gender:</span> ${escapeHtml(profile.gender || 'Not specified')}</div>
-                        <div class="profile-detail"><span class="label">Religion:</span> ${escapeHtml(profile.religion || 'Not specified')}</div>
-                        <div class="profile-detail"><span class="label">Caste:</span> ${escapeHtml(profile.caste || 'Not specified')}</div>
-                        <div class="profile-detail"><span class="label">Education:</span> ${escapeHtml(profile.education || 'Not specified')}</div>
-                        <div class="profile-detail"><span class="label">Profession:</span> ${escapeHtml(profile.profession || 'Not specified')}</div>
-                        <div class="profile-detail"><span class="label">Income:</span> ${escapeHtml(profile.income || 'Not specified')}</div>
-                        ${profile.motherTongue ? `<div class="profile-detail"><span class="label">Mother Tongue:</span> ${escapeHtml(profile.motherTongue)}</div>` : ''}
-                        ${profile.maritalStatus ? `<div class="profile-detail"><span class="label">Status:</span> ${escapeHtml(profile.maritalStatus)}</div>` : ''}
-                    </div>
-                </div>
-            `;
-        });
-
-        html += `</div>`;
-        container.innerHTML = html;
-
-    } catch (err) {
-        console.error("Error loading divorced profiles:", err);
-        container.innerHTML = `
-            <div class="error">
-                <h3>Error Loading Profiles</h3>
-                <p>${err.message}</p>
-                <p><small>Please check if the server is running and try again.</small></p>
-                <button onclick="loadDivorcedProfiles()" style="background:#e17055; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer; margin-top:10px;">
-                    Try Again
-                </button>
-            </div>
-        `;
+  <script>
+    
+    // 🔐 Login API (sets cookie)
+    function login() {
+      fetch("http://localhost:5000/login", {
+        method: "POST",
+        credentials: "include"
+      })
+      .then(res => res.json())
+      .then(data => alert(data.message));
     }
-}
 
-function calculateAge(dob) {
-    if (!dob) return "N/A";
-    try {
-        const birthDate = new Date(dob);
-        const today = new Date();
-        let age = today.getFullYear() - birthDate.getFullYear();
-        const monthDiff = today.getMonth() - birthDate.getMonth();
-        
-        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-            age--;
-        }
-        return age;
-    } catch (e) {
-        return "N/A";
+    // 📩 Submit form
+    function submitForm() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+
+      fetch("http://localhost:5000/save-user", {
+        method: "POST",
+        credentials: "include", // ✅ important
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email })
+      })
+      .then(res => res.json())
+      .then(data => alert(data.message))
+      .catch(err => console.log(err));
     }
-}
 
-function escapeHtml(text) {
-    if (!text) return 'Not specified';
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-}
-</script>
-
-
-<div id="footer"></div>
-
-<script>
-fetch("footer.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-</script>
+  </script>
 
 </body>
 </html>

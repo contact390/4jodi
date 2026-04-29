@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Messages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .main-container {
+            max-width: 1200px;
+            margin: 180px auto 40px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .sidebar {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+        .sidebar-profile {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .sidebar-profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff3366;
+            margin-bottom: 15px;
+        }
+        .sidebar-profile h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .sidebar-profile p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .progress-bar {
+            height: 8px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+        .progress-bar div {
+            height: 100%;
+            background: #ff3366;
+            border-radius: 4px;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .sidebar a:hover {
+            background: rgba(255, 51, 102, 0.1);
+            color: #ff3366;
+        }
+        .sidebar a.active {
+            background: rgba(255, 51, 102, 0.1);
+            color: #ff3366;
+        }
+        .content {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .content h1 {
+            color: #ff3366;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .content > p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .messages-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .message-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #f9f9f9;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .message-item:hover {
+            background: #f0f0f0;
+            transform: translateX(5px);
+        }
+        .message-item.unread {
+            background: rgba(255, 51, 102, 0.05);
+            border-left: 3px solid #ff3366;
+        }
+        .message-item .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .message-item .message-content {
+            flex: 1;
+        }
+        .message-item .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .message-item .sender-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 1rem;
+        }
+        .message-item .message-time {
+            color: #999;
+            font-size: 0.8rem;
+        }
+        .message-item .message-preview {
+            color: #666;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .message-item .unread-badge {
+            background: #ff3366;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            margin-left: 10px;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        .empty-state i {
+            font-size: 4rem;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+        .empty-state h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        .loading i {
+            font-size: 2rem;
+            color: #ff3366;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .message-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .message-tab {
+            padding: 10px 20px;
+            border: none;
+            background: transparent;
+            color: #666;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .message-tab:hover {
+            background: rgba(255, 51, 102, 0.1);
+            color: #ff3366;
+        }
+        .message-tab.active {
+            background: #ff3366;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+<!-- Main Container -->
+<div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-profile">
+            <img id="profilePhoto" src="https://via.placeholder.com/120x120?text=Profile+Photo" alt="Profile Photo">
+            <h2 id="userName">User Name</h2>
+            <p id="userId">ID: Loading...</p>
+            <div style="margin-top: 15px;">
+                <div class="progress-bar">
+                    <div id="profileProgress" style="width: 75%;"></div>
+                </div>
+                <p id="completionText" style="font-size: 0.8rem; color: #666;">Profile Loading...</p>
+            </div>
+        </div>
+        
+        <ul>
+            <li><a href="userdashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a></li>
+            <li><a href="my-photos.html"><i class="fas fa-images"></i> My Photos</a></li>
+            <li><a href="match-suggestions.html"><i class="fas fa-heart"></i> Match Suggestions</a></li>
+            <li><a href="messages.html" class="active"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>Messages</h1>
+        <p>Connect with your matches through our secure messaging system.</p>
+        
+        <div class="message-tabs">
+            <button class="message-tab active" data-tab="inbox">Inbox</button>
+            <button class="message-tab" data-tab="sent">Sent</button>
+            <button class="message-tab" data-tab="requests">Interest Requests</button>
+        </div>
+        
+        <div id="messagesContainer" class="messages-container">
+            <div class="loading">
+                <i class="fas fa-spinner"></i>
+                <p>Loading messages...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // User data
+    let userData = {};
+    let messages = [];
+    let currentTab = 'inbox';
+
+    function getLocalStorageUser() {
+        try {
+            const stored = localStorage.getItem('hitaishi_user');
+            return stored ? JSON.parse(stored) : null;
+        } catch (err) {
+            console.warn('Failed to parse saved user from localStorage', err);
+            return null;
+        }
+    }
+
+    // DOM elements
+    const messagesContainer = document.getElementById('messagesContainer');
+    const messageTabs = document.querySelectorAll('.message-tab');
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+        const savedUser = getLocalStorageUser();
+        if (savedUser) {
+            userData = savedUser;
+            populateSidebar();
+        }
+        
+        loadUserData();
+        setupTabs();
+    });
+    
+    // Load user data from backend
+    function loadUserData() {
+        const localUser = getLocalStorageUser();
+        const userId = localUser && localUser.id ? localUser.id : '';
+        
+        let url = 'http://localhost:5000/api/user/profile';
+        if (userId) {
+            url += `?userId=${encodeURIComponent(userId)}`;
+        }
+
+        fetch(url, { 
+            credentials: 'include',
+            headers: { 'X-User-Id': userId }
+        })
+        .then(response => {
+            if (!response.ok) throw new Error(`Failed to fetch user data (${response.status})`);
+            return response.json();
+        })
+        .then(data => {
+            if (data.success && data.user) {
+                userData = Object.assign({}, userData, data.user);
+                populateSidebar();
+                loadMessages();
+            }
+        })
+        .catch(error => {
+            console.error('Error loading user data:', error);
+            const localUser = getLocalStorageUser();
+            if (localUser) {
+                userData = localUser;
+                populateSidebar();
+                loadMessages();
+            }
+        });
+    }
+    
+    // Populate sidebar
+    function populateSidebar() {
+        document.getElementById('userName').textContent = `${userData.firstName || userData.firstname || ''} ${userData.lastName || userData.lastname || ''}`.trim() || 'User Name';
+        document.getElementById('userId').textContent = userData.id ? `ID: ${userData.id}` : '';
+        
+        if (userData.profileImage && userData.profileImage.trim() !== '') {
+            document.getElementById('profilePhoto').src = userData.profileImage;
+        }
+        
+        updateProfileCompletion();
+    }
+    
+    // Update profile completion percentage
+    function updateProfileCompletion() {
+        let completedFields = 0;
+        const totalFields = 13;
+        
+        const requiredFields = [
+            'profileFor', 'firstName', 'lastName', 'dob', 'gender', 'maritalStatus',
+            'religion', 'caste', 'motherTongue', 'education', 'profession', 'income'
+        ];
+        
+        requiredFields.forEach(field => {
+            if (userData[field] && userData[field].trim() !== '') {
+                completedFields++;
+            }
+        });
+        
+        if (userData.aboutMe && userData.aboutMe.trim() !== '') {
+            completedFields++;
+        }
+        
+        const completionPercentage = Math.round((completedFields / totalFields) * 100);
+        document.getElementById('profileProgress').style.width = `${completionPercentage}%`;
+        document.getElementById('completionText').textContent = `Profile ${completionPercentage}% Complete`;
+    }
+    
+    // Setup tabs
+    function setupTabs() {
+        messageTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                messageTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                currentTab = this.getAttribute('data-tab');
+                loadMessages();
+            });
+        });
+    }
+    
+    // Load messages
+    function loadMessages() {
+        const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
+        
+        messagesContainer.innerHTML = `
+            <div class="loading">
+                <i class="fas fa-spinner"></i>
+                <p>Loading messages...</p>
+            </div>
+        `;
+        
+        // Simulate fetching messages - in real app, this would be an API call
+        setTimeout(() => {
+            // For demo, show empty state with sample data structure
+            if (currentTab === 'inbox') {
+                showEmptyState('inbox');
+            } else if (currentTab === 'sent') {
+                showEmptyState('sent');
+            } else if (currentTab === 'requests') {
+                showInterestRequests();
+            }
+        }, 500);
+    }
+    
+    // Show empty state
+    function showEmptyState(type) {
+        let icon, title, message;
+        
+        if (type === 'inbox') {
+            icon = 'fa-inbox';
+            title = 'No Messages Yet';
+            message = 'When someone sends you a message, it will appear here.';
+        } else {
+            icon = 'fa-paper-plane';
+            title = 'No Sent Messages';
+            message = 'Messages you send will appear here.';
+        }
+        
+        messagesContainer.innerHTML = `
+            <div class="empty-state">
+                <i class="fas ${icon}"></i>
+                <h3>${title}</h3>
+                <p>${message}</p>
+            </div>
+        `;
+    }
+    
+    // Show interest requests
+    function showInterestRequests() {
+        const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
+        
+        fetch('http://localhost:5000/api/user/interest-requests', {
+            credentials: 'include',
+            headers: { 'X-User-Id': userId }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success && data.requests && data.requests.length > 0) {
+                displayInterestRequests(data.requests);
+            } else {
+                messagesContainer.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-handshake"></i>
+                        <h3>No Interest Requests</h3>
+                        <p>When someone expresses interest in your profile, it will appear here.</p>
+                    </div>
+                `;
+            }
+        })
+        .catch(error => {
+            console.error('Error loading interest requests:', error);
+            messagesContainer.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-handshake"></i>
+                    <h3>No Interest Requests</h3>
+                    <p>When someone expresses interest in your profile, it will appear here.</p>
+                </div>
+            `;
+        });
+    }
+    
+    // Display interest requests
+    function displayInterestRequests(requests) {
+        messagesContainer.innerHTML = '';
+        
+        requests.forEach(request => {
+            const requestItem = document.createElement('div');
+            requestItem.className = 'message-item';
+            
+            requestItem.innerHTML = `
+                <img class="avatar" src="${request.photo || 'https://via.placeholder.com/60x60?text=Photo'}" alt="${request.name}">
+                <div class="message-content">
+                    <div class="message-header">
+                        <span class="sender-name">${request.name}</span>
+                        <span class="message-time">${request.time || 'Recently'}</span>
+                    </div>
+                    <p class="message-preview">${request.message || 'Interested in your profile'}</p>
+                </div>
+            `;
+            
+            requestItem.addEventListener('click', function() {
+                // Handle clicking on request - could navigate to profile or open chat
+                window.location.href = `single_profile.html?id=${request.id}`;
+            });
+            
+            messagesContainer.appendChild(requestItem);
+        });
+    }
+</script>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 80px; right: 22px; z-index: 1000; background: linear-gradient(135deg, #3498db, #2980b9); color:white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 33px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s ease;" onclick="scrollToTop()">↑</button>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (window.pageYOffset > 100) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  });
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+</body>
+</html>

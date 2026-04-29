@@ -7,30 +7,47 @@
  * - logoutUser(): POST /api/logout and redirect to login
  */
 
-const API = '/api';
+const API = (function() {
+  if (window.location.protocol === 'file:') {
+    return 'http://localhost:5000/api';
+  }
+  return window.location.origin ? window.location.origin + '/api' : '/api';
+})();
+
 let currentUser = null;
 let _sessionChecked = false;
 
+function loadLocalUser() {
+  try {
+    const stored = localStorage.getItem('hitaishi_user');
+    if (!stored) return null;
+    const parsed = JSON.parse(stored);
+    return parsed && parsed.firstName ? parsed : null;
+  } catch (err) {
+    return null;
+  }
+}
+
 async function checkSession() {
-  // If already checked, return quickly
   if (_sessionChecked) return currentUser;
+
   try {
     const res = await fetch(API + '/session', { credentials: 'include' });
     if (!res.ok) {
-      _sessionChecked = true;
-      currentUser = null;
-      return null;
+      throw new Error('session fetch failed: ' + res.status);
     }
     const data = await res.json();
     if (data && data.success && data.user) {
       currentUser = data.user;
+      try { localStorage.setItem('hitaishi_user', JSON.stringify(currentUser)); } catch (e) {}
     } else {
       currentUser = null;
     }
   } catch (err) {
     console.warn('[header-auth] session check failed', err);
-    currentUser = null;
+    currentUser = loadLocalUser();
   }
+
   _sessionChecked = true;
   updateAuthUI();
   return currentUser;
@@ -118,8 +135,14 @@ window.headerAuth = {
   logoutUser
 };
 
+// internal fallback to honor localStorage user when session is not available
+function getStoredUser() {
+  if (currentUser) return currentUser;
+  return loadLocalUser();
+}
+
 // also expose shortcuts for pages that expect global functions
 window.checkSession = checkSession;
-window.isAuthenticated = () => !!headerAuth.getCurrentUser();
-window.getCurrentUser = () => headerAuth.getCurrentUser();
+window.isAuthenticated = () => !!getStoredUser();
+window.getCurrentUser = () => getStoredUser();
 window.logoutUser = logoutUser;

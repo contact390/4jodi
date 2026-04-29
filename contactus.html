@@ -26,27 +26,130 @@
 </script>
 
     <!-- Main Content -->
-<main style="max-width: 1200px; margin: 20px auto; padding: 0 20px; padding-top: 130px;">
+<main style="width: 100%; margin: 20px auto; padding: 0 20px; padding-top: 130px;">
     <!-- Contact Section -->
-    <section style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-        <h2 style="color: #333; text-align: center; font-size: 2em;">Get in Touch</h2>
-        <p style="text-align: center; color: #666; font-size: 1.1em; margin-bottom: 30px;">
-            We're here to help you find your soulmate. Reach out to us today!
-        </p>
+<!-- Contact Section -->
+<div style="display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%); padding: 60px 0;">
+    <section style="width: 1005px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+        
+        <!-- Section Header -->
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 style="color: #8B1E3F; font-size: 2.5em; margin-bottom: 15px; font-weight: 700; background:#8B1E3F; background-clip: text;">
+                Get in Touch
+            </h2>
+            <div style="width: 80px; height: 4px; background: #8B1E3F; margin: 0 auto 20px auto; border-radius: 2px;"></div>
+            <p style="color: #7f8c8d; font-size: 1.1em; max-width: 600px; margin: 0 auto;">
+                We're here to help you find your soulmate. Reach out to us today!
+            </p>
+        </div>
 
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+        <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between;">
+            
             <!-- Contact Form -->
-            <div style="flex: 1; min-width: 300px;">
-                <h3 style="color: #ff6f61; font-size: 1.5em;">Send Us a Message</h3>
+            <div style="flex: 1; min-width: 300px; background: #fafafa; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 25px;">
+                    <div style="background: #8B1E3F; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: #2c3e50; font-size: 1.5em; font-weight: 600; margin: 0;">Send Us a Message</h3>
+                </div>
                 
-           <form id="contact-form" style="display: flex; flex-direction: column; gap: 15px;">
-    <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px;">
-    <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px;">
-    <input type="tel" name="phone" placeholder="Your Phone Number" required style="padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px;">
-    <textarea name="message" placeholder="Your Message" required style="padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px; min-height: 30px;"></textarea>
-    <button type="submit" style="padding: 10px; background-color: #ff6f61; color: white; border: none; border-radius: 5px; font-size: 1.1em; cursor: pointer;">Send Message</button>
-    <p id="form-response" style="text-align: center; font-size: 14px;"></p>
-</form>
+                <form id="contact-form" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="text" name="name" placeholder="Your Name" required style="padding: 12px 15px; font-size: 1em; border: 2px solid #e0e0e0; border-radius: 10px; outline: none; transition: all 0.3s ease; background: white;">
+                    <input type="email" name="email" placeholder="Your Email" required style="padding: 12px 15px; font-size: 1em; border: 2px solid #e0e0e0; border-radius: 10px; outline: none; transition: all 0.3s ease; background: white;">
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required style="padding: 12px 15px; font-size: 1em; border: 2px solid #e0e0e0; border-radius: 10px; outline: none; transition: all 0.3s ease; background: white;">
+                    <textarea name="message" placeholder="Your Message" required rows="4" style="padding: 12px 15px; font-size: 1em; border: 2px solid #e0e0e0; border-radius: 10px; outline: none; transition: all 0.3s ease; background: white; resize: vertical;"></textarea>
+                    <button type="submit" style="padding: 12px; background: #8B1E3F; color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: 600; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 12px rgba(255,111,97,0.3);">
+                        Send Message
+                    </button>
+                    <p id="form-response" style="text-align: center; font-size: 14px; margin-top: 10px;"></p>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div style="flex: 1; min-width: 300px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 25px;">
+                    <div style="background: rgba(255,255,255,0.2); width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: white; font-size: 1.5em; font-weight: 600; margin: 0;">Contact Information</h3>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div>
+                        <p style="color: white; margin: 0; font-size: 0.85em; opacity: 0.8;">📞 Phone</p>
+                        <p style="color: white; margin: 3px 0 0 0; font-size: 1em; font-weight: 500;">
+                            <a href="tel:+91-9908796302" style="color: white; text-decoration: none;">+91-9908796302</a>
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <p style="color: white; margin: 0; font-size: 0.85em; opacity: 0.8;">📱 Alternate Phone</p>
+                        <p style="color: white; margin: 3px 0 0 0; font-size: 1em; font-weight: 500;">
+                            <a href="tel:+91-9502489877" style="color: white; text-decoration: none;">+91-9502489877</a>
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <p style="color: white; margin: 0; font-size: 0.85em; opacity: 0.8;">✉️ Email</p>
+                        <p style="color: white; margin: 3px 0 0 0; font-size: 0.9em; word-break: break-all;">
+                            <a href="mailto:opticjodi@gmail.com" style="color: white; text-decoration: none;">opticjodi@gmail.com</a>
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <p style="color: white; margin: 0; font-size: 0.85em; opacity: 0.8;">📧 Alternate Email</p>
+                        <p style="color: white; margin: 3px 0 0 0; font-size: 0.9em; word-break: break-all;">
+                            <a href="mailto:hitaishimatrimony@gmail.com" style="color: white; text-decoration: none;">hitaishimatrimony@gmail.com</a>
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <p style="color: white; margin: 0; font-size: 0.85em; opacity: 0.8;">📍 Address</p>
+                        <p style="color: white; margin: 3px 0 0 0; font-size: 0.95em;">985, Pragathi Nagar</p>
+                        <p style="color: white; margin: 3px 0 0 0; font-size: 0.9em; opacity: 0.9;">Kukatpally Hyderabad, Telangana - 500072</p>
+                    </div>
+                    
+                    <div>
+                        <p style="color: white; margin: 0; font-size: 0.85em; opacity: 0.8;">🕐 Office Hours</p>
+                        <p style="color: white; margin: 3px 0 0 0; font-size: 0.95em;">Mon-Sat, 10:00 AM - 6:00 PM</p>
+                    </div>
+                    
+                    <div>
+                        <p style="color: white; margin: 0 0 8px 0; font-size: 0.85em; opacity: 0.8;">🌐 Social Media</p>
+                        <div style="display: flex; gap: 10px;">
+                            <a href="https://facebook.com/hitaishimatrimony" style="color: white; text-decoration: none; padding: 6px 12px; background: rgba(255,255,255,0.15); border-radius: 6px; font-size: 0.85em; transition: all 0.3s ease;">Facebook</a>
+                            <a href="https://instagram.com/hitaishimatrimony" style="color: white; text-decoration: none; padding: 6px 12px; background: rgba(255,255,255,0.15); border-radius: 6px; font-size: 0.85em; transition: all 0.3s ease;">Instagram</a>
+                            <a href="https://linkedin.com/company/hitaishimatrimony" style="color: white; text-decoration: none; padding: 6px 12px; background: rgba(255,255,255,0.15); border-radius: 6px; font-size: 0.85em; transition: all 0.3s ease;">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    input:focus, textarea:focus {
+        border-color: #ff6f61 !important;
+        box-shadow: 0 0 0 3px rgba(255,111,97,0.1);
+    }
+    
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255,111,97,0.4);
+    }
+    
+    .social-link:hover {
+        background: rgba(255,255,255,0.25) !important;
+        transform: translateY(-2px);
+    }
+</style>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
@@ -77,7 +180,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     body: JSON.stringify(formData)
                 });
 
-                // Check if response is OK before trying to parse as JSON
                 if (!response.ok) {
                     throw new Error(`Server returned ${response.status}: ${response.statusText}`);
                 }
@@ -85,17 +187,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 const result = await response.json();
 
                 responseMessage.textContent = result.message || 'Message sent successfully!';
-                responseMessage.style.color = 'green';
+                responseMessage.style.color = '#27ae60';
+                responseMessage.style.fontWeight = '500';
                 form.reset();
             } catch (error) {
                 console.error('Error:', error);
                 responseMessage.textContent = error.message || 'Something went wrong. Please try again.';
-                responseMessage.style.color = 'red';
+                responseMessage.style.color = '#e74c3c';
+                responseMessage.style.fontWeight = '500';
             } finally {
                 button.disabled = false;
                 button.textContent = 'Send Message';
                 
-                // Clear message after 5 seconds
                 setTimeout(() => {
                     responseMessage.textContent = '';
                 }, 5000);
@@ -104,41 +207,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
-            </div>
-
-            <!-- Contact Info -->
-            <div style="flex: 1; min-width: 300px;">
-                <h3 style="color: #ff6f61; font-size: 1.5em;">Contact Information</h3>
-                <p style="color: #333; font-size: 1em; margin: 10px 0;">
-                    <strong>Phone:</strong> <a href="tel:+91-9876543210" style="color: #ff6f61; text-decoration: none;">+91-9908796302</a>
-                </p>
-                <p style="color: #333; font-size: 1em; margin: 10px 0;">
-                    <strong>Alternate Phone:</strong> <a href="tel:+91-9123456789" style="color: #ff6f61; text-decoration: none;">+91-9502489877</a>
-                </p>
-                <p style="color: #333; font-size: 1em; margin: 10px 0;">
-                    <strong>Email:</strong> <a href="mailto:support@hitaishimatrimony.com" style="color: #ff6f61; text-decoration: none;">opticjodi@gmail.com</a>
-                </p>
-                <p style="color: #333; font-size: 1em; margin: 10px 0;">
-                    <strong>Alternate Email:</strong> <a href="mailto:info@hitaishimatrimony.com" style="color: #ff6f61; text-decoration: none;">hitaishimatrimony@gmail.com</a>
-                </p>
-                <p style="color: #333; font-size: 1em; margin: 10px 0;">
-                    <strong>Address:</strong> 985, pragathi nagar
-                </p>
-                <p style="color: #333; font-size: 1em; margin: 10px 0;">
-                    <strong>Branch Office:</strong> kukatpally hyderabad, Telangana, India - 500072
-                </p>
-                <p style="color: #333; font-size: 1em; margin: 10px 0;">
-                    <strong>Office Hours:</strong> Mon-Sat, 10:00 AM - 6:00 PM
-                </p>
-                <p style="color: #333; font-size: 1em; margin: 10px 0;">
-                    <strong>Social Media:</strong>
-                    <a href="https://facebook.com/hitaishimatrimony" style="color: #ff6f61; text-decoration: none; margin: 0 5px;">Facebook</a> |
-                    <a href="https://instagram.com/hitaishimatrimony" style="color: #ff6f61; text-decoration: none; margin: 0 5px;">Instagram</a> |
-                    <a href="https://linkedin.com/company/hitaishimatrimony" style="color: #ff6f61; text-decoration: none; margin: 0 5px;">LinkedIn</a>
-                </p>
-            </div>
-        </div>
-    </section>
 
     <!-- Map Section -->
     <section style="margin-top: 30px;">
@@ -157,6 +225,74 @@ fetch("footer.html")
   .then(data => {
     document.getElementById("footer").innerHTML = data;
   });
+</script>
+
+
+<!-- Load Chatbot -->
+<script>
+  async function loadChatbot() {
+    try {
+      const response = await fetch('./chatbot.html');
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const htmlContent = await response.text();
+      
+      // Create a container to hold chatbot
+      const container = document.createElement('div');
+      container.id = 'chatbot-container';
+      container.innerHTML = htmlContent;
+      document.body.appendChild(container);
+      
+      // Extract and re-execute scripts from chatbot.html
+      const scripts = container.querySelectorAll('script');
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement('script');
+        newScript.textContent = oldScript.textContent;
+        document.head.appendChild(newScript);
+      });
+      
+      console.log('✓ Chatbot loaded successfully');
+    } catch (error) {
+      console.error('✗ Chatbot load failed:', error);
+    }
+  }
+  
+  // Load chatbot when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadChatbot);
+  } else {
+    loadChatbot();
+  }
+</script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 80px; right: 22px; z-index: 1000; background: linear-gradient(135deg, #3498db, #2980b9); color:white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 33px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s ease;" onclick="scrollToTop()">↑</button>
+
+<style>
+  #scrollToTopBtn:hover {
+    background: linear-gradient(135deg, #2980b9, #21618c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  }
+</style>
+
+<script>
+  // Show/hide scroll to top button
+  window.addEventListener('scroll', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (window.pageYOffset > 100) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  });
+
+  // Scroll to top function
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 </script>
 
   

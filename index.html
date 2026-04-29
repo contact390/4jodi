@@ -3,24 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="4Jodi Matrimony is a trusted Telugu matrimonial platform connecting brides and grooms with verified profiles, smart matching, secure communication, and personalized support.">
+    <meta name="keywords" content="Telugu matrimony, Telugu matrimonial site, verified bride profiles, verified groom profiles, marriage matchmaking, Indian matrimony, 4Jodi Matrimony, marriage bureau, Telugu marriage, bride and groom match">
+    <meta name="author" content="4Jodi Matrimony">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="4jodi Matrimony | Trusted Telugu Matrimony Platform">
+    <meta property="og:description" content="Join thousands of Telugu brides and grooms on 4Jodi Matrimony. Discover verified matches, personalized matchmaking, and a secure path to your life partner.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.pinimg.com/736x/10/7d/b7/107db799e59acdc43e1910410c8f1cc8.jpg">
+    <meta property="og:image:alt" content="4Jodi Matrimony hero banner showing happy couples and marriage matchmaking">
+    <meta property="og:url" content="https://www.4jodi.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="4jodi Matrimony | Trusted Telugu Matrimony Platform">
+    <meta name="twitter:description" content="Find your perfect Telugu life partner with 4Jodi Matrimony's verified profiles, smart matching, and dedicated support.">
+    <meta name="twitter:image" content="https://i.pinimg.com/736x/10/7d/b7/107db799e59acdc43e1910410c8f1cc8.jpg">
+    <link rel="canonical" href="https://www.4jodi.com/">
     <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "url": "https://www.4jodi.com/",
+            "name": "4Jodi Matrimony",
+            "description": "Trusted Telugu matrimonial platform for verified bride and groom matches.",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://www.4jodi.com/?s={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "Organization",
+            "name": "4Jodi Matrimony",
+            "url": "https://www.4jodi.com/",
+            "logo": "https://i.pinimg.com/736x/10/7d/b7/107db799e59acdc43e1910410c8f1cc8.jpg"
+          }
+        ]
+      }
+    </script>
+    <script src="header-auth.js"></script>
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
   
 
  <div id="navbar"></div>
-<!-- testing -->
+
 <script>
   fetch("navbar.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("navbar").innerHTML = data;
 
-      // Run scripts inside navbar
+      // Run scripts inside navbar, including external script references.
       const scripts = document.getElementById("navbar").querySelectorAll("script");
       scripts.forEach(oldScript => {
         const newScript = document.createElement("script");
+        if (oldScript.src) {
+          newScript.src = oldScript.src;
+          newScript.async = false;
+        }
         newScript.textContent = oldScript.textContent;
         document.body.appendChild(newScript);
       });
@@ -31,10 +75,13 @@
 <!-- Hero Banner -->
 <section style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.pinimg.com/736x/10/7d/b7/107db799e59acdc43e1910410c8f1cc8.jpg'); background-size: cover; background-position: center; height: 600px; display: flex; color: white; padding-top: 80px; position: relative;">
   <div style="width: 85%; margin: auto auto 0; text-align: center; align-self: flex-end; padding-bottom: 50px;">
-    <h2 style="font-size: 42px; margin-bottom: 20px;">Find Your Perfect Life Partner</h2>
+    <h2 style="font-size: 42px; margin-bottom: 20px;">4Jodi – India’s Trusted Matrimony Platform</h2>
     <p style="font-size: 18px; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Join thousands of happy couples who found their soulmates through 4jodi Matrimony</p>
 
- <form action="createprofile.html" method="GET" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+ <div id="hero-user-greeting" style="font-size: 18px; color: #fff; margin-bottom: 18px; opacity: 0.95;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.4);"></div>
+
+ <form id="heroMatchForm" action="createprofile.html" method="GET" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
   
   <select name="looking_for" required
     style="padding: 12px 20px; border: none; border-radius: 5px; width: 200px; transition: all 0.3s ease;"
@@ -86,17 +133,17 @@
     onmouseenter="this.style.backgroundColor='#f8d7e6'; this.style.transform='scale(1.05)'"
     onmouseleave="this.style.backgroundColor=''; this.style.transform='scale(1)'">
     <option value="" disabled selected>Language</option>
-    <option>Hindi</option>
+    <option>Telugu</option>
     <option>English</option>
     <option>Punjabi</option>
-    <option>Gujarati</option>
+    <option>Hindi</option>
     <option>Other</option>
   </select>
 
   <button type="submit"
-    style="padding: 12px 30px; background-color: #e83e8c; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: all 0.3s ease;"
+    style="padding: 12px 30px; background-color: #8B1E3F; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: all 0.3s ease;"
     onmouseenter="this.style.backgroundColor='#c83279'; this.style.transform='scale(1.05)'"
-    onmouseleave="this.style.backgroundColor='#e83e8c'; this.style.transform='scale(1)'">
+    onmouseleave="this.style.backgroundColor='#8B1E3F'; this.style.transform='scale(1)'">
     Find Matches
   </button>
 
@@ -110,7 +157,7 @@
 <div style="margin: 0; padding: 0; width:100%; min-height: 60vh; display: flex; justify-content: center; align-items: center; background-color: transparent;"> 
   <div style="padding: 3.125rem 1.25rem; background-color: transparent; font-family: Arial, sans-serif; width:100%; box-sizing: border-box;">
     
-    <h2 style="text-align: center; font-size: 1.625rem; margin-bottom: 2.5rem; color: #d63384;">
+    <h2 style="text-align: center; font-size: 1.625rem; margin-bottom: 2.5rem; color: #8B1E3F;margin-top: -100px;">
       ❤️ Find Your Life Partner in Simple Steps
     </h2>
 
@@ -120,7 +167,7 @@
       <div style="flex: 1 1 280px; max-width: 320px; background: #ffffff; padding: 1.5625rem; text-align: center; border-radius: 0.875rem; box-shadow: 0 0.375rem 0.9375rem rgba(0, 0, 0, 0.08); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0.75rem 1.5rem rgba(0, 0, 0, 0.15)';"
            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0.375rem 0.9375rem rgba(0, 0, 0, 0.08)';">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhHSdVAwgk4U9Uny0oOhuFJU3VAYPhSX-S0w&s" style="width: 5rem; height: 5rem; margin-bottom: 0.9375rem;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhHSdVAwgk4U9Uny0oOhuFJU3VAYPhSX-S0w&s" alt="Create profile icon" style="width: 5rem; height: 5rem; margin-bottom: 0.9375rem;">
         <h3 style="margin: 0.625rem 0; font-size: 1.25rem; color: #28a745;">Create Profile</h3>
         <p style="font-size: 0.875rem; color: #444;">
           Get started by adding your real information, recent photo, and preferences. A genuine profile attracts the best matches and builds trust instantly.
@@ -131,7 +178,7 @@
       <div style="flex: 1 1 280px; max-width: 320px; background: #ffffff; padding: 1.5625rem; text-align: center; border-radius: 0.875rem; box-shadow: 0 0.375rem 0.9375rem rgba(0, 0, 0, 0.08); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0.75rem 1.5rem rgba(0, 0, 0, 0.15)';"
            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0.375rem 0.9375rem rgba(0, 0, 0, 0.08)';">
-        <img src="images/searchmatches.png" style="width: 5rem; height: 5rem; margin-bottom: 0.9375rem;">
+        <img src="images/searchmatches.png" alt="Search matches icon" style="width: 5rem; height: 5rem; margin-bottom: 0.9375rem;">
         <h3 style="margin: 0.625rem 0; font-size: 1.25rem; color: #28a745;">Search Matches</h3>
         <p style="font-size: 0.875rem; color: #444;">
           Use powerful filters to explore verified profiles that match your lifestyle, values, and goals.
@@ -142,7 +189,7 @@
       <div style="flex: 1 1 280px; max-width: 320px; background: #ffffff; padding: 1.5625rem; text-align: center; border-radius: 0.875rem; box-shadow: 0 0.375rem 0.9375rem rgba(0, 0, 0, 0.08); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0.75rem 1.5rem rgba(0, 0, 0, 0.15)';"
            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0.375rem 0.9375rem rgba(0, 0, 0, 0.08)';">
-        <img src="images/i_starttalking.png" style="width: 5rem; height: 5rem; margin-bottom: 0.9375rem;">
+        <img src="images/i_starttalking.png" alt="Start talking icon" style="width: 5rem; height: 5rem; margin-bottom: 0.9375rem;">
         <h3 style="margin: 0.625rem 0; font-size: 1.25rem; color: #28a745;">Start Talking</h3>
         <p style="font-size: 0.875rem; color: #444;">
           Connect with your favorite matches and start your journey toward a happy future together.
@@ -157,16 +204,16 @@
 <section style="padding: 10px 0; background: linear-gradient(to bottom, #ddc6d2, #8b4d64); width: 100%; margin: auto; border-radius: 12px;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
     
-    <h2 style="text-align: center; font-size: 30px; color: #e83e8c; margin-bottom: 50px; position: relative;">
-      <span style="background: linear-gradient(to right, #e83e8c, #ff69b4); -webkit-background-clip: text; background-clip: text; color: transparent;">Why Choose 4jodi Matrimony</span>
+    <h2 style="text-align: center; font-size: 30px; color: #8B1E3F; margin-bottom: 50px; position: relative;">
+      <span style="background: #8B1E3F; -webkit-background-clip: text; background-clip: text; color: transparent;">Why Choose 4jodi Matrimony</span>
     </h2>
 
     <!-- Responsive Grid - 3 cards per row on mobile -->
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
       
       <!-- Card 1 -->
-      <div style="background: white; border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid #e83e8c;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #e83e8c, #ff69b4); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+      <div style="background: white; border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid #8B1E3F;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #8B1E3F, #ff69b4); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
           <i class="fas fa-shield-alt" style="color: white; font-size: 24px;"></i>
         </div>
         <h3 style="margin-top: 0; color: #333; font-size: 22px;">Verified Profiles</h3>
@@ -175,7 +222,7 @@
 
       <!-- Card 2 -->
       <div style="background: white; border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; border-top: 4px solid #ff69b4;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ff69b4, #e83e8c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ff69b4, #8B1E3F); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
           <i class="fas fa-heart" style="color: white; font-size: 24px;"></i>
         </div>
         <h3 style="margin-top: 0; color: #333; font-size: 22px;">Smart Matching</h3>
@@ -222,7 +269,7 @@
 
     <!-- CTA Button -->
     <div style="text-align: center; margin-top: 40px;">
-      <a href="createprofile.html" style="display: inline-block; background: linear-gradient(to right, #e83e8c, #ff69b4); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 16px; box-shadow: 0 5px 15px rgba(232, 62, 140, 0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <a href="createprofile.html" style="display: inline-block; background:#8B1E3F; color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 16px; box-shadow: 0 5px 15px rgba(232, 62, 140, 0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
         Create Your Free Profile
       </a>
     </div>
@@ -234,7 +281,7 @@
 <section style="padding: 60px 20px; background: #fff9fc;">
   <div style="max-width: 1200px; margin: auto;">
     
-    <h2 style="text-align: center; font-size: 32px; margin-bottom: 50px; color: #e83e8c;">
+    <h2 style="text-align: center; font-size: 32px; margin-bottom: 50px; color: #8B1E3F;">
       Success Stories
     </h2>
 
@@ -247,8 +294,7 @@
            onmouseout="this.style.transform='none'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.08)';">
 
         <div style="height: 200px; overflow: hidden;">
-          <img src="https://images.pexels.com/photos/6685151/pexels-photo-6685151.jpeg" 
-               style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="https://images.pexels.com/photos/6685151/pexels-photo-6685151.jpeg" alt="Rahul and Priya success story" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
 
         <div style="padding: 20px;">
@@ -256,11 +302,11 @@
           <p style="font-size: 14px; color: #555; margin-bottom: 15px;">
             "We found each other on 4jodi Matrimony and couldn't be happier."
           </p>
-          <p style="color: #e83e8c; font-size: 13px; margin-bottom: 15px;">
+          <p style="color: #8B1E3F; font-size: 13px; margin-bottom: 15px;">
             Married since 2023
           </p>
           <a href="rahulpriya.html" 
-             style="display: inline-block; padding: 10px 20px; background: #e83e8c; color: white; border-radius: 30px; text-decoration: none; font-size: 14px;">
+             style="display: inline-block; padding: 10px 20px; background: #8B1E3F; color: white; border-radius: 30px; text-decoration: none; font-size: 14px;">
             Read More →
           </a>
         </div>
@@ -272,8 +318,7 @@
            onmouseout="this.style.transform='none'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.08)';">
 
         <div style="height: 200px;">
-          <img src="https://www.alfaazphotography.com/wp-content/uploads/2019/10/How-to-find-right-Indian-Wedding-Photographer-0028-1024x683.jpg" 
-               style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="https://www.alfaazphotography.com/wp-content/uploads/2019/10/How-to-find-right-Indian-Wedding-Photographer-0028-1024x683.jpg" alt="Amit and Neha success story" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
 
         <div style="padding: 20px;">
@@ -281,10 +326,10 @@
           <p style="font-size: 14px; color: #555; margin-bottom: 15px;">
             "The verification process gave us confidence in each other."
           </p>
-          <p style="color: #e83e8c; font-size: 13px; margin-bottom: 15px;">
+          <p style="color: #8B1E3F; font-size: 13px; margin-bottom: 15px;">
             Married since 2022
           </p>
-          <a href="amitneha.html" style="display: inline-block; padding: 10px 20px; background: #e83e8c; color: white; border-radius: 30px; text-decoration: none;">
+          <a href="amitneha.html" style="display: inline-block; padding: 10px 20px; background: #8B1E3F; color: white; border-radius: 30px; text-decoration: none;">
             Read More →
           </a>
         </div>
@@ -296,8 +341,7 @@
            onmouseout="this.style.transform='none'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.08)';">
 
         <div style="height: 200px;">
-          <img src="https://www.candidshutters.com/maintenance/wp-content/uploads/2024/06/Best-wedding-photographers-India-Top-5-destination-wedding-photographers-Indian-weddings-2.jpg" 
-               style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="https://www.candidshutters.com/maintenance/wp-content/uploads/2024/06/Best-wedding-photographers-India-Top-5-destination-wedding-photographers-Indian-weddings-2.jpg" alt="Vikram and Anjali success story" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
 
         <div style="padding: 20px;">
@@ -305,10 +349,10 @@
           <p style="font-size: 14px; color: #555; margin-bottom: 15px;">
             "Personalized matchmaking made all the difference."
           </p>
-          <p style="color: #e83e8c; font-size: 13px; margin-bottom: 15px;">
+          <p style="color: #8B1E3F; font-size: 13px; margin-bottom: 15px;">
             Married since 2021
           </p>
-          <a href="vikramanjali.html" style="display: inline-block; padding: 10px 20px; background: #e83e8c; color: white; border-radius: 30px; text-decoration: none;">
+          <a href="vikramanjali.html" style="display: inline-block; padding: 10px 20px; background: #8B1E3F; color: white; border-radius: 30px; text-decoration: none;">
             Read More →
           </a>
         </div>
@@ -319,9 +363,9 @@
     <!-- Button -->
     <div style="text-align: center; margin-top: 50px;">
       <a href="viewmorestories.html" 
-         style="padding: 12px 30px; background: #e83e8c; color: white; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s;"
+         style="padding: 12px 30px; background: #8B1E3F; color: white; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s;"
          onmouseover="this.style.background='#d42a7a'; this.style.transform='translateY(-3px)';"
-         onmouseout="this.style.background='#e83e8c'; this.style.transform='none';">
+         onmouseout="this.style.background='#8B1E3F'; this.style.transform='none';">
         View More Stories
       </a>
     </div>
@@ -340,25 +384,25 @@
 
       <!-- Bride Profiles Counter -->
       <div class="counter-item" style="padding: 30px; background: rgba(255,255,255,0.9); border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-        <div style="font-size: 48px; font-weight: 700; color: #e83e8c; margin-bottom: 10px;" class="count" data-count="78212">0</div>
+        <div style="font-size: 48px; font-weight: 700; color: #8B1E3F; margin-bottom: 10px;" class="count" data-count="78212">0</div>
         <div style="font-size: 20px; color: #555;">Bride Profiles</div>
       </div>
 
       <!-- Groom Profiles Counter -->
       <div class="counter-item" style="padding: 30px; background: rgba(255,255,255,0.9); border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-        <div style="font-size: 48px; font-weight: 700; color: #e83e8c; margin-bottom: 10px;" class="count" data-count="85671">0</div>
+        <div style="font-size: 48px; font-weight: 700; color: #8B1E3F; margin-bottom: 10px;" class="count" data-count="85671">0</div>
         <div style="font-size: 20px; color: #555;">Groom Profiles</div>
       </div>
 
       <!-- Happy Couples Counter -->
       <div class="counter-item" style="padding: 30px; background: rgba(255,255,255,0.9); border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-        <div style="font-size: 48px; font-weight: 700; color: #e83e8c; margin-bottom: 10px;" class="count" data-count="12033">0</div>
+        <div style="font-size: 48px; font-weight: 700; color: #8B1E3F; margin-bottom: 10px;" class="count" data-count="12033">0</div>
         <div style="font-size: 20px; color: #555;">Happy Couples</div>
       </div>
 
       <!-- Years of Experience Counter -->
       <div class="counter-item" style="padding: 30px; background: rgba(255,255,255,0.9); border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-        <div style="font-size: 48px; font-weight: 700; color: #e83e8c; margin-bottom: 10px;" class="count" data-count="11">0</div>
+        <div style="font-size: 48px; font-weight: 700; color: #8B1E3F; margin-bottom: 10px;" class="count" data-count="11">0</div>
         <div style="font-size: 20px; color: #555;">Years of Experience</div>
       </div>
 
@@ -420,7 +464,7 @@
 <!-- Testimonials -->
 <section style="padding:60px 0; background-color:#ffe6f2; width:100%; overflow-x:auto;">
 
-  <h2 style="text-align:center; font-size:32px; margin-bottom:40px; color:#e83e8c;">
+  <h2 style="text-align:center; font-size:32px; margin-bottom:40px; color:#8B1E3F;">
     What Our Clients Say
   </h2>
 
@@ -575,7 +619,7 @@
   margin-bottom: 40px;
 }
 .faq-header h1 {
-  color: #d63384;
+  color:#8B1E3F;
   font-size: 2.5rem;
 }
 .faq-header h2 {
@@ -650,7 +694,7 @@
 .cta-box {
   text-align: center;
   margin-top: 50px;
-  padding: 30px;
+  padding: 50px;
   border-radius: 15px;
   background: linear-gradient(135deg, #d63384, #6f42c1);
   color: white;
@@ -659,7 +703,7 @@
   background: white;
   color: #d63384;
   border: none;
-  padding: 12px 30px;
+  padding: 15px 30px;
   border-radius: 50px;
   font-weight: bold;
   cursor: pointer;
@@ -754,8 +798,8 @@
 
   <!-- CTA -->
   <div class="cta-box">
-    <h3>Still have questions?</h3>
-    <p>Our team is happy to help you.</p>
+    <h3 style="margin-bottom: 5px;">Still have questions?</h3>
+    <p style="margin-bottom: 10px;">Our team is happy to help you.</p>
     <a href="contactus.html">
       <button>Contact Us</button>
     </a>
@@ -816,6 +860,114 @@ fetch("footer.html")
   }
 </script>
 
+<script>
+function updateIndexGreeting(user) {
+  const greeting = document.getElementById('hero-user-greeting');
+  if (!greeting) return;
+  if (user && user.firstName) {
+    greeting.innerText = `Welcome back, ${user.firstName}! Choose your match preferences below.`;
+  } else {
+    greeting.innerText = 'Select your match preferences to start your search.';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  if (window.headerAuth && typeof window.headerAuth.checkSession === 'function') {
+    const user = await window.headerAuth.checkSession();
+    updateIndexGreeting(user);
+  } else {
+    updateIndexGreeting(null);
+  }
+
+  const form = document.getElementById('heroMatchForm');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    const user = window.headerAuth && window.headerAuth.getCurrentUser ? window.headerAuth.getCurrentUser() : null;
+    const lookingFor = form.looking_for ? form.looking_for.value : '';
+
+    if (user) {
+      e.preventDefault();
+      const params = new URLSearchParams(new FormData(form));
+      const targetPage = lookingFor === 'bride' ? 'female_profiles.html'
+        : lookingFor === 'groom' ? 'male_profiles.html'
+        : 'createprofile.html';
+      window.location.href = targetPage + '?' + params.toString();
+    }
+    // if not authenticated, allow normal createprofile.html flow
+  });
+});
+</script>
+
+
+
+
+<!-- Load Chatbot -->
+<script>
+  async function loadChatbot() {
+    try {
+      const response = await fetch('./chatbot.html');
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const htmlContent = await response.text();
+      
+      // Create a container to hold chatbot
+      const container = document.createElement('div');
+      container.id = 'chatbot-container';
+      container.innerHTML = htmlContent;
+      document.body.appendChild(container);
+      
+      // Extract and re-execute scripts from chatbot.html
+      const scripts = container.querySelectorAll('script');
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement('script');
+        newScript.textContent = oldScript.textContent;
+        document.head.appendChild(newScript);
+      });
+      
+      console.log('✓ Chatbot loaded successfully');
+    } catch (error) {
+      console.error('✗ Chatbot load failed:', error);
+    }
+  }
+  
+  // Load chatbot when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadChatbot);
+  } else {
+    loadChatbot();
+  }
+</script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 80px; right: 22px; z-index: 1000; background: linear-gradient(135deg, #3498db, #2980b9); color:white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 33px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s ease;" onclick="scrollToTop()">↑</button>
+
+<style>
+  #scrollToTopBtn:hover {
+    background: linear-gradient(135deg, #2980b9, #21618c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  }
+</style>
+
+<script>
+  // Show/hide scroll to top button
+  window.addEventListener('scroll', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (window.pageYOffset > 100) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  });
+
+  // Scroll to top function
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
 
 
 

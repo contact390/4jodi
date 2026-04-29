@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - Edit Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .main-container {
+            max-width: 1200px;
+            margin: 180px auto 40px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .sidebar {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+        .sidebar-profile {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .sidebar-profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff3366;
+            margin-bottom: 15px;
+        }
+        .sidebar-profile h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .sidebar-profile p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .progress-bar {
+            height: 8px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+        .progress-bar div {
+            height: 100%;
+            background: #ff3366;
+            border-radius: 4px;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .sidebar a:hover {
+            background: rgba(255, 51, 102, 0.1);
+            color: #ff3366;
+        }
+        .sidebar a.active {
+            background: rgba(255, 51, 102, 0.1);
+            color: #ff3366;
+        }
+        .content {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .content h1 {
+            color: #ff3366;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #ff3366;
+            outline: none;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        .error-message {
+            color: #dc3545;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+        .form-group.error input,
+        .form-group.error select {
+            border-color: #dc3545;
+        }
+        .form-group.error .error-message {
+            display: block;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+        .btn-cancel {
+            background: #4CAF50;
+            color: white;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        .btn-submit {
+            background: linear-gradient(135deg, #ff3366, #ff4b2b);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .subcaste-options {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .subcaste-option {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .subcaste-option:hover {
+            background: #f5f5f5;
+        }
+        .subcaste-option.selected {
+            background: #ff3366;
+            color: white;
+            border-color: #ff3366;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+<!-- Main Container -->
+<div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-profile">
+            <img id="profilePhoto" src="https://via.placeholder.com/120x120?text=Profile+Photo" alt="Profile Photo">
+            <h2 id="userName">User Name</h2>
+            <p id="userId">ID: Loading...</p>
+            <div style="margin-top: 15px;">
+                <div class="progress-bar">
+                    <div id="profileProgress" style="width: 75%;"></div>
+                </div>
+                <p id="completionText" style="font-size: 0.8rem; color: #666;">Profile Loading...</p>
+            </div>
+        </div>
+        
+        <ul>
+            <li><a href="userdashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="edit-profile.html" class="active"><i class="fas fa-user-edit"></i> Edit Profile</a></li>
+            <li><a href="my-photos.html"><i class="fas fa-images"></i> My Photos</a></li>
+            <li><a href="match-suggestions.html"><i class="fas fa-heart"></i> Match Suggestions</a></li>
+            <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>Edit Profile</h1>
+        
+        <form id="profileForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="profileFor">Profile For *</label>
+                    <select id="profileFor" name="profileFor" required>
+                        <option value="" disabled selected>Select profile type</option>
+                        <option value="Bride">Bride</option>
+                        <option value="Groom">Groom</option>
+                    </select>
+                    <div class="error-message" id="profileFor-error">This field is required</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <div class="error-message" id="firstName-error">This field is required</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <div class="error-message" id="lastName-error">This field is required</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <div class="error-message" id="dob-error">This field is required</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gender">Gender *</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <div class="error-message" id="gender-error">This field is required</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="maritalStatus">Marital Status *</label>
+                    <select id="maritalStatus" name="maritalStatus" required>
+                        <option value="">Select Marital Status</option>
+                        <option value="Never Married">Never Married</option>
+                        <option value="Divorced">Divorced</option>
+                        <option value="Widowed">Widowed</option>
+                        <option value="Separated">Separated</option>
+                    </select>
+                    <div class="error-message" id="maritalStatus-error">This field is required</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="religion">Religion *</label>
+                    <select id="religion" name="religion" required>
+                        <option value="">Select Religion</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Muslim">Muslim</option>
+                        <option value="Christian">Christian</option>
+                        <option value="Sikh">Sikh</option>
+                        <option value="Buddhist">Buddhist</option>
+                        <option value="Jain">Jain</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div class="error-message" id="religion-error">This field is required</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="caste">Caste/Community *</label>
+                    <select id="caste" name="caste" required>
+                        <option value="">Select Caste/Community</option>
+                        <option value="Brahmin">Brahmin</option>
+                        <option value="Kshatriya">Kshatriya</option>
+                        <option value="Vaishya">Vaishya</option>
+                        <option value="Shudra">Shudra</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div class="error-message" id="caste-error">This field is required</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subCaste">Sub Caste (Optional)</label>
+                    <input type="text" id="subCaste" name="subCaste">
+                    <div id="subcasteOptions" class="subcaste-options"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="motherTongue">Mother Tongue *</label>
+                    <select id="motherTongue" name="motherTongue" required>
+                        <option value="">Select Mother Tongue</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Bengali">Bengali</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="Telugu">Telugu</option>
+                        <option value="Marathi">Marathi</option>
+                        <option value="Gujarati">Gujarati</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div class="error-message" id="motherTongue-error">This field is required</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="education">Highest Education *</label>
+                    <select id="education" name="education" required>
+                        <option value="">Select Education Level</option>
+                        <option value="High School">High School</option>
+                        <option value="Bachelor's Degree">Bachelor's Degree</option>
+                        <option value="Master's Degree">Master's Degree</option>
+                        <option value="Doctorate">Doctorate</option>
+                        <option value="Diploma">Diploma</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div class="error-message" id="education-error">This field is required</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="college">College/University</label>
+                    <input type="text" id="college" name="college">
+                </div>
+                
+                <div class="form-group">
+                    <label for="profession">Profession *</label>
+                    <select id="profession" name="profession" required>
+                        <option value="">Select Profession</option>
+                        <option value="Software Professional">Software Professional</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Business Owner">Business Owner</option>
+                        <option value="Government Employee">Government Employee</option>
+                        <option value="Private Employee">Private Employee</option>
+                        <option value="Student">Student</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div class="error-message" id="profession-error">This field is required</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="income">Annual Income (₹) *</label>
+                    <select id="income" name="income" required>
+                        <option value="">Select Income Range</option>
+                        <option value="0-5 Lakhs">0-5 Lakhs</option>
+                        <option value="5-10 Lakhs">5-10 Lakhs</option>
+                        <option value="10-20 Lakhs">10-20 Lakhs</option>
+                        <option value="20-30 Lakhs">20-30 Lakhs</option>
+                        <option value="30+ Lakhs">30+ Lakhs</option>
+                    </select>
+                    <div class="error-message" id="income-error">This field is required</div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="aboutMe">About Me</label>
+                    <textarea id="aboutMe" name="aboutMe" rows="4" placeholder="Tell others about yourself, your interests, and what you're looking for in a partner"></textarea>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="partnerExpectations">Partner Expectations</label>
+                    <textarea id="partnerExpectations" name="partnerExpectations" rows="4" placeholder="Describe what you're looking for in a life partner"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" readonly placeholder="Your email address">
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="profileImage">Profile Image</label>
+                    <input type="file" id="profileImage" name="profileImage" accept="image/*">
+                    <div style="color: #6b7280; font-size: 12px; margin-top: 8px;">Choose a new profile photo to update your avatar.</div>
+                </div>
+            </div>
+            
+            <div class="btn-group">
+                <button type="button" class="btn btn-cancel" onclick="window.location.href='userdashboard.html'">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+                <button type="submit" class="btn btn-submit">
+                    <i class="fas fa-save"></i> Update Profile
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // User data
+    let userData = {};
+
+    function getLocalStorageUser() {
+        try {
+            const stored = localStorage.getItem('hitaishi_user');
+            return stored ? JSON.parse(stored) : null;
+        } catch (err) {
+            console.warn('Failed to parse saved user from localStorage', err);
+            return null;
+        }
+    }
+    
+    // Subcaste data
+    const subcasteData = {
+        'Brahmin': ['Iyer', 'Iyengar', 'Kanyakubj', 'Gaur', 'Saraswat', 'Maithil', 'Other'],
+        'Kshatriya': ['Rajput', 'Maratha', 'Jat', 'Gurjar', 'Thakur', 'Bhumihar', 'Other'],
+        'Vaishya': ['Agarwal', 'Gupta', 'Mahajan', 'Lohana', 'Khatri', 'Baniya', 'Other'],
+        'Shudra': ['Yadav', 'Kurmi', 'Koiri', 'Lodh', 'Other'],
+        'Other': ['Please specify']
+    };
+
+    // DOM elements
+    const profileForm = document.getElementById('profileForm');
+    const casteSelect = document.getElementById('caste');
+    const subcasteOptions = document.getElementById('subcasteOptions');
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+        setupFormSubmission();
+        setupSubcasteOptions();
+        
+        const savedUser = getLocalStorageUser();
+        if (savedUser) {
+            userData = savedUser;
+            populateUserData();
+        }
+        
+        loadUserData();
+    });
+    
+    // Load user data from backend
+    function loadUserData() {
+        const localUser = getLocalStorageUser();
+        const userId = localUser && localUser.id ? localUser.id : '';
+        
+        let url = 'http://localhost:5000/api/user/profile';
+        if (userId) {
+            url += `?userId=${encodeURIComponent(userId)}`;
+        }
+
+        fetch(url, { 
+            credentials: 'include',
+            headers: { 'X-User-Id': userId }
+        })
+        .then(response => {
+            if (!response.ok) throw new Error(`Failed to fetch user data (${response.status})`);
+            return response.json();
+        })
+        .then(data => {
+            if (data.success && data.user) {
+                userData = Object.assign({}, userData, data.user);
+                populateUserData();
+                try {
+                    localStorage.setItem('hitaishi_user', JSON.stringify(userData));
+                } catch (e) {
+                    console.warn('Could not save user data locally', e);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Error loading user data:', error);
+            const localUser = getLocalStorageUser();
+            if (localUser) {
+                userData = localUser;
+                populateUserData();
+            }
+        });
+    }
+    
+    // Populate user data in the UI
+    function populateUserData() {
+        document.getElementById('userName').textContent = `${userData.firstName || userData.firstname || ''} ${userData.lastName || userData.lastname || ''}`.trim() || 'User Name';
+        document.getElementById('userId').textContent = userData.id ? `ID: ${userData.id}` : '';
+        
+        const profileData = {
+            profileFor: (userData.profileFor || userData.profilefor || userData.profile_for || '').trim(),
+            firstName: (userData.firstName || userData.firstname || '').trim(),
+            lastName: (userData.lastName || userData.lastname || '').trim(),
+            dob: userData.dob || userData.dateOfBirth || '',
+            gender: userData.gender || '',
+            maritalStatus: userData.maritalStatus || userData.maritalstatus || '',
+            religion: userData.religion || '',
+            caste: userData.caste || '',
+            subCaste: userData.subCaste || userData.subcaste || '',
+            motherTongue: userData.motherTongue || userData.mothertongue || '',
+            education: userData.education || '',
+            college: userData.college || '',
+            profession: userData.profession || '',
+            income: userData.income || '',
+            aboutMe: userData.aboutMe || userData.aboutme || '',
+            partnerExpectations: userData.partnerExpectations || userData.partnerexpectations || '',
+            mobile: userData.mobile || '',
+            email: userData.email || ''
+        };
+
+        Object.assign(userData, profileData);
+
+        document.getElementById('profileFor').value = profileData.profileFor;
+        document.getElementById('firstName').value = profileData.firstName;
+        document.getElementById('lastName').value = profileData.lastName;
+        document.getElementById('dob').value = profileData.dob;
+        document.getElementById('gender').value = profileData.gender;
+        document.getElementById('maritalStatus').value = profileData.maritalStatus;
+        document.getElementById('religion').value = profileData.religion;
+        document.getElementById('caste').value = profileData.caste;
+        document.getElementById('subCaste').value = profileData.subCaste;
+        document.getElementById('motherTongue').value = profileData.motherTongue;
+        document.getElementById('education').value = profileData.education;
+        document.getElementById('college').value = profileData.college;
+        document.getElementById('profession').value = profileData.profession;
+        document.getElementById('income').value = profileData.income;
+        document.getElementById('aboutMe').value = profileData.aboutMe;
+        document.getElementById('partnerExpectations').value = profileData.partnerExpectations;
+        document.getElementById('mobile').value = profileData.mobile;
+        document.getElementById('email').value = profileData.email;
+        
+        if (userData.profileImage && userData.profileImage.trim() !== '') {
+            document.getElementById('profilePhoto').src = userData.profileImage;
+        }
+        
+        updateSubcasteOptions(profileData.caste);
+        updateProfileCompletion();
+    }
+    
+    // Update profile completion percentage
+    function updateProfileCompletion() {
+        let completedFields = 0;
+        const totalFields = 13;
+        
+        const requiredFields = [
+            'profileFor', 'firstName', 'lastName', 'dob', 'gender', 'maritalStatus',
+            'religion', 'caste', 'motherTongue', 'education', 'profession', 'income'
+        ];
+        
+        requiredFields.forEach(field => {
+            if (userData[field] && userData[field].trim() !== '') {
+                completedFields++;
+            }
+        });
+        
+        if (userData.aboutMe && userData.aboutMe.trim() !== '') {
+            completedFields++;
+        }
+        
+        const completionPercentage = Math.round((completedFields / totalFields) * 100);
+        document.getElementById('profileProgress').style.width = `${completionPercentage}%`;
+        document.getElementById('completionText').textContent = `Profile ${completionPercentage}% Complete`;
+    }
+    
+    // Set up form submission
+    function setupFormSubmission() {
+        profileForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (validateProfileForm()) {
+                await updateUserData();
+            }
+        });
+    }
+    
+    // Validate profile form
+    function validateProfileForm() {
+        let isValid = true;
+        const requiredFields = [
+            'profileFor', 'firstName', 'lastName', 'dob', 'gender', 'maritalStatus',
+            'religion', 'caste', 'motherTongue', 'education', 'profession', 'income'
+        ];
+        
+        requiredFields.forEach(field => {
+            clearError(field);
+        });
+        
+        requiredFields.forEach(field => {
+            const element = document.getElementById(field);
+            
+            if (!element.value) {
+                showError(field, 'This field is required');
+                isValid = false;
+            }
+        });
+        
+        if (document.getElementById('dob').value) {
+            const dob = new Date(document.getElementById('dob').value);
+            const today = new Date();
+            const age = today.getFullYear() - dob.getFullYear();
+            
+            if (age < 18) {
+                showError('dob', 'You must be at least 18 years old');
+                isValid = false;
+            }
+        }
+        
+        return isValid;
+    }
+    
+    // Show error message
+    function showError(fieldId, message) {
+        const formGroup = document.getElementById(fieldId).closest('.form-group');
+        formGroup.classList.add('error');
+        const errorElement = document.getElementById(`${fieldId}-error`);
+        if (errorElement) {
+            errorElement.textContent = message;
+        }
+    }
+    
+    // Clear error message
+    function clearError(fieldId) {
+        const formGroup = document.getElementById(fieldId).closest('.form-group');
+        formGroup.classList.remove('error');
+    }
+
+    function readFileAsDataURL(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = () => reject(new Error('Failed to read file'));
+            reader.readAsDataURL(file);
+        });
+    }
+
+    // Update user data
+    async function updateUserData() {
+        const formData = new FormData(profileForm);
+        const updateData = {};
+
+        for (let [key, value] of formData.entries()) {
+            if (key === 'profileImage') continue;
+            updateData[key] = value;
+        }
+
+        const profileImageInput = document.getElementById('profileImage');
+        if (profileImageInput && profileImageInput.files && profileImageInput.files.length > 0) {
+            try {
+                updateData.profileImage = await readFileAsDataURL(profileImageInput.files[0]);
+            } catch (err) {
+                console.error('Profile image read failed', err);
+                alert('Unable to read selected profile image. Please try again.');
+                return;
+            }
+        }
+
+        const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
+        
+        if (userId) {
+            updateData.userId = userId;
+            
+            const submitBtn = profileForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
+            submitBtn.disabled = true;
+
+            const updateUrl = `http://localhost:5000/api/user/update-profile?userId=${encodeURIComponent(userId)}`;
+            fetch(updateUrl, {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-User-Id': userId
+                },
+                body: JSON.stringify(updateData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(errBody => {
+                        throw new Error(errBody.message || `Update failed (${response.status})`);
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success && data.user) {
+                    userData = Object.assign({}, userData, updateData, data.user);
+                    populateUserData();
+                    try {
+                        localStorage.setItem('hitaishi_user', JSON.stringify(userData));
+                    } catch (e) {
+                        console.warn('Could not save user data locally', e);
+                    }
+                    alert('Profile updated successfully!');
+                    window.location.href = 'userdashboard.html';
+                } else {
+                    throw new Error(data.message || 'Failed to update profile');
+                }
+            })
+            .catch(error => {
+                console.error('Error updating profile:', error);
+                alert('Error updating profile: ' + error.message);
+            })
+            .finally(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        } else {
+            Object.assign(userData, updateData);
+            userData.id = userData.id || 'guest';
+            
+            try {
+                localStorage.setItem('hitaishi_user', JSON.stringify(userData));
+            } catch (e) {
+                console.error('Failed to save to localStorage', e);
+            }
+            
+            document.getElementById('userName').textContent = `${userData.firstName || 'Guest'} ${userData.lastName || 'User'}`;
+            updateProfileCompletion();
+            
+            alert('Profile saved locally successfully!');
+            window.location.href = 'userdashboard.html';
+        }
+    }
+    
+    // Set up subcaste options
+    function setupSubcasteOptions() {
+        casteSelect.addEventListener('change', function() {
+            updateSubcasteOptions(this.value);
+        });
+    }
+    
+    // Update subcaste options based on selected caste
+    function updateSubcasteOptions(caste) {
+        subcasteOptions.innerHTML = '';
+        
+        if (caste && subcasteData[caste]) {
+            subcasteOptions.style.display = 'grid';
+            
+            subcasteData[caste].forEach(subcaste => {
+                const option = document.createElement('div');
+                option.className = 'subcaste-option';
+                option.textContent = subcaste;
+                
+                if (userData.subCaste === subcaste) {
+                    option.classList.add('selected');
+                }
+                
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.subcaste-option').forEach(el => {
+                        el.classList.remove('selected');
+                    });
+                    
+                    this.classList.add('selected');
+                    document.getElementById('subCaste').value = this.textContent;
+                });
+                
+                subcasteOptions.appendChild(option);
+            });
+        } else {
+            subcasteOptions.style.display = 'none';
+        }
+    }
+</script>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 80px; right: 22px; z-index: 1000; background: linear-gradient(135deg, #3498db, #2980b9); color:white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 33px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s ease;" onclick="scrollToTop()">↑</button>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (window.pageYOffset > 100) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  });
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+</body>
+</html>

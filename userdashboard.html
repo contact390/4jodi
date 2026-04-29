@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hitaishi Matrimony - User Dashboard</title>
+    <title>4jodi Matrimony - User Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh;">
@@ -33,7 +33,7 @@
     <!-- Sidebar -->
     <div style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); padding: 20px; height: fit-content; position: sticky; top: 120px;">
         <div style="text-align: center; padding-bottom: 20px; border-bottom: 1px solid #ddd; margin-bottom: 20px;">
-            <img id="profilePhoto" src="" alt="Profile Photo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #ff3366; margin-bottom: 15px;">
+            <img id="profilePhoto" src="https://via.placeholder.com/120x120?text=Profile+Photo" alt="Profile Photo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #ff3366; margin-bottom: 15px;">
             <h2 id="userName" style="font-size: 1.5rem; color: #333; margin-bottom: 5px;">User Name</h2>
             <p id="userId" style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">ID: Loading...</p>
             
@@ -47,32 +47,32 @@
         
         <ul style="list-style: none;">
             <li style="margin-bottom: 10px;">
-                <a href="#" class="nav-link active" data-section="dashboard" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 10px; color: #333; text-decoration: none; transition: all 0.3s ease; background: rgba(255, 51, 102, 0.1); color: #ff3366;">
+                <a href="userdashboard.html" class="nav-link active" data-section="dashboard" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 10px; color: #333; text-decoration: none; transition: all 0.3s ease; background: rgba(255, 51, 102, 0.1); color: #ff3366;">
                     <i class="fas fa-tachometer-alt"></i> Dashboard
                 </a>
             </li>
             <li style="margin-bottom: 10px;">
-                <a href="#" class="nav-link" data-section="profile" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 10px; color: #333; text-decoration: none; transition: all 0.3s ease;">
+                <a href="edit-profile.html" class="nav-link" data-section="profile" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 10px; color: #333; text-decoration: none; transition: all 0.3s ease;">
                     <i class="fas fa-user-edit"></i> Edit Profile
                 </a>
             </li>
             <li style="margin-bottom: 10px;">
-                <a href="#" class="nav-link" data-section="photos" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 10px; color: #333; text-decoration: none; transition: all 0.3s ease;">
+                <a href="my-photos.html" class="nav-link" data-section="photos" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 10px; color: #333; text-decoration: none; transition: all 0.3s ease;">
                     <i class="fas fa-images"></i> My Photos
                 </a>
             </li>
             <li style="margin-bottom: 10px;">
-                <a href="#" class="nav-link" data-section="matches" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 10px; color: #333; text-decoration: none; transition: all 0.3s ease;">
+                <a href="match-suggestions.html" class="nav-link" data-section="matches" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 10px; color: #333; text-decoration: none; transition: all 0.3s ease;">
                     <i class="fas fa-heart"></i> Match Suggestions
                 </a>
             </li>
             <li style="margin-bottom: 10px;">
-                <a href="#" class="nav-link" data-section="messages" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 10px; color: #333; text-decoration: none; transition: all 0.3s ease;">
+                <a href="messages.html" class="nav-link" data-section="messages" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 10px; color: #333; text-decoration: none; transition: all 0.3s ease;">
                     <i class="fas fa-envelope"></i> Messages
                 </a>
             </li>
             <li style="margin-bottom: 10px;">
-                <a href="#" class="nav-link" data-section="settings" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 10px; color: #333; text-decoration: none; transition: all 0.3s ease;">
+                <a href="settings.html" class="nav-link" data-section="settings" style="display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 10px; color: #333; text-decoration: none; transition: all 0.3s ease;">
                     <i class="fas fa-cog"></i> Settings
                 </a>
             </li>
@@ -86,36 +86,21 @@
             <h2 style="color: #ff3366; margin-bottom: 20px; font-size: 1.8rem; border-bottom: 2px solid #ddd; padding-bottom: 10px;">Dashboard Overview</h2>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
-                <div style="background: #f5f7fa; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(255, 51, 102, 0.1);">
-                    <div style="font-size: 2rem; color: #ff3366; margin-bottom: 10px;">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <div id="profileViews" style="font-size: 1.8rem; font-weight: bold; color: #333; margin-bottom: 5px;">0</div>
-                    <div style="color: #666; font-size: 0.9rem;">Profile Views</div>
+                <div>
+                    <div id="profileViewsCount" style="font-size:2rem;">0</div>
+                    <div>Profile Views</div>
                 </div>
-                
-                <div style="background: #f5f7fa; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(255, 51, 102, 0.1);">
-                    <div style="font-size: 2rem; color: #ff3366; margin-bottom: 10px;">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <div id="interestedProfiles" style="font-size: 1.8rem; font-weight: bold; color: #333; margin-bottom: 5px;">0</div>
-                    <div style="color: #666; font-size: 0.9rem;">Interested Profiles</div>
+                <div>
+                    <div id="interestedProfilesCount" style="font-size:2rem;">0</div>
+                    <div>Interested Profiles</div>
                 </div>
-                
-                <div style="background: #f5f7fa; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(255, 51, 102, 0.1);">
-                    <div style="font-size: 2rem; color: #ff3366; margin-bottom: 10px;">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div id="matchSuggestionsCount" style="font-size: 1.8rem; font-weight: bold; color: #333; margin-bottom: 5px;">0</div>
-                    <div style="color: #666; font-size: 0.9rem;">Match Suggestions</div>
+                <div>
+                    <div id="matchSuggestionsCount" style="font-size:2rem;">0</div>
+                    <div>Match Suggestions</div>
                 </div>
-                
-                <div style="background: #f5f7fa; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(255, 51, 102, 0.1);">
-                    <div style="font-size: 2rem; color: #ff3366; margin-bottom: 10px;">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div id="newMessages" style="font-size: 1.8rem; font-weight: bold; color: #333; margin-bottom: 5px;">0</div>
-                    <div style="color: #666; font-size: 0.9rem;">New Messages</div>
+                <div>
+                    <div id="newMessagesCount" style="font-size:2rem;">0</div>
+                    <div>New Messages</div>
                 </div>
             </div>
             
@@ -131,6 +116,16 @@
             
             <form id="profileForm">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                    <div style="margin-bottom: 20px;">
+                        <label for="profileFor" style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Profile For *</label>
+                        <select id="profileFor" name="profileFor" required style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; transition: all 0.3s ease;">
+                            <option value="" disabled selected>Select profile type</option>
+                            <option value="Bride">Bride</option>
+                            <option value="Groom">Groom</option>
+                        </select>
+                        <div id="profileFor-error" style="color: #dc3545; font-size: 12px; margin-top: 5px; display: none;"></div>
+                    </div>
+                    
                     <div style="margin-bottom: 20px;">
                         <label for="firstName" style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">First Name *</label>
                         <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; transition: all 0.3s ease;">
@@ -278,6 +273,21 @@
                         <label for="partnerExpectations" style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Partner Expectations</label>
                         <textarea id="partnerExpectations" name="partnerExpectations" rows="4" placeholder="Describe what you're looking for in a life partner" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; transition: all 0.3s ease;"></textarea>
                     </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="mobile" style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; transition: all 0.3s ease;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="email" style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Email Address</label>
+                        <input type="email" id="email" name="email" readonly placeholder="Your email address" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; background-color: #f9f9f9; transition: all 0.3s ease;">
+                    </div>
+                    <div style="margin-bottom: 20px; grid-column: 1 / -1;">
+                        <label for="profileImage" style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Profile Image</label>
+                        <input type="file" id="profileImage" name="profileImage" accept="image/*" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; transition: all 0.3s ease; background: #fff;" />
+                        <div style="color: #6b7280; font-size: 12px; margin-top: 8px;">Choose a new profile photo to update your avatar.</div>
+                    </div>
                 </div>
                 
                 <div style="display: flex; justify-content: flex-end; gap: 15px; margin-top: 30px;">
@@ -342,6 +352,7 @@
     // User data
     let userData = {};
     let matchSuggestions = [];
+    let isAuthenticated = false; // track whether server session is active
 
     function getLocalStorageUser() {
         try {
@@ -401,40 +412,54 @@
     // Check authentication status using server session
     async function checkAuthStatus() {
         try {
-            const resp = await fetch('http://localhost:5000/api/session', { credentials: 'include' });
+            const localUser = getLocalStorageUser();
+            const userId = localUser && localUser.id ? localUser.id : '';
+            const resp = await fetch('http://localhost:5000/api/session', { 
+                credentials: 'include',
+                headers: { 'X-User-Id': userId }
+            });
             if (!resp.ok) throw new Error('No session');
             const data = await resp.json();
             if (!data || !data.success || !data.user) {
+                // Not authenticated, check localStorage
+                if (localUser && localUser.id) {
+                    userData = localUser;
+                    isAuthenticated = false;
+                    loadUserData(localUser.id);
+                    return;
+                }
+                userData = { id: 'guest' };
                 showGuestView();
                 return;
             }
             // session exists; load profile from backend
+            isAuthenticated = true;
             loadUserData();
         } catch (err) {
-            // fallback to guest view
-            showGuestView();
+            console.error('Auth check failed:', err);
+            // fallback to localStorage or guest
+            const localUser = getLocalStorageUser();
+            if (localUser && localUser.id) {
+                userData = localUser;
+                isAuthenticated = false;
+                loadUserData(localUser.id);
+            } else {
+                userData = { id: 'guest' };
+                showGuestView();
+            }
         }
     }
 
     function showGuestView() {
-        // Guest view: allow browsing but disable editing features
+        isAuthenticated = false;
+        // Guest view: allow browsing and editing, but save to localStorage
         document.getElementById('userName').textContent = 'Guest User';
         document.getElementById('userId').textContent = '';
         if (logoutBtn) {
             logoutBtn.style.display = 'none';
         }
 
-        // Disable profile form inputs and upload controls so guests cannot modify
-        if (profileForm) {
-            profileForm.querySelectorAll('input, select, textarea, button').forEach(el => {
-                // Keep the Cancel button enabled
-                if (el.id === 'cancelBtn') return;
-                // Keep non-submit buttons (like navigation) enabled
-                if (el.type === 'button') return;
-                el.disabled = true;
-            });
-        }
-
+        // For guests, enable editing but note that data is local
         const localUser = getLocalStorageUser();
         if (localUser) {
             userData = localUser;
@@ -445,51 +470,80 @@
         const notice = document.createElement('div');
         notice.id = 'guestNotice';
         notice.style.cssText = 'max-width:1200px;margin:70px auto 10px;padding:10px 20px;background:#fff3cd;border:1px solid #ffeeba;color:#856404;border-radius:6px;text-align:center;';
-        notice.innerHTML = 'You are viewing as <strong>Guest</strong>. <a href="login2.html">Login</a> to edit your profile and see personalized data.';
+        notice.innerHTML = 'You are viewing as <strong>Guest</strong>. Your changes will be saved locally. <a href="login2.html">Login</a> to sync with server.';
         document.body.insertBefore(notice, document.body.children[2]);
     }
     
     // Load user data from backend
-    function loadUserData() {
-        fetch('http://localhost:5000/api/user/profile', { credentials: 'include' })
+    function loadUserData(fallbackUserId) {
+        let url = 'http://localhost:5000/api/user/profile';
+        const userId = fallbackUserId || (userData.id && userData.id !== 'guest' ? userData.id : '');
+        if (userId) {
+            url += `?userId=${encodeURIComponent(userId)}`;
+        }
+
+        fetch(url, { 
+            credentials: 'include',
+            headers: { 'X-User-Id': userId }
+        })
         .then(response => {
             if (!response.ok) throw new Error(`Failed to fetch user data (${response.status})`);
             return response.json();
         })
         .then(data => {
-            if (data.success) {
-                userData = data.user;
+            if (data.success && data.user) {
+                userData = Object.assign({}, userData, data.user);
                 populateUserData();
 
-                // Load additional data
+                try {
+                    localStorage.setItem('hitaishi_user', JSON.stringify(userData));
+                } catch (e) {
+                    console.warn('Could not save authenticated user data locally', e);
+                }
+
+                if (!fallbackUserId) {
+                    isAuthenticated = true;
+                }
                 loadDashboardStats();
                 loadMatchSuggestions();
                 loadUserPhotos();
             } else {
+                isAuthenticated = false;
                 throw new Error(data.message || 'Failed to load user data');
             }
         })
         .catch(error => {
             console.error('Error loading user data:', error);
+            if (fallbackUserId) {
+                showGuestView();
+                return;
+            }
+            isAuthenticated = false;
             const localUser = getLocalStorageUser();
             if (localUser) {
                 userData = localUser;
                 populateUserData();
+                alert('Loaded data from local storage. Your changes will be saved locally only. Login to sync with server.');
+            } else {
+                alert('Error loading user data: ' + error.message + '. Please try logging in again.');
             }
-            alert('Error loading user data: ' + error.message);
         });
     }
     
     // Load dashboard statistics
     function loadDashboardStats() {
-        fetch('http://localhost:5000/api/user/dashboard-stats', { credentials: 'include' })
+        const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
+        fetch('http://localhost:5000/api/user/dashboard-stats', {
+            credentials: 'include',
+            headers: { 'X-User-Id': userId }
+        })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                document.getElementById('profileViews').textContent = data.stats.profileViews || 0;
-                document.getElementById('interestedProfiles').textContent = data.stats.interestedProfiles || 0;
+                document.getElementById('profileViewsCount').textContent = data.stats.profileViews || 0;
+                document.getElementById('interestedProfilesCount').textContent = data.stats.interestedProfiles || 0;
                 document.getElementById('matchSuggestionsCount').textContent = data.stats.matchSuggestions || 0;
-                document.getElementById('newMessages').textContent = data.stats.newMessages || 0;
+                document.getElementById('newMessagesCount').textContent = data.stats.newMessages || 0;
             }
         })
         .catch(error => {
@@ -499,33 +553,61 @@
     
     // Populate user data in the UI
     function populateUserData() {
-        document.getElementById('userName').textContent = `${userData.firstName} ${userData.lastName}`;
-        document.getElementById('userId').textContent = `ID: ${userData.id || 'HM' + Math.floor(100000 + Math.random() * 900000)}`;
+        document.getElementById('userName').textContent = userData.id === 'guest' ? 'Guest User' : `${userData.firstName || userData.firstname || ''} ${userData.lastName || userData.lastname || ''}`.trim();
+        document.getElementById('userId').textContent = userData.id === 'guest' ? '' : `ID: ${userData.id || 'HM' + Math.floor(100000 + Math.random() * 900000)}`;
         
-        // Populate form fields
-        document.getElementById('firstName').value = userData.firstName || '';
-        document.getElementById('lastName').value = userData.lastName || '';
-        document.getElementById('dob').value = userData.dob || '';
-        document.getElementById('gender').value = userData.gender || '';
-        document.getElementById('maritalStatus').value = userData.maritalStatus || '';
-        document.getElementById('religion').value = userData.religion || '';
-        document.getElementById('caste').value = userData.caste || '';
-        document.getElementById('subCaste').value = userData.subCaste || '';
-        document.getElementById('motherTongue').value = userData.motherTongue || '';
-        document.getElementById('education').value = userData.education || '';
-        document.getElementById('college').value = userData.college || '';
-        document.getElementById('profession').value = userData.profession || '';
-        document.getElementById('income').value = userData.income || '';
-        document.getElementById('aboutMe').value = userData.aboutMe || '';
-        document.getElementById('partnerExpectations').value = userData.partnerExpectations || '';
+        const profileData = {
+            profileFor: (userData.profileFor || userData.profilefor || userData.profile_for || '').trim(),
+            firstName: (userData.firstName || userData.firstname || '').trim(),
+            lastName: (userData.lastName || userData.lastname || '').trim(),
+            dob: userData.dob || userData.dateOfBirth || '',
+            gender: userData.gender || '',
+            maritalStatus: userData.maritalStatus || userData.maritalstatus || '',
+            religion: userData.religion || '',
+            caste: userData.caste || '',
+            subCaste: userData.subCaste || userData.subcaste || '',
+            motherTongue: userData.motherTongue || userData.mothertongue || '',
+            education: userData.education || '',
+            college: userData.college || '',
+            profession: userData.profession || '',
+            income: userData.income || '',
+            aboutMe: userData.aboutMe || userData.aboutme || '',
+            partnerExpectations: userData.partnerExpectations || userData.partnerexpectations || '',
+            mobile: userData.mobile || '',
+            email: userData.email || ''
+        };
+
+        // Normalize userData so later logic uses the same fields
+        Object.assign(userData, profileData);
+
+        document.getElementById('profileFor').value = profileData.profileFor;
+        document.getElementById('firstName').value = profileData.firstName;
+        document.getElementById('lastName').value = profileData.lastName;
+        document.getElementById('dob').value = profileData.dob;
+        document.getElementById('gender').value = profileData.gender;
+        document.getElementById('maritalStatus').value = profileData.maritalStatus;
+        document.getElementById('religion').value = profileData.religion;
+        document.getElementById('caste').value = profileData.caste;
+        document.getElementById('subCaste').value = profileData.subCaste;
+        document.getElementById('motherTongue').value = profileData.motherTongue;
+        document.getElementById('education').value = profileData.education;
+        document.getElementById('college').value = profileData.college;
+        document.getElementById('profession').value = profileData.profession;
+        document.getElementById('income').value = profileData.income;
+        document.getElementById('aboutMe').value = profileData.aboutMe;
+        document.getElementById('partnerExpectations').value = profileData.partnerExpectations;
+        document.getElementById('mobile').value = profileData.mobile;
+        document.getElementById('email').value = profileData.email;
         
         // Update profile photo if available
-        if (userData.profileImage) {
+        if (userData.profileImage && userData.profileImage.trim() !== '') {
             document.getElementById('profilePhoto').src = userData.profileImage;
+        } else {
+            document.getElementById('profilePhoto').src = 'https://via.placeholder.com/120x120?text=Profile+Photo';
         }
         
         // Update subcaste options based on caste
-        updateSubcasteOptions(userData.caste);
+        updateSubcasteOptions(profileData.caste);
         
         // Calculate and update profile completion
         updateProfileCompletion();
@@ -534,11 +616,11 @@
     // Update profile completion percentage
     function updateProfileCompletion() {
         let completedFields = 0;
-        const totalFields = 12; // Adjust based on your form fields
+        const totalFields = 13; // Adjust based on your form fields
         
         // Check each required field
         const requiredFields = [
-            'firstName', 'lastName', 'dob', 'gender', 'maritalStatus',
+            'profileFor', 'firstName', 'lastName', 'dob', 'gender', 'maritalStatus',
             'religion', 'caste', 'motherTongue', 'education', 'profession', 'income'
         ];
         
@@ -593,11 +675,6 @@
         // Ensure edit profile shows existing user values
         if (sectionId === 'profile') {
             if (Object.keys(userData).length === 0) {
-                const localUser = getLocalStorageUser();
-                if (localUser) {
-                    userData = localUser;
-                    populateUserData();
-                }
                 loadUserData();
             } else {
                 populateUserData();
@@ -618,13 +695,13 @@
     
     // Set up form submission
     function setupFormSubmission() {
-        profileForm.addEventListener('submit', function(e) {
+        profileForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Validate form
             if (validateProfileForm()) {
                 // Update user data
-                updateUserData();
+                await updateUserData();
             }
         });
     }
@@ -633,7 +710,7 @@
     function validateProfileForm() {
         let isValid = true;
         const requiredFields = [
-            'firstName', 'lastName', 'dob', 'gender', 'maritalStatus',
+            'profileFor', 'firstName', 'lastName', 'dob', 'gender', 'maritalStatus',
             'religion', 'caste', 'motherTongue', 'education', 'profession', 'income'
         ];
         
@@ -691,38 +768,80 @@
         }
     }
     
+    function readFileAsDataURL(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = () => reject(new Error('Failed to read file'));
+            reader.readAsDataURL(file);
+        });
+    }
+
     // Update user data
-    function updateUserData() {
+    async function updateUserData() {
         // Collect form data
         const formData = new FormData(profileForm);
         const updateData = {};
 
         for (let [key, value] of formData.entries()) {
+            if (key === 'profileImage') continue;
             updateData[key] = value;
         }
 
-        // Show loading state
+        const profileImageInput = document.getElementById('profileImage');
+        if (profileImageInput && profileImageInput.files && profileImageInput.files.length > 0) {
+            try {
+                updateData.profileImage = await readFileAsDataURL(profileImageInput.files[0]);
+            } catch (err) {
+                console.error('Profile image read failed', err);
+                alert('Unable to read selected profile image. Please try again.');
+                return;
+            }
+        }
+
+        // If we have a valid user ID, try backend update first
+        if (userData.id && userData.id !== 'guest') {
+            updateData.userId = userData.id;
+            updateBackend(updateData);
+        } else {
+            updateLocal(updateData);
+            alert('You are not authenticated. Profile changes are saved locally only. Login to sync with the server.');
+        }
+    }
+
+    function updateBackend(updateData) {
         const submitBtn = profileForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
         submitBtn.disabled = true;
 
-        fetch('http://localhost:5000/api/user/update-profile', {
+const updateUrl = `http://localhost:5000/api/user/update-profile?userId=${encodeURIComponent(userData.id || '')}`;
+        fetch(updateUrl, {
             method: 'POST',
             credentials: 'include',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'X-User-Id': userData.id || ''
+            },
             body: JSON.stringify(updateData)
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(errBody => {
+                    throw new Error(errBody.message || `Update failed (${response.status})`);
+                });
+            }
+            return response.json();
+        })
         .then(data => {
-            if (data.success) {
-                // Update userData object
-                Object.assign(userData, updateData);
-
-                // Update UI
-                document.getElementById('userName').textContent = `${userData.firstName} ${userData.lastName}`;
-                updateProfileCompletion();
-
+            if (data.success && data.user) {
+                userData = Object.assign({}, userData, updateData, data.user);
+                populateUserData();
+                try {
+                    localStorage.setItem('hitaishi_user', JSON.stringify(userData));
+                } catch (e) {
+                    console.warn('Could not save updated user data locally', e);
+                }
                 alert('Profile updated successfully!');
                 showSection('dashboard');
             } else {
@@ -731,36 +850,63 @@
         })
         .catch(error => {
             console.error('Error updating profile:', error);
-            alert('Error updating profile: ' + error.message);
+            alert('Error updating profile: ' + error.message + '. Please check your connection and try again.');
         })
         .finally(() => {
-            // Reset button state
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         });
+    }
+
+    function updateLocal(updateData) {
+        // Update userData
+        Object.assign(userData, updateData);
+        userData.id = userData.id || 'guest';
+
+        // Save to localStorage
+        try {
+            localStorage.setItem('hitaishi_user', JSON.stringify(userData));
+        } catch (e) {
+            console.error('Failed to save to localStorage', e);
+        }
+
+        // Update UI
+        document.getElementById('userName').textContent = `${userData.firstName || 'Guest'} ${userData.lastName || 'User'}`;
+        updateProfileCompletion();
+
+        alert('Profile saved locally successfully!');
+        showSection('dashboard');
     }
     
     // Set up photo upload
     function setupPhotoUpload() {
         addPhotoBtn.addEventListener('click', function() {
+            if (!userData.id || userData.id === 'guest') {
+                alert('Please log in to upload photos.');
+                return;
+            }
             photoUpload.click();
         });
-        
+
         photoUpload.addEventListener('change', function() {
+            if (!userData.id || userData.id === 'guest') {
+                alert('Please log in to upload photos.');
+                return;
+            }
             if (this.files && this.files[0]) {
                 const file = this.files[0];
-                
+
                 // Validate file type and size
                 if (!file.type.startsWith('image/')) {
                     alert('Please select an image file');
                     return;
                 }
-                
+
                 if (file.size > 5 * 1024 * 1024) { // 5MB limit
                     alert('Image size should be less than 5MB');
                     return;
                 }
-                
+
                 // Upload photo to backend
                 uploadPhoto(file);
             }
@@ -771,10 +917,13 @@
     function uploadPhoto(file) {
         const formData = new FormData();
         formData.append('photo', file);
+        
+        const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
 
         fetch('http://localhost:5000/api/user/upload-photo', {
             method: 'POST',
             credentials: 'include',
+            headers: { 'X-User-Id': userId },
             body: formData
         })
         .then(response => response.json())
@@ -799,7 +948,11 @@
     
     // Load user photos
     function loadUserPhotos() {
-        fetch('http://localhost:5000/api/user/photos', { credentials: 'include' })
+        const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
+        fetch('http://localhost:5000/api/user/photos', {
+            credentials: 'include',
+            headers: { 'X-User-Id': userId }
+        })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -825,51 +978,109 @@
         photoItem.style.borderRadius = '10px';
         photoItem.style.overflow = 'hidden';
         photoItem.style.aspectRatio = '1';
-        
-        photoItem.innerHTML = `
-            <img src="${photoUrl}" alt="User Photo" style="width: 100%; height: 100%; object-fit: cover;">
-            <div class="photo-actions" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.7); display: flex; justify-content: space-around; padding: 8px; transform: translateY(100%); transition: transform 0.3s ease;">
-                <span class="photo-action set-profile" title="Set as Profile" style="color: white; cursor: pointer; transition: color 0.3s ease;">
-                    <i class="fas fa-user-circle"></i>
-                </span>
-                <span class="photo-action delete-photo" title="Delete" style="color: white; cursor: pointer; transition: color 0.3s ease;">
-                    <i class="fas fa-trash"></i>
-                </span>
-            </div>
-            ${isProfile ? '<div style="position: absolute; top: 5px; right: 5px; background: #ff3366; color: white; padding: 2px 5px; border-radius: 3px; font-size: 0.7rem;">Profile</div>' : ''}
-        `;
-        
-        // Add hover effect
+
+        // Top-right delete icon
+        const deleteBtn = document.createElement('span');
+        deleteBtn.className = 'photo-action delete-photo';
+        deleteBtn.title = 'Delete';
+        deleteBtn.innerHTML = '<i class="fas fa-times-circle"></i>';
+        deleteBtn.style.position = 'absolute';
+        deleteBtn.style.top = '7px';
+        deleteBtn.style.right = '7px';
+        deleteBtn.style.color = '#ff3366';
+        deleteBtn.style.background = 'rgba(255,255,255,0.85)';
+        deleteBtn.style.borderRadius = '50%';
+        deleteBtn.style.padding = '4px';
+        deleteBtn.style.fontSize = '1.2rem';
+        deleteBtn.style.cursor = 'pointer';
+        deleteBtn.style.zIndex = '2';
+        deleteBtn.style.boxShadow = '0 2px 6px rgba(0,0,0,0.08)';
+
+        // Set as profile icon (bottom overlay)
+        const setAsProfileBtn = document.createElement('span');
+        setAsProfileBtn.className = 'photo-action set-profile';
+        setAsProfileBtn.title = 'Set as Profile';
+        setAsProfileBtn.innerHTML = '<i class="fas fa-user-circle"></i>';
+        setAsProfileBtn.style.color = 'white';
+        setAsProfileBtn.style.cursor = 'pointer';
+        setAsProfileBtn.style.transition = 'color 0.3s ease';
+
+        // Overlay for set as profile (bottom)
+        const photoActions = document.createElement('div');
+        photoActions.className = 'photo-actions';
+        photoActions.style.position = 'absolute';
+        photoActions.style.bottom = '0';
+        photoActions.style.left = '0';
+        photoActions.style.right = '0';
+        photoActions.style.background = 'rgba(0, 0, 0, 0.7)';
+        photoActions.style.display = 'flex';
+        photoActions.style.justifyContent = 'center';
+        photoActions.style.padding = '8px';
+        photoActions.style.transform = 'translateY(100%)';
+        photoActions.style.transition = 'transform 0.3s ease';
+        photoActions.appendChild(setAsProfileBtn);
+
+        // Main image
+        const img = document.createElement('img');
+        img.src = photoUrl;
+        img.alt = 'User Photo';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+
+        // Profile badge
+        let profileBadge = '';
+        if (isProfile) {
+            profileBadge = document.createElement('div');
+            profileBadge.style.position = 'absolute';
+            profileBadge.style.top = '5px';
+            profileBadge.style.right = '35px';
+            profileBadge.style.background = '#ff3366';
+            profileBadge.style.color = 'white';
+            profileBadge.style.padding = '2px 5px';
+            profileBadge.style.borderRadius = '3px';
+            profileBadge.style.fontSize = '0.7rem';
+            profileBadge.textContent = 'Profile';
+        }
+
+        // Build photo item
+        photoItem.appendChild(img);
+        photoItem.appendChild(deleteBtn);
+        if (profileBadge) photoItem.appendChild(profileBadge);
+        photoItem.appendChild(photoActions);
+
+        // Hover effect for set as profile overlay
         photoItem.addEventListener('mouseenter', function() {
-            this.querySelector('.photo-actions').style.transform = 'translateY(0)';
+            photoActions.style.transform = 'translateY(0)';
         });
-        
         photoItem.addEventListener('mouseleave', function() {
-            this.querySelector('.photo-actions').style.transform = 'translateY(100%)';
+            photoActions.style.transform = 'translateY(100%)';
         });
-        
-        // Insert before the add photo button
+
+        // Insert photo item
         photoGallery.appendChild(photoItem);
-        
-        // Add event listeners for photo actions
-        const setAsProfileBtn = photoItem.querySelector('.set-profile');
-        const deleteBtn = photoItem.querySelector('.delete-photo');
-        
-        setAsProfileBtn.addEventListener('click', function() {
+
+        // Event listeners
+        setAsProfileBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
             setAsProfilePhoto(photoUrl, photoId);
         });
-        
-        deleteBtn.addEventListener('click', function() {
+        deleteBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
             deletePhoto(photoId, photoItem);
         });
     }
     
     // Set photo as profile photo
     function setAsProfilePhoto(photoUrl, photoId) {
+        const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
         fetch('http://localhost:5000/api/user/set-profile-photo', {
             method: 'POST',
             credentials: 'include',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                'X-User-Id': userId
+            },
             body: JSON.stringify({ photoId: photoId, photoUrl: photoUrl })
         })
         .then(response => response.json())
@@ -895,11 +1106,15 @@
     // Delete photo
     function deletePhoto(photoId, photoElement) {
         if (confirm('Are you sure you want to delete this photo?')) {
+            const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
             // Delete photo from backend
             fetch('http://localhost:5000/api/user/delete-photo', {
                 method: 'POST',
                 credentials: 'include',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'X-User-Id': userId
+                },
                 body: JSON.stringify({ photoId: photoId })
             })
             .then(response => response.json())
@@ -921,7 +1136,11 @@
     
     // Load match suggestions
     function loadMatchSuggestions() {
-        fetch('http://localhost:5000/api/user/match-suggestions', { credentials: 'include' })
+        const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
+        fetch('http://localhost:5000/api/user/match-suggestions', {
+            credentials: 'include',
+            headers: { 'X-User-Id': userId }
+        })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -1136,6 +1355,72 @@ fetch("footer.html")
   .then(data => {
     document.getElementById("footer").innerHTML = data;
   });
+</script>
+<!-- Load Chatbot -->
+<script>
+  async function loadChatbot() {
+    try {
+      const response = await fetch('./chatbot.html');
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const htmlContent = await response.text();
+      
+      // Create a container to hold chatbot
+      const container = document.createElement('div');
+      container.id = 'chatbot-container';
+      container.innerHTML = htmlContent;
+      document.body.appendChild(container);
+      
+      // Extract and re-execute scripts from chatbot.html
+      const scripts = container.querySelectorAll('script');
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement('script');
+        newScript.textContent = oldScript.textContent;
+        document.head.appendChild(newScript);
+      });
+      
+      console.log('✓ Chatbot loaded successfully');
+    } catch (error) {
+      console.error('✗ Chatbot load failed:', error);
+    }
+  }
+  
+  // Load chatbot when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadChatbot);
+  } else {
+    loadChatbot();
+  }
+</script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 80px; right: 22px; z-index: 1000; background: linear-gradient(135deg, #3498db, #2980b9); color:white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 33px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s ease;" onclick="scrollToTop()">↑</button>
+
+<style>
+  #scrollToTopBtn:hover {
+    background: linear-gradient(135deg, #2980b9, #21618c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  }
+</style>
+
+<script>
+  // Show/hide scroll to top button
+  window.addEventListener('scroll', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (window.pageYOffset > 100) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  });
+
+  // Scroll to top function
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 </script>
 
 

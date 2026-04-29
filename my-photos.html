@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4jodi Matrimony - My Photos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .main-container {
+            max-width: 1200px;
+            margin: 180px auto 40px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .sidebar {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+        .sidebar-profile {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .sidebar-profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff3366;
+            margin-bottom: 15px;
+        }
+        .sidebar-profile h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .sidebar-profile p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .progress-bar {
+            height: 8px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+        .progress-bar div {
+            height: 100%;
+            background: #ff3366;
+            border-radius: 4px;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .sidebar a:hover {
+            background: rgba(255, 51, 102, 0.1);
+            color: #ff3366;
+        }
+        .sidebar a.active {
+            background: rgba(255, 51, 102, 0.1);
+            color: #ff3366;
+        }
+        .content {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .content h1 {
+            color: #ff3366;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .content > p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .photo-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .photo-item:hover {
+            transform: translateY(-5px);
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .photo-item .profile-badge {
+            position: absolute;
+            top: 8px;
+            right: 40px;
+            background: #ff3366;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        .photo-item .delete-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #ff3366;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .photo-item .delete-btn:hover {
+            background: #ff3366;
+            color: white;
+        }
+        .photo-item .photo-actions {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .photo-item:hover .photo-actions {
+            transform: translateY(0);
+        }
+        .photo-item .set-profile-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+        .photo-item .set-profile-btn:hover {
+            color: #ff3366;
+        }
+        .add-photo {
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+            padding: 20px;
+            background: #fafafa;
+        }
+        .add-photo:hover {
+            border-color: #ff3366;
+            color: #ff3366;
+            background: rgba(255, 51, 102, 0.05);
+        }
+        .add-photo i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .add-photo span {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        #photoUpload {
+            display: none;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        .empty-state i {
+            font-size: 4rem;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
+
+<!-- Main Container -->
+<div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-profile">
+            <img id="profilePhoto" src="https://via.placeholder.com/120x120?text=Profile+Photo" alt="Profile Photo">
+            <h2 id="userName">User Name</h2>
+            <p id="userId">ID: Loading...</p>
+            <div style="margin-top: 15px;">
+                <div class="progress-bar">
+                    <div id="profileProgress" style="width: 75%;"></div>
+                </div>
+                <p id="completionText" style="font-size: 0.8rem; color: #666;">Profile Loading...</p>
+            </div>
+        </div>
+        
+        <ul>
+            <li><a href="userdashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a></li>
+            <li><a href="my-photos.html" class="active"><i class="fas fa-images"></i> My Photos</a></li>
+            <li><a href="match-suggestions.html"><i class="fas fa-heart"></i> Match Suggestions</a></li>
+            <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>My Photos</h1>
+        <p>Upload and manage your profile photos. You can add up to 6 photos.</p>
+        
+        <div id="photoGallery" class="photo-gallery">
+            <!-- Photos will be loaded here -->
+        </div>
+        
+        <div id="addPhotoBtn" class="add-photo">
+            <i class="fas fa-plus-circle"></i>
+            <span>Add Photo</span>
+        </div>
+        
+        <input type="file" id="photoUpload" accept="image/*">
+    </div>
+</div>
+
+<script>
+    // User data
+    let userData = {};
+
+    function getLocalStorageUser() {
+        try {
+            const stored = localStorage.getItem('hitaishi_user');
+            return stored ? JSON.parse(stored) : null;
+        } catch (err) {
+            console.warn('Failed to parse saved user from localStorage', err);
+            return null;
+        }
+    }
+
+    // DOM elements
+    const addPhotoBtn = document.getElementById('addPhotoBtn');
+    const photoUpload = document.getElementById('photoUpload');
+    const photoGallery = document.getElementById('photoGallery');
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+        setupPhotoUpload();
+        
+        const savedUser = getLocalStorageUser();
+        if (savedUser) {
+            userData = savedUser;
+            populateSidebar();
+        }
+        
+        loadUserData();
+    });
+    
+    // Load user data from backend
+    function loadUserData() {
+        const localUser = getLocalStorageUser();
+        const userId = localUser && localUser.id ? localUser.id : '';
+        
+        let url = 'http://localhost:5000/api/user/profile';
+        if (userId) {
+            url += `?userId=${encodeURIComponent(userId)}`;
+        }
+
+        fetch(url, { 
+            credentials: 'include',
+            headers: { 'X-User-Id': userId }
+        })
+        .then(response => {
+            if (!response.ok) throw new Error(`Failed to fetch user data (${response.status})`);
+            return response.json();
+        })
+        .then(data => {
+            if (data.success && data.user) {
+                userData = Object.assign({}, userData, data.user);
+                populateSidebar();
+                loadUserPhotos();
+            }
+        })
+        .catch(error => {
+            console.error('Error loading user data:', error);
+            const localUser = getLocalStorageUser();
+            if (localUser) {
+                userData = localUser;
+                populateSidebar();
+            }
+        });
+    }
+    
+    // Populate sidebar
+    function populateSidebar() {
+        document.getElementById('userName').textContent = `${userData.firstName || userData.firstname || ''} ${userData.lastName || userData.lastname || ''}`.trim() || 'User Name';
+        document.getElementById('userId').textContent = userData.id ? `ID: ${userData.id}` : '';
+        
+        if (userData.profileImage && userData.profileImage.trim() !== '') {
+            document.getElementById('profilePhoto').src = userData.profileImage;
+        }
+        
+        updateProfileCompletion();
+    }
+    
+    // Update profile completion percentage
+    function updateProfileCompletion() {
+        let completedFields = 0;
+        const totalFields = 13;
+        
+        const requiredFields = [
+            'profileFor', 'firstName', 'lastName', 'dob', 'gender', 'maritalStatus',
+            'religion', 'caste', 'motherTongue', 'education', 'profession', 'income'
+        ];
+        
+        requiredFields.forEach(field => {
+            if (userData[field] && userData[field].trim() !== '') {
+                completedFields++;
+            }
+        });
+        
+        if (userData.aboutMe && userData.aboutMe.trim() !== '') {
+            completedFields++;
+        }
+        
+        const completionPercentage = Math.round((completedFields / totalFields) * 100);
+        document.getElementById('profileProgress').style.width = `${completionPercentage}%`;
+        document.getElementById('completionText').textContent = `Profile ${completionPercentage}% Complete`;
+    }
+    
+    // Set up photo upload
+    function setupPhotoUpload() {
+        addPhotoBtn.addEventListener('click', function() {
+            if (!userData.id || userData.id === 'guest') {
+                alert('Please log in to upload photos.');
+                return;
+            }
+            photoUpload.click();
+        });
+
+        photoUpload.addEventListener('change', function() {
+            if (!userData.id || userData.id === 'guest') {
+                alert('Please log in to upload photos.');
+                return;
+            }
+            if (this.files && this.files[0]) {
+                const file = this.files[0];
+
+                if (!file.type.startsWith('image/')) {
+                    alert('Please select an image file');
+                    return;
+                }
+
+                if (file.size > 5 * 1024 * 1024) {
+                    alert('Image size should be less than 5MB');
+                    return;
+                }
+
+                uploadPhoto(file);
+            }
+        });
+    }
+    
+    // Upload photo to backend
+    function uploadPhoto(file) {
+        const formData = new FormData();
+        formData.append('photo', file);
+        
+        const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
+
+        fetch('http://localhost:5000/api/user/upload-photo', {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'X-User-Id': userId },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                addPhotoToGallery(data.photoUrl, data.photoId, data.isProfile);
+                
+                if (!userData.profileImage) {
+                    setAsProfilePhoto(data.photoUrl, data.photoId);
+                }
+                
+                alert('Photo uploaded successfully!');
+            } else {
+                alert('Failed to upload photo: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error uploading photo:', error);
+            alert('Error uploading photo');
+        });
+    }
+    
+    // Load user photos
+    function loadUserPhotos() {
+        const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
+        fetch('http://localhost:5000/api/user/photos', {
+            credentials: 'include',
+            headers: { 'X-User-Id': userId }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                photoGallery.innerHTML = '';
+                
+                if (data.photos.length === 0) {
+                    photoGallery.innerHTML = `
+                        <div class="empty-state" style="grid-column: 1 / -1;">
+                            <i class="fas fa-images"></i>
+                            <p>No photos uploaded yet. Add your first photo!</p>
+                        </div>
+                    `;
+                } else {
+                    data.photos.forEach(photo => {
+                        addPhotoToGallery(photo.url, photo.id, photo.isProfile);
+                    });
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Error loading photos:', error);
+        });
+    }
+    
+    // Add photo to gallery
+    function addPhotoToGallery(photoUrl, photoId, isProfile = false) {
+        const photoItem = document.createElement('div');
+        photoItem.className = 'photo-item';
+        
+        let profileBadge = '';
+        if (isProfile) {
+            profileBadge = '<div class="profile-badge">Profile</div>';
+        }
+
+        photoItem.innerHTML = `
+            <img src="${photoUrl}" alt="User Photo">
+            ${profileBadge}
+            <button class="delete-btn" title="Delete"><i class="fas fa-times"></i></button>
+            <div class="photo-actions">
+                <button class="set-profile-btn"><i class="fas fa-user-circle"></i> Set as Profile</button>
+            </div>
+        `;
+
+        // Set as profile button
+        const setProfileBtn = photoItem.querySelector('.set-profile-btn');
+        setProfileBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            setAsProfilePhoto(photoUrl, photoId);
+        });
+
+        // Delete button
+        const deleteBtn = photoItem.querySelector('.delete-btn');
+        deleteBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            deletePhoto(photoId, photoItem);
+        });
+
+        // Remove empty state if exists
+        const emptyState = photoGallery.querySelector('.empty-state');
+        if (emptyState) {
+            emptyState.remove();
+        }
+
+        photoGallery.appendChild(photoItem);
+    }
+    
+    // Set photo as profile photo
+    function setAsProfilePhoto(photoUrl, photoId) {
+        const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
+        fetch('http://localhost:5000/api/user/set-profile-photo', {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 
+                'Content-Type': 'application/json',
+                'X-User-Id': userId
+            },
+            body: JSON.stringify({ photoId: photoId, photoUrl: photoUrl })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById('profilePhoto').src = photoUrl;
+                userData.profileImage = photoUrl;
+                alert('Profile photo updated successfully');
+                loadUserPhotos();
+            } else {
+                alert('Failed to update profile photo: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error updating profile photo:', error);
+            alert('Error updating profile photo');
+        });
+    }
+    
+    // Delete photo
+    function deletePhoto(photoId, photoElement) {
+        if (confirm('Are you sure you want to delete this photo?')) {
+            const userId = userData.id && userData.id !== 'guest' ? userData.id : '';
+            fetch('http://localhost:5000/api/user/delete-photo', {
+                method: 'POST',
+                credentials: 'include',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'X-User-Id': userId
+                },
+                body: JSON.stringify({ photoId: photoId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    photoElement.remove();
+                    alert('Photo deleted successfully');
+                    
+                    // Check if gallery is empty
+                    if (photoGallery.children.length === 0) {
+                        photoGallery.innerHTML = `
+                            <div class="empty-state" style="grid-column: 1 / -1;">
+                                <i class="fas fa-images"></i>
+                                <p>No photos uploaded yet. Add your first photo!</p>
+                            </div>
+                        `;
+                    }
+                } else {
+                    alert('Failed to delete photo: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error deleting photo:', error);
+                alert('Error deleting photo');
+            });
+        }
+    }
+</script>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 80px; right: 22px; z-index: 1000; background: linear-gradient(135deg, #3498db, #2980b9); color:white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 33px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s ease;" onclick="scrollToTop()">↑</button>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (window.pageYOffset > 100) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  });
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+</body>
+</html>

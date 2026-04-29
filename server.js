@@ -14,10 +14,12 @@ const create_profileRoutes = require('./routes/create_profile');
 const nriProfilesRoutes = require('./routes/nriprofiles');
 const new_profilecreationRoutes = require('./routes/new_profilecreation');
 const register2Routes = require('./routes/register2'); 
-const new_profilecreation2Routes = require('./routes/new_profilecreation2');
+// const new_profilecreation2Routes = require('./routes/new_profilecreation2');
 const sessionRoutes = require('./routes/session');
 const interestRoutes = require("./routes/interests");
 const userRoutes = require('./routes/user');
+const forgotPasswordRoutes = require('./routes/forgot_password');
+const saveUserRoutes = require('./routes/saveuser');
 
 
 const app = express();
@@ -44,7 +46,7 @@ app.use(cors({
     return callback(new Error('Not allowed by CORS'));
   },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'X-User-Id'],
   credentials: true,
   preflightContinue: false,
   optionsSuccessStatus: 200
@@ -70,10 +72,14 @@ app.use(session({
   saveUninitialized: false,
   cookie: {
     httpOnly: true,
-    secure: false, // 🔒 change to true if using HTTPS
+    secure: false, // keep false for local development over HTTP
+    sameSite: 'lax', // use 'lax' for localhost HTTP to work properly
     maxAge: 1000 * 60 * 60 * 24 // 1 day
   }
 }));
+
+// ✅ Serve static files from public directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // ✅ Routes
 try {
@@ -117,9 +123,9 @@ try {
   app.use('/api', register2Routes);
   console.log('✅ register2Routes loaded');
 
-  console.log('Loading new_profilecreation2Routes...');
-  app.use('/api', new_profilecreation2Routes);
-  console.log('✅ new_profilecreation2Routes loaded');
+  // console.log('Loading new_profilecreation2Routes...');
+  // app.use('/api', new_profilecreation2Routes);
+  // console.log('✅ new_profilecreation2Routes loaded');
 
   console.log('Loading interestRoutes...');
   app.use("/api", interestRoutes);
@@ -133,6 +139,14 @@ try {
   app.use('/api', sessionRoutes);
   console.log('✅ sessionRoutes loaded');
 
+  console.log('Loading forgotPasswordRoutes...');
+  app.use('/api', forgotPasswordRoutes);
+  console.log('✅ forgotPasswordRoutes loaded');
+
+  console.log('Loading saveUserRoutes...');
+  app.use('/api', saveUserRoutes);
+  console.log('✅ saveUserRoutes loaded');
+
 } catch (err) {
   console.error('❌ Error loading routes:', err.message);
   process.exit(1);
@@ -145,7 +159,7 @@ app.use('/uploads', express.static('uploads'));
 app.use(express.static(path.join(__dirname)));
 
 // ✅ Start server
-const PORT = 5002;
+const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });

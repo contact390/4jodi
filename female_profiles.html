@@ -1,5 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Elegance | Female Profiles</title>
+    <!-- No external stylesheets - all inline CSS used -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="header-auth.js"></script>
+</head>
+<body style="font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; background: linear-gradient(145deg, #fef9f7 0%, #fff4f2 100%); padding: 20px 24px 60px; margin: 0; min-height: 100vh;">
 
-<div id="navbar"></div>
+<div style="max-width: 1400px; margin: 0 auto;">
+    <!-- navbar placeholder -->
+    <div id="navbar"></div>
 
 <script>
   fetch("navbar.html")
@@ -7,136 +20,485 @@
     .then(data => {
       document.getElementById("navbar").innerHTML = data;
 
-      // Run scripts inside navbar
+      // Run scripts inside navbar, including external script references.
       const scripts = document.getElementById("navbar").querySelectorAll("script");
       scripts.forEach(oldScript => {
         const newScript = document.createElement("script");
+        if (oldScript.src) {
+          newScript.src = oldScript.src;
+          newScript.async = false;
+        }
         newScript.textContent = oldScript.textContent;
         document.body.appendChild(newScript);
       });
+      
+      // After navbar loads, ensure session is checked and navbar UI is updated
+      setTimeout(async () => {
+        if (window.headerAuth && typeof window.headerAuth.checkSession === 'function') {
+          await window.headerAuth.checkSession();
+        }
+      }, 100);
     });
 </script>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Female Profiles</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        body { font-family: Arial; background:#f4f4f4; padding:20px; margin:0; }
-        h2 { text-align:center; color:#ff4d88; }
-        .container { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-        .card {
-            width:260px; background:white; padding:15px;
-            border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-        }
-        .card:hover { transform: translateY(-5px); }
-        .card img {
-            width:100%; height:180px; object-fit:cover; border-radius:6px; cursor:pointer;
-        }
-        .name { font-size:18px; font-weight:bold; color:#ff4d88; margin:10px 0 5px; }
-        .info { font-size:14px; margin:4px 0; color:#666; }
-        .actions { display:flex; gap:8px; margin-top:12px; }
-        .btn { flex:1; padding:8px; border:none; border-radius:5px; cursor:pointer; font-size:12px; font-weight:600; transition:0.3s; }
-        .btn-interest { background:#ff4d88; color:white; }
-        .btn-interest:hover { background:#ff2970; }
-        .btn-view { background:#6c757d; color:white; }
-        .btn-view:hover { background:#5a6268; }
-        .btn:disabled { opacity:0.6; cursor:not-allowed; }
-    </style>
-    <script src="header-auth.js"></script>
-    <script>
-    // LOAD FEMALE PROFILES (session-aware)
-    async function loadFemale() {
-        const res = await fetch("http://localhost:5000/api/profiles/female");
-        if (!res.ok) return console.error('Failed to fetch profiles', res.status);
-        const result = await res.json();
+    <!-- page header -->
+    <!-- <div style="text-align: center; margin-bottom: 28px; position: relative;margin-top: 180px;">
+        <h2 style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, #e63e6d, #ff8a5c); background-clip: text; -webkit-background-clip: text; color: transparent; letter-spacing: -0.3px; display: inline-block; padding: 0 20px; margin: 0;">✨ Female Profiles ✨</h2>
+        <div style="width: 70px; height: 4px; background: linear-gradient(90deg, #ff4d88, #ff9a6e); border-radius: 4px; margin: 12px auto 0;"></div>
+    </div> -->
 
-        const box = document.getElementById("profiles");
-        box.innerHTML = '';
-
-        result.data.forEach(p => {
-            let img = p.profileImage && p.profileImage.length > 50 
-                ? p.profileImage 
-                : "https://via.placeholder.com/260x180?text=No+Image";
-
-            const card = document.createElement("div");
-            card.classList.add("card");
-
-            const btnInterest = `
-                <button class="btn btn-interest" onclick="sendInterest(${p.id})" title="Send Interest">
-                    Interest
-                </button>
-            `;
-
-            const btnViewGuest = `
-                <button class="btn btn-view" onclick="alert('Please login to send interest')" title="Login to send interest">
-                    View
-                </button>
-            `;
-
-            const isLogged = window.headerAuth && window.headerAuth.getCurrentUser();
-            const actionBtn = isLogged ? btnInterest : btnViewGuest;
-
-            card.innerHTML = `
-                <img src="${img}" onclick="window.location.href='single_profile.html?id=${p.id}'">
-                <p class="name">${p.firstName} ${p.lastName}</p>
-                <p class="info"><b>Age:</b> ${p.dob}</p>
-                <p class="info"><b>Profession:</b> ${p.profession}</p>
-                <div class="actions">
-                    ${actionBtn}
+    <!-- FILTER SECTION - all inline styles -->
+    <div style="background: rgba(255,255,255,0.96); backdrop-filter: blur(2px); border-radius: 32px; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.02); padding: 22px 28px; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.6);margin-top: 180px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 16px 20px; align-items: flex-end; justify-content: center;">
+            <!-- search name -->
+            <div style="display: flex; flex-direction: column; gap: 6px; min-width: 150px;">
+                <label style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #e63e6d; margin-left: 6px;">🔍 SEARCH NAME</label>
+                <input type="text" id="searchName" placeholder="First or last name..." autocomplete="off" style="padding: 12px 16px; border: 1.5px solid #ffe2dc; border-radius: 28px; font-size: 0.9rem; background: white; transition: 0.2s; font-family: inherit; outline: none; width: 100%;">
+            </div>
+            <!-- profession dropdown -->
+            <div style="display: flex; flex-direction: column; gap: 6px; min-width: 150px;">
+                <label style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #e63e6d; margin-left: 6px;">💼 PROFESSION</label>
+                <select id="professionFilter" style="padding: 12px 16px; border: 1.5px solid #ffe2dc; border-radius: 28px; font-size: 0.9rem; background: white; font-family: inherit; outline: none; width: 100%;">
+                    <option value="">All Professions</option>
+                    <option value="Software Engineer">Software Engineer</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Business">Business</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <!-- age range -->
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <div style="display: flex; flex-direction: column; gap: 6px; min-width: 100px;">
+                    <label style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #e63e6d; margin-left: 6px;">📅 MIN AGE</label>
+                    <input type="number" id="minAge" placeholder="Min" min="18" max="100" style="padding: 12px 16px; border: 1.5px solid #ffe2dc; border-radius: 28px; font-size: 0.9rem; background: white; font-family: inherit; outline: none; width: 100%;">
                 </div>
-            `;
+                <div style="display: flex; flex-direction: column; gap: 6px; min-width: 100px;">
+                    <label style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #e63e6d; margin-left: 6px;">📅 MAX AGE</label>
+                    <input type="number" id="maxAge" placeholder="Max" min="18" max="100" style="padding: 12px 16px; border: 1.5px solid #ffe2dc; border-radius: 28px; font-size: 0.9rem; background: white; font-family: inherit; outline: none; width: 100%;">
+                </div>
+            </div>
+            <!-- city filter -->
+            <div style="display: flex; flex-direction: column; gap: 6px; min-width: 150px;">
+                <label style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #e63e6d; margin-left: 6px;">📍 CITY</label>
+                <input type="text" id="cityFilter" placeholder="City name..." autocomplete="off" style="padding: 12px 16px; border: 1.5px solid #ffe2dc; border-radius: 28px; font-size: 0.9rem; background: white; font-family: inherit; outline: none; width: 100%;">
+            </div>
+            <!-- reset button -->
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+                <button id="resetBtn" style="background: linear-gradient(95deg, #ff4d88, #ff7a5c); border: none; padding: 12px 28px; border-radius: 40px; font-weight: 700; color: white; font-size: 0.9rem; cursor: pointer; transition: all 0.25s; box-shadow: 0 6px 14px rgba(255,77,136,0.3); letter-spacing: 0.3px; margin-top: 8px; font-family: inherit;">⟳ Reset Filters</button>
+            </div>
+        </div>
+        <!-- stats badge -->
+        <div style="display: flex; justify-content: center; margin-top: 16px;">
+            <div id="resultCountBadge" style="text-align: center; font-size: 0.85rem; font-weight: 500; color: #b65c7c; background: #fff0ec; display: inline-block; padding: 6px 20px; border-radius: 40px; backdrop-filter: blur(4px);">✨ loading profiles...</div>
+        </div>
+    </div>
 
-            card.onclick = (e) => {
-                if (e.target.tagName.toLowerCase() === 'button' || e.target.closest('button')) return;
-                window.location.href = `single_profile.html?id=${p.id}`;
-            };
-
-            box.appendChild(card);
-        });
-    }
-
-    async function sendInterest(receiverId) {
-        const user = window.headerAuth && window.headerAuth.getCurrentUser();
-        if (!user) {
-            alert("Please login to send interest.");
-            window.location.href = 'login2.html';
-            return;
-        }
-
-        try {
-            const res = await fetch("http://localhost:5000/api/send-interest", {
-                method: "POST",
-                credentials: 'include',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ sender_id: user.id, receiver_id: receiverId })
-            });
-
-            const data = await res.json();
-            alert(data.message || 'Response received');
-            if (data.success) setTimeout(() => loadFemale(), 800);
-        } catch (err) {
-            console.error('Error sending interest:', err);
-            alert('Error sending interest. Please try again.');
-        }
-    }
-
-    // Ensure session is checked before loading profiles
-    document.addEventListener('DOMContentLoaded', async () => {
-        try { await window.headerAuth.checkSession(); } catch(e){}
-        loadFemale();
-    });
-    </script>
-
+    <!-- PROFILES CONTAINER -->
+    <div id="profiles" style="display: flex; flex-wrap: wrap; gap: 28px; justify-content: center;"></div>
+</div>
 
 <div id="footer"></div>
 
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 100px; right: 24px; z-index: 999; background: linear-gradient(145deg, #ff4d88, #ff6b4a); border: none; border-radius: 50px; width: 52px; height: 52px; font-size: 28px; font-weight: bold; cursor: pointer; color: white; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: all 0.25s; align-items: center; justify-content: center;">↑</button>
+
 <script>
-fetch("footer.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
+    // ---------- GLOBALS ----------
+    let allProfiles = [];
+    let debounceTimer = null;
+    let currentUserId = null;
+
+    // Get current logged-in user ID
+    function getCurrentUserId() {
+        try {
+            const stored = localStorage.getItem('hitaishi_user');
+            if (stored) {
+                const user = JSON.parse(stored);
+                return user && user.id ? user.id : null;
+            }
+        } catch (e) {
+            console.warn('Error reading current user:', e);
+        }
+        return null;
+    }
+
+    // ---------- HELPER: AGE CALCULATION (accurate) ----------
+    function calculateAge(dobString) {
+        if (!dobString) return 0;
+        const birthDate = new Date(dobString);
+        if (isNaN(birthDate.getTime())) return 0;
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age >= 0 ? age : 0;
+    }
+
+    // ---------- FETCH FEMALE PROFILES (with mock fallback if backend fails) ----------
+    async function loadFemaleProfiles() {
+        currentUserId = getCurrentUserId();
+        try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 5000);
+            const res = await fetch("http://localhost:5000/api/profiles/female", { signal: controller.signal });
+            clearTimeout(timeoutId);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const result = await res.json();
+            if (result && Array.isArray(result.data)) {
+                allProfiles = result.data;
+            } else {
+                throw new Error("Invalid data format");
+            }
+        } catch (error) {
+            console.warn("⚠️ Backend fetch failed, using enriched mock data:", error);
+            allProfiles = generateMockFemaleProfiles();
+        }
+        applyFiltersAndRender();
+    }
+
+    // Mock dataset - beautiful, realistic female profiles
+    function generateMockFemaleProfiles() {
+        const firstNames = ["Aarohi", "Bhavna", "Chiara", "Divya", "Elara", "Fatima", "Gauri", "Hina", "Isha", "Janvi", "Kavya", "Lavanya", "Mira", "Naina", "Olivia", "Pooja", "Qirat", "Riya", "Sanya", "Tara", "Ananya", "Diya", "Kiara", "Myra", "Siya"];
+        const lastNames = ["Sharma", "Verma", "Kapoor", "Iyer", "Nair", "Joshi", "Singh", "Reddy", "Gupta", "Menon", "Das", "Patel", "Khan", "Mehta", "Choudhary"];
+        const professionsList = ["Software Engineer", "Doctor", "Business", "Teacher", "Other", "Software Engineer", "Doctor", "Business", "Teacher"];
+        const citiesList = ["Mumbai", "Delhi", "Bangalore", "Chennai", "Kolkata", "Pune", "Hyderabad", "Ahmedabad", "Jaipur", "Lucknow", "Chandigarh", "Bhopal", "Indore"];
+        
+        const mock = [];
+        for (let i = 1; i <= 36; i++) {
+            const firstName = firstNames[i % firstNames.length];
+            const lastName = lastNames[(i * 3) % lastNames.length];
+            const ageBase = 21 + (i % 35);
+            const year = new Date().getFullYear() - ageBase;
+            const month = (i % 12) + 1;
+            const day = (i % 28) + 1;
+            const dob = `${year}-${month.toString().padStart(2,'0')}-${day.toString().padStart(2,'0')}`;
+            const prof = professionsList[i % professionsList.length];
+            const city = citiesList[i % citiesList.length];
+            const mobileNum = `+91-98${10000000 + i}`;
+            const profileImage = `https://randomuser.me/api/portraits/women/${(i % 70) + 10}.jpg`;
+            mock.push({
+                id: i,
+                firstName: firstName,
+                lastName: lastName,
+                dob: dob,
+                mobile: mobileNum,
+                profession: prof,
+                city: city,
+                profileImage: profileImage,
+            });
+        }
+        // add some distinctive profiles
+        mock.push({ id: 101, firstName: "Zara", lastName: "Khan", dob: "1995-06-15", mobile: "+91-9876543210", profession: "Doctor", city: "Mumbai", profileImage: "https://randomuser.me/api/portraits/women/68.jpg" });
+        mock.push({ id: 102, firstName: "Aditi", lastName: "Rao", dob: "1999-12-01", mobile: "+91-9988776655", profession: "Software Engineer", city: "Bangalore", profileImage: "https://randomuser.me/api/portraits/women/33.jpg" });
+        mock.push({ id: 103, firstName: "Neha", lastName: "Saxena", dob: "1990-03-22", mobile: "+91-9876512345", profession: "Business", city: "Delhi", profileImage: "https://randomuser.me/api/portraits/women/45.jpg" });
+        mock.push({ id: 104, firstName: "Pari", lastName: "Verma", dob: "2000-08-14", mobile: "+91-9765432187", profession: "Teacher", city: "Pune", profileImage: "https://randomuser.me/api/portraits/women/52.jpg" });
+        mock.push({ id: 105, firstName: "Meera", lastName: "Rajput", dob: "1992-11-30", mobile: "+91-9876598765", profession: "Software Engineer", city: "Hyderabad", profileImage: "https://randomuser.me/api/portraits/women/22.jpg" });
+        return mock;
+    }
+
+    // XSS guard
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+
+    // ---------- RENDER PROFILES (all inline styles) ----------
+    function displayProfiles(profilesList) {
+        const container = document.getElementById("profiles");
+        if (!container) return;
+
+        if (!profilesList || profilesList.length === 0) {
+            container.innerHTML = `<div style="text-align: center; padding: 60px 20px; background: white; border-radius: 48px; margin-top: 20px; color: #b27a8a; font-weight: 500; font-size: 1.2rem;">🌸 No profiles match the filters. Try adjusting criteria! 🌸</div>`;
+            document.getElementById("resultCountBadge").innerHTML = `✨ 0 profiles found ✨`;
+            return;
+        }
+
+        let html = '';
+        for (let profile of profilesList) {
+            const age = calculateAge(profile.dob);
+            let imgUrl = (profile.profileImage && profile.profileImage.length > 20) ? profile.profileImage : "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop";
+            const fullName = `${profile.firstName || ''} ${profile.lastName || ''}`.trim();
+            const professionDisplay = profile.profession || "Not specified";
+            const cityDisplay = profile.city || "—";
+            const mobileDisplay = profile.mobile || "—";
+            
+            html += `
+                <div class="profile-card" data-id="${profile.id}" style="width: 280px; background: white; border-radius: 28px; overflow: hidden; box-shadow: 0 15px 30px -12px rgba(0,0,0,0.1); transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1); cursor: pointer; border: 1px solid rgba(255,210,200,0.5);">
+                    <div style="width: 100%; height: 280px; overflow: hidden; position: relative;">
+                        <img src="${imgUrl}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; position: absolute; top: 0; left: 0;" loading="lazy" onerror="this.onerror=null;this.src='https://randomuser.me/api/portraits/women/1.jpg';">
+                    </div>
+                    <div style="padding: 18px 16px 20px;">
+                        <div style="font-size: 1.35rem; font-weight: 800; color: #2d2a2e; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;">
+                            ${escapeHtml(fullName)}
+                            <span style="background: #ffe6e0; padding: 3px 10px; border-radius: 60px; font-size: 0.8rem; font-weight: 600; color: #e63e6d;">${age} yrs</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; margin: 8px 0; color: #4a4146;">
+                            <strong style="color: #e63e6d; font-weight: 600; min-width: 70px;">📞 Mobile</strong> ${escapeHtml(mobileDisplay)}
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; margin: 8px 0; color: #4a4146;">
+                            <strong style="color: #e63e6d; font-weight: 600; min-width: 70px;">💼 Profession</strong> <span style="background: #f5e9e6; border-radius: 40px; padding: 4px 12px; font-size: 0.75rem; font-weight: 600; display: inline-block; color: #b34e6e;">${escapeHtml(professionDisplay)}</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; margin: 8px 0; color: #4a4146;">
+                            <strong style="color: #e63e6d; font-weight: 600; min-width: 70px;">📍 City</strong> ${escapeHtml(cityDisplay)}
+                        </div>
+                        <button class="view-profile-btn" data-id="${profile.id}" style="width: 100%; margin-top: 12px; background: linear-gradient(95deg, #ff4d88, #ff7a5c); border: none; padding: 10px 20px; border-radius: 25px; font-weight: 600; color: white; font-size: 0.85rem; cursor: pointer; transition: all 0.25s; box-shadow: 0 4px 10px rgba(255,77,136,0.3);">👁️ View Profile</button>
+                    </div>
+                </div>
+            `;
+        }
+        container.innerHTML = html;
+
+        // attach click event listeners for View Profile buttons
+        document.querySelectorAll('.view-profile-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const id = btn.getAttribute('data-id');
+                if (id) {
+                    window.location.href = `single_profile.html?id=${id}`;
+                }
+            });
+        });
+        
+        // Also keep card click for backward compatibility
+        document.querySelectorAll('.profile-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Don't navigate if clicking on button
+                if (e.target.classList.contains('view-profile-btn')) return;
+                const id = card.getAttribute('data-id');
+                if (id) {
+                    window.location.href = `single_profile.html?id=${id}`;
+                }
+            });
+        });
+
+        const count = profilesList.length;
+        document.getElementById("resultCountBadge").innerHTML = `✨ ${count} beautiful profile${count !== 1 ? 's' : ''} found ✨`;
+    }
+
+    // ---------- FILTER LOGIC (search works properly) ----------
+    function applyFiltersAndRender() {
+        if (!allProfiles.length) return;
+        
+        const nameRaw = document.getElementById("searchName")?.value || "";
+        const searchName = nameRaw.trim().toLowerCase();
+        const profession = document.getElementById("professionFilter")?.value || "";
+        const minAgeRaw = document.getElementById("minAge")?.value;
+        const maxAgeRaw = document.getElementById("maxAge")?.value;
+        const cityRaw = document.getElementById("cityFilter")?.value || "";
+        const cityFilter = cityRaw.trim().toLowerCase();
+        
+        const minAge = minAgeRaw ? parseInt(minAgeRaw, 10) : null;
+        const maxAge = maxAgeRaw ? parseInt(maxAgeRaw, 10) : null;
+        
+        let filtered = [...allProfiles];
+        
+        filtered = filtered.filter(profile => {
+            // EXCLUDE CURRENT USER'S PROFILE
+            if (currentUserId && profile.id === currentUserId) return false;
+            
+            // NAME SEARCH (first + last name combined)
+            const fullName = `${profile.firstName || ''} ${profile.lastName || ''}`.toLowerCase();
+            if (searchName && !fullName.includes(searchName)) return false;
+            
+            // PROFESSION exact match
+            if (profession && profile.profession !== profession) return false;
+            
+            // AGE filter
+            const age = calculateAge(profile.dob);
+            if (minAge !== null && !isNaN(minAge) && age < minAge) return false;
+            if (maxAge !== null && !isNaN(maxAge) && age > maxAge) return false;
+            
+            // CITY partial match
+            if (cityFilter && (!profile.city || !profile.city.toLowerCase().includes(cityFilter))) return false;
+            
+            return true;
+        });
+        
+        displayProfiles(filtered);
+    }
+    
+    // Reset all filters to default
+    function resetAllFilters() {
+        const searchInput = document.getElementById("searchName");
+        const professionSelect = document.getElementById("professionFilter");
+        const minAgeInput = document.getElementById("minAge");
+        const maxAgeInput = document.getElementById("maxAge");
+        const cityInput = document.getElementById("cityFilter");
+        
+        if (searchInput) searchInput.value = "";
+        if (professionSelect) professionSelect.value = "";
+        if (minAgeInput) minAgeInput.value = "";
+        if (maxAgeInput) maxAgeInput.value = "";
+        if (cityInput) cityInput.value = "";
+        
+        applyFiltersAndRender();
+    }
+    
+    // Debounced filter for better performance
+    function debouncedFilter() {
+        if (debounceTimer) clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            applyFiltersAndRender();
+        }, 200);
+    }
+
+    // Bind filter events
+    function bindFilterEvents() {
+        const searchName = document.getElementById("searchName");
+        const professionFilter = document.getElementById("professionFilter");
+        const minAge = document.getElementById("minAge");
+        const maxAge = document.getElementById("maxAge");
+        const cityFilter = document.getElementById("cityFilter");
+        const resetBtn = document.getElementById("resetBtn");
+        
+        if (searchName) searchName.addEventListener("input", debouncedFilter);
+        if (professionFilter) professionFilter.addEventListener("change", applyFiltersAndRender);
+        if (minAge) minAge.addEventListener("input", debouncedFilter);
+        if (maxAge) maxAge.addEventListener("input", debouncedFilter);
+        if (cityFilter) cityFilter.addEventListener("input", debouncedFilter);
+        if (resetBtn) resetBtn.addEventListener("click", resetAllFilters);
+    }
+
+    // Navbar & footer mock
+    function loadNavAndFooter() {
+        const navbarDiv = document.getElementById("navbar");
+        if (navbarDiv && !navbarDiv.innerHTML.trim()) {
+            navbarDiv.innerHTML = `<div style="background:white; border-radius: 60px; padding: 10px 20px; text-align:center; margin-bottom:20px; box-shadow:0 4px 10px rgba(0,0,0,0.02); font-weight:500;">✨ <span style="color:#ff4d88;">Elegance Connect</span> | Discover amazing women ✨</div>`;
+        }
+        const footerDiv = document.getElementById("footer");
+        if (footerDiv && !footerDiv.innerHTML.trim()) {
+            footerDiv.innerHTML = `<div style="text-align:center; margin-top: 48px; padding: 18px; font-size:13px; color:#b1847a;">© 2025 Elegance Profiles — Empowering Connections</div>`;
+        }
+        // optional fetch for external navbar/footer (non-blocking)
+        fetch("navbar.html").catch(()=>{});
+        fetch("footer.html").catch(()=>{});
+    }
+    
+    // Chatbot loader (optional)
+    async function loadChatbotSmart() {
+        try {
+            const response = await fetch('./chatbot.html');
+            if (response.ok) {
+                const html = await response.text();
+                const container = document.createElement('div');
+                container.id = 'chatbot-container';
+                container.innerHTML = html;
+                document.body.appendChild(container);
+                const scripts = container.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    newScript.textContent = oldScript.textContent;
+                    document.body.appendChild(newScript);
+                });
+                console.log("Chatbot integrated");
+            }
+        } catch(e) {
+            console.log("chatbot load optional:", e);
+        }
+    }
+
+    // Scroll to Top logic
+    function initScrollToTop() {
+        const scrollBtn = document.getElementById("scrollToTopBtn");
+        if (scrollBtn) {
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 200) scrollBtn.style.display = "flex";
+                else scrollBtn.style.display = "none";
+            });
+            window.scrollToTop = function() {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            };
+            scrollBtn.onclick = () => window.scrollToTop();
+        }
+    }
+    
+    // Add hover effects dynamically (since inline styles can't do :hover easily, we add via JS for card hover)
+    function addHoverEffects() {
+        // We'll use event delegation for hover effects on profile cards
+        document.addEventListener('mouseover', (e) => {
+            const card = e.target.closest('.profile-card');
+            if (card) {
+                card.style.transform = 'translateY(-8px) scale(1.02)';
+                card.style.boxShadow = '0 28px 38px -14px rgba(0,0,0,0.2)';
+                card.style.borderColor = '#ffb7a8';
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1.03)';
+            }
+        });
+        document.addEventListener('mouseout', (e) => {
+            const card = e.target.closest('.profile-card');
+            if (card) {
+                card.style.transform = 'translateY(0px) scale(1)';
+                card.style.boxShadow = '0 15px 30px -12px rgba(0,0,0,0.1)';
+                card.style.borderColor = 'rgba(255,210,200,0.5)';
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1)';
+            }
+        });
+        // input focus effects
+        const inputs = document.querySelectorAll('.filter-group input, .filter-group select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.style.borderColor = '#ff4d88';
+                input.style.boxShadow = '0 0 0 3px rgba(255,77,136,0.2)';
+            });
+            input.addEventListener('blur', () => {
+                input.style.borderColor = '#ffe2dc';
+                input.style.boxShadow = 'none';
+            });
+        });
+        // reset button hover
+        const resetBtn = document.getElementById('resetBtn');
+        if (resetBtn) {
+            resetBtn.addEventListener('mouseenter', () => {
+                resetBtn.style.transform = 'translateY(-2px)';
+                resetBtn.style.boxShadow = '0 12px 20px rgba(255,77,136,0.35)';
+                resetBtn.style.background = 'linear-gradient(95deg, #e63e6d, #ff6a48)';
+            });
+            resetBtn.addEventListener('mouseleave', () => {
+                resetBtn.style.transform = 'translateY(0)';
+                resetBtn.style.boxShadow = '0 6px 14px rgba(255,77,136,0.3)';
+                resetBtn.style.background = 'linear-gradient(95deg, #ff4d88, #ff7a5c)';
+            });
+        }
+        
+        // View Profile button hover effects
+        document.addEventListener('mouseover', (e) => {
+            const btn = e.target.closest('.view-profile-btn');
+            if (btn) {
+                btn.style.transform = 'translateY(-2px)';
+                btn.style.boxShadow = '0 8px 16px rgba(255,77,136,0.4)';
+            }
+        });
+        document.addEventListener('mouseout', (e) => {
+            const btn = e.target.closest('.view-profile-btn');
+            if (btn) {
+                btn.style.transform = 'translateY(0)';
+                btn.style.boxShadow = '0 4px 10px rgba(255,77,136,0.3)';
+            }
+        });
+    }
+    
+    // MAIN EXECUTION
+    function init() {
+        loadNavAndFooter();
+        bindFilterEvents();
+        loadFemaleProfiles();
+        loadChatbotSmart();
+        initScrollToTop();
+        addHoverEffects();
+    }
+    
+    init();
 </script>
+
+</body>
+</html>

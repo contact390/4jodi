@@ -6,8 +6,7 @@
     <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
-  
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9; width: 100%; overflow-x: hidden;">
 
 <div id="navbar"></div>
 
@@ -16,187 +15,493 @@
     .then(res => res.text())
     .then(data => {
       document.getElementById("navbar").innerHTML = data;
-
-      // Run scripts inside navbar
       const scripts = document.getElementById("navbar").querySelectorAll("script");
       scripts.forEach(oldScript => {
         const newScript = document.createElement("script");
         newScript.textContent = oldScript.textContent;
         document.body.appendChild(newScript);
       });
-    });
+    }).catch(error => console.log('Navbar loading error:', error));
 </script>
-    <!-- Hero Section -->
-    <!-- <section style="background:linear-gradient(rgba(110,72,170,0.9),rgba(157,80,187,0.9)),url('hero-bg.jpg');background-size:cover;background-position:center;color:white;text-align:center;padding:100px 20px;position:relative;margin-top: 140px;">
-        <div style="max-width:800px;margin:0 auto;">
-            <h2 style="font-size:42px;margin-bottom:20px;text-shadow:2px 2px 4px rgba(0,0,0,0.3);">Find Your Perfect Life Partner</h2>
-            <p style="font-size:20px;margin-bottom:30px;">Join thousands of happy couples who found their match through Hitiashi Matrimony</p>
-            <a href="#plans" style="background-color:#ffd700;color:#6e48aa;padding:12px 30px;border-radius:30px;text-decoration:none;font-weight:600;font-size:18px;transition:all 0.3s ease;display:inline-block;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 8px 20px rgba(255,215,0,0.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">View Membership Plans</a>
+
+<!-- Hero Section - Enhanced -->
+<section style="background: linear-gradient(135deg, rgba(110,72,170,0.95), rgba(157,80,187,0.95)), url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600'); background-size: cover; background-position: center; color: white; text-align: center; padding: 120px 20px; position: relative; margin-top: 0px;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        <h1 style="font-size: 52px; margin-bottom: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); animation: fadeInDown 1s ease;">Find Your Perfect Life Partner</h1>
+        <p style="font-size: 22px; margin-bottom: 30px; opacity: 0.95; animation: fadeInUp 1s ease;">Join thousands of happy couples who found their match through Hitaishi Matrimony</p>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <a href="#plans" style="background-color: #ffd700; color: #6e48aa; padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 8px 25px rgba(255,215,0,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">View Membership Plans</a>
+            <a href="#register" style="background-color: transparent; border: 2px solid white; color: white; padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='white'; this.style.color='#6e48aa'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'; this.style.transform='scale(1)'">Register Free</a>
         </div>
-    </section> -->
-
- 
-
-
-
-
-
-
-
-  
-   <!-- Membership Concept Section with Hover Effects and Colored Cards -->
-<section style="padding:80px 20px;background:linear-gradient(135deg,#f8f1ff,#ffffff);">
-  <div style="max-width:1100px;margin:0 auto;">
-
-  <!-- Why Become a Member -->
-<div style="margin-bottom:60px;background-color:white;padding:40px 0;">
-  <h2 style="text-align:center;font-size:36px;color:black;margin-bottom:30px;">Why Become a Member?</h2>
-  <div style="display:flex;flex-wrap:nowrap;gap:30px;justify-content:center;width:80%;margin:auto;">
-    <div style="flex:1;background:#f9f9f9;border-radius:12px;padding:30px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
-      <h3 style="color:black;font-size:20px;margin-bottom:10px;">Verified Profiles</h3>
-      <p style="color:#333;margin:0;">Each member profile is manually verified to ensure authenticity and commitment.</p>
     </div>
-    <div style="flex:1;background:#f9f9f9;border-radius:12px;padding:30px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
-      <h3 style="color:black;font-size:20px;margin-bottom:10px;">Tailored Matches</h3>
-      <p style="color:#333;margin:0;">Get suggestions based on your preferences, community, lifestyle, and values.</p>
-    </div>
-    <div style="flex:1;background:#f9f9f9;border-radius:12px;padding:30px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
-      <h3 style="color:black;font-size:20px;margin-bottom:10px;">Safe & Private</h3>
-      <p style="color:#333;margin:0;">We safeguard your personal details and only show what you choose to share.</p>
-    </div>
-  </div>
-</div>
-
-<!-- How Membership Works -->
-<div style="background-color:white;padding:40px 0;">
-  <h2 style="text-align:center;font-size:36px;color:black;margin-bottom:30px;">How Membership Works</h2>
-  <div style="display:flex;flex-wrap:nowrap;gap:30px;justify-content:center;width:80%;margin:auto;">
-    <div style="flex:1;background:#f9f9f9;border-left:5px solid #666;border-radius:8px;padding:25px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
-      <h3 style="margin-bottom:10px;font-size:18px;color:black;">1. Create Your Profile</h3>
-      <p style="margin:0;color:#333;">Share your details, upload your photo, and describe your expectations for a life partner.</p>
-    </div>
-    <div style="flex:1;background:#f9f9f9;border-left:5px solid #666;border-radius:8px;padding:25px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
-      <h3 style="margin-bottom:10px;font-size:18px;color:black;">2. Get Verified</h3>
-      <p style="margin:0;color:#333;">We perform a simple profile verification for quality and trustworthiness.</p>
-    </div>
-    <div style="flex:1;background:#f9f9f9;border-left:5px solid #666;border-radius:8px;padding:25px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
-      <h3 style="margin-bottom:10px;font-size:18px;color:black;">3. Connect Confidently</h3>
-      <p style="margin:0;color:#333;">Start expressing interest, chatting, and taking the next steps at your comfort level.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Success Stories -->
-<section id="testimonials" style="padding:80px 20px;background-color:white;">
-  <div style="max-width:80%;margin:0 auto;">
-    <h2 style="text-align:center;font-size:36px;margin-bottom:50px;color:black;">Success Stories</h2>
-    <div style="display:flex;gap:30px;justify-content:space-between;">
-      <!-- Testimonial 1 -->
-      <div style="width:calc(33.333% - 20px);background-color:#f9f9f9;border-radius:10px;padding:30px;transition:all 0.3s ease;box-sizing:border-box;" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
-        <div style="display:flex;align-items:center;margin-bottom:20px;">
-          <img src="images/msimage1.png" alt="Rahul & Priya" loading="lazy" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid #666;">
-          <div style="margin-left:15px;">
-            <h4 style="margin:0;font-size:18px;color:black;">Rahul & Priya</h4>
-            <p style="margin:5px 0 0;font-size:14px;color:#666;">Married: June 2022</p>
-          </div>
-        </div>
-        <p style="font-style:italic;color:#333;padding-left:20px;">"Hitiashi's advanced matching system connected us despite being in different cities. We found our perfect match within 3 weeks of premium membership!"</p>
-      </div>
-
-      <!-- Testimonial 2 -->
-      <div style="width:calc(33.333% - 20px);background-color:#f9f9f9;border-radius:10px;padding:30px;transition:all 0.3s ease;box-sizing:border-box;" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
-        <div style="display:flex;align-items:center;margin-bottom:20px;">
-          <img src="images/msimage2.png" alt="Arjun & Meera" loading="lazy" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid #666;">
-          <div style="margin-left:15px;">
-            <h4 style="margin:0;font-size:18px;color:black;">Arjun & Meera</h4>
-            <p style="margin:5px 0 0;font-size:14px;color:#666;">Married: February 2023</p>
-          </div>
-        </div>
-        <p style="font-style:italic;color:#333;padding-left:20px;">"The verified profiles feature gave us confidence in the process. Our relationship manager helped us navigate cultural differences beautifully."</p>
-      </div>
-
-      <!-- Testimonial 3 -->
-      <div style="width:calc(33.333% - 20px);background-color:#f9f9f9;border-radius:10px;padding:30px;transition:all 0.3s ease;box-sizing:border-box;" onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
-        <div style="display:flex;align-items:center;margin-bottom:20px;">
-          <img src="images/msimage3.png" alt="Vikram & Ananya" loading="lazy" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid #666;">
-          <div style="margin-left:15px;">
-            <h4 style="margin:0;font-size:18px;color:black;">Vikram & Ananya</h4>
-            <p style="margin:5px 0 0;font-size:14px;color:#666;">Married: November 2023</p>
-          </div>
-        </div>
-        <p style="font-style:italic;color:#333;padding-left:20px;">"As busy professionals, we appreciated the quality matches Hitiashi provided. The compatibility scores were surprisingly accurate!"</p>
-      </div>
-    </div>
-  </div>
 </section>
 
-
-<!--faq-->
-<section style="padding:40px 10px;background:linear-gradient(135deg,#e8e3f8,#f9f7fe);">
-  <div style="max-width:80%;margin:0 auto;">
-    <h2 style="text-align:center;font-size:30px;margin-bottom:30px;color:#6e48aa;">Frequently Asked Questions</h2>
-
-    <!-- FAQ Container -->
-    <div id="faq-container">
-
-      <!-- FAQ Items -->
-      <div onclick="toggleFaq(0)" style="cursor:pointer;background-color:#ffffff;border-radius:10px;padding:9px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;" onmouseover="this.querySelector('h3').style.color='#4c2d85'" onmouseout="this.querySelector('h3').style.color=''">
-        <h3 style="font-size:16px;margin-bottom:8px;color:#6e48aa;">How does Hitiashi verify profiles?</h3>
-        <p class="faq-answer" style="display:none;margin:0;">We use a 4-step verification process including document verification, background checks, personal interviews, and social media validation to ensure all profiles are genuine.</p>
-      </div>
-
-      <div onclick="toggleFaq(1)" style="cursor:pointer;background-color:#ffffff;border-radius:10px;padding:9px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;" onmouseover="this.querySelector('h3').style.color='#4c2d85'" onmouseout="this.querySelector('h3').style.color=''">
-        <h3 style="font-size:16px;margin-bottom:8px;color:#6e48aa;">Can I upgrade my plan later?</h3>
-        <p class="faq-answer" style="display:none;margin:0;">Yes, you can upgrade anytime. The remaining value of your current plan will be applied to your upgrade.</p>
-      </div>
-
-      <div onclick="toggleFaq(2)" style="cursor:pointer;background-color:#ffffff;border-radius:10px;padding:9px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;" onmouseover="this.querySelector('h3').style.color='#4c2d85'" onmouseout="this.querySelector('h3').style.color=''">
-        <h3 style="font-size:16px;margin-bottom:8px;color:#6e48aa;">Is my personal information secure?</h3>
-        <p class="faq-answer" style="display:none;margin:0;">Absolutely. We use bank-level encryption and never share your contact details without permission.</p>
-      </div>
-
-      <div onclick="toggleFaq(3)" style="cursor:pointer;background-color:#ffffff;border-radius:10px;padding:9px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;" onmouseover="this.querySelector('h3').style.color='#4c2d85'" onmouseout="this.querySelector('h3').style.color=''">
-        <h3 style="font-size:16px;margin-bottom:8px;color:#6e48aa;">Can I hide my profile from others?</h3>
-        <p class="faq-answer" style="display:none;margin:0;">Yes, you can activate incognito mode to hide your profile until you're ready to go public.</p>
-      </div>
-
-      <div onclick="toggleFaq(4)" style="cursor:pointer;background-color:#ffffff;border-radius:10px;padding:9px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;" onmouseover="this.querySelector('h3').style.color='#4c2d85'" onmouseout="this.querySelector('h3').style.color=''">
-        <h3 style="font-size:16px;margin-bottom:8px;color:#6e48aa;">Do you offer refunds?</h3>
-        <p class="faq-answer" style="display:none;margin:0;">We provide refunds only in specific cases based on our terms and conditions. Please contact support for details.</p>
-      </div>
-
-      <div onclick="toggleFaq(5)" style="cursor:pointer;background-color:#ffffff;border-radius:10px;padding:9px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);transition:all 0.3s ease;" onmouseover="this.querySelector('h3').style.color='#4c2d85'" onmouseout="this.querySelector('h3').style.color=''">
-        <h3 style="font-size:16px;margin-bottom:8px;color:#6e48aa;">How do I delete my profile?</h3>
-        <p class="faq-answer" style="display:none;margin:0;">Go to account settings and select "Delete Profile." Confirm your decision and your data will be permanently removed.</p>
-      </div>
-
+<!-- Stats Counter Section - New -->
+<section style="padding: 60px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-around;">
+        <div style="text-align: center; color: white;">
+            <div style="font-size: 48px; font-weight: bold; margin-bottom: 10px;" id="counter1">0</div>
+            <div style="font-size: 18px; opacity: 0.9;">Happy Couples</div>
+        </div>
+        <div style="text-align: center; color: white;">
+            <div style="font-size: 48px; font-weight: bold; margin-bottom: 10px;" id="counter2">0</div>
+            <div style="font-size: 18px; opacity: 0.9;">Verified Profiles</div>
+        </div>
+        <div style="text-align: center; color: white;">
+            <div style="font-size: 48px; font-weight: bold; margin-bottom: 10px;" id="counter3">0</div>
+            <div style="font-size: 18px; opacity: 0.9;">Successful Matches</div>
+        </div>
+        <div style="text-align: center; color: white;">
+            <div style="font-size: 48px; font-weight: bold; margin-bottom: 10px;" id="counter4">0</div>
+            <div style="font-size: 18px; opacity: 0.9;">Active Members</div>
+        </div>
     </div>
-  </div>
-
-  <script>
-    function toggleFaq(index) {
-      const answers = document.querySelectorAll(".faq-answer");
-      answers.forEach((ans, i) => {
-        ans.style.display = i === index ? (ans.style.display === "none" ? "block" : "none") : "none";
-      });
-    }
-  </script>
 </section>
 
-     
+<!-- Why Become a Member - Enhanced -->
+<div style="margin-bottom: 60px; background-color: white; padding: 60px 20px;">
+    <h2 style="text-align: center; font-size: 42px; color: #2c3e50; margin-bottom: 50px; position: relative;">Why Become a Member?
+        <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #ff6f61, #ff8e7a); margin: 15px auto 0; border-radius: 2px;"></div>
+    </h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1200px; margin: 0 auto;">
+        <div style="flex: 1; min-width: 250px; background: linear-gradient(135deg, #f9f9f9, #ffffff); border-radius: 15px; padding: 35px 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)'">
+            <div style="background: linear-gradient(135deg, #ff6f61, #ff8e7a); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <i class="fas fa-check-circle" style="font-size: 35px; color: white;"></i>
+            </div>
+            <h3 style="color: #2c3e50; font-size: 22px; margin-bottom: 15px;">Verified Profiles</h3>
+            <p style="color: #666; line-height: 1.6;">Each member profile is manually verified to ensure authenticity and commitment.</p>
+        </div>
+        <div style="flex: 1; min-width: 250px; background: linear-gradient(135deg, #f9f9f9, #ffffff); border-radius: 15px; padding: 35px 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)'">
+            <div style="background: linear-gradient(135deg, #ff6f61, #ff8e7a); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <i class="fas fa-heart" style="font-size: 35px; color: white;"></i>
+            </div>
+            <h3 style="color: #2c3e50; font-size: 22px; margin-bottom: 15px;">Tailored Matches</h3>
+            <p style="color: #666; line-height: 1.6;">Get suggestions based on your preferences, community, lifestyle, and values.</p>
+        </div>
+        <div style="flex: 1; min-width: 250px; background: linear-gradient(135deg, #f9f9f9, #ffffff); border-radius: 15px; padding: 35px 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)'">
+            <div style="background: linear-gradient(135deg, #ff6f61, #ff8e7a); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <i class="fas fa-shield-alt" style="font-size: 35px; color: white;"></i>
+            </div>
+            <h3 style="color: #2c3e50; font-size: 22px; margin-bottom: 15px;">Safe & Private</h3>
+            <p style="color: #666; line-height: 1.6;">We safeguard your personal details and only show what you choose to share.</p>
+        </div>
+    </div>
+</div>
 
-   
-   <!-- Footer -->
+<!-- How Membership Works - Enhanced -->
+<div style="background: linear-gradient(135deg, #f8f1ff, #ffffff); padding: 60px 20px;">
+    <h2 style="text-align: center; font-size: 42px; color: #2c3e50; margin-bottom: 50px;">How Membership Works
+        <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #ff6f61, #ff8e7a); margin: 15px auto 0; border-radius: 2px;"></div>
+    </h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1200px; margin: 0 auto;">
+        <div style="flex: 1; min-width: 250px; background: white; border-left: 5px solid #ff6f61; border-radius: 10px; padding: 30px 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(8px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.08)'">
+            <div style="background: linear-gradient(135deg, #ff6f61, #ff8e7a); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <span style="color: white; font-size: 24px; font-weight: bold;">1</span>
+            </div>
+            <h3 style="margin-bottom: 15px; font-size: 20px; color: #2c3e50;">Create Your Profile</h3>
+            <p style="color: #666; line-height: 1.6;">Share your details, upload your photo, and describe your expectations for a life partner.</p>
+        </div>
+        <div style="flex: 1; min-width: 250px; background: white; border-left: 5px solid #ff6f61; border-radius: 10px; padding: 30px 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(8px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.08)'">
+            <div style="background: linear-gradient(135deg, #ff6f61, #ff8e7a); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <span style="color: white; font-size: 24px; font-weight: bold;">2</span>
+            </div>
+            <h3 style="margin-bottom: 15px; font-size: 20px; color: #2c3e50;">Get Verified</h3>
+            <p style="color: #666; line-height: 1.6;">We perform a simple profile verification for quality and trustworthiness.</p>
+        </div>
+        <div style="flex: 1; min-width: 250px; background: white; border-left: 5px solid #ff6f61; border-radius: 10px; padding: 30px 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(8px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.08)'">
+            <div style="background: linear-gradient(135deg, #ff6f61, #ff8e7a); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <span style="color: white; font-size: 24px; font-weight: bold;">3</span>
+            </div>
+            <h3 style="margin-bottom: 15px; font-size: 20px; color: #2c3e50;">Connect Confidently</h3>
+            <p style="color: #666; line-height: 1.6;">Start expressing interest, chatting, and taking the next steps at your comfort level.</p>
+        </div>
+    </div>
+</div>
 
+<!-- Membership Plans Section - New -->
+<section id="plans" style="padding: 80px 20px; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; font-size: 42px; color: #2c3e50; margin-bottom: 15px;">Membership Plans
+            <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #ff6f61, #ff8e7a); margin: 15px auto 0; border-radius: 2px;"></div>
+        </h2>
+        <p style="text-align: center; color: #666; font-size: 18px; margin-bottom: 50px;">Choose the perfect plan that suits your needs</p>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+            <!-- Basic Plan -->
+            <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #f9f9f9, #ffffff); border-radius: 20px; padding: 40px 25px; text-align: center; transition: all 0.3s ease; position: relative; box-shadow: 0 5px 20px rgba(0,0,0,0.08);" onmouseover="this.style.transform='translateY(-15px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)'">
+                <div style="font-size: 30px; font-weight: bold; color: #ff6f61; margin-bottom: 10px;">Basic</div>
+                <div style="font-size: 48px; font-weight: bold; color: #2c3e50; margin: 20px 0;">
+                    ₹999<span style="font-size: 18px; color: #666;">/month</span>
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 25px 0; text-align: left;">
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ff6f61; margin-right: 10px;"></i> 10 Profile Matches</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ff6f61; margin-right: 10px;"></i> Basic Search Filters</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ff6f61; margin-right: 10px;"></i> Email Support</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-times-circle" style="color: #ccc; margin-right: 10px;"></i> Priority Verification</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-times-circle" style="color: #ccc; margin-right: 10px;"></i> Relationship Manager</li>
+                </ul>
+                <button style="width: 100%; padding: 14px; background: linear-gradient(135deg, #ff6f61, #ff8e7a); color: white; border: none; border-radius: 50px; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 5px 15px rgba(255,111,97,0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'" onclick="alert('Thank you for your interest! Please register to continue.')">Choose Plan</button>
+            </div>
+            
+            <!-- Premium Plan - Highlighted -->
+            <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; padding: 40px 25px; text-align: center; transition: all 0.3s ease; position: relative; transform: scale(1.02); box-shadow: 0 10px 30px rgba(102,126,234,0.3);" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 25px 45px rgba(102,126,234,0.4)'" onmouseout="this.style.transform='scale(1.02)'; this.style.boxShadow='0 10px 30px rgba(102,126,234,0.3)'">
+                <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #ffd700; color: #6e48aa; padding: 5px 20px; border-radius: 20px; font-size: 14px; font-weight: bold;">Most Popular</div>
+                <div style="font-size: 30px; font-weight: bold; color: #ffd700; margin-bottom: 10px;">Premium</div>
+                <div style="font-size: 48px; font-weight: bold; color: white; margin: 20px 0;">
+                    ₹2,499<span style="font-size: 18px; color: rgba(255,255,255,0.8);">/month</span>
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 25px 0; text-align: left; color: white;">
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ffd700; margin-right: 10px;"></i> Unlimited Profile Matches</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ffd700; margin-right: 10px;"></i> Advanced Search Filters</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ffd700; margin-right: 10px;"></i> Priority Verification</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ffd700; margin-right: 10px;"></i> Dedicated Relationship Manager</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ffd700; margin-right: 10px;"></i> 24/7 Phone Support</li>
+                </ul>
+                <button style="width: 100%; padding: 14px; background: #ffd700; color: #6e48aa; border: none; border-radius: 50px; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 5px 20px rgba(255,215,0,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'" onclick="alert('Premium plan selected! Please complete registration.')">Choose Plan</button>
+            </div>
+            
+            <!-- Elite Plan -->
+            <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #f9f9f9, #ffffff); border-radius: 20px; padding: 40px 25px; text-align: center; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(0,0,0,0.08);" onmouseover="this.style.transform='translateY(-15px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)'">
+                <div style="font-size: 30px; font-weight: bold; color: #ff6f61; margin-bottom: 10px;">Elite</div>
+                <div style="font-size: 48px; font-weight: bold; color: #2c3e50; margin: 20px 0;">
+                    ₹4,999<span style="font-size: 18px; color: #666;">/quarter</span>
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 25px 0; text-align: left;">
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ff6f61; margin-right: 10px;"></i> Everything in Premium</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ff6f61; margin-right: 10px;"></i> Personalized Matchmaking</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ff6f61; margin-right: 10px;"></i> Event Invitations</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ff6f61; margin-right: 10px;"></i> Profile Boosting</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: #ff6f61; margin-right: 10px;"></i> Save 33% vs Monthly</li>
+                </ul>
+                <button style="width: 100%; padding: 14px; background: linear-gradient(135deg, #ff6f61, #ff8e7a); color: white; border: none; border-radius: 50px; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 5px 15px rgba(255,111,97,0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'" onclick="alert('Elite plan selected! Best value for long-term commitment.')">Choose Plan</button>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- Success Stories - Enhanced -->
+<section id="testimonials" style="padding: 80px 20px; background: linear-gradient(135deg, #f8f1ff, #ffffff);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; font-size: 42px; margin-bottom: 50px; color: #2c3e50;">Success Stories
+            <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #ff6f61, #ff8e7a); margin: 15px auto 0; border-radius: 2px;"></div>
+        </h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+            <div style="flex: 1; min-width: 300px; background: white; border-radius: 15px; padding: 30px; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(0,0,0,0.08);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)'">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="background: linear-gradient(135deg, #ff6f61, #ff8e7a); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; color: white;">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div style="margin-left: 15px;">
+                        <h4 style="margin: 0; font-size: 20px; color: #2c3e50;">Rahul & Priya</h4>
+                        <p style="margin: 5px 0 0; font-size: 14px; color: #ff6f61;">Married: June 2022</p>
+                    </div>
+                </div>
+                <p style="font-style: italic; color: #666; line-height: 1.6; padding-left: 20px; border-left: 3px solid #ff6f61;">"Hitaishi's advanced matching system connected us despite being in different cities. We found our perfect match within 3 weeks of premium membership!"</p>
+                <div style="margin-top: 15px;">
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; background: white; border-radius: 15px; padding: 30px; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(0,0,0,0.08);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)'">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="background: linear-gradient(135deg, #ff6f61, #ff8e7a); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; color: white;">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div style="margin-left: 15px;">
+                        <h4 style="margin: 0; font-size: 20px; color: #2c3e50;">Arjun & Meera</h4>
+                        <p style="margin: 5px 0 0; font-size: 14px; color: #ff6f61;">Married: February 2023</p>
+                    </div>
+                </div>
+                <p style="font-style: italic; color: #666; line-height: 1.6; padding-left: 20px; border-left: 3px solid #ff6f61;">"The verified profiles feature gave us confidence in the process. Our relationship manager helped us navigate cultural differences beautifully."</p>
+                <div style="margin-top: 15px;">
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; background: white; border-radius: 15px; padding: 30px; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(0,0,0,0.08);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)'">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="background: linear-gradient(135deg, #ff6f61, #ff8e7a); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; color: white;">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div style="margin-left: 15px;">
+                        <h4 style="margin: 0; font-size: 20px; color: #2c3e50;">Vikram & Ananya</h4>
+                        <p style="margin: 5px 0 0; font-size: 14px; color: #ff6f61;">Married: November 2023</p>
+                    </div>
+                </div>
+                <p style="font-style: italic; color: #666; line-height: 1.6; padding-left: 20px; border-left: 3px solid #ff6f61;">"As busy professionals, we appreciated the quality matches Hitaishi provided. The compatibility scores were surprisingly accurate!"</p>
+                <div style="margin-top: 15px;">
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                    <i class="fas fa-star" style="color: #ffd700;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section - Enhanced -->
+<section style="padding: 80px 20px; background: white;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        <h2 style="text-align: center; font-size: 42px; margin-bottom: 50px; color: #2c3e50;">Frequently Asked Questions
+            <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #ff6f61, #ff8e7a); margin: 15px auto 0; border-radius: 2px;"></div>
+        </h2>
+        
+        <div id="faq-container">
+            <div onclick="toggleFaq(0)" style="cursor: pointer; background: linear-gradient(135deg, #f9f9f9, #ffffff); border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#f0f0f0'" onmouseout="this.style.backgroundColor=''">
+                <h3 style="font-size: 18px; margin: 0; color: #2c3e50; display: flex; justify-content: space-between; align-items: center;">
+                    How does Hitaishi verify profiles?
+                    <i class="fas fa-chevron-down" style="color: #ff6f61; transition: transform 0.3s;"></i>
+                </h3>
+                <p class="faq-answer" style="display: none; margin: 15px 0 0 0; padding-top: 15px; border-top: 1px solid #eee; color: #666; line-height: 1.6;">We use a 4-step verification process including document verification, background checks, personal interviews, and social media validation to ensure all profiles are genuine.</p>
+            </div>
+
+            <div onclick="toggleFaq(1)" style="cursor: pointer; background: linear-gradient(135deg, #f9f9f9, #ffffff); border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#f0f0f0'" onmouseout="this.style.backgroundColor=''">
+                <h3 style="font-size: 18px; margin: 0; color: #2c3e50; display: flex; justify-content: space-between; align-items: center;">
+                    Can I upgrade my plan later?
+                    <i class="fas fa-chevron-down" style="color: #ff6f61; transition: transform 0.3s;"></i>
+                </h3>
+                <p class="faq-answer" style="display: none; margin: 15px 0 0 0; padding-top: 15px; border-top: 1px solid #eee; color: #666; line-height: 1.6;">Yes, you can upgrade anytime. The remaining value of your current plan will be applied to your upgrade.</p>
+            </div>
+
+            <div onclick="toggleFaq(2)" style="cursor: pointer; background: linear-gradient(135deg, #f9f9f9, #ffffff); border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#f0f0f0'" onmouseout="this.style.backgroundColor=''">
+                <h3 style="font-size: 18px; margin: 0; color: #2c3e50; display: flex; justify-content: space-between; align-items: center;">
+                    Is my personal information secure?
+                    <i class="fas fa-chevron-down" style="color: #ff6f61; transition: transform 0.3s;"></i>
+                </h3>
+                <p class="faq-answer" style="display: none; margin: 15px 0 0 0; padding-top: 15px; border-top: 1px solid #eee; color: #666; line-height: 1.6;">Absolutely. We use bank-level encryption and never share your contact details without permission.</p>
+            </div>
+
+            <div onclick="toggleFaq(3)" style="cursor: pointer; background: linear-gradient(135deg, #f9f9f9, #ffffff); border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#f0f0f0'" onmouseout="this.style.backgroundColor=''">
+                <h3 style="font-size: 18px; margin: 0; color: #2c3e50; display: flex; justify-content: space-between; align-items: center;">
+                    Can I hide my profile from others?
+                    <i class="fas fa-chevron-down" style="color: #ff6f61; transition: transform 0.3s;"></i>
+                </h3>
+                <p class="faq-answer" style="display: none; margin: 15px 0 0 0; padding-top: 15px; border-top: 1px solid #eee; color: #666; line-height: 1.6;">Yes, you can activate incognito mode to hide your profile until you're ready to go public.</p>
+            </div>
+
+            <div onclick="toggleFaq(4)" style="cursor: pointer; background: linear-gradient(135deg, #f9f9f9, #ffffff); border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#f0f0f0'" onmouseout="this.style.backgroundColor=''">
+                <h3 style="font-size: 18px; margin: 0; color: #2c3e50; display: flex; justify-content: space-between; align-items: center;">
+                    Do you offer refunds?
+                    <i class="fas fa-chevron-down" style="color: #ff6f61; transition: transform 0.3s;"></i>
+                </h3>
+                <p class="faq-answer" style="display: none; margin: 15px 0 0 0; padding-top: 15px; border-top: 1px solid #eee; color: #666; line-height: 1.6;">We provide refunds only in specific cases based on our terms and conditions. Please contact support for details.</p>
+            </div>
+
+            <div onclick="toggleFaq(5)" style="cursor: pointer; background: linear-gradient(135deg, #f9f9f9, #ffffff); border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#f0f0f0'" onmouseout="this.style.backgroundColor=''">
+                <h3 style="font-size: 18px; margin: 0; color: #2c3e50; display: flex; justify-content: space-between; align-items: center;">
+                    How do I delete my profile?
+                    <i class="fas fa-chevron-down" style="color: #ff6f61; transition: transform 0.3s;"></i>
+                </h3>
+                <p class="faq-answer" style="display: none; margin: 15px 0 0 0; padding-top: 15px; border-top: 1px solid #eee; color: #666; line-height: 1.6;">Go to account settings and select "Delete Profile." Confirm your decision and your data will be permanently removed.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section - New -->
+<section style="padding: 60px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <h2 style="color: white; font-size: 32px; margin-bottom: 15px;">Subscribe to Our Newsletter</h2>
+        <p style="color: rgba(255,255,255,0.9); margin-bottom: 25px;">Get the latest updates, success stories, and matchmaking tips directly in your inbox!</p>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+            <input type="email" id="newsletterEmail" placeholder="Enter your email address" style="flex: 1; min-width: 250px; padding: 14px 20px; border: none; border-radius: 50px; font-size: 16px; outline: none;">
+            <button onclick="subscribeNewsletter()" style="padding: 14px 30px; background: #ffd700; color: #6e48aa; border: none; border-radius: 50px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">Subscribe</button>
+        </div>
+        <p id="newsletterMessage" style="color: white; margin-top: 15px; font-size: 14px;"></p>
+    </div>
+</section>
+
+<!-- Footer -->
 <div id="footer"></div>
 
 <script>
 fetch("footer.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("footer").innerHTML = data;
+    }).catch(error => console.log('Footer loading error:', error));
 </script>
+
+<!-- Load Chatbot -->
+<script>
+async function loadChatbot() {
+    try {
+        const response = await fetch('./chatbot.html');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const htmlContent = await response.text();
+        
+        const container = document.createElement('div');
+        container.id = 'chatbot-container';
+        container.innerHTML = htmlContent;
+        document.body.appendChild(container);
+        
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+            const newScript = document.createElement('script');
+            newScript.textContent = oldScript.textContent;
+            document.head.appendChild(newScript);
+        });
+        
+        console.log('✓ Chatbot loaded successfully');
+    } catch (error) {
+        console.error('✗ Chatbot load failed:', error);
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadChatbot);
+} else {
+    loadChatbot();
+}
+</script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 80px; right: 22px; z-index: 1000; background: linear-gradient(135deg, #ff6f61, #ff8e7a); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 33px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.3s ease;" onclick="scrollToTop()">↑</button>
+
+<style>
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    #scrollToTopBtn:hover {
+        background: linear-gradient(135deg, #ff8e7a, #ff6f61);
+        transform: scale(1.1) translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255,111,97,0.5);
+    }
+</style>
+
+<script>
+// Enhanced FAQ Toggle with icon rotation
+function toggleFaq(index) {
+    const answers = document.querySelectorAll(".faq-answer");
+    const icons = document.querySelectorAll(".fa-chevron-down");
+    
+    answers.forEach((ans, i) => {
+        if (i === index) {
+            const isVisible = ans.style.display === "block";
+            ans.style.display = isVisible ? "none" : "block";
+            if (icons[i]) {
+                icons[i].style.transform = isVisible ? "rotate(0deg)" : "rotate(180deg)";
+            }
+        } else {
+            ans.style.display = "none";
+            if (icons[i]) {
+                icons[i].style.transform = "rotate(0deg)";
+            }
+        }
+    });
+}
+
+// Scroll to top button
+window.addEventListener('scroll', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (window.pageYOffset > 100) {
+        scrollToTopBtn.style.display = 'block';
+    } else {
+        scrollToTopBtn.style.display = 'none';
+    }
+});
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Counter animation
+function animateCounter(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        element.innerText = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// Start counters when in viewport
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.id;
+            if (id === 'counter1') animateCounter(entry.target, 0, 15234, 2000);
+            if (id === 'counter2') animateCounter(entry.target, 0, 12345, 2000);
+            if (id === 'counter3') animateCounter(entry.target, 0, 18976, 2000);
+            if (id === 'counter4') animateCounter(entry.target, 0, 25341, 2000);
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('#counter1, #counter2, #counter3, #counter4').forEach(counter => {
+    counterObserver.observe(counter);
+});
+
+// Newsletter subscription
+function subscribeNewsletter() {
+    const email = document.getElementById('newsletterEmail').value;
+    const messageEl = document.getElementById('newsletterMessage');
+    
+    if (!email || !email.includes('@')) {
+        messageEl.innerText = 'Please enter a valid email address!';
+        messageEl.style.color = '#ffd700';
+        setTimeout(() => messageEl.innerText = '', 3000);
+        return;
+    }
+    
+    messageEl.innerText = 'Thank you for subscribing! 🎉';
+    messageEl.style.color = '#ffd700';
+    document.getElementById('newsletterEmail').value = '';
+    setTimeout(() => messageEl.innerText = '', 3000);
+}
+
+// Smooth navigation for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+</script>
+
 </body>
 </html>

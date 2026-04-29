@@ -49,6 +49,21 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// GET: Fetch all brokers
+router.get("/brokers", async (req, res) => {
+  try {
+    // Debug: Log before query
+    console.log("[BROKERS] GET /brokers called");
+    const [brokers] = await connection.query("SELECT * FROM brokers ORDER BY submitted_at DESC");
+    // Debug: Log result
+    console.log("[BROKERS] Query result:", brokers);
+    res.status(200).json(brokers);
+  } catch (err) {
+    console.error("Error fetching brokers:", err);
+    res.status(500).json({ error: "Failed to fetch brokers.", details: err.message });
+  }
+});
+
 // POST: Submit broker form
 router.post("/brokers", upload.single("photo"), async (req, res) => {
   const { name, email, phone, location, experience } = req.body;

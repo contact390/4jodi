@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Enhanced Navbar | 4jodi Matrimony</title>
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f4f7fc;
+      padding-top: 130px; /* reserve space for fixed double navbar */
+    }
+
+    /* smooth transitions */
+    a, button {
+      transition: all 0.25s ease;
+    }
+
+    /* unified navbar container (fixed, no conflict) */
+    .enhanced-nav-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Top bar (green gradient) - simplified, only login button kept */
+    .top-navbar {
+      background: linear-gradient(135deg, #F5E6CA 0%, #F8E8E8 100%);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(255,255,255,0.35);
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      background: #8B0000;
+      color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 24px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .brand-text {
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.3px;
+      background: linear-gradient(145deg, #8B0000, #a52a2a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: none;
+    }
+
+    /* desktop contact group */
+    .contact-group {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #1e2a2e;
+      background: rgba(255,255,240,0.85);
+      padding: 6px 16px;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+
+    .contact-link i {
+      color: #8B0000;
+      font-size: 1rem;
+    }
+
+    .contact-link:hover {
+      background: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      color: #8B0000;
+    }
+
+    /* SINGLE LOGIN BUTTON (unified, modern) */
+    .login-btn-single {
+      background: #8B0000;
+      color: white;
+      padding: 9px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 12px rgba(139,0,0,0.3);
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .login-btn-single i {
+      font-size: 1rem;
+    }
+
+    .login-btn-single:hover {
+      background: #a52a2a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(139,0,0,0.4);
+    }
+
+    /* desktop right wrapper */
+    .desktop-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* mobile toggle button */
+    .mobile-toggle-btn {
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #8B0000;
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,240,0.7);
+      transition: 0.2s;
+    }
+
+    .mobile-toggle-btn:hover {
+      background: white;
+      transform: scale(1.02);
+    }
+
+    /* second navbar (pink header) */
+    .second-navbar {
+      background: #8B1E3F;
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo-img-link {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 52px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+
+    .title-trust {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .main-title {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: white;
+      white-space: nowrap;
+      letter-spacing: -0.3px;
+    }
+
+    .trust-badge {
+      background: #dc3545;
+      font-size: 0.7rem;
+      padding: 4px 12px;
+      border-radius: 30px;
+      width: fit-content;
+      font-weight: 600;
+      margin-top: 4px;
+      color: white;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    /* main navigation links (desktop) */
+    .main-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .main-nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .main-nav-links a:hover {
+      border-bottom-color: #FFD966;
+      transform: translateY(-1px);
+    }
+
+    /* right side nav (NRI, Contact, Services, Membership, Success, Login) */
+    .right-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .right-nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+
+    .right-nav-links a:hover {
+      text-decoration: underline;
+      opacity: 0.9;
+    }
+
+    .main-nav-links a.active-nav-link,
+    .right-nav-links a.active-nav-link {
+      color: #ffd966;
+      border-bottom-color: #ffd966;
+      font-weight: 700;
+    }
+
+    .mobile-nav-list a.active-nav-link {
+      background: rgba(255, 217, 102, 0.18);
+      color: #138496;
+      border-radius: 12px;
+      padding-left: 14px;
+    }
+
+    /* mobile drawer panel */
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2000;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(3px);
+    }
+
+    .mobile-drawer-content {
+      background: linear-gradient(145deg, #ffffff, #fef5e8);
+      width: 85%;
+      max-width: 320px;
+      height: 100%;
+      overflow-y: auto;
+      padding: 24px 20px 40px;
+      box-shadow: 8px 0 30px rgba(0,0,0,0.3);
+      border-radius: 0 24px 24px 0;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
+    }
+
+    .mobile-drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #00CD66;
+      padding-bottom: 16px;
+    }
+
+    .mobile-drawer-logo {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: #8B0000;
+    }
+
+    .close-drawer {
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #8B0000;
+    }
+
+    .mobile-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .mobile-nav-list a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2c3e2f;
+      padding: 10px 8px;
+      border-radius: 20px;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .mobile-nav-list a i {
+      width: 28px;
+      color: #e83e8c;
+    }
+
+    .mobile-nav-list a:hover {
+      background: #00FA9A20;
+      color: #8B0000;
+      padding-left: 16px;
+    }
+
+    .mobile-contact-info {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .mobile-contact-info a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #1e2a2e;
+      margin: 16px 0;
+      font-weight: 500;
+    }
+
+    /* hide desktop elements on mobile */
+    @media (max-width: 900px) {
+      body {
+        padding-top: 120px;
+      }
+      .desktop-actions .contact-group {
+        display: none;
+      }
+      .desktop-actions .login-btn-single {
+        display: none;
+      }
+      .mobile-toggle-btn {
+        display: flex;
+      }
+      /* second navbar adjustments */
+      .second-navbar {
+        flex-wrap: wrap;
+        padding: 12px 20px;
+      }
+      .main-nav-links, .right-nav-links {
+        display: none;
+      }
+      .title-trust .main-title {
+        font-size: 1.2rem;
+        white-space: normal;
+      }
+      .logo-img {
+        height: 44px;
+      }
+    }
+
+    @media (min-width: 901px) {
+      .mobile-toggle-btn {
+        display: none;
+      }
+      .mobile-drawer {
+        display: none !important;
+      }
+      .desktop-actions .contact-group {
+        display: flex;
+      }
+      .desktop-actions .login-btn-single {
+        display: inline-flex;
+      }
+      .main-nav-links, .right-nav-links {
+        display: flex;
+      }
+    }
+
+    /* when desktop but maybe small laptops */
+    @media (max-width: 1100px) {
+      .main-nav-links {
+        gap: 12px;
+      }
+      .right-nav-links {
+        gap: 12px;
+      }
+      .main-title {
+        font-size: 1.3rem;
+      }
+    }
+
+    /* logout button style inside second navbar */
+    .logout-header-btn {
+      background: #dc3545;
+      padding: 6px 16px;
+      border-radius: 40px;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      margin-left: 12px;
+      font-size: 0.8rem;
+    }
+    .logout-header-btn:hover {
+      background: #b02a37;
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body>
+
+<div class="enhanced-nav-wrapper">
+  <!-- FIRST ROW: green gradient with contact + single login -->
+  <div class="top-navbar">
+    <div class="brand-area">
+       <!-- contact group (visible desktop) -->
+      <div class="contact-group">
+        <a href="tel:9908793602" class="contact-link">
+          <i class="fas fa-phone-alt"></i> <span>9908793602</span>
+        </a>
+        <a href="mailto:hitaishimatrimony@gmail.com" class="contact-link">
+          <i class="fas fa-envelope"></i> <span>hitaishimatrimony@gmail.com</span>
+        </a>
+      </div>
+      <!-- <div class="brand-icon">H</div>
+      <span class="brand-text">4jodi Matrimony</span> -->
+    </div>
+
+    <div class="desktop-actions">
+     
+      <!-- SINGLE LOGIN BUTTON (only one) -->
+      <a href="login2.html" id="unifiedLoginBtn" class="login-btn-single">
+        <i class="fas fa-user-circle"></i> Login
+      </a>
+    </div>
+
+    <!-- mobile hamburger (three dots replaced by modern burger) -->
+    <button id="mobileMenuButton" class="mobile-toggle-btn" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- SECOND ROW: original pink header with all navigation, but login button is removed from here to keep single login -->
+  <div class="second-navbar">
+    <div class="logo-img-link">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Logo" class="logo-img" onerror="this.src='https://placehold.co/60x60?text=Logo'">
+      </a>
+    </div>
+    <div class="title-trust">
+      <h1 class="main-title">Welcome to 4jodi Matrimony</h1>
+      <span class="trust-badge">Trusted since 2023</span>
+    </div>
+
+    <!-- MAIN NAVIGATION (desktop) -->
+    <div class="main-nav-links" id="desktopMainNav">
+      <a href="index.html">Home</a>
+      <a href="male2.html">Male</a>
+      <a href="female.html">Female</a>
+      <a href="dating.html">Dating</a>
+      <a href="co-living.html">Co-living</a>
+      <a href="friendship.html">Friendship</a>
+      <a href="secondmarriage.html">Second marriage</a>
+      <a href="widows.html">Widows</a>
+            <a href="communityconnect.html">Community</a>
+
+      <a href="marriageaffiliate.html">Marriage Affiliates</a>
+      <!-- <a href="profiles.html">Profiles</a> -->
+    </div>
+
+    <!-- RIGHT SIDE NAV (desktop) -->
+    <div class="right-nav-links" id="desktopRightNav">
+      <a href="nri2.html">NRI</a>
+      <a href="contactus.html">Contact</a>
+      <a href="services2.html">Services</a>
+      <a href="membership.html">Membership</a>
+      <a href="viewmorestories.html">Success Stories</a>
+      <!-- no duplicate login here, only one global login in top bar -->
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE SIDEDRAWER (better mobile experience) -->
+<div id="mobileDrawer" class="mobile-drawer">
+  <div class="mobile-drawer-content">
+    <div class="mobile-drawer-header">
+      <span class="mobile-drawer-logo"><i class="fas fa-heart" style="color:#e83e8c;"></i> Hitaishi</span>
+      <button id="closeDrawerBtn" class="close-drawer"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mobile-nav-list" id="mobileNavList"></div>
+    <div class="mobile-contact-info">
+      <a href="tel:9908793602"><i class="fas fa-phone-alt"></i> 9908793602</a>
+      <a href="mailto:hitaishimatrimony@gmail.com"><i class="fas fa-envelope"></i> hitaishimatrimony@gmail.com</a>
+      <div style="margin-top: 16px;">
+        <p style="font-weight: bold; color:#8B0000;"><i class="fas fa-map-marker-alt"></i> Hyderabad, Mumbai, Delhi, Bangalore</p>
+        <div style="display: flex; gap: 20px; margin-top: 12px;">
+          <a href="https://www.whatsapp.com/" style="color:#25D366; font-size: 24px;"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.linkedin.com/in/hitaishi-matrimony" style="color:#0077B5; font-size: 24px;"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/hita.ishimatrimony/?hl=en" style="color:#E1306C; font-size: 24px;"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@Hitaishimatrimony" style="color:#FF0000; font-size: 24px;"><i class="fab fa-youtube"></i></a>
+          <a href="https://x.com/matrimonyhitais" style="color:#1DA1F2; font-size: 24px;"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="header-auth.js"></script>
+<script>
+  // ========== SINGLE LOGIN BUTTON + SESSION HANDLING (no duplicate) ==========
+  const unifiedLoginBtn = document.getElementById('unifiedLoginBtn');
+
+  // function to update UI after login/logout (only one button)
+  function applyUserUI(user) {
+    if (!unifiedLoginBtn) return;
+    if (user && user.firstName) {
+      // logged in state: change button text to profile + dropdown style
+      unifiedLoginBtn.innerHTML = `<i class="fas fa-user-check"></i> ${user.firstName}`;
+      unifiedLoginBtn.href = 'userdashboard.html';
+      unifiedLoginBtn.style.background = '#a52a2a';
+      unifiedLoginBtn.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+      
+      // If logout button not exists inside top navbar, add it nearby (but not a second login)
+      let existingLogout = document.querySelector('.top-navbar .logout-action-btn');
+      if (!existingLogout) {
+        const logoutSpan = document.createElement('a');
+        logoutSpan.href = 'javascript:void(0)';
+        logoutSpan.innerHTML = '<i class="fas fa-sign-out-alt"></i> Logout';
+        logoutSpan.classList.add('login-btn-single');
+        logoutSpan.style.background = '#495057';
+        logoutSpan.style.marginLeft = '12px';
+        logoutSpan.style.padding = '9px 20px';
+        logoutSpan.classList.add('logout-action-btn');
+        logoutSpan.onclick = async (e) => {
+          e.preventDefault();
+          try {
+            if (window.logoutUser) {
+              await window.logoutUser();
+            } else {
+              await fetch('/api/logout', { method: 'POST', credentials: 'include' });
+              localStorage.removeItem('hitaishi_user');
+              window.location.href = 'login2.html';
+            }
+          } catch(err) {
+            console.warn(err);
+            window.location.href = 'login2.html';
+          }
+        };
+        unifiedLoginBtn.parentNode.insertBefore(logoutSpan, unifiedLoginBtn.nextSibling);
+      }
+    } else {
+      // logged out state
+      unifiedLoginBtn.innerHTML = `<i class="fas fa-user-circle"></i> Login`;
+      unifiedLoginBtn.href = 'login2.html';
+      unifiedLoginBtn.style.background = '#8B0000';
+      const logoutBtn = document.querySelector('.top-navbar .logout-action-btn');
+      if (logoutBtn) logoutBtn.remove();
+    }
+  }
+
+  async function initSessionUI() {
+    if (window.headerAuth && typeof window.headerAuth.checkSession === 'function') {
+      try {
+        const user = await window.headerAuth.checkSession();
+        applyUserUI(user);
+        return;
+      } catch (e) {
+        console.warn('[navbar] headerAuth session init failed', e);
+      }
+    }
+
+    try {
+      const localUser = localStorage.getItem('hitaishi_user');
+      if (localUser) {
+        const user = JSON.parse(localUser);
+        if (user && user.firstName) applyUserUI(user);
+        else applyUserUI(null);
+      } else {
+        applyUserUI(null);
+      }
+    } catch (e) {
+      applyUserUI(null);
+    }
+  }
+
+  initSessionUI();
+
+  // ========== MOBILE DRAWER LOGIC (better than old inline menu) ==========
+  const mobileMenuBtn = document.getElementById('mobileMenuButton');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+  const mobileNavList = document.getElementById('mobileNavList');
+
+  function buildMobileMenu() {
+    // collect all main nav links + right side nav links (except duplicate login)
+    const mainNavItems = document.querySelectorAll('#desktopMainNav a');
+    const rightNavItems = document.querySelectorAll('#desktopRightNav a');
+    const allLinks = [...mainNavItems, ...rightNavItems];
+    const currentPathName = window.location.pathname.split('/').pop().toLowerCase() || 'index.html';
+    
+    // also we want contact, profile? but we already show contact in separate section. 
+    // For completeness we add those extra links
+    let linksHtml = '';
+    allLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      const text = link.innerText.trim();
+      if (text.toLowerCase() !== 'login') {  // skip any possible login inside nav to avoid duplication
+        const targetPage = (href || '').split('/').pop().toLowerCase();
+        const activeClass = targetPage === currentPathName ? ' active-nav-link' : '';
+        linksHtml += `<a href="${href}" class="${activeClass}"><i class="fas fa-chevron-right"></i> ${text}</a>`;
+      }
+    });
+    // additional useful mobile items
+    const extraItems = [
+      {href: 'nri2.html', text: 'NRI'},
+      {href: 'membership.html', text: 'Membership'},
+      {href: 'successstories.html', text: 'Success Stories'}
+    ];
+    extraItems.forEach(item => {
+      const activeClass = item.href === currentPathName ? ' active-nav-link' : '';
+      linksHtml += `<a href="${item.href}" class="${activeClass}"><i class="fas fa-chevron-right"></i> ${item.text}</a>`;
+    });
+    mobileNavList.innerHTML = linksHtml;
+  }
+
+  function openDrawer() {
+    mobileDrawer.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    buildMobileMenu();
+  }
+
+  function closeDrawer() {
+    mobileDrawer.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  mobileMenuBtn.addEventListener('click', openDrawer);
+  if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+  mobileDrawer.addEventListener('click', (e) => {
+    if (e.target === mobileDrawer) closeDrawer();
+  });
+
+  // handle resize: if screen > 900 and drawer open, close it automatically
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900 && mobileDrawer.style.display === 'block') {
+      closeDrawer();
+    }
+  });
+
+  // initial build of desktop/mobile responsiveness: make sure no double login appears on desktop
+  // ensure the second navbar doesn't contain login link (already removed)
+  // Additional: if any element with login inside second navbar, we delete
+  const possibleExtraLogin = document.querySelector('#desktopRightNav a[href="login2.html"]');
+  if (possibleExtraLogin) possibleExtraLogin.remove();
+
+  function setActiveDesktopNav() {
+    const currentPathName = window.location.pathname.split('/').pop().toLowerCase() || 'index.html';
+    const desktopLinks = [...document.querySelectorAll('#desktopMainNav a'), ...document.querySelectorAll('#desktopRightNav a')];
+    desktopLinks.forEach(link => {
+      const href = link.getAttribute('href') || '';
+      const targetPage = href.split('/').pop().toLowerCase();
+      if (targetPage === currentPathName) {
+        link.classList.add('active-nav-link');
+      } else {
+        link.classList.remove('active-nav-link');
+      }
+    });
+  }
+  setActiveDesktopNav();
+
+  // make sure mobile drawer builds links on open
+  // also we add toggling of body scroll
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileDrawer.style.display === 'block') closeDrawer();
+  });
+
+  // handle contact hover, brand consistency
+  // style adjustment for logout action btn to fit on desktop/mobile
+  const style = document.createElement('style');
+  style.textContent = `
+    @media (max-width: 900px) {
+      .logout-action-btn {
+        display: inline-block !important;
+        margin-top: 8px;
+        font-size: 0.8rem;
+        padding: 6px 16px !important;
+      }
+      .desktop-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+    .logout-action-btn {
+      margin-left: 12px;
+      white-space: nowrap;
+    }
+  `;
+  document.head.appendChild(style);
+
+  // ensure that after login state we don't have multiple logout buttons
+  function cleanupDuplicates() {
+    const allLogout = document.querySelectorAll('.logout-action-btn');
+    if (allLogout.length > 1) {
+      for (let i = 1; i < allLogout.length; i++) allLogout[i].remove();
+    }
+  }
+  setInterval(cleanupDuplicates, 500);
+</script>
+
+
+</body>
+</html>

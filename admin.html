@@ -1,497 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4jodi Matrimony - Find Your Perfect Life Partner</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>All Profiles & Contact Messages</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: linear-gradient(135deg,#f9f9f9,#f0f0f5); margin:0; padding:30px; }
+    h1 { color: #ff3366; text-align: center; margin-bottom:30px; font-size:32px; letter-spacing:1px; }
+    h2 { color: #ff3366; text-align: center; margin-top:40px; font-size:28px; }
+    .section { margin-bottom: 40px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.2); margin-bottom: 30px; }
+    th, td { padding: 12px; border: 1px solid #ddd; text-align: center; }
+    th { background: #ff3366; color: #fff; }
+    tr:nth-child(even) { background: #f9f9f9; }
+    img { max-width: 80px; border-radius: 5px; }
+    .card-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; width: 95%; margin: 0 auto; }
+    .card { background: #fff; border-radius: 15px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); padding: 25px 20px; text-align: center; transition: all 0.3s ease; }
+    .card:hover { transform: translateY(-8px); }
+    .card img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 4px solid #ff3366; }
+    .card h3 { margin: 10px 0; color: #222; font-size: 22px; }
+    .card p { margin: 5px 0; color: #444; font-size: 15px; }
+    .badge { position: absolute; top: 15px; right: 15px; background: #ff3366; color: #fff; font-size: 12px; padding: 4px 10px; border-radius: 20px; }
+    .contact-card { background: #fff; border-radius: 15px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); padding: 20px; text-align: left; position: relative; }
+    .contact-card h3 { color: #ff3366; margin-bottom: 10px; }
+    .contact-card p { margin: 8px 0; color: #555; font-size: 14px; }
+    .contact-card .date { color: #888; font-size: 12px; }
+    .more-details { display: none; text-align: left; margin-top: 15px; font-size: 14px; color: #555; line-height: 1.6; }
+    .toggleBtn, .connectBtn { margin-top: 15px; background: #ff3366; color: #fff; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; font-size: 14px; }
+    .connectBtn { background: #28a745; margin-left: 8px; }
+    .nri-card { background: #fff; border-radius: 15px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); padding: 20px; text-align: left; position: relative; border-left: 5px solid #4a90e2; }
+    .nri-card h3 { color: #4a90e2; margin-bottom: 10px; }
+    .nri-card p { margin: 8px 0; color: #555; font-size: 14px; }
+  </style>
+  <script src="header-auth.js"></script>
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #333; background-color: #f9f9f9;width: 100%;">
-  
+<body>
 
-<!-- Contact Info Bar -->
-<div style="position: fixed; top: 0; left: 0; width: 100%; background-color: mediumspringgreen; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; font-family: Arial, sans-serif; font-size: 18px; z-index: 3000; height: 35px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-  <div style="display: flex; align-items: center; gap: 20px;">
-    <span style="display: flex; align-items: center;" class="desktop-only">
-      <i class="fas fa-map-marker-alt" style="color: maroon; margin-right: 5px;"></i>
-      <span style="color: black;">Hyderabad, Mumbai, Delhi, Bangalore</span>
-    </span>
-    <a href="tel:9908793602" style="display: flex; align-items: center; text-decoration: none; margin-right: 15px;" class="desktop-only">
-      <i class="fas fa-phone-alt" style="color: maroon; margin-right: 5px;"></i>
-      <span style="color: black;">9908793602</span>
-    </a>
-    <a href="mailto:Hitaishimatrimony@gmail.com" style="display: flex; align-items: center; text-decoration: none;" class="desktop-only">
-      <i class="fas fa-envelope" style="color: maroon; margin-right: 5px;"></i>
-      <span style="color: black;">opticjodi@gmail.com</span>
-    </a>
-  </div>
-  <div style="display: flex; align-items: center; gap: 25px; margin-right: 50px;" class="desktop-only">
-    <a href="https://www.whatsapp.com/" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='green';" onmouseleave="this.style.color='maroon';"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.linkedin.com/in/hitaishi-matrimony" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='#0077b5';" onmouseleave="this.style.color='maroon';"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://www.instagram.com/hita.ishimatrimony/?hl=en" style="color: maroon; font-size: 20px;" onmouseenter="this.style.color='#e1306c';" onmouseleave="this.style.color='maroon';"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com/@Hitaishimatrimony" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='red';" onmouseleave="this.style.color='maroon';"><i class="fab fa-youtube"></i></a>
-    <a href="https://x.com/matrimonyhitais" style="color: maroon; font-size: 40px;" onmouseenter="this.style.color='black';" onmouseleave="this.style.color='maroon';"><i class="fab fa-twitter"></i></a>
-    <a href="createprofile.html" style="background-color: maroon; color: white; padding: 6px 15px; text-decoration: none; border-radius: 4px; font-size: 18px; font-weight: bold;" onmouseenter="this.style.backgroundColor='darkred'; this.style.transform='scale(1.05)'; this.style.transition='all 0.3s ease';" onmouseleave="this.style.backgroundColor='maroon'; this.style.transform='scale(1)';">Create Profile</a>
-  </div>
-  
-  <!-- Mobile Top Bar -->
-  <div class="mobile-top-bar" style="display: none; width: 100%; justify-content: space-between; align-items: center;">
-    <a href="tel:9908793602" style="display: flex; align-items: center; text-decoration: none;">
-      <i class="fas fa-phone-alt" style="color: maroon; margin-right: 5px;"></i>
-    </a>
-    <a href="mailto:Hitaishimatrimony@gmail.com" style="display: flex; align-items: center; text-decoration: none;">
-      <i class="fas fa-envelope" style="color: maroon; margin-right: 5px;"></i>
-    </a>
-    <a href="createprofile.html" style="background-color: maroon; color: white; padding: 6px 15px; text-decoration: none; border-radius: 4px; font-size: 16px; font-weight: bold;">Create Profile</a>
-    <button id="mobileMenuBtn" onclick="toggleMobileTopMenu()" style="background:none; border:none; font-size:24px; color:maroon; cursor:pointer;">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-</div>
-
-<!-- Mobile Top Menu (Hidden by default) -->
-<div id="mobileTopMenu" style="display: none; position: fixed; top: 35px; left: 0; width: 100%; background-color: mediumspringgreen; z-index: 3001; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); flex-direction: column; align-items: center;">
-  <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 15px;">
-    <a href="https://www.whatsapp.com/" style="color: maroon; font-size: 30px;"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.linkedin.com/in/hitaishi-matrimony" style="color: maroon; font-size: 30px;"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://www.instagram.com/hita.ishimatrimony/?hl=en" style="color: maroon; font-size: 30px;"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com/@Hitaishimatrimony" style="color: maroon; font-size: 30px;"><i class="fab fa-youtube"></i></a>
-    <a href="https://x.com/matrimonyhitais" style="color: maroon; font-size: 30px;"><i class="fab fa-twitter"></i></a>
-  </div>
-  
-</div>
-
-<!-- Main Header -->
-<header id="mainHeader" style="position: fixed; top: 50px; left: 0; width: 100%; height: 100px; background-color: #e83e8c; color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; display: flex; align-items: center; padding: 0 15px;">
-  <!-- Logo -->
-  <div style="flex: 0 0 120px; margin-right: 10px;">
-    <a href="index.html">
-      <img src="images/logo.png" alt="Hitaishi Matrimony Logo" style="height: 80px; width: auto; padding-left: 0px; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
-    </a>
-  </div>
-  <!-- Title & Tagline -->
-  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-    <div style="display: flex; align-items: center; gap: 8px;">
-      <h1 style="margin: 0; font-size: 40px; color: white; white-space: nowrap; margin-left: 100px; margin-top: 0%;">Welcome to 4jodi Matrimony</h1>
-      <span style="font-size: 9px; background-color: red; color: white; padding: 2px 5px; border-radius: 10px; flex-shrink: 0; margin-top: 10px;">Trusted since 2023</span>
-    </div>
-    <!-- Main Navigation -->
-    <nav id="topNav" style="display: flex; flex-wrap: wrap; gap: 50px; margin-left: 95px; margin-top: 8px;">
-      <a href="index.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Home</a>
-      <a href="male2.html" style="color: white; text-decoration: none;font-size: 18px; white-space: nowrap;">Male</a>
-      <a href="female.html" style="color: white; text-decoration: none;font-size: 18px; white-space: nowrap;">Female</a>
-        <a href="dating.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">community connect</a>
-      <a href="dating.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Dating</a>
-      <a href="co-living.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Co-living</a>
-      <a href="friendship.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Friendship</a>
-      <a href="secondmarriage.html" style="color: white; text-decoration: none;  font-size: 18px; white-space: nowrap;">Second marriage</a>
-      <a href="widows.html" style="color: white; text-decoration: none;font-size: 18px; white-space: nowrap;">Widows</a>
-      <a href="marriage affiliate.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Marriage Affiliates</a>
-      <a href="marriage broker.html" style="color: white; text-decoration: none;  font-size: 18px; white-space: nowrap;">Marriage Brokers</a>
-    </nav>
-  </div>
-  <!-- Top Navigation Links -->
-  <nav id="topNav" style="position: absolute; top: 10px; right: 35px; display: flex; justify-content: flex-end; align-items: center; gap: 50px;">
-    <a href="nri2.html" style="color: rgb(255, 255, 255); text-decoration: none; font-size: 18px; white-space: nowrap;">NRI</a>
-    <a href="contactus.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Contact us</a>
-    <a href="services2.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Services</a>
-    <a href="membership.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Membership</a>
-    <a href="successstories.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Success Stories</a>
-    <a href="login.html" style="color: white; text-decoration: none; font-size: 18px; white-space: nowrap;">Login/Register</a>
-  </nav>
-  <!-- Mobile Menu Button -->
-  <button id="menuBtn" onclick="toggleMobileMenu()" style="display:none; position:absolute; right:15px; top:15px; background:none; border:none; font-size:32px; color:white; cursor:pointer; z-index:2001;">&#8942;</button>
-</header>
+    <div id="navbar"></div>
 
 <script>
-  // Toggle mobile top menu (social links and top nav)
-  function toggleMobileTopMenu() {
-    var mobileMenu = document.getElementById('mobileTopMenu');
-    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
-      mobileMenu.style.display = 'flex';
-    } else {
-      mobileMenu.style.display = 'none';
-    }
-  }
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
 
-  // Toggle main mobile menu (main navigation)
-  function toggleMobileMenu() {
-    var nav = document.getElementById('mainNav');
-    var topNav = document.getElementById('topNav');
-    
-    if (nav.style.display === 'none' || nav.style.display === '') {
-      // Open mobile menu
-      nav.style.display = 'flex';
-      nav.style.flexDirection = 'column';
-      nav.style.position = 'absolute';
-      nav.style.top = '100px';
-      nav.style.left = '0';
-      nav.style.width = '100%';
-      nav.style.background = '#e83e8c';
-      nav.style.zIndex = '2000';
-      nav.style.marginLeft = '0';
-      nav.style.gap = '0';
-      nav.style.padding = '10px 0';
-      
-      Array.from(nav.children).forEach(a => {
-        a.style.borderBottom = '1px solid #fff';
-        a.style.padding = '15px 0';
-        a.style.fontSize = '18px';
-        a.style.textAlign = 'center';
-        a.style.background = 'none';
-        a.style.borderRadius = '0';
-        a.style.width = '100%';
+      // Run scripts inside navbar
+      const scripts = document.getElementById("navbar").querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
       });
-    } else {
-      // Close mobile menu
-      nav.style.display = 'none';
-    }
-  }
-
-  // Handle screen resize
-  function handleResize() {
-    var menuBtn = document.getElementById('menuBtn');
-    var nav = document.getElementById('mainNav');
-    var topNav = document.getElementById('topNav');
-    var mobileTopBar = document.querySelector('.mobile-top-bar');
-    var desktopElements = document.querySelectorAll('.desktop-only');
-    var mobileTopMenu = document.getElementById('mobileTopMenu');
-    
-    if (window.innerWidth <= 700) {
-      // Mobile view
-      menuBtn.style.display = 'block';
-      nav.style.display = 'none';
-      topNav.style.display = 'none';
-      mobileTopBar.style.display = 'flex';
-      mobileTopMenu.style.display = 'none';
-      
-      // Hide desktop elements
-      desktopElements.forEach(el => {
-        el.style.display = 'none';
-      });
-    } else {
-      // Desktop view
-      menuBtn.style.display = 'none';
-      nav.style.display = 'flex';
-      nav.style.flexDirection = 'row';
-      nav.style.position = 'relative';
-      nav.style.top = '';
-      nav.style.left = '';
-      nav.style.width = '';
-      nav.style.background = '';
-      nav.style.zIndex = '';
-      nav.style.marginLeft = '95px';
-      nav.style.gap = '50px';
-      nav.style.padding = '';
-      
-      Array.from(nav.children).forEach(a => {
-        a.style.borderBottom = '';
-        a.style.padding = '5px 10px';
-        a.style.fontSize = '18px';
-        a.style.textAlign = '';
-        a.style.background = '#ff69b4';
-        a.style.borderRadius = '5px';
-        a.style.width = '';
-      });
-      
-      topNav.style.display = 'flex';
-      topNav.style.flexDirection = 'row';
-      topNav.style.position = 'absolute';
-      topNav.style.top = '10px';
-      topNav.style.right = '35px';
-      topNav.style.gap = '50px';
-      
-      mobileTopBar.style.display = 'none';
-      mobileTopMenu.style.display = 'none';
-      
-      // Show desktop elements
-      desktopElements.forEach(el => {
-        el.style.display = 'flex';
-      });
-    }
-  }
-
-  window.addEventListener('resize', handleResize);
-  window.addEventListener('DOMContentLoaded', handleResize);
+    });
 </script>
+  <h1>✨ Admin Dashboard ✨</h1>
+  
+  <!-- Contact Messages Section -->
+  <div class="section">
+    <h2>📩 Contact Messages</h2>
+    <div id="contactsContainer" class="card-container"></div>
+  </div>
 
-<style>
-/* Media Queries for Responsiveness */
-@media (max-width: 1000px) {
-    #mainHeader {
-        max-width: 100%;
-        padding: 0 10px;
-    }
-    #mainHeader h1 {
-        font-size: 20px;
-        margin-left: 5px;
-    }
-    #mainHeader .logo div {
-        flex: 0 0 100px;
-    }
-    #mainHeader .logo img {
-        height: 40px;
-    }
-    #mainHeader nav a {
-        font-size: 11px;
-        padding: 4px 8px;
-    }
-    #mainHeader nav[style*="position: absolute"] a {
-        font-size: 11px;
-    }
-}
+  <!-- NRI Profiles Section -->
+  <div class="section">
+    <h2>🌍 NRI Profiles</h2>
+    <div id="nriContainer" class="card-container"></div>
+  </div>
 
-@media (max-width: 700px) {
-  .desktop-only {
-    display: none !important;
-  }
-  
-  .mobile-top-bar {
-    display: flex !important;
-  }
-  
-  #mainHeader {
-    flex-direction: column !important;
-    height: auto !important;
-    padding: 10px !important;
-    min-width: 100vw !important;
-    align-items: flex-start !important;
-  }
-  
-  #mainHeader > div {
-    margin: 0 !important;
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-  
-  #mainHeader h1 {
-    font-size: 18px !important;
-    margin: 10px 0 0 0 !important;
-    text-align: center !important;
-    width: 100% !important;
-  }
-  
-  #mainNav {
-    flex-direction: column !important;
-    gap: 8px !important;
-    margin: 10px 0 0 0 !important;
-    width: 100% !important;
-    align-items: stretch !important;
-  }
-  
-  #mainNav a {
-    font-size: 15px !important;
-    padding: 10px 0 !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
-    width: 100% !important;
-    text-align: center !important;
-    background-color: #ff69b4 !important;
-    border-bottom: 1px solid #e83e8c !important;
-  }
-  
-  #topNav {
-    position: static !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    margin: 0 !important;
-    width: 100% !important;
-    align-items: stretch !important;
-  }
-  
-  #topNav a {
-    background: none !important;
-    border-radius: 0 !important;
-    border-bottom: 1px solid #e83e8c !important;
-    color: white !important;
-    font-size: 15px !important;
-    padding: 10px 0 !important;
-    width: 100% !important;
-    text-align: center !important;
-  }
-}
-</style>
-
-    <!-- Membership Plans Section -->
-
-<section style="max-width: 1200px; margin: 20px auto; padding: 20px; background-color: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);margin-top: 150px;">
-  <h2 style="text-align:center;color:#007bff;">Membership Enrollments</h2>
-
-  <table border="1" cellspacing="0" cellpadding="10" style="width:100%;border-collapse:collapse;text-align:left;">
-    <thead style="background:#f8f9fa;">
-      <tr>
-        <th>ID</th>
-        <th>Package Name</th>
-        <th>Price</th>
-        <th>Full Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Created At</th>
-      </tr>
-    </thead>
-    <tbody id="membershipTable"></tbody>
-  </table>
+  <!-- Profiles Section -->
+  <div class="section">
+    <h2>👥 All Profiles</h2>
+    <div id="profilesContainer" class="card-container"></div>
+  </div>
 
   <script>
-    async function fetchMemberships() {
+    // Fetch Contact Messages
+    async function fetchContacts() {
       try {
-        const response = await fetch("http://localhost:5000/api/membership_plans"); // Adjust if different port
+        const response = await fetch("http://localhost:5000/api/contacts");
         const data = await response.json();
 
-        const table = document.getElementById("membershipTable");
-        table.innerHTML = "";
-
-        data.forEach(row => {
-          table.innerHTML += `
-            <tr>
-              <td>${row.id}</td>
-              <td>${row.packageName}</td>
-              <td>${row.packagePrice}</td>
-              <td>${row.fullName}</td>
-              <td>${row.email}</td>
-              <td>${row.phone}</td>
-              <td>${new Date(row.created_at).toLocaleString()}</td>
-            </tr>
-          `;
-        });
+        const container = document.getElementById("contactsContainer");
+        
+        if (Array.isArray(data) && data.length > 0) {
+          container.innerHTML = "";
+          data.forEach(contact => {
+            const card = document.createElement("div");
+            card.className = "contact-card";
+            card.innerHTML = `
+              <h3>${contact.name || 'N/A'}</h3>
+              <p><strong>📧 Email:</strong> ${contact.email || 'N/A'}</p>
+              <p><strong>📞 Phone:</strong> ${contact.phone || 'N/A'}</p>
+              <p><strong>💬 Message:</strong> ${contact.message || 'N/A'}</p>
+              <p class="date"><strong>📅 Date:</strong> ${contact.date ? new Date(contact.date).toLocaleString() : 'N/A'}</p>
+            `;
+            container.appendChild(card);
+          });
+        } else {
+          container.innerHTML = "<p style='text-align:center; color:#666;'>No contact messages found.</p>";
+        }
       } catch (err) {
-        console.error("Error fetching data:", err);
+        console.error("Error loading contacts:", err);
+        document.getElementById("contactsContainer").innerHTML = "<p style='text-align:center; color:red;'>Error loading contacts.</p>";
       }
     }
 
-    fetchMemberships();
-  </script>
+    // Fetch NRI Profiles
+    async function fetchNRIProfiles() {
+      try {
+        const response = await fetch("http://localhost:5000/api/nriprofile");
+        const data = await response.json();
 
-</section>
+        const container = document.getElementById("nriContainer");
+        
+        if (Array.isArray(data) && data.length > 0) {
+          container.innerHTML = "";
+          data.forEach(profile => {
+            const card = document.createElement("div");
+            card.className = "nri-card";
+            card.innerHTML = `
+              <h3>${profile.full_name || 'N/A'}</h3>
+              <p><strong>🌍 Country:</strong> ${profile.residence_country || 'N/A'}</p>
+              <p><strong>📧 Email:</strong> ${profile.email || 'N/A'}</p>
+              <p><strong>📞 Mobile:</strong> ${profile.mobile || 'N/A'}</p>
+              <p><strong>💼 Profession:</strong> ${profile.profession || 'N/A'}</p>
+              <p><strong>👤 Gender:</strong> ${profile.gender || 'N/A'}</p>
+              <p><strong>💍 Marital Status:</strong> ${profile.marital_status || 'N/A'}</p>
+              <p><strong>🕉️ Religion:</strong> ${profile.religion || 'N/A'}</p>
+              <p><strong>🗣️ Mother Tongue:</strong> ${profile.mother_tongue || 'N/A'}</p>
+              <p><strong>📅 Years Abroad:</strong> ${profile.years_abroad || 'N/A'}</p>
+              <p><strong>📄 Visa Status:</strong> ${profile.visa_status || 'N/A'}</p>
+              <p style="color:#888; font-size:12px;"><strong>Created:</strong> ${profile.created_at ? new Date(profile.created_at).toLocaleString() : 'N/A'}</p>
+            `;
+            container.appendChild(card);
+          });
+        } else {
+          container.innerHTML = "<p style='text-align:center; color:#666;'>No NRI profiles found.</p>";
+        }
+      } catch (err) {
+        console.error("Error loading NRI profiles:", err);
+        document.getElementById("nriContainer").innerHTML = "<p style='text-align:center; color:red;'>Error loading NRI profiles.</p>";
+      }
+    }
 
-<!-------register----->
- <h2 style="color:#e83e8c;">All Registered Profiles</h2>
-  <div id="profiles" style="display:flex; flex-wrap:wrap; gap:20px;"></div>
-
-  <script>
-    // Fetch and display all profiles
-    fetch('http://localhost:5000/api/profiles')
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById('profiles');
-        data.forEach(profile => {
-          const card = document.createElement('div');
-          card.style = "border:1px solid #ccc; padding:15px; border-radius:8px; width:250px; background:#f9f9f9";
-          card.innerHTML = `
-            <h3>${profile.firstName} ${profile.lastName}</h3>
-            <p><strong>Email:</strong> ${profile.email}</p>
-            <p><strong>Phone:</strong> ${profile.phone}</p>
-            <p><strong>Gender:</strong> ${profile.gender}</p>
-            <p><strong>DOB:</strong> ${profile.dob}</p>
-            <p><strong>Religion:</strong> ${profile.religion}</p>
-            <p><strong>Caste:</strong> ${profile.caste}</p>
-            <p><strong>Education:</strong> ${profile.education}</p>
-            <p><strong>Profession:</strong> ${profile.profession}</p>
-            <p><strong>Income:</strong> ${profile.income}</p>
-          `;
-          container.appendChild(card);
-        });
-      })
-      .catch(error => {
-        console.error('Error fetching profiles:', error);
-        document.getElementById('profiles').innerText = "Failed to load profiles.";
-      });
-  </script>
-
-  
-
-<!--contact-->
- <h2 style="color:#007bff;">All Contact Messages</h2>
-  <table border="1" cellpadding="10" cellspacing="0" style="width:100%;border-collapse:collapse;">
-    <thead style="background:#f0f0f0;">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Message</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody id="contactTable"></tbody>
-  </table>
-
-  <script>
-    // Fetch and display contact messages
-    fetch('http://localhost:5000/api/contact')
-      .then(res => res.json())
-      .then(data => {
-        const table = document.getElementById('contactTable');
-        data.forEach(msg => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td>${msg.id}</td>
-            <td>${msg.name}</td>
-            <td>${msg.email}</td>
-            <td>${msg.phone}</td>
-            <td>${msg.message}</td>
-            <td>${new Date(msg.date).toLocaleString()}</td>
-          `;
-          table.appendChild(row);
-        });
-      })
-      .catch(err => {
-        console.error('Fetch error:', err);
-        document.getElementById('contactTable').innerHTML = `<tr><td colspan="6">Error loading data.</td></tr>`;
-      });
-  </script>
-
-
-<!--CREATE PROFILE-->
- <h1 style="color: #d63384; text-align: center; margin-bottom: 30px;">All Matrimony Profiles</h1>
-
-  <div id="profiles-container"></div>
-
-  <script>
+    // Fetch Profiles
     async function fetchProfiles() {
       try {
-        const res = await fetch('http://localhost:5000/api/create_profile');
-        const profiles = await res.json();
-        const container = document.getElementById('profiles-container');
+        const response = await fetch("http://localhost:5000/api/new_profilecreation");
+        const data = await response.json();
 
-        if (!profiles.length) {
-          container.innerHTML = '<p style="text-align:center; color:#888;">No profiles found.</p>';
-          return;
-        }
+        if (data.success) {
+          const container = document.getElementById("profilesContainer");
+          container.innerHTML = "";
 
-        profiles.forEach(profile => {
-          const div = document.createElement('div');
-          div.setAttribute("style", "background:#fff; margin:15px 0; padding:15px; border-radius:8px; box-shadow:0 0 5px rgba(0,0,0,0.1);");
+          data.data.forEach(profile => {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.style = "position:relative;";
 
-          div.innerHTML = `
-            <div style="display: flex; gap: 20px; align-items: center;">
-              <img src="/uploads/${profile.profilePhoto || 'default.jpg'}" alt="Profile Photo" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 2px solid #d63384;">
-              <div style="flex: 1;">
-                <h3 style="margin: 0 0 10px; color: #333;">${profile.firstName} ${profile.lastName}</h3>
-                <p style="margin: 4px 0;"><strong>Gender:</strong> ${profile.gender}</p>
-                <p style="margin: 4px 0;"><strong>DOB:</strong> ${profile.dob}</p>
-                <p style="margin: 4px 0;"><strong>Religion:</strong> ${profile.religion}</p>
-                <p style="margin: 4px 0;"><strong>Caste:</strong> ${profile.caste}</p>
-                <p style="margin: 4px 0;"><strong>Education:</strong> ${profile.education}</p>
-                <p style="margin: 4px 0;"><strong>Occupation:</strong> ${profile.occupation}</p>
-                <p style="margin: 4px 0;"><strong>About:</strong> ${profile.about}</p>
+            card.innerHTML = `
+              <div class="badge">${profile.profileFor}</div>
+              <img src="${profile.profileImage || 'https://via.placeholder.com/120'}" alt="Profile">
+              <h3>${profile.firstName} ${profile.lastName}</h3>
+              <p><b>Gender:</b> ${profile.gender}</p>
+              <p><b>Profession:</b> ${profile.profession}</p>
+              <p><b>Education:</b> ${profile.education}</p>
+
+              <div class="more-details">
+                <p><b>DOB:</b> ${profile.dob}</p>
+                <p><b>Marital Status:</b> ${profile.maritalStatus}</p>
+                <p><b>Religion:</b> ${profile.religion}</p>
+                <p><b>Caste:</b> ${profile.caste}</p>
+                <p><b>Income:</b> ${profile.income}</p>
+                <p><b>Mobile:</b> ${profile.mobile}</p>
+                <p><b>Email:</b> ${profile.email}</p>
+                <p style="color:#888; font-size:12px;"><b>Created At:</b> ${profile.created_at}</p>
               </div>
-            </div>
-          `;
-          container.appendChild(div);
-        });
+
+              <button class="toggleBtn">More Details</button>
+              <button class="connectBtn">Connect</button>
+            `;
+
+            const toggleBtn = card.querySelector(".toggleBtn");
+            const moreDetails = card.querySelector(".more-details");
+            toggleBtn.addEventListener("click", () => {
+              moreDetails.style.display = moreDetails.style.display === "none" ? "block" : "none";
+              toggleBtn.textContent = moreDetails.style.display === "none" ? "More Details" : "Less Details";
+            });
+
+            const connectBtn = card.querySelector(".connectBtn");
+            connectBtn.addEventListener("click", () => {
+              alert(`✅ You sent a connect request to ${profile.firstName} ${profile.lastName}`);
+            });
+
+            container.appendChild(card);
+          });
+        }
       } catch (err) {
-        console.error('Error fetching profiles:', err);
-        document.getElementById('profiles-container').innerHTML = '<p style="color:red;">Error loading profiles.</p>';
+        console.error("Error loading profiles:", err);
       }
     }
 
+    // Load all data
+    fetchContacts();
+    fetchNRIProfiles();
     fetchProfiles();
   </script>
 
 
+
+<!----footer chatbot scrooltop button -->
 
 
 <div id="footer"></div>
@@ -503,6 +220,76 @@ fetch("footer.html")
     document.getElementById("footer").innerHTML = data;
   });
 </script>
+
+
+<!-- Load Chatbot -->
+<script>
+  async function loadChatbot() {
+    try {
+      const response = await fetch('./chatbot.html');
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const htmlContent = await response.text();
+      
+      // Create a container to hold chatbot
+      const container = document.createElement('div');
+      container.id = 'chatbot-container';
+      container.innerHTML = htmlContent;
+      document.body.appendChild(container);
+      
+      // Extract and re-execute scripts from chatbot.html
+      const scripts = container.querySelectorAll('script');
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement('script');
+        newScript.textContent = oldScript.textContent;
+        document.head.appendChild(newScript);
+      });
+      
+      console.log('✓ Chatbot loaded successfully');
+    } catch (error) {
+      console.error('✗ Chatbot load failed:', error);
+    }
+  }
+  
+  // Load chatbot when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadChatbot);
+  } else {
+    loadChatbot();
+  }
+</script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 80px; right: 22px; z-index: 1000; background: linear-gradient(135deg, #3498db, #2980b9); color:white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 33px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s ease;" onclick="scrollToTop()">↑</button>
+
+<style>
+  #scrollToTopBtn:hover {
+    background: linear-gradient(135deg, #2980b9, #21618c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  }
+</style>
+
+<script>
+  // Show/hide scroll to top button
+  window.addEventListener('scroll', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (window.pageYOffset > 100) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  });
+
+  // Scroll to top function
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+
 </body>
-</html> 
+</html>
 
